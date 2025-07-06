@@ -1,0 +1,15 @@
+:root {
+	--contentFont: "msPixelTahoma", "Tahoma", sans-serif;
+	--contentFontSize: 13px;
+	--systemFont: "msSansSerif", "Microsoft Sans Serif", sans-serif;
+	--systemFontSize: 13px;
+}
+
+appcontents{
+	letter-spacing: 0;
+}
+
+scene_logon logonbtm p{
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+}

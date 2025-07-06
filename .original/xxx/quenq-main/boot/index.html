@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Computer Startup Screen with Boot Device Not Found Message</title>
+	<link rel="canonical" href="index.html">
+	<meta name="description" content="Online fake Windows computer startup screen prank with Boot Device Not Found error message. Open this on your friend's computer and they will believe something's wrong with their PC.">
+	<meta name="keywords" content="windows,boot">
+	<meta property="og:title" content="Computer Startup Screen with Boot Device Not Found Message">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="index.html">
+	<meta property="og:description" content="Online fake Windows computer startup screen prank with Boot Device Not Found error message. Open this on your friend's computer and they will believe something's wrong with their PC.">
+	<link rel="stylesheet" href="stylef0b5.css?v=a">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+</head>
+<body>
+	<article>
+		<h1>Computer Startup Screen with Boot Device Not Found Message</h1>
+		<p>Online fake Windows computer startup screen prank with Boot Device Not Found error message. Open this on your friend's computer and they will believe something's wrong with their PC.</p>
+		<p>The animation starts with a DELL startup screen then it tries to boot from LAN. When this doesn't succeed as screen appears showing no boot device is found and the only option the visitor can pick is to restart the last known good configuration. When the Enter is pressed a warning shows up and it seemingly erases all data from the hard drive. After formatting the disc a "Don't worry it's just a prank" message shows up.</p>
+	</article>
+	<div id="restart">
+		<div class="screen" id="screen1">
+		</div>
+		<div class="screen" id="screen2">
+			<div class="topright">
+				F1 - Setup Utility
+			</div>
+			<div class="textCenter">
+				<img src="dell.png" alt="welcome screen" id="dell"><br>
+				<br>
+				Bios Revision 2.18.0<br>
+				<br>
+				<br>
+			</div>
+			Welcome!<br>
+			<br>
+			Please Wait...<br>
+		</div>
+		<div class="screen" id="screen3">
+			Trying to boot from IDE0: WCD WD1600BEVT-223CHG<span id="loadingDots">.</span><br>
+			<br>
+		</div>
+		<div class="screen" id="screen4">
+			Trying to boot from LAN/PXE Network<span id="loadingDots2">.</span><br>
+			<br>
+		</div>
+		<div class="screen" id="screen5">
+			Boot Device Not Found<br>
+			<br>
+			Please install an operating system on your disk:<br>
+			DISK DRIVE (3F0)<br>
+			<br>
+			<span class="buttonka">Start The Last Known Good Configuration</span><br>
+			<br>
+			<br>
+		</div>
+	</div>
+	<div id="redirectIframe"></div>
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'F1') {
+      var screen2 = document.getElementById('screen2');
+      if (screen2 && screen2.style.display !== 'none') {
+        window.location.href = 'https://www.quenq.com/bios/';
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

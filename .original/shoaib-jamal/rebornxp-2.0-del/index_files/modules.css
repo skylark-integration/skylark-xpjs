@@ -1,0 +1,1991 @@
+ /*Windows Shutdown/Switch User action boxes*/
+/*@font-face{
+	font-family: "msDefault";
+	src: url("../../res/fonts/px_sans_nouveuax.ttf");
+}
+
+body{
+	font-family: "msDefault" !important;
+	font-size: 8px !important;
+	text-rendering: optimizeSpeed;
+	font-kerning: none;
+}*/
+
+scene_bsod{
+	display: none;
+}
+
+@font-face{
+	font-family: "msPixelTahoma";
+	src: url("../../res/fonts/Tahoma 8pt 11-2.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face{
+	font-family: "msPixelTahoma";
+	src: url("../../res/fonts/Tahoma 8pt 11-2 Bold.ttf");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face{
+	font-family: "msPixelTahoma";
+	src: url("../../res/fonts/Tahoma 8pt 11-2 Italic.ttf");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face{
+	font-family: "msPixelTahoma";
+	src: url("../../res/fonts/Tahoma 8pt 11-2 Bold Italic.ttf");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "msSansSerif";
+	src: url("../../res/fonts/MSSansSerif 8pt.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face{
+	font-family: "msSansSerif";
+	src: url("../../res/fonts/MSSansSerif Bold 8pt.ttf");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face{
+	font-family: "msSansSerif";
+	src: url("../../res/fonts/MSSansSerif 8pt.ttf");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face{
+	font-family: "msSansSerif";
+	src: url("../../res/fonts/MSSansSerif Bold 8pt.ttf");
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: "msTahoma";
+	src: url("../../res/fonts/Tahoma.ttf");
+}
+
+:root{
+	/*declaring our colors and variables*/
+	--contentFont: "msTahoma", "Tahoma", sans-serif;
+	--contentFontSize: 8.5pt;
+	--systemFont: "Microsoft Sans Serif", sans-serif;
+	--systemFontSize: 13px;
+	--titleFont: "Trebuchet MS", sans-serif;
+	--titleFontSize: 14px;
+
+	--mainColor: #d4d0c8;
+	--mainText: #000;
+	--internalBackdrop: #808080;
+	--desktop: #3a6ea5;
+
+	--3dHighlight: #fff;
+	--3dLightShade: #808080;
+	--3dDarkShade: #404040;
+
+	--activePrimary: #0a246a;
+	--activeSecondary: #a6caf0;
+	--activeFrame: #d4d0c8;
+	--activeTitleText: #fff;
+
+	--inactivePrimary: #808080;
+	--inactiveSecondary: #c0c0c0;
+	--inactiveFrame: #d4d0c8;
+	--inactiveTitleText: #d4d0c8;
+
+	--bodyText: #000;
+	--inactiveBodyText: #808080;
+
+	--highlightColor: #0a246a;
+	--highlightText: #fff;
+
+	--menuColor: #d4d0c8;
+	--menuText: #000;
+
+	--contentColor: #fff;
+	--contentText: #000;
+
+
+	/*border color properties*/
+	--accentGradient: linear-gradient(to right, var(--activePrimary), var(--activeSecondary));
+
+	--lowerBoxDark: var(--3dDarkShade) var(--mainColor) var(--mainColor) var(--3dDarkShade);
+	--lowerBoxLight: var(--3dLightShade) var(--3dHighlight) var(--3dHighlight) var(--3dLightShade);
+
+	--raiseBoxDark: var(--mainColor) var(--3dDarkShade) var(--3dDarkShade) var(--mainColor);
+	--raiseBoxLight: var(--3dHighlight) var(--3dLightShade) var(--3dLightShade) var(--3dHighlight);
+
+	/*box shadow properties*/
+	--insetBSLowerDark: inset 1px 1px var(--3dDarkShade), inset -1px -1px var(--mainColor);
+	--insetBSLowerLight: inset 1px 1px var(--3dLightShade), inset -1px -1px var(--3dHighlight);
+	--insetBSRaiseDark: inset 1px 1px var(--mainColor), inset -1px -1px var(--3dDarkShade);
+	--insetBSRaiseLight: inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade);
+
+	--BSLowerDark: -1px -1px var(--3dDarkShade), 1px 1px var(--mainColor);
+	--BSLowerLight: -1px -1px var(--3dLightShade), 1px 1px var(--3dHighlight);
+	--BSRaiseDark: -1px -1px var(--mainColor), 1px 1px var(--3dDarkShade);
+	--BSRaiseLight: -1px -1px var(--3dHighlight), 1px 1px var(--3dLightShade);
+
+	--menuShadow: 2px 2px 2px #00000088;
+}
+
+/*actionbox{
+	width:312px;
+	height:198px;
+	background: radial-gradient(#99b4f7, #5c7ee0);
+	border: 1px solid #000;
+	display: block;
+	margin: 0 auto;
+}
+
+actionbox act_heading{
+	display: block;
+	height:43px;
+	background-color: #003399;
+	border-bottom: 2px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #2f5eba, #cfe6ff, #2f5eba);
+	margin-bottom: 19px;
+}
+
+actionbox act_heading span{
+	font-family: sans-serif;
+	font-weight: 700;
+	color: #fff;
+	margin: 13px 0 0 12px;
+	display: inline-block;
+}
+
+actionbox footing{
+	height: 43px;
+	width: inherit;
+	background-color: #003399;
+	display: inline-block;
+	bottom: 0;
+	position: relative;
+	margin-top: 18px;
+}
+actionbox footing winbutton{
+	margin: 12px 10px 0 0;
+	display: inline-block;
+	right:0;
+	height:13px;
+	float: right;
+}*/
+
+taskbar{
+	position: absolute;
+	display: flex;
+
+	background: var(--mainColor);
+	color: var(--bodyText);
+	bottom:0px;
+	height:28px;
+	border-top: 1px solid var(--mainColor);
+	box-shadow: inset 0 1px var(--3dHighlight);
+	width:100%;
+	z-index: 999999;
+}
+taskbar.autohide{
+	transform: translateY(26px);
+	transition: transform 0.1s linear;
+}
+taskbar.autohide:hover{
+	transform: translateY(0px);
+}
+
+taskbar startbtn{
+	width:50px;
+	height:20px;
+	background: var(--mainColor);
+	border: 1px solid;
+	border-color: var(--3dHighlight) var(--3dDarkShade) var(--3dDarkShade) var(--3dHighlight);
+	box-shadow: inset -1px -1px 0 var(--3dLightShade);
+	margin: 3px 0 0 2px;
+}
+taskbar startbtn:before{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	content: " ";
+	background: url('../../res/icons/tray/win.png');
+	background-size: contain;
+	margin: 0px -1px 0 1px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+taskbar startbtn:after{
+	display: inline-block;
+	content: "Start";
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	font-weight: 600;
+	letter-spacing: -0.2px;
+	line-height: 20px;
+	vertical-align: middle;
+	margin-top: -1px;
+
+}
+taskbar startbtn:active, taskbar startbtn.active{
+	background-image:
+      linear-gradient(45deg, var(--3dHighlight) 25%, transparent 25%),
+      linear-gradient(135deg, var(--3dHighlight) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--3dHighlight) 75%),
+      linear-gradient(135deg, transparent 75%, var(--3dHighlight) 75%);
+    background-size:2px 2px; /* Must be a square */
+    background-position:0 0, 1px 0, 1px -1px, 0px 1px; /* Must be half of one side of the square */
+
+	box-shadow: inset -1px -1px var(--mainColor), inset 1px 1px var(--3dLightShade);
+	border: 1px solid;
+	border-color: var(--3dDarkShade) var(--3dHighlight) var(--3dHighlight) var(--3dDarkShade);
+}
+taskbar startbtn:active:before, taskbar startbtn.active:before{
+	margin: 1px -1px 0 2px;
+}
+taskbar startbtn:active:after, taskbar startbtn.active:after{
+	margin-top: 0px;
+}
+
+taskbar quicklaunch{
+	display: flex;
+	padding: 4px 2px 4px 8px;
+	overflow: hidden;
+	text-overflow: " ≫ ";
+	white-space: nowrap;
+}
+taskbar quicklaunch img{
+	display: block;
+	padding: 3px;
+	width: 22px;
+	height: 22px;
+	box-sizing: border-box;
+}
+taskbar quicklaunch img:hover{
+	border: 1px solid;
+	border-color: var(--3dHighlight) var(--3dLightShade) var(--3dLightShade) var(--3dHighlight);
+	padding: 2px;
+}
+taskbar quicklaunch img:active{
+	border-color: var(--3dLightShade) var(--3dHighlight) var(--3dHighlight) var(--3dLightShade);
+	padding: 2px 1px 2px 3px;
+}
+
+taskbar taskarea{
+	display: flex;
+	flex: 1;
+	padding: 0 14px 0 5px;
+	overflow-x: hidden;
+}
+/*taskbar taskarea taskholder{
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: flex-start;
+}*/
+taskbar taskarea task{
+	display: flex;
+	flex: 1;
+	width: 100%; /*works to make buttons max size if possible, but shrink if needed*/
+	min-width:50px;
+	max-width: 157px;
+	height: 18px;
+	margin-top: 3px;
+	margin-right: 2px;
+
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	line-height: 18px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+
+	padding: 1px 1px 1px 0;
+	background: var(--mainColor);
+	box-shadow: inset -1px -1px 0 var(--3dLightShade);
+	border: 1px solid;
+	border-color: var(--3dHighlight) var(--3dDarkShade) var(--3dDarkShade) var(--3dHighlight);
+
+	transition: width 0.5s 2s linear;
+}
+taskbar taskarea task.active, taskbar taskarea task:active{
+	padding: 2px 0 0 1px;
+
+	/*checkerboard magic*/
+	background-image:
+      linear-gradient(45deg, var(--3dHighlight) 25%, transparent 25%),
+      linear-gradient(135deg, var(--3dHighlight) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--3dHighlight) 75%),
+      linear-gradient(135deg, transparent 75%, var(--3dHighlight) 75%);
+    background-size:2px 2px; /* Must be a square */
+    background-position:0 0, 1px 0, 1px -1px, 0px 1px; /* Must be half of one side of the square */
+
+	box-shadow: inset -1px -1px var(--mainColor), inset 1px 1px var(--3dLightShade);
+	border: 1px solid;
+	border-color: var(--3dDarkShade) var(--3dHighlight) var(--3dHighlight) var(--3dDarkShade);
+}
+taskbar taskarea task img{
+	width: 16px;
+	height: 16px;
+	padding: 1px 3px 5px 3px;
+	display: inline-block;
+	vertical-align: middle;
+	filter: drop-shadow(0.5px 0.5px 0.5px #00000088);
+}
+taskbar taskarea task span{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+taskbar taskarea task.active img, taskbar taskarea task:active img{
+	padding:1px 3px 5px 3px;
+}
+
+taskbar taskarea task.dialogbox{
+	display: none;
+}
+
+taskbar trayarea{
+	background: var(--mainColor);
+	border: 1px solid;
+	border-color: var(--3dLightShade) var(--3dHighlight) var(--3dHighlight) var(--3dLightShade);
+
+	height:21px;
+	margin: 3px 2px 0 0;
+	padding-right: 12px;
+
+	text-align: right;
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	line-height: 30px;
+}
+taskbar trayarea traycontain{
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-items: flex-start;
+	padding-left: 3px;
+	margin: 0;
+}
+
+taskbar trayarea img{
+	display: inline-block;
+	padding:3px 1px 6px;
+	filter: drop-shadow(0.5px 0.5px 0.5px #00000088);
+	z-index: 1;
+}
+taskbar trayarea span{
+	padding-left: 8px;
+	line-height: 21px;
+}
+
+/* start menu */
+
+startmenu{
+	position: absolute;
+	bottom:25px;
+	left: 2px;
+	display: grid;
+	grid-template-rows: 40px auto 34px;
+	grid-template-columns: 378px;
+	width:378px;
+	height: 446px;
+
+	border: 1px solid;
+	border-color: var(--raiseBoxDark);
+	box-shadow: var(--insetBSRaiseLight);
+	background: var(--menuColor);
+	color: var(--menuText);
+
+	filter: drop-shadow(2px 2px 2px #00000088);
+	z-index: 999999;
+}
+startmenu.hidden{
+	display: none;
+}
+startmenu userbar{
+	display: grid;
+	grid-column: 1;
+	grid-row: 1;
+	background: linear-gradient(to right, var(--activePrimary), var(--activeSecondary));
+	margin:2px 2px 0 2px;
+	/*box-shadow: inset -2px 0px 3px #1455b7, inset 2px 0 3px #7190d9;*/
+}
+startmenu userbar usericon{
+	margin: 8px 6px;
+	font-family: 'Franklin Gothic Medium', sans-serif;
+}
+startmenu userbar usericon:after{
+	box-shadow: 2px 2px 3px #00000066;
+	display: none;
+}
+startmenu userbar usericon span{
+	text-shadow: none;
+	line-height: 34px;
+	color: var(--activeTitleText);
+	text-shadow: none;
+	font-family: sans-serif;
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 600;
+	transform: translateY(-18px);
+}
+startmenu userbar usericon img{
+	display: none;
+	margin-top: 1px;
+}
+startmenu links{
+	display: grid;
+	grid-column: 1;
+	grid-row: 2;
+
+	margin-left: 1px;
+	margin-top: 0px;
+	grid-template-columns: 188px 189px;
+	grid-template-rows:auto;
+
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+
+	/*border-top: 2px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #91a4da 0%, #91a4da 0.4%, #ffffff 0.5%, #ff8e24, #d3e5fa 99.5%, #2b6dd1 99.6%, #2b6dd1 100%);*/
+}
+startmenu links applinks{
+	margin: 0 6px;
+	display: grid;
+	grid-column: 1;
+	grid-row: 1;
+	padding-top: 2px;
+}
+startmenu links applinks ul{
+	padding-left: 5px;
+	margin: 0;
+	margin-left: -2px;
+}
+startmenu links applinks li{
+	height: 32px;
+	line-height: 32px;
+	padding: 1px 0 3px 2px;
+	list-style: none;
+	margin: 4px 5px 4px 0;
+}
+startmenu links applinks ul#pinnedapps{
+	line-height: 48px;
+	overflow-wrap: break-word;
+	border-bottom: 1px solid;
+	border-color: var(--3dLightShade);
+	box-shadow: 0 1px var(--3dHighlight);
+	padding-bottom: 4px;
+	height: 84px;
+}
+startmenu links applinks ul#pinnedapps span.title{
+	font-weight: 900;
+	position: absolute;
+	transform: translateY(-5px);
+}
+startmenu links applinks ul#pinnedapps span.name{
+	position: absolute;
+	transform: translateY(8px);
+}
+startmenu links applinks ul#userapps{
+	/*height:252px;*/
+	padding-top: 0;
+	margin-top: -8px;
+	margin-bottom: 18px;
+}
+startmenu links applinks ul#allapps{
+	text-align: center;
+	font-weight: 900;
+	height: 24px;
+	line-height: 24px;
+	display: block;
+	bottom: 0;
+	padding: 0;
+	margin-top: 16px;
+	margin: -25px 0px 4px 0px;
+	border-top: 1px solid;
+	border-color: var(--3dHighlight);
+	box-shadow: 0 -1px var(--3dLightShade);
+}
+startmenu links applinks ul#allapps progarrow{
+	width: 16px;
+	height: 24px;
+	display: inline-block;
+	padding: 0;
+	margin-left: 12px;
+	transform: translateY(-1px);
+	filter:none;
+	vertical-align: middle;
+	background:none;
+}
+startmenu links applinks ul#allapps progarrow:after{
+	content: "▼";
+	font-size: 9px;
+	transform: rotate(-90deg) scaleY(0.8) translateX(1px);
+	display: inline-block;
+
+}
+
+startmenu links applinks ul#allapps li{
+	height: 24px;
+	line-height: 24px;
+	margin: 0;
+	padding: 2px;
+	margin-top: 3px;
+}
+
+/* submenus */
+
+/*set up all menus*/
+startmenu links applinks ul#allapps ul{
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 2px;
+	position: absolute;
+
+	border: 1px solid;
+	border-color: var(--menuColor) var(--3dDarkShade) var(--3dDarkShade) var(--menuColor);
+	background-color: var(--menuColor);
+	color: var(--menuText);
+	box-shadow: inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade);
+	font-weight: 500;
+	filter: none;
+
+	width: auto;
+	white-space: nowrap;
+	z-index: 1;
+}
+/*set up first menu's positioning*/
+startmenu links applinks ul#allapps ul#start-programs{
+	bottom: 39px;
+	left:145px;
+	box-shadow: inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade);
+}
+/*set up positioning on submenus*/
+startmenu links applinks ul#allapps ul ul{
+	top: -3px;
+	left: 100%;
+	margin-left: -3px;
+}
+
+/*open main menu on hover*/
+startmenu links applinks ul#allapps:hover ul#start-programs{
+	display: block;
+	opacity: 0;
+	animation: linear 0.2s 0.3s menuFade forwards;
+}
+
+/*set up list items*/
+startmenu links applinks ul#allapps ul#start-programs li{
+	position: relative;
+	width: auto;
+	margin: 0;
+	padding: 0 22px 0 6px;
+	text-align: left;
+	height: 20px;
+	line-height: 20px;
+}
+startmenu links applinks ul#allapps ul#start-programs li.new{
+	background: #fbe7b5;
+}
+startmenu links applinks ul#allapps ul#start-programs li.empty img{
+	visibility: hidden;
+}
+startmenu links applinks ul#allapps ul#start-programs li.empty a{
+	color: var(--3dLightShade);
+}
+/*style dividers*/
+startmenu links applinks ul#allapps ul#start-programs li.divider{
+	height: 2px;
+	margin: 3px;
+	box-sizing: border-box;
+	border: 1px solid;
+	border-color: var(--3dLightShade) var(--3dLightShade) var(--3dHighlight) var(--3dHighlight);
+}
+/*set up conatined a elements so they can set the width proper*/
+startmenu links applinks ul#allapps ul li a{
+	width: 100%;
+	padding: 0;
+	display: inline;
+	line-height: 145%;
+
+}
+/*configure our menu item images*/
+startmenu links applinks ul#allapps ul li a img{
+	width: 16px;
+	height: 16px;
+	margin-right: 4px;
+	transform: translateY(-1px);
+}
+
+/*give the menus arrows to indicate they contain stuff*/
+startmenu links applinks ul#allapps:hover ul#start-programs li.submenuHolder:after{
+	content: "▼";
+	display: inline-block;
+	position: absolute;
+
+	font-size: 9px;
+	transform: rotate(-90deg) scaleY(0.6);
+
+	right: 6px;
+	line-height: 20px;
+}
+
+/*color items on hover*/
+startmenu links applinks ul#allapps:hover ul#start-programs li:not(.divider):hover{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+/*display submenus on hover*/
+startmenu links applinks ul#allapps:hover ul#start-programs li.submenuHolder:hover > ul{
+	display: block;
+	opacity: 0;
+	animation: linear 0.2s 0.3s menuFade forwards;
+}
+
+/* start menu left pane continues */
+
+startmenu links applinks li:hover{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+startmenu links applinks li:hover span.name{
+	color: var(--highlightText) !important;
+}
+startmenu links applinks li img{
+	height: 32px;
+	width: 32px;
+	vertical-align: middle;
+	padding-right: 4px;
+	filter: drop-shadow(0.5px 0.5px 0.5px #00000088);
+}
+startmenu links syslinks{
+	display: flex;
+	flex-direction: column;
+	grid-column: 2;
+	grid-row: 1;
+	height: 370px;
+	padding-top: 2px;
+
+	/*box-shadow: inset -1px 0 2px #a6c2e6;*/
+	border-left:1px solid var(--3dHighlight);
+	box-shadow: -1px 0 var(--3dLightShade);
+}
+startmenu links syslinks ul{
+	padding-left: 7px;
+	margin: 0;
+}
+startmenu links syslinks ul#syslocations{
+	/*height: 159px;*/
+	font-weight: 900;
+	padding-top: 5px;
+	/*margin-bottom: -20px;*/
+}
+startmenu links syslinks ul#syslocations:after{
+	content:' ';
+	height: 1px;
+	width: 100%;
+	background: var(--3dLightShade);
+	display: block;
+	margin:6px 5px 0 -2px;
+	/*margin: 6px auto 0;*/
+}
+
+startmenu links syslinks ul#settings{
+	/*height: 96px;*/
+	/*margin-top: 18px;
+	margin-bottom: 2px;*/
+}
+startmenu links syslinks ul#settings:before{
+	content:' ';
+	height: 1px;
+	width: 100%;
+	background: var(--3dHighlight);
+	display: block;
+	margin: 0 5px 0 -2px;
+}
+startmenu links syslinks ul#settings:after{
+	content:' ';
+	height: 1px;
+	width: 100%;
+	background: var(--3dLightShade);
+	display: block;
+	margin:6px 5px 0 -2px;
+}
+
+startmenu links syslinks ul#support{
+	/*height: 112px;*/
+}
+startmenu links syslinks ul#support:before{
+	content:' ';
+	height: 1px;
+	width: 100%;
+	background: var(--3dHighlight);
+	display: block;
+	margin: 0 5px 0 -2px;
+}
+startmenu links syslinks li{
+	line-height: 24px;
+	list-style: none;
+	margin: 1px 5px 3px 0;
+	padding: 1px 3px;
+}
+startmenu links syslinks li:hover{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+startmenu links syslinks li img{
+	height: 24px;
+	width: 24px;
+	vertical-align: middle;
+	padding-right: 4px;
+	filter: drop-shadow(0.5px 0.5px 0.5px #00000088);
+}
+
+startmenu poweropt{
+	display: grid;
+	grid-column: 1;
+	grid-row: 3;
+
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+
+	box-shadow: 0 -1px var(--3dLightShade);
+	border-top: 1px solid var(--3dHighlight);
+	margin: 0 2px;
+}
+startmenu poweropt powercontain{
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: flex-end;
+
+	margin-top: 4px;
+	right:0px;
+}
+startmenu poweropt btncontain{
+	display: inherit;
+	padding: 2px 0 2px 3px;
+	margin-top: -3px;
+	margin-bottom: 3px;
+}
+startmenu poweropt btncontain:hover{
+	background: var(--highlightColor);
+	color: var(--highlightText);
+}
+
+/* classic theme specific power buttons */
+startmenu poweropt softbutton.red{
+	background: #800000;
+}
+startmenu poweropt softbutton.yellow{
+	background: #808000;
+}
+startmenu poweropt:hover softbutton.red, startmenu poweropt:active softbutton.red{
+	background: #800000;
+	box-shadow: inset 1px 1px #f00, inset -1px -1px #f00;
+}
+startmenu poweropt:hover softbutton.yellow, startmenu poweropt:active softbutton.yellow{
+	background: #808000;
+	box-shadow: inset 1px 1px #ff0, inset -1px -1px #ff0;
+}
+
+startmenu poweropt softbutton{
+	display: inline;
+	width: 22px;
+	height: 22px;
+	border-radius: 0;
+	border: 1px solid white;
+	box-shadow: inset 1px 1px #c0c0c0, inset -1px -1px #808080;
+}
+startmenu poweropt softbutton:before{
+	display: none;
+}
+startmenu poweropt softbutton:after{
+	top:0;
+}
+startmenu poweropt span{
+	display: inline;
+
+	line-height: 25px;
+	margin-left: 4px;
+	margin-right: 11px;
+}
+/*startmenu:before{
+	content:' ';
+	height:30px;
+	width: 97px;
+	background:url('../res/ui/start_press.png');
+	position: absolute;
+	bottom: 0;
+	margin: 0 0 -31px -1px;
+	box-shadow: none;
+}*/
+
+/* start menu */
+
+startmenu.classic{
+	display: grid;
+	grid-template-columns: 23px auto;
+	grid-template-rows: 100%;
+	width: unset;
+	height: unset;
+	background: var(--mainColor);
+	border: 1px solid;
+	border-color: var(--raiseBoxDark);
+	box-shadow: var(--insetBSRaiseLight);
+	position: absolute;
+	bottom: 25px;
+	left: 2px;
+	z-index: 999999;
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	color: var(--menuText);
+}
+startmenu.classic.hidden{
+	display: none;
+}
+startmenu.classic #banner{
+	background: url("../../res/ui/startbanner_classic.png"), #000;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	margin: 2px 0 2px 2px;
+	grid-column: 1;
+}
+startmenu.classic links {
+	display: flex;
+	flex-direction: column;
+	grid-row:1;
+	grid-column: 2;
+}
+startmenu.classic links ul{
+	list-style: none;
+	margin: 0 2px 0 0;
+	padding: 2px 0;
+	border-bottom: 1px solid var(--3dLightShade);
+	box-shadow: 0 1px var(--3dHighlight);
+}
+startmenu.classic links ul:last-child{
+	box-shadow: none;
+	border-bottom: none;
+}
+startmenu.classic links li{
+	line-height: 32px;
+	height: 32px;
+	padding-left: 6px;
+	padding-right: 32px;
+}
+startmenu.classic links li.submenuholder:after{
+	content: "▼";
+	display: inline-block;
+	position: absolute;
+	font-size: 10px;
+	transform: rotate(-90deg) scaleY(0.6);
+
+	right: 6px;
+	/*line-height: 32px;*/
+	text-shadow: none;
+}
+startmenu.classic links li:hover{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+startmenu.classic links li img{
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	padding-right: 8px;
+	vertical-align: middle;
+}
+
+/* submenus */
+
+/*set up all menus*/
+startmenu.classic links ul#links li ul{
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 2px;
+	position: absolute;
+
+	border: 1px solid;
+	border-color: var(--menuColor) var(--3dDarkShade) var(--3dDarkShade) var(--menuColor);
+	background-color: var(--menuColor);
+	color: var(--menuText);
+	box-shadow: inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade);
+	font-weight: 500;
+	filter: none;
+
+	width: auto;
+	white-space: nowrap;
+	z-index: 1;
+}
+/*set up first menu's positioning*/
+startmenu.classic links ul#links li ul{
+	/*top: 38px;*/
+	left:100%;
+	margin-left: -5px;
+	box-shadow: inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade);
+}
+startmenu.classic links ul#links li ul#start-programs{
+/*	top: 38px;*/
+	bottom: 0;
+}
+startmenu.classic links ul#links li ul#start-favorites{
+	top: 70px;
+}
+startmenu.classic links ul#links li ul#start-documents{
+	top: 102px;
+}
+startmenu.classic links ul#links li ul#start-settings{
+	top: 134px;
+}
+startmenu.classic links ul#links li ul#start-find{
+	top: 166px;
+}
+/*set up positioning on submenus*/
+startmenu.classic links ul#links ul ul{
+	top: -3px;
+	left: 100%;
+	margin-left: -5px;
+}
+
+/*open main menu on hover*/
+startmenu.classic links ul#links li:hover > ul{
+	display: block;
+}
+
+/*set up list items*/
+startmenu.classic links ul#links ul li{
+	position: relative;
+	width: auto;
+	margin: 0;
+	padding: 0 22px 0 6px;
+	text-align: left;
+	height: 20px;
+	line-height: 20px;
+}
+startmenu.classic links ul#links ul li.new{
+	background: #fbe7b5;
+}
+startmenu.classic links ul#links ul li.empty img{
+	visibility: hidden;
+}
+startmenu.classic links ul#links ul li.empty a{
+	color: var(--3dLightShade);
+}
+/*style dividers*/
+startmenu.classic links ul#links ul li.divider{
+	height: 2px;
+	margin: 3px;
+	box-sizing: border-box;
+	border: 1px solid;
+	border-color: var(--3dLightShade) var(--3dLightShade) var(--3dHighlight) var(--3dHighlight);
+}
+/*set up conatined a elements so they can set the width proper*/
+startmenu.classic links ul#links ul li a{
+	width: 100%;
+	padding: 0;
+	display: inline;
+	line-height: 145%;
+}
+/*configure our menu item images*/
+startmenu.classic links ul#links ul li a img{
+	width: 16px;
+	height: 16px;
+	margin-right: 4px;
+	transform: translateY(-1px);
+}
+
+/*give the menus arrows to indicate they contain stuff*/
+startmenu.classic links ul#links ul li.submenuHolder:after{
+	content: "▼";
+	display: inline-block;
+	position: absolute;
+
+	font-size: 9px;
+	transform: rotate(-90deg) scaleY(0.6);
+
+	right: 6px;
+	line-height: 21px;
+}
+
+/*color items on hover*/
+startmenu.classic links ul#links ul li:not(.divider):hover{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+/*display submenus on hover*/
+startmenu.classic links ul#links ul li.submenuHolder:hover > ul{
+	display: block;
+}
+
+/*RESIZABLE WINDOW*/
+
+/* context menus */
+contextmenu{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	font-weight: 500;
+	z-index: 9999999;
+	animation: linear 0.2s menuFade forwards;
+}
+contextmenu.visible{
+	display: block;
+}
+contextmenu ul{
+	list-style: none;
+	margin: 0;
+	padding: 2px;
+	border: 1px solid;
+	border-color: var(--mainColor) var(--3dDarkShade) var(--3dDarkShade) var(--mainColor);
+	box-shadow: var(--insetBSRaiseLight) ,2px 2px 3px #00000088;
+	background-color: var(--mainColor);
+	color: var(--mainText);
+	/*position: absolute;*/
+}
+contextmenu ul li{
+	position: relative;
+	height: 17px;
+	line-height: 17px;
+	margin: 0;
+	padding: 0 22px 0 17px;
+	width: auto;
+	white-space: nowrap;
+}
+
+/*submenus*/
+contextmenu > ul ul{
+	top: -3px;
+	left: 100%;
+	position: absolute;
+}
+contextmenu > ul li.submenuholder > ul{
+	display: none;
+}
+contextmenu > ul li.submenuholder:hover > ul{
+	display: block;
+	animation: linear 0.2s menuFade forwards;
+}
+
+/*context entry types*/
+contextmenu ul li.default{
+	font-weight: 600;
+}
+contextmenu ul li.submenuholder:after{
+	content: "▼";
+	display: inline-block;
+	position: absolute;
+	font-size: 9px;
+	transform: rotate(-90deg) scaleY(0.6);
+
+	right: 6px;
+	line-height: 19px;
+	text-shadow: none;
+}
+contextmenu ul li.disabled{
+	color: var(--3dLightShade);
+	text-shadow: 1px 1px var(--3dHighlight);
+	pointer-events: none;
+}
+contextmenu ul li.divider{
+	height: 1px;
+	margin: 3px 2px 5px 1px;
+	background: var(--3dLightShade);
+	box-shadow: 0 1px var(--3dHighlight);
+	pointer-events: none;
+}
+
+/*context menu effects*/
+contextmenu ul li:hover{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+
+@keyframes menuFade{
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+scene_windowspace{
+	height:calc(100% - 26px);
+}
+/*Dialog box*/
+app{
+/*	width:300px;*/
+	/*height: 120px;*/
+	display: block;
+	position: absolute;
+	left: calc(50% - 150px);
+	top: calc(50% - 60px);
+	pointer-events: all;
+
+	border:1px solid;
+	border-color: var(--mainColor) var(--3dDarkShade) var(--3dDarkShade) var(--mainColor);
+	background-color: var(--mainColor);
+	color: var(--bodyText);
+	box-shadow: inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade), inset 2px 2px var(--activeFrame), inset -2px -2px var(--activeFrame);
+
+/*	min-width: 300px;*/
+/*	min-height: 140px;*/
+	box-sizing: border-box;
+}
+
+app.dialogbox{
+		box-shadow: inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade);
+/*		min-width: 200px;*/
+/*		min-height: 100px;*/
+}
+app.inactive.dialogbox{
+		box-shadow: inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade);
+}
+
+/*application frames*/
+app.dialogbox appheader{
+	margin: 2px 2px 1px 2px;
+}
+app.dialogbox appcontrols{
+	top: 3px;
+}
+appheader, appanimator{
+	height: 18px;
+	display: block;
+	padding: 0 2px;
+	margin: 3px 3px 1px 3px;
+
+	font-family: var(--titleFont);
+	font-weight: 600;
+	font-size: var(--titleFontSize);
+	letter-spacing: 0.1px;
+	color: var(--activeTitleText);
+	line-height: 18px;
+
+	background: linear-gradient(to right, var(--activePrimary), var(--activeSecondary));
+	/*background-color: #0055e5;*/
+}
+appanimator{
+	background: linear-gradient(to right, var(--activePrimary), var(--activeSecondary));
+	position: fixed;
+	display: none;
+	padding-right:2px; /*counteracts extra width bc of borders*/
+	pointer-events: none;
+	z-index: 999;
+	/*width: var(--srcWidth);
+	top:var(--srcTop);
+	left:var(--srcLeft);*/
+}
+appanimator.animating{
+	display: block;
+	animation: titlebarAnim 0.25s steps(8, start) forwards;
+}
+@keyframes titlebarAnim{
+	0% {
+		width: var(--srcWidth);
+		top:var(--srcTop);
+		left:var(--srcLeft);
+	}
+	100%{
+		width: var(--destWidth);
+		top:var(--destTop);
+		left:var(--destLeft);
+	}
+}
+appheader img, appanimator img{
+	vertical-align: middle;
+	padding-right: 4px;
+	margin-bottom: 3px;
+	width: 16px;
+	height: 16px;
+}
+appheader span, appanimator span{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	width: calc(100% - 100px);
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 2px;
+	pointer-events: none;
+}
+app.dialogbox appheader span, app.dialogbox appanimator span{
+	width: calc(100% - 45px);
+}
+
+app.inactive{
+	box-shadow: inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade), inset 2px 2px var(--inactiveFrame), inset -2px -2px var(--inactiveFrame);
+	/*border-color: #babac5;*/
+}
+
+app.inactive appheader{
+	background: linear-gradient(to right, var(--inactivePrimary), var(--inactiveSecondary));
+	color: var(--inactiveTitleText);
+}
+
+/*caption buttons _ [] X*/
+appcontrols{
+	position: absolute;
+	right:5px;
+	top:4px;
+	transform: translateY(0px);
+}
+/*add in the convex shape*/
+appcontrols captionbutton{
+	display: inline-block;
+	width: 14px;
+	height: 12px;
+	margin: 1px 0px 1px -4px;
+	background: var(--mainColor);
+	border: 1px solid;
+	box-shadow: inset -1px -1px var(--3dLightShade);
+	border-color: var(--3dHighlight) var(--3dDarkShade) var(--3dDarkShade) var(--3dHighlight);
+}
+/*disable regular button graphics*/
+appcontrols captionbutton img{
+	width: 11px;
+	height: auto;
+	margin-left: 1px;
+	display: none;
+	filter: invert(100%);
+	image-rendering: pixelated;
+}
+/*use free :after slot for new graphics*/
+appcontrols captionbutton:after{
+	height: 11px;
+	width: 11px;
+	content:" ";
+	display: block;
+	margin: 0 0px 0 1px;
+}
+appcontrols captionbutton.closebtn:after{
+	background: url('../../res/ui/classic/close_classic.png');
+}
+appcontrols captionbutton.max:after{
+	background: url('../../res/ui/classic/maximize_classic.png');
+}
+appcontrols captionbutton.res:after{
+	background: url('../../res/ui/classic/restore_classic.png');
+}
+appcontrols captionbutton.min:after{
+	background: url('../../res/ui/classic/minimize_classic.png');
+}
+appcontrols captionbutton.help:after{
+	background: url('../../res/ui/classic/help_classic.png');
+}
+
+/*click states*/
+appcontrols captionbutton:active, app.inactive appcontrols captionbutton:active{
+	box-shadow: inset 1px 1px var(--3dLightShade);
+	border-color:  var(--3dDarkShade) #fff #fff var(--3dDarkShade);
+}
+appcontrols captionbutton:active:after{
+	margin: 1px 0px 0px 2px;
+}
+
+/*close button specific*/
+appcontrols captionbutton.closebtn{
+	margin-left: -1px;
+}
+
+/*maximized window state*/
+app.maximized{
+	/*transitions only applied to maximized state for the moment
+	otherwise they mess with the window dragging routine*/
+/*	transition-property: width, height, top, left;
+	transition-duration: 0.1s;*/
+	width: calc(100% + 8px) !important;
+	height: calc(100% + 5px) !important;
+	top: -4px !important;
+	left: -4px !important;
+}
+app.fullscreen{
+	width:calc(100% + 2px) !important;
+	height:calc(100% + 51px) !important;
+	top:-23px !important;
+	left:-4px !important;
+	z-index: 9999999 !important;
+	visibility: hidden;
+}
+app.fullscreen appcontents{
+	visibility: visible;
+}
+app.maximized appresizers, app.fullscreen appresizers{
+	display: none;
+}
+app.fullscreen appcontents{
+	width: 100% !important;
+	height: calc(100% - 23px) !important;
+}
+app.minimized{
+	display: none;
+}
+app.minimized.unminimizing{
+	display: block;
+	visibility: hidden;
+}
+app.minimized.unminimizing appanimator{
+	visibility: visible;
+}
+app.maximized appheader{
+	background: linear-gradient(to right, var(--activePrimary), var(--activeSecondary));
+}
+app.maximized.inactive appheader{
+	background: linear-gradient(to right, var(--inactivePrimary), var(--inactiveSecondary));
+
+}
+/*hide maximize button when maximized*/
+app.maximized appcontrols captionbutton.max{
+	display: none;
+}
+
+/*hide restore button when not maximized*/
+app:not(.maximized) appcontrols captionbutton.res{
+	display: none;
+}
+
+
+/*disable _ [] buttons on dialog windows*/
+app.dialogbox captionbutton.max,
+app.dialogbox captionbutton.res,
+app.dialogbox captionbutton.min{
+	display: none;
+}
+app.noresize captionbutton.max{
+	pointer-events: none;
+}
+app.noresize captionbutton.max:before{
+	height: 11px;
+	width: 11px;
+	content:" ";
+	display: block;
+	margin: 1px 0px 0 2px;
+	background:var(--3dHighlight);
+	-webkit-mask-image: url('../../res/ui/classic/maximize_classic.png');
+	mask-image: url('../../res/ui/classic/maximize_classic.png');
+	position: absolute;
+}
+app.noresize captionbutton.max:after{
+	background:var(--3dLightShade);
+	-webkit-mask-image: url('../../res/ui/classic/maximize_classic.png');
+	mask-image: url('../../res/ui/classic/maximize_classic.png');
+}
+app.noclose appcontrols captionbutton.closebtn{
+	pointer-events: none;
+}
+app.noclose appcontrols captionbutton.closebtn:after{
+	opacity: 0.2;
+	filter: drop-shadow(1px 1px var(--3dHighlight));
+}
+
+/* display help button only on dialogs */
+app:not(.hashelp) appcontrols captionbutton.help{
+	display: none;
+}
+app.hashelp captionbutton.help{
+	display: inline-block;
+}
+
+/*app contents*/
+appcontents{
+	margin: 0 3px 3px;
+	background-color: var(--contentColor);
+	color: var(--contentText);
+	display: block;
+	position: relative;
+/*	width: calc(100% - 6px);*/
+/*	height: calc(100% - 25px);*/
+
+	/*box-shadow: -1px 0 2px 1px #166aee, 1px 0 2px 1px #003ddc, 0px 1px 2px 1px #003ddc;*/
+	/*box-shadow: -1px 0 1px 0px #28f, 1px 0 1px 1px #06f, 0px 1px 1px 1px #06f;*/
+
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	letter-spacing: -0.2px;
+	scrollbar-color: var(--mainColor) var(--3dHighlight);
+
+	/*display: grid;
+	grid-template-rows: 23px auto 23px;
+	grid-template-columns: auto;*/
+}
+app.inactive appcontents{
+}
+app.maximized appcontents{
+	width: calc(100% - 6px) !important;
+	height: calc(100% - 25px) !important;
+}
+
+app.dialogbox appcontents{
+	background-color: var(--mainColor);
+	color: var(--mainText);
+	margin: 0 1px 1px;
+}
+app.noresize appcontents{
+	background-color: var(--mainColor);
+	color: var(--mainText);
+}
+app.dialogbox appcontents appcontentholder{
+	padding: 7px 10px;
+}
+
+appcontentholder{
+	display: block;
+	box-sizing: border-box;
+}
+app.dialogbox appcontentholder img.dialogicon{
+	height: 32px;
+	width: auto;
+	vertical-align: middle;
+	/*border:1px solid black;*/
+	margin-right: 4px;
+}
+app.dialogbox appcontentholder span.dialogtext{
+	margin: 0 auto;
+	display: inline-block;
+	width: calc(100% - 48px);
+	vertical-align: top;
+}
+app.dialogbox appcontentholder div.dialogbuttons{
+	margin: 0 auto;
+	width: fit-content;
+}
+
+/*handle iframe apps*/
+appcontentholder iframe.embeddedAppFrame{
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+app.inactive iframe{
+	pointer-events: none;
+}
+app.inactive iframe:after{
+	content: " ";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+	top:0;
+	left: 0;
+}
+
+/*window navigation + menus*/
+appcontentholder appnavigation{
+	display: block;
+	background: var(--menuColor);
+	/*border:1px solid var(--3dLightShade);
+	border-bottom: none;
+	box-shadow: 1px 0 var(--3dHighlight);*/
+	width: 100%;
+}
+appcontentholder appnavigation.rich{
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 23px 33px 24px;
+	background: var(--mainColor);
+}
+appcontentholder appnavigation ul{
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	color: var(--menuText);
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	list-style-type: none;
+	width: calc(100% - 3px);
+	padding-left: 2px;
+	border:1px solid;
+	border-color: var(--3dHighlight) var(--3dLightShade) var(--3dLightShade) var(--3dHighlight);
+}
+appcontentholder.explorer appnavigation{
+	border:1px solid var(--3dLightShade);
+	border-bottom: none;
+	box-shadow: 1px 0 var(--3dHighlight);
+	width:calc(100% - 3px);
+}
+appcontentholder:not(.explorer) appnavigation ul.appmenus{
+	border-color: transparent transparent var(--3dLightShade) transparent;
+}
+
+app.inactive appcontentholder appnavigation ul{
+	color:var(--3dLightShade);
+}
+appcontentholder appnavigation ul li{
+	display: inline-block;
+}
+appcontentholder appnavigation ul img{
+	border:none;
+}
+
+appcontentholder appnavigation ul.appmenus{
+	padding-top: 2px;
+	padding-bottom: 6px;
+	width: calc(100% - 4px);
+	height: 13px;
+	margin-top: 0;
+	line-height: 13px;
+	border-right: none;
+}
+appcontentholder appnavigation ul.appmenus .submenu{
+	display: none;
+	position: absolute;
+	background: var(--menuColor) !important;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--mainColor) var(--3dDarkShade) var(--3dDarkShade) var(--mainColor);
+	box-shadow: inset 0 1px var(--3dHighlight), inset -1px 0 var(--3dLightShade), inset 0 -1px var(--3dLightShade), inset 1px 0 var(--3dHighlight), var(--menuShadow);
+	flex-direction: column;
+	z-index: 999;
+	width: auto;
+	top: 22px;
+	padding: 2px;
+}
+appcontentholder appnavigation ul.appmenus .submenu.visible{
+	display: flex;
+}
+appcontentholder appnavigation ul.appmenus .submenu li{
+	padding: 2px 17px 2px;
+	margin: 0;
+	border: none;
+}
+appcontentholder appnavigation ul.appmenus .submenu li:hover{
+	background: var(--highlightColor);
+	color: var(--highlightText);
+	border: none;
+}
+appcontentholder appnavigation ul.appmenus .submenu li.disabled{
+	color: var(--3dLightShade);
+	text-shadow: 1px 1px 0 var(--3dHighlight);
+}
+appcontentholder appnavigation ul.appmenus .submenu li.disabled:hover{
+	text-shadow: none;
+}
+appcontentholder appnavigation ul.appmenus .submenu li.divider{
+	width: 100%;
+	height: 1px;
+	background: var(--3dLightShade);
+	box-shadow: 0 1px var(--3dHighlight);
+	padding: 0;
+	margin: 3px 0px 4px 0px;
+	pointer-events: none;
+	border: none;
+}
+
+appcontentholder appnavigation ul.appmenus li{
+	padding: 2px 5px 2px;
+	border: 1px solid;
+	border-color: transparent;
+	margin: -1px -3px 0 0;
+}
+appcontentholder appnavigation ul.appmenus li:hover{
+	border-color: var(--3dHighlight) var(--3dLightShade) var(--3dLightShade) var(--3dHighlight);
+
+	/*this doesn't apply to the silver theme*/
+	/*color: #fff;*/
+}
+appcontentholder appnavigation navflag{
+	float: right;
+	position: absolute;
+	right: 2px;
+	top: 1px;
+	width: 39px;
+	height: 22px;
+	background: url('../../res/ui/browserflag.png');
+	border-color: #fff var(--3dLightShade) var(--3dLightShade) #fff;
+	border-style: solid;
+	border-width: 0 0 1px 1px;
+	box-shadow: -1px 0 0 var(--3dLightShade);
+}
+
+appcontentholder appnavigation ul.navbuttons{
+	width: calc(100% - 1px);
+	padding-left: 0;
+	overflow: hidden;
+	margin-bottom: -3px;
+	text-overflow: " ≫ ";
+	white-space: nowrap;
+	height: 31px;
+}
+appcontentholder appnavigation ul.navbuttons li{
+	line-height: 20px;
+	padding: 1px 5px 1px 0px;
+	/*padding: 9px 5px 12px 2px;*/
+	height:27px;
+	border: 1px solid #00000000;
+}
+appcontentholder appnavigation ul.navbuttons img{
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	padding: 3px 0 0px 3px;
+	vertical-align: middle;
+	margin-right: 4px;
+	transform: translateY(-2px);
+}
+appcontentholder appnavigation ul.navbuttons li.divider{
+	display: inline;
+	width: 1px;
+	height: 22px;
+	margin: 2px 3px 1px -3px;
+	padding: 4px 0 6px 0;
+	content: " ";
+	border-right: 1px solid var(--3dLightShade);
+	box-shadow: 1px 0 0 var(--3dHighlight);
+}
+appcontentholder appnavigation ul.navbuttons pointer{
+	font-size: 8px;
+	display: inline-block;
+	transform: scaleY(0.75);
+	padding: 10px 0 10px 2px;
+	margin: -7px 0;
+	margin-right: -3px;
+	border-left: 1px solid transparent;
+}
+appcontentholder appnavigation ul.navbuttons li:hover:not(.divider){
+	border-color: var(--3dHighlight) var(--3dLightShade) var(--3dLightShade) var(--3dHighlight);
+}
+appcontentholder appnavigation ul.navbuttons li:hover img{
+	filter: brightness(80%) saturate(110%) contrast(150%);
+}
+appcontentholder appnavigation ul.navbuttons li:hover pointer{
+	border-left:1px solid var(--3dLightShade);
+	box-shadow: inset 1px 0 0 var(--3dHighlight);
+}
+appcontentholder appnavigation ul.navbuttons li:active:not(.divider){
+	border-color: var(--3dLightShade) var(--3dHighlight) var(--3dHighlight) var(--3dLightShade);
+	transform: translate(1px, 1px);
+	padding: 1px 5px 0px 0px;
+}
+
+app appcontentholder appnavigation ul.navbuttons li[disabled]{
+	filter:grayscale(100);
+}
+app appcontentholder appnavigation ul.navbuttons li[disabled]:hover{
+	border: 1px solid transparent;
+	background:none;
+	box-shadow: none;
+}
+app appcontentholder appnavigation ul.navbuttons li[disabled]:hover img{
+	filter:grayscale(100%);
+}
+app appcontentholder appnavigation ul.navbuttons li[disabled]:hover pointer{
+	border-left: 1px solid transparent;
+	box-shadow: none;
+}
+
+/* view picker popup */
+
+appcontentholder appnavigation xp-popup.viewpicker{
+/*	left:327px;*/
+	top:55px;
+	z-index: 2;
+	position: absolute;
+	display: none;
+	width:100px;
+/*	height: 75px;*/
+	border: 1px solid;
+	border-color: var(--mainColor) var(--3dDarkShade) var(--3dDarkShade) var(--mainColor);
+	background: var(--menuColor);
+	box-shadow: 3px 3px 3px #909090, inset 1px 1px var(--3dHighlight), inset -1px -1px var(--3dLightShade);
+	padding: 0px 0 1px 0;
+}
+appcontentholder appnavigation xp-popup.viewpicker ul{
+	border-bottom: none;
+	width: calc(100% - 3px);
+	padding: 1px 0 1px 1px;
+}
+appcontentholder appnavigation xp-popup.viewpicker li{
+	display: block;
+	height: 16px;
+	width: initial;
+	margin-right: 1px;
+	padding-left: 5px;
+	font-size: var(--contentFontSize);
+	line-height: 16px;
+	border:none;
+}
+appcontentholder appnavigation xp-popup.viewpicker li span{
+	display: inline-block;
+	padding-right: 5px;
+	opacity: 0;
+	font-size: 16px;
+	line-height: 12px;
+	transform: translateY(0);
+	vertical-align: middle;
+}
+appcontentholder appnavigation xp-popup.viewpicker li.activeView span{
+	opacity: 1;
+}
+appcontentholder appnavigation xp-popup.viewpicker li:hover{
+	background: var(--highlightColor);
+	color: var(--highlightText);
+	border:none;
+	box-shadow: none;
+}
+
+/* explorer address bar */
+
+appcontentholder appnavigation ul.addressbar{
+	line-height: 20px;
+	padding-bottom: 0;
+	height: 22px;
+}
+appcontentholder appnavigation ul.addressbar li{
+	display: inline;
+}
+appcontentholder appnavigation ul.addressbar combobox{
+	width: calc(100% - 99px);
+}
+appcontentholder appnavigation ul.addressbar combobox img{
+	width: 16px;
+	height: 16px;
+}
+appcontentholder appnavigation ul.addressbar img{
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+
+/* content panes in apps */
+appcontentholder contentpane{
+	border: 1px solid;
+	border-color: var(--3dLightShade) var(--3dHighlight) var(--3dHighlight) var(--3dLightShade);
+	box-shadow: var(--insetBSLowerDark);
+	overflow: auto;
+	background-color: var(--contentColor);
+	color: var(--contentText);
+	display: block;
+}
+
+appcontentholder contentpane items entry{
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 21px 120px 120px auto;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	height: 18px;
+}
+appcontentholder contentpane items entry *{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+appcontentholder contentpane items entry.details-header{
+	position: relative;
+	width: calc(100% - 1px);
+	height: 18px;
+	grid-row: 1;
+	grid-column: 1;
+	background: var(--mainColor);
+	color: var(--mainText);
+	margin: 1px 0 0 1px;
+}
+appcontentholder contentpane items entry.details-header *{
+	display: inline-block;
+	border: 1px solid;
+	border-color: var(--mainColor) var(--3dDarkShade) var(--3dDarkShade) var(--mainColor);
+	box-shadow: var(--insetBSRaiseLight);
+	margin: -1px 1px 0 -1px;
+	padding-left: 10px;
+	box-sizing: border-box;
+	height: inherit;
+}
+appcontentholder contentpane items entry:not(.details-header):active,
+appcontentholder contentpane li item:active,
+appcontentholder contentpane items entry:not(.details-header).selected,
+appcontentholder contentpane li item.selected{
+	background: var(--highlightColor);
+	color: var(--highlightText);
+	border: 1px dotted white;
+	box-sizing: border-box;
+}
+appcontentholder contentpane items entry:not(.details-header):active icon,
+appcontentholder contentpane items entry:not(.details-header).selected icon{
+	background: unset;
+	filter: sepia(0.9) saturate(4) brightness(0.5) contrast(2) hue-rotate(140deg);
+}
+
+
+appcontentholder contentpane .expander{
+	width: 7px;
+	height: 7px;
+	border: 1px solid black;
+	background-color: #fff;
+	border-radius: 0;
+	display: inline-block;
+	position: absolute;
+	top: 8px;
+	left: -20px;
+	z-index: 1;
+}
+
+/* status bar stuff in apps */
+appcontentholder statusbar{
+	border: 1px solid;
+	border-color: var(--3dLightShade) var(--3dHighlight) var(--3dHighlight) var(--3dLightShade);
+	box-shadow: var(--insetBSLowerDark);
+	margin-top: 3px;
+	padding: 0px 5px;
+	overflow: hidden;
+	width: -webkit-fill-available;
+	width: -moz-available;
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	background: var(--mainColor);
+}
+appcontentholder statusbar span{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: block;
+	width: 100%;
+	line-height: 18px;
+}
+appcontentholder statusbar span:nth-child(n + 2){
+	margin-left: 2px;
+}
+appcontentholder statusbar span img{
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+/* resize grabber */
+appcontentholder statusbar #grabber{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 11px;
+	height: 11px;
+	background: url("../../res/ui/classic/grabber_classic.png");
+	filter: contrast(0) drop-shadow(-1px -1px #fff);
+}
+
+/* when opening a system directory (windows or system32) */
+
+appcontentholder systemfilesprompt{
+	background-color: #b1b3c8;
+	background: url("../../res/ui/metallic/systemfiles.bmp"), #b1b3c8;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	display: block;
+	height: calc(100% - 91px);
+	padding: 2px 14px;
+	position: absolute;
+}
+appcontentholder systemfilesprompt h1{
+	color: #dfe5f7;
+	font-family: "Franklin Gothic Medium", sans-serif;
+	font-size: 28px;
+	letter-spacing: 0.3px;
+}
+appcontentholder systemfilesprompt h2{
+	color: #fff;
+	font-family: "Franklin Gothic Medium", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+}
+appcontentholder systemfilesprompt span{
+	color: #fff;
+	font-weight: 900;
+	letter-spacing: 0.1px;
+}
+appcontentholder systemfilesprompt span:hover{
+	text-decoration: underline;
+	content: "I'll do it anyway bitch";
+}
+
+/* RESIZE HANDLES */
+app.dialogbox grabber.resize, app.noresize grabber.resize{
+	display: none;
+}
+
+appresizers grabber.resize{
+	background-color: #f00;
+	cursor: move;
+	min-height: 5px;
+	min-width: 5px;
+	position: absolute;
+	visibility: visible;
+	z-index: 10;
+
+	opacity: 0;
+}
+grabber.resize.n{
+	top: -1px;
+	right: 15px;
+	left: 15px;
+	cursor: url('../../res/ui/cursors/resize_ns.cur'), ns-resize;
+}
+grabber.resize.s{
+	bottom: -1px;
+	right: 15px;
+	left: 15px;
+	cursor: url('../../res/ui/cursors/resize_ns.cur'), ns-resize;
+}
+grabber.resize.w{
+	top: 15px;
+	bottom: 15px;
+	left: -1px;
+	cursor: url('../../res/ui/cursors/resize_we.cur'), ew-resize;
+}
+grabber.resize.e{
+	top: 15px;
+	bottom: 15px;
+	right: -1px;
+	cursor: url('../../res/ui/cursors/resize_we.cur'), ew-resize;
+}
+
+grabber.resize.nw,
+grabber.resize.ne,
+grabber.resize.sw,
+grabber.resize.se{
+	min-width: 16px;
+	min-height: 16px;
+	background-color: #00f;
+}
+
+grabber.resize.nw{
+	top: -1px;
+	left: -1px;
+	cursor: url('../../res/ui/cursors/resize_nwse.cur'), nwse-resize;
+	clip-path: polygon(0 0, 100% 0, 100% 4px, 4px 4px, 4px 100%, 0 100%);
+}
+grabber.resize.ne{
+	top: -1px;
+	right: -1px;
+	cursor: url('../../res/ui/cursors/resize_nesw.cur'), nesw-resize;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 12px 100%, 12px 4px, 0 4px);
+}
+grabber.resize.sw{
+	bottom: -1px;
+	left: -1px;
+	cursor: url('../../res/ui/cursors/resize_nesw.cur'), nesw-resize;
+	clip-path: polygon(0 0, 4px 0, 4px 12px, 100% 12px, 100% 100%, 0 100%);
+}
+grabber.resize.se{
+	bottom: -1px;
+	right: -1px;
+	cursor: url('../../res/ui/cursors/resize_nwse.cur'), nwse-resize;
+	clip-path: polygon(0 12px, 12px 12px, 12px 0, 100% 0, 100% 100%, 0 100%);
+}
+
+
+/*app modifications*/
+body.classic .iexplore appnavigation.iexplorenav ul.navbuttons li{
+	padding: 1px 5px 1px 0px !important;
+}
+body.classic .iexplore iframecontents iframe{
+	height: calc(100% - 81px);
+}

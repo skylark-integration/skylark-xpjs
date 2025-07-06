@@ -1,0 +1,12 @@
+ダウンロード開始：2025/06/22 15:12:59
+
+● https://xp.quenq.com/res/sites/appstore から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\res\sites\appstore へ
+
+style.css
+appstore_client.js
+
+ダウンロード完了：2025/06/22 15:12:59
+
+ダウンロード予定数：2
+ダウンロード総数：2
+エラーはありませんでした。

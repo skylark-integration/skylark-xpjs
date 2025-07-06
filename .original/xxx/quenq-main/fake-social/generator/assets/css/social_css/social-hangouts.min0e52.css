@@ -1,0 +1,492 @@
+.hangouts {
+    position: relative;
+}
+
+.hangouts .android-header .status-bar {
+    background: #0a8043;
+}
+
+.hangouts .hangouts-header {
+    position: relative;
+    height: 59px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    background: #109d58;
+    border-bottom: none;
+    z-index: 1;
+}
+
+.hangouts .hangouts-header .back-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+.hangouts .hangouts-header .hangouts-user-info {
+    margin-left: 30px;
+    width: 182px;
+}
+
+.hangouts .hangouts-header .hangouts-user-info span {
+    position: relative;
+    display: block;
+}
+
+.hangouts .hangouts-header .hangouts-user-info span.user-name {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    width: 170px;
+    display: block;
+}
+
+.hangouts .hangouts-header .hangouts-user-info span.active-status {
+    font-weight: 600;
+    color: #fff;
+    font-size: 12px;
+}
+
+.hangouts .hangouts-header .hangouts-messenger-more-icon img,
+.hangouts .hangouts-header .hangouts-messenger-more-icon div {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hangouts .hangouts-header .hangouts-messenger-more-icon img {
+    margin-right: 20px;
+}
+
+.hangouts .hangouts-header .hangouts-messenger-more-icon .circle-dot span {
+    display: block;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 3px 0;
+}
+
+.hangouts-messenger-android .hangouts-messenger-android-body {
+    background: #eceff1;
+    min-height: 441px;
+    padding: 5px 0;
+}
+
+.hangouts-received-profile {
+    display: inline-block;
+    vertical-align: text-bottom;
+    padding-left: 15px;
+    float: left;
+    padding-top: 10px;
+}
+
+.hangouts-received-profile img {
+    width: 30px;
+    border-radius: 50%;
+    height: 30px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hangouts-messenger-android-received,
+.hangouts-messenger-android-sent {
+    max-width: 70% !important;
+    display: inline-block;
+}
+
+.hangouts-messenger-android-received {
+    padding-left: 10px !important;
+}
+
+.hangouts-messenger-android-received .hangouts-messenger-android-text {
+    margin-top: 10px !important;
+}
+
+.hangouts-messenger-android-received .hangouts-messenger-android-text {
+    border-radius: 0 13px 13px 13px !important;
+    padding: 10px 15px !important;
+    position: relative;
+}
+
+.hangouts-messenger-android-text {
+    background-color: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 5px 0 !important;
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+.right-part .modal-body .message-received .message-bubble {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.chat-left-caret {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    z-index: -1;
+    height: 20px;
+    overflow-y: hidden;
+    border-radius: 0 13px 0 0;
+}
+
+.chat-left-caret img {
+    width: 42px;
+    height: 35px;
+}
+
+.hangouts-messenger-android-text p {
+    color: #000 !important;
+}
+
+.whatsapp-sent {
+    margin-left: auto !important;
+    padding-left: 0 !important;
+    padding-right: 20px !important;
+    max-width: 80% !important;
+}
+
+.whatsapp-caret {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.hangouts-messenger-android-sent .hangouts-messenger-android-text {
+    background-color: #cfd8dc !important;
+    margin-top: 10px !important;
+    border: none !important;
+}
+
+.hangouts-messenger-android-sent .hangouts-messenger-android-text {
+    border-radius: 13px 0 13px 13px !important;
+    padding: 10px 15px !important;
+    position: relative;
+}
+
+.chat-right-caret {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    z-index: -1;
+    height: 20px;
+    overflow-y: hidden !important;
+    border-radius: 13px 0 0 0;
+}
+
+.chat-right-caret img {
+    width: 42px;
+    height: 35px;
+}
+
+.right-part .modal-body .message-text p {
+    margin-bottom: 0;
+}
+
+.right-part .modal-body .message-sent .message-footer {
+    margin-left: auto;
+    padding-left: 50px;
+    padding-right: 58px;
+}
+
+.hangouts-messenger-android-body .message-footer {
+    padding-right: 30px !important;
+}
+
+.hangouts-messenger-android-send-status {
+    text-align: right;
+    padding-left: 0;
+}
+
+.hangouts-messenger-android-send-status span {
+    font-size: 11px;
+    color: #607d8b;
+}
+
+.hangouts-messenger-android .hangouts-messenger-android-footer {
+    background-image: unset !important;
+    background: #fff !important;
+    padding-bottom: 0 !important;
+    z-index: 5555;
+    position: relative;
+}
+
+.hangouts-messenger-android .hangouts-messenger-android-footer .post_write_comment {
+    padding: 15px !important;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.txt {
+    position: relative;
+}
+
+.whatsapp-android .whatapp-android-footer .text_block {
+    padding: 0 48px 0 0 !important;
+}
+
+.hangouts-messenger-android .hangouts-messenger-comment {
+    width: 100%;
+    display: block;
+    min-height: 36px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    background-color: #fff !important;
+    border-radius: 40px !important;
+}
+
+.text-wrcommenttext {
+    color: #8d949e;
+    font-size: 13px;
+    padding-left: 5px;
+    line-height: 21px;
+    display: inline-block;
+}
+
+.hangouts-messenger-android .text-wrcommenttext {
+    font-size: 14px;
+    line-height: 20px !important;
+    padding-left: 0 !important;
+}
+
+.hangouts-upload-icon {
+    position: relative;
+    padding-top: 15px;
+}
+
+.hangouts-upload-icon img {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.hangouts-send-arw {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.hangouts-send-arw img {
+    width: 40px;
+    margin-right: 0 !important;
+    box-shadow: 2px 2px 5px #ccc;
+    border-radius: 50%;
+}
+
+.hangouts-messenger-ios .ios-header {
+    display: block;
+}
+
+.hangouts .ios-header .status-bar {
+    background: #0a8043;
+}
+
+.hangouts-messenger-ios-received-status {
+    text-align: left;
+    padding-left: 0;
+}
+
+.hangouts-messenger-ios-received-status span {
+    font-size: 11px;
+    color: #607d8b;
+}
+
+.hangouts-messenger-ios-send-status {
+    text-align: right;
+    padding-left: 0;
+}
+
+.hangouts-messenger-ios-send-status span {
+    font-size: 11px;
+    color: #607d8b;
+}
+
+.hangouts-messenger-ios .hangouts-messenger-android-body {
+    background: #eceff1;
+}
+
+.hangouts-ios-upload-icon img {
+    margin-right: 53px;
+}
+
+.hangouts-ios-upload-icon img:last-child {
+    margin: 0;
+}
+
+.all_header_wp {
+    position: relative;
+    z-index: 10;
+}
+
+.hg-video-android-header {
+    display: block;
+}
+
+.hg-video-android-header-bottom {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 14px;
+    border-bottom: none;
+}
+
+.hangouts-video-header-icon {
+    width: 100%;
+    text-align: center;
+}
+
+.hangouts-video-header-icon img {
+    width: 100%;
+}
+
+.hangouts-input-name {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    padding-left: 55px;
+    width: 232px;
+    text-align: left;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.hg-video-body {
+    background-size: cover;
+    padding: 5px 0;
+    overflow: auto !important;
+    height: 507px;
+}
+
+.wp-video-footer {
+    background-image: unset !important;
+    background-color: transparent;
+    position: relative;
+    z-index: 5;
+    padding-bottom: 5px;
+}
+
+.wp-video-footer .whatapp-android-footer .post_write_comment {
+    padding: 0 5px !important;
+    background: 0 0 !important;
+}
+
+.hangouts-video-footer-icon {
+    width: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.hangouts-video-footer {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+.hangouts-video-footer img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hangouts-video-footer:nth-child(2) {
+    background-color: #ff0037;
+}
+
+.hangouts-video-footer:nth-child(1) img {
+    width: 15px;
+}
+
+.hangouts-video-footer:nth-child(2) img {
+    width: 23px;
+}
+
+.hangouts-video-footer:nth-child(3) img {
+    width: 18px;
+}
+
+.wp-video-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.hangouts_profile_call_fullscreen {
+    background-image: url(../../images/profile-1.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.profile_footer {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 0 5px;
+}
+
+.hangouts_profile_call_1 {
+    background-image: url(../../images/profile-2.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 90px;
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+}
+
+.hangouts_profile_call_1[style] {
+    width: 90px;
+    right: auto;
+    position: unset;
+}
+
+.hangouts_profile_call_2 {
+    background-size: cover;
+    background-position: center;
+    width: 90px;
+    height: 90px;
+    display: none;
+    border: 3px solid #fff;
+}
+
+.hangouts_profile_call_3 {
+    background-size: cover;
+    background-position: center;
+    width: 90px;
+    height: 90px;
+    z-index: 5;
+}
+
+.hangouts_profile_call_4 {
+    background-size: cover;
+    background-position: center;
+    width: 90px;
+    height: 90px;
+    z-index: 5;
+}

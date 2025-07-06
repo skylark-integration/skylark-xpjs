@@ -1,0 +1,308 @@
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    background-color: #ECE9D8;
+    color: #000;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.appstore-container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: none;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.appstore-main-content {
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: #ece9d8;
+}
+
+.featured-slider {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+    border: 1px solid #C0C0C0;
+    background-color: #333;
+    box-sizing: border-box;
+}
+
+.featured-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.featured-slide.active {
+    opacity: 1;
+}
+.featured-slide .slide-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 12px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.filters-search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: #F0F0F0;
+    border: 1px solid #C0C0C0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.filters-search-bar .category-filters {
+    margin-bottom: 5px;
+}
+
+.filters-search-bar .category-filters button {
+    margin-right: 5px;
+    margin-bottom: 3px;
+    padding: 4px 8px;
+    font-size: 10px;
+    background-color: #DFDFDF;
+    border: 1px solid #7F9DB9;
+    cursor: pointer;
+}
+.filters-search-bar .category-filters button.active,
+.filters-search-bar .category-filters button:hover {
+    background-color: #B5D5FF;
+    border-color: #316AC5;
+    font-weight: bold;
+}
+
+.filters-search-bar .search-input {
+    margin-left: auto;
+}
+
+.filters-search-bar .search-input input {
+    padding: 4px;
+    border: 1px solid #7F9DB9;
+    width: 180px;
+    max-width: 100%;
+    font-size: 11px;
+    box-sizing: border-box;
+}
+
+.app-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.app-card {
+    background-color: #FDFDFD;
+    border: 1px solid #C0C0C0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: box-shadow 0.2s ease-in-out;
+    border-radius: 3px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.app-card:hover {
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.app-card img.app-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+    object-fit: contain;
+}
+
+.app-card h3.app-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #003399;
+    margin: 0 0 5px 0;
+    cursor: pointer;
+    overflow: hidden;
+    line-height: 1.3em;
+}
+.app-card h3.app-title:hover {
+    text-decoration: underline;
+}
+
+.app-card .app-version {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.app-card p.app-category {
+    font-size: 9px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.app-card p.app-description {
+    font-size: 10px;
+    color: #444;
+    margin-bottom: 8px;
+    flex-grow: 1;
+    max-height: 4.5em;
+    line-height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.app-card button.action-button, button.action-button {
+    padding: 3px 10px;
+    background-color: #ECE9D8;
+    border: 1px solid #7F9DB9;
+    border-top-color: #FFFFFF;
+    border-left-color: #FFFFFF;
+    border-bottom-color: #848284;
+    border-right-color: #848284;
+    box-shadow: 1px 1px 0px #C0C0C0;
+    cursor: pointer;
+    font-size: 10px;
+    min-width: 70px;
+    height: 21px;
+    line-height: 13px;
+    margin-top: auto;
+}
+.app-card button.action-button:active {
+    border-top-color: #848284;
+    border-left-color: #848284;
+    border-bottom-color: #FFFFFF;
+    border-right-color: #FFFFFF;
+    box-shadow: none;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+.app-card button.action-button:disabled {
+    color: #808080;
+    cursor: default;
+    border-color: #A0A0A0;
+    box-shadow: none;
+}
+
+.app-detail-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+.app-detail-modal-content {
+    background-color: #ECE9D8;
+    margin: 8% auto;
+    padding: 20px;
+    border: 2px outset #A0A0A0;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-sizing: border-box;
+}
+.app-detail-modal-content img.app-icon {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    width:64px;
+    height:64px;
+    object-fit: contain;
+}
+.app-detail-modal-content h2 {
+    color: #003399;
+    font-size:16px;
+    margin-bottom: 5px;
+}
+
+
+.app-detail-modal-content p {
+    margin-bottom:10px;
+    line-height:1.4;
+    clear: left; /* Ensure text clears floated icon */
+}
+.app-detail-modal-content hr {
+    border:0;
+    border-top:1px solid #A0A0A0;
+    margin:10px 0;
+}
+.app-detail-modal-content .action-button-container {
+    text-align:right;
+    margin-top:15px;
+}
+
+.close-modal-button {
+    color: #555;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height:0.5;
+    padding: 0 5px;
+}
+.close-modal-button:hover,
+.close-modal-button:focus {
+    color: black;
+    text-decoration: none;
+}
+.loading-text, .info-message, .error-message {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    width: 100%;
+    box-sizing: border-box;
+}
+.error-message {
+    color: red;
+}
+.appstore-footer {
+    text-align: center;
+    padding: 8px;
+    font-size: 10px;
+    color: #555;
+    border-top: 1px solid #C0C0C0;
+    background-color: #F0F0F0;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}

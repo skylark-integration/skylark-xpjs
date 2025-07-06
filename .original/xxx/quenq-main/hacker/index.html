@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="index.html">
+<title>Online Hacker Simulator — Quenq</title>
+<meta name="description" content="This engaging online hacker simulator allows you to pretend you're breaching a computer or digital network. Customize your experience in the Start menu, and interact with the windows by opening, minimizing, and experimenting with them.">
+<meta property="og:title" content="Online Hacker Simulator">
+<meta property="og:type" content="website">
+<meta property="og:url" content="index.html">
+<meta property="og:image" content="https://www.quenq.com/hacker/hacker.png">
+<meta property="og:description" content="This engaging online hacker simulator allows you to pretend you're breaching a computer or digital network. Customize your experience in the Start menu, and interact with the windows by opening, minimizing, and experimenting with them.">
+<link rel="stylesheet" href="hacker.css">
+</head>
+<body>
+<div id="screen">
+	<div class="grid">
+		<div data-title="Hidden" class="gridecske" id="window0">Hidden</div>
+		<div data-title="Terminal" class="active gridecske">
+			<div id="typer">
+				<span id="typeHere"></span><span id="cursor"> </span>
+			</div>
+		</div>
+		
+		<div data-title="Directory" class="gridecske">
+			<div id="wrapRunningDirectory">
+				<div id="runningDirectory">
+
+
+C:\GOV\TopSECRET
+│ .compile-cache
+│ .htaccess
+│ citizens.db
+│ kernel.bin
+│ boot.ini
+├─application
+│ │ encryptor.bin
+│ │ filters.bin
+│ │ routes.exe
+│ │ └─security
+│ │ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>vuln_go.exe
+│ │ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>penetrate.log
+│ ├─config
+│ │ │ _controller.md
+│ │ │ application.exe
+│ │ │ auth.bin
+│ │ │ cache_log.crt
+│ │ │ dtbs.exe
+│ │ │ session.bin
+│ │ └─admin
+│ │ <span class="cr">&nbsp;</span> application.exe
+│ │ <span class="cr">&nbsp;</span> error.bin
+│ │ <span class="cr">&nbsp;</span> session.exe
+│ ├─controllers
+│ │ <span class="cr">&nbsp;</span>home.exe
+│ ├─language
+│ │ └─en
+│ │ <span class="cr">&nbsp;</span> _common.exe
+│ │ <span class="cr">&nbsp;</span> enter.bin
+│ │ <span class="cr">&nbsp;</span> encryption.exe
+│ │ <span class="cr">&nbsp;</span> validation.exe
+│ ├─libraries
+│ │ │ _ca_chain_bundle.crt
+│ │ │ jsredirect.exe
+│ │ │ mail.bin
+│ │ │ maxuploadsize.bin
+│ │ │ qq_file_upldr.exe
+│ │ │ votebutton.bin
+│ │ └─phpmailer
+│ │ <span class="cr">&nbsp;</span> class.binmailer.exe
+│ │ <span class="cr">&nbsp;</span> class.smtp.bin
+│ ├─models
+│ │ <span class="cr">&nbsp;</span>contestperiod.exe
+│ │ <span class="cr">&nbsp;</span>cntrl.exe
+│ │ <span class="cr">&nbsp;</span>entry.bin
+│ │ <span class="cr">&nbsp;</span>fb.init
+│ │ <span class="cr">&nbsp;</span>report_bug.md
+│ │ <span class="cr">&nbsp;</span>user.exe
+│ ├─routes
+│ │ <span class="cr">&nbsp;</span>error.md
+│ │ <span class="cr">&nbsp;</span>info.bin
+│ │ <span class="cr">&nbsp;</span>submit.exe
+│ ├─storage
+│ │ └─database.dbs
+│ ├─security
+│ │ └─passwords.sql
+│ └─views
+│ <span class="cr">&nbsp;</span>│ contest_page.html
+│ <span class="cr">&nbsp;</span>│ default.bin
+│ <span class="cr">&nbsp;</span>│ entries.dbs
+│ <span class="cr">&nbsp;</span>│ entry.exe
+│ <span class="cr">&nbsp;</span>│ info-page.bin
+│ <span class="cr">&nbsp;</span>│ rules.bin
+│ <span class="cr">&nbsp;</span>│ tab-unliked.bin
+│ <span class="cr">&nbsp;</span>│ upload-form.table
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>├─common
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>footerjs.template
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>header_js.template
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>nav.bin
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>sportselect.bin
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>user.table
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>├─entries
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>entry-details.bin
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>logins.exe
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>passwords.crack
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>vote-js.exe
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>├─error
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>404.html
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>500.html
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>├─home
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>index.php
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>└─info
+│ <span class="cr">&nbsp;</span>└─<span class="cr">&nbsp;</span>crack_rep-row.bin
+│ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>crack_rep.bin
+├─encryptors
+│ │ arr.bin
+│ │ asset.bin
+│ │ auth.bin
+│ │ autoloader.bin
+│ │ benchmark.bin
+│ │ config.bin
+│ │ cookie.bin
+│ │ core.bin
+│ │ crypter.bin
+│ │ file.bin
+│ │ hash.bin
+│ │ url.bin
+│ │ validator.exe
+│ │ view.template
+│ ├─cache
+│ │ │ manager.md
+│ │ └─drivers
+│ │ <span class="cr">&nbsp;</span> apc.bin
+│ │ <span class="cr">&nbsp;</span> driver.exe
+│ │ <span class="cr">&nbsp;</span> file.crack
+│ │ <span class="cr">&nbsp;</span> memcached.bin
+│ │ <span class="cr">&nbsp;</span> redis.bin
+│ ├─config
+│ │ <span class="cr">&nbsp;</span>root.md
+│ │ <span class="cr">&nbsp;</span>mimes.bin
+│ ├─database
+│ │ │ connection.table
+│ │ │ expression.sql
+│ │ │ manager.bin
+│ │ │ query.sql
+│ │ ├─connectors
+│ │ │ <span class="cr">&nbsp;</span>plug.bin
+│ │ │ <span class="cr">&nbsp;</span>mysql.bin
+│ │ │ <span class="cr">&nbsp;</span>postgres.bin
+│ │ │ <span class="cr">&nbsp;</span>sqlite.bin
+│ │ ├─eloquent
+│ │ │ <span class="cr">&nbsp;</span>hydrator.bin
+│ │ │ <span class="cr">&nbsp;</span>model.bin
+│ │ └─grammars
+│ │ <span class="cr">&nbsp;</span> grammar.bin
+│ │ <span class="cr">&nbsp;</span> mysql.bin
+│ ├─routing
+│ │ <span class="cr">&nbsp;</span>controller.bin
+│ │ <span class="cr">&nbsp;</span>filter.bin
+│ │ <span class="cr">&nbsp;</span>loader.bin
+│ │ <span class="cr">&nbsp;</span>route.bin
+│ │ <span class="cr">&nbsp;</span>router.bin
+│ └─session
+│ <span class="cr">&nbsp;</span>│ payload.bin
+│ <span class="cr">&nbsp;</span>│ <span class="cr">&nbsp;</span>└─drivers
+│ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>apc.bin
+│ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>driver.bin
+│ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>factory.bin
+│ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>file.bin
+│ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>memcached.bin
+│ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>redis.bin
+│ <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span>sweeper.bin
+└─public
+ <span class="cr">&nbsp;</span>│ .htaccess
+ <span class="cr">&nbsp;</span>└─ index.bin
+				</div>
+			</div>
+		</div>
+		
+		<div data-title="Encryptor" class="gridecske">
+			<div id="wrapRunningCode">
+				<div id="runningCode"><span class="codecolor2">"use strict"</span>;
+<span class="codecolor1">var</span> arr <span class="codecolor1">=</span> [];
+<span class="codecolor1">var</span> document <span class="codecolor1">=</span> window.document;
+<span class="codecolor1">var</span> getProto <span class="codecolor1">=</span> <span class="codecolor6">Object</span>.getPrototypeOf;
+<span class="codecolor1">var</span> <span class="codecolor3">slice</span> <span class="codecolor1">=</span> arr.<span class="codecolor3">slice</span>;
+<span class="codecolor1">var</span> isFunction <span class="codecolor1">=</span> function <span class="codecolor5">isFunction</span>(<span> obj </span>) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor3">typeof</span> obj <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor2">"function"</span> <span class="codecolor1">&amp;</span><span class="codecolor1">&amp;</span> <span class="codecolor3">typeof</span> obj.<span class="codecolor3">nodeType</span> <span class="codecolor1">!</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor2">"number"</span>;
+<span class="cr">&nbsp;</span> };
+<span class="codecolor1">var</span> isWindow <span class="codecolor1">=</span> function <span class="codecolor5">isWindow</span>(<span> obj </span>) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> obj <span class="codecolor1">!</span><span class="codecolor1">=</span> <span class="codecolor4">null</span> <span class="codecolor1">&amp;</span><span class="codecolor1">&amp;</span> obj <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> obj.window;
+<span class="cr">&nbsp;</span> };
+<span class="cr">&nbsp;</span> <span class="codecolor1">var</span> preservedScriptAttributes <span class="codecolor1">=</span> {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">type</span><span class="codecolor1">:</span> <span class="codecolor4">true</span>,
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> src<span class="codecolor1">:</span> <span class="codecolor4">true</span>,
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> nonce<span class="codecolor1">:</span> <span class="codecolor4">true</span>,
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> noModule<span class="codecolor1">:</span> <span class="codecolor4">true</span>
+<span class="cr">&nbsp;</span> };
+<span class="cr">&nbsp;</span> function <span class="codecolor5">DOMEval</span>(<span> code</span>,<span> node</span>,<span> doc </span>) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> doc <span class="codecolor1">=</span> doc || document;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">var</span> i, val,
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> script <span class="codecolor1">=</span> doc.<span class="codecolor3">createElement</span>( <span class="codecolor2">"script"</span> );
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> script.<span class="codecolor3">text</span> <span class="codecolor1">=</span> code;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( node ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">for</span> ( i <span class="codecolor3">in</span> preservedScriptAttributes ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor7">// Target vulnerable devices</span>
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> val <span class="codecolor1">=</span> node[ i ] || node.getAttribute <span class="codecolor1">&amp;</span><span class="codecolor1">&amp;</span> node.getAttribute( i );
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( val ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> script.setAttribute( i, val );
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> doc.head.<span class="codecolor3">appendChild</span>( script ).<span class="codecolor3">parentNode</span>.removeChild( script );
+<span class="cr">&nbsp;</span> }
+function <span class="codecolor5">toType</span>(<span> obj </span>) {
+<span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( obj <span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor4">null</span> ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> obj <span class="codecolor1">+</span> <span class="codecolor2">""</span>;
+<span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="codecolor7">// System vulnerability check</span>
+<span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor3">typeof</span> obj <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor2">"object"</span> || <span class="codecolor3">typeof</span> obj <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor2">"function"</span> <span class="codecolor1">?</span>
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> class2type[ <span class="codecolor3">toString</span>.<span class="codecolor3">call</span>( obj ) ] || <span class="codecolor2">"object"</span> <span class="codecolor1">:</span>
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">typeof</span> obj;
+}
+<span class="codecolor7">/* global Symbol */</span>
+<span class="codecolor1">var</span>
+<span class="cr">&nbsp;</span> <span class="codecolor3">version</span> <span class="codecolor1">=</span> <span class="codecolor2">"3.4.1"</span>,
+<span class="cr">&nbsp;</span> Hacker <span class="codecolor1">=</span> function( selector, context ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor1">new</span> hack.fn.<span class="codecolor3">init</span>( selector, context );
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> rtrim <span class="codecolor1">=</span> <span class="codecolor1">/</span>^[\s\uFEFF\xA0]<span class="codecolor1">+</span>|[\s\uFEFF\xA0]<span class="codecolor1">+</span>$<span class="codecolor1">/</span>g;
+hack.fn <span class="codecolor1">=</span> hack.<span class="codecolor3">prototype</span> <span class="codecolor1">=</span> {
+<span class="cr">&nbsp;</span> jquery<span class="codecolor1">:</span> <span class="codecolor3">version</span>,
+<span class="cr">&nbsp;</span> <span class="codecolor3">constructor</span><span class="codecolor1">:</span> hack,
+<span class="cr">&nbsp;</span> <span class="codecolor7">// The default length of a Hacker 2.93.8</span>
+<span class="cr">&nbsp;</span> <span class="codecolor3">length</span><span class="codecolor1">:</span> <span class="codecolor8">0</span>,
+<span class="cr">&nbsp;</span> toArray<span class="codecolor1">:</span> function() {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor3">slice</span>.<span class="codecolor3">call</span>( <span class="codecolor3">this</span> );
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> <span class="codecolor3">get</span><span class="codecolor1">:</span> function( num ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor7">// Cracker</span>
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( num <span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor4">null</span> ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor3">slice</span>.<span class="codecolor3">call</span>( <span class="codecolor3">this</span> );
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor7">// Return element from the set</span>
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> num &lt; <span class="codecolor8">0</span> <span class="codecolor1">?</span> <span class="codecolor3">this</span>[ num <span class="codecolor1">+</span> <span class="codecolor3">this</span>.<span class="codecolor3">length</span> ] <span class="codecolor1">:</span> <span class="codecolor3">this</span>[ num ];
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> pushStack<span class="codecolor1">:</span> function( elems ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor7">// Build a new Hacker matched element set</span>
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">var</span> ret <span class="codecolor1">=</span> hack.merge( <span class="codecolor3">this</span>.<span class="codecolor3">constructor</span>(), elems );
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> ret.prevObject <span class="codecolor1">=</span> <span class="codecolor3">this</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor7">// Return the newly-formed element set</span>
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> ret;
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> <span class="codecolor7">// Execute a hacker.ext</span>
+<span class="cr">&nbsp;</span> each<span class="codecolor1">:</span> function( callback ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> hack.each( <span class="codecolor3">this</span>, callback );
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> map<span class="codecolor1">:</span> function( callback ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor3">this</span>.pushStack( hack.map( <span class="codecolor3">this</span>, function( elem, i ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> } ) );
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> <span class="codecolor3">eq</span><span class="codecolor1">:</span> function( i ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">var</span> len <span class="codecolor1">=</span> <span class="codecolor3">this</span>.<span class="codecolor3">length</span>,
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> j <span class="codecolor1">=</span> <span class="codecolor1">+</span>i <span class="codecolor1">+</span> ( i &lt; <span class="codecolor8">0</span> <span class="codecolor1">?</span> len <span class="codecolor1">:</span> <span class="codecolor8">0</span> );
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor3">this</span>.pushStack( j &gt;<span class="codecolor1">=</span> <span class="codecolor8">0</span> <span class="codecolor1">&amp;</span><span class="codecolor1">&amp;</span> j &lt; len <span class="codecolor1">?</span> [ <span class="codecolor3">this</span>[ j ] ] <span class="codecolor1">:</span> [] );
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> end<span class="codecolor1">:</span> function() {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor3">this</span>.prevObject || <span class="codecolor3">this</span>.<span class="codecolor3">constructor</span>();
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> <span class="codecolor7">// For internal use only.</span>
+<span class="cr">&nbsp;</span> <span class="codecolor3">sort</span><span class="codecolor1">:</span> arr.<span class="codecolor3">sort</span>,
+<span class="cr">&nbsp;</span> <span class="codecolor3">splice</span><span class="codecolor1">:</span> arr.<span class="codecolor3">splice</span>
+};
+hack.extend <span class="codecolor1">=</span> hack.fn.extend <span class="codecolor1">=</span> function() {
+<span class="cr">&nbsp;</span> <span class="codecolor1">var</span> options, <span class="codecolor3">name</span>, src, <span class="codecolor3">copy</span>, copyIsArray, <span class="codecolor3">clone</span>,
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">target</span> <span class="codecolor1">=</span> <span class="codecolor3">arguments</span>[ <span class="codecolor8">0</span> ] || {},
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> i <span class="codecolor1">=</span> <span class="codecolor8">1</span>,
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">length</span> <span class="codecolor1">=</span> <span class="codecolor3">arguments</span>.<span class="codecolor3">length</span>,
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> deep <span class="codecolor1">=</span> <span class="codecolor4">false</span>;
+<span class="cr">&nbsp;</span> <span class="codecolor7">// Handle a deep copy situation</span>
+<span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( <span class="codecolor3">typeof</span> <span class="codecolor3">target</span> <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor2">"boolean"</span> ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> deep <span class="codecolor1">=</span> <span class="codecolor3">target</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor7">// Skip the boolean</span>
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">target</span> <span class="codecolor1">=</span> <span class="codecolor3">arguments</span>[ i ] || {};
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> i<span class="codecolor1">+</span><span class="codecolor1">+</span>;
+<span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="codecolor7">// Possible in deep copy</span>
+<span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( <span class="codecolor3">typeof</span> <span class="codecolor3">target</span> <span class="codecolor1">!</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor2">"object"</span> <span class="codecolor1">&amp;</span><span class="codecolor1">&amp;</span> <span class="codecolor1">!</span>isFunction( <span class="codecolor3">target</span> ) ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">target</span> <span class="codecolor1">=</span> {};
+<span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="codecolor7">// Extend Hacker Simulator</span>
+<span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( i <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor3">length</span> ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">target</span> <span class="codecolor1">=</span> <span class="codecolor3">this</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> i<span class="codecolor1">-</span><span class="codecolor1">-</span>;
+<span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor3">target</span>;
+};
+hack.extend( {
+<span class="cr">&nbsp;</span> <span class="codecolor7">// Unique for each copy Hackers</span>
+<span class="cr">&nbsp;</span> expando<span class="codecolor1">:</span> <span class="codecolor2">"hack"</span> <span class="codecolor1">+</span> ( <span class="codecolor3">version</span> <span class="codecolor1">+</span> <span class="codecolor6">Math</span>.<span class="codecolor3">random</span>() ).<span class="codecolor3">replace</span>( <span class="codecolor1">/</span>\D<span class="codecolor1">/</span>g, <span class="codecolor2">""</span> ),
+<span class="cr">&nbsp;</span> <span class="codecolor7">// Assume Hacker is ready</span>
+<span class="cr">&nbsp;</span> isReady<span class="codecolor1">:</span> <span class="codecolor4">true</span>,
+<span class="cr">&nbsp;</span> error<span class="codecolor1">:</span> function( msg ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">throw</span> <span class="codecolor1">new</span> <span class="codecolor6">Error</span>( msg );
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> noop<span class="codecolor1">:</span> function() {},
+<span class="cr">&nbsp;</span> isPlainObject<span class="codecolor1">:</span> function( obj ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">var</span> <span class="codecolor3">proto</span>, Ctor;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor7">// Detect obvious negatives</span>
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( <span class="codecolor1">!</span>obj || <span class="codecolor3">toString</span>.<span class="codecolor3">call</span>( obj ) <span class="codecolor1">!</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor2">"[object Object]"</span> ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor4">false</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">proto</span> <span class="codecolor1">=</span> getProto( obj );
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( <span class="codecolor1">!</span><span class="codecolor3">proto</span> ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor4">true</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> Ctor <span class="codecolor1">=</span> hasOwn.<span class="codecolor3">call</span>( <span class="codecolor3">proto</span>, <span class="codecolor2">"constructor"</span> ) <span class="codecolor1">&amp;</span><span class="codecolor1">&amp;</span> <span class="codecolor3">proto</span>.<span class="codecolor3">constructor</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor3">typeof</span> Ctor <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor2">"function"</span> <span class="codecolor1">&amp;</span><span class="codecolor1">&amp;</span> fnToString.<span class="codecolor3">call</span>( Ctor ) <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> ObjectFunctionString;
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> isEmptyObject<span class="codecolor1">:</span> function( obj ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">var</span> <span class="codecolor3">name</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">for</span> ( <span class="codecolor3">name</span> <span class="codecolor3">in</span> obj ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor4">false</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> <span class="codecolor4">true</span>;
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> globalEval<span class="codecolor1">:</span> function( code, options ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> DOMEval( code, { nonce<span class="codecolor1">:</span> options <span class="codecolor1">&amp;</span><span class="codecolor1">&amp;</span> options.nonce } );
+<span class="cr">&nbsp;</span> },
+<span class="cr">&nbsp;</span> each<span class="codecolor1">:</span> function( obj, callback ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">var</span> <span class="codecolor3">length</span>, i <span class="codecolor1">=</span> <span class="codecolor8">0</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( isArrayLike( obj ) ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor3">length</span> <span class="codecolor1">=</span> obj.<span class="codecolor3">length</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">for</span> ( ; i &lt; <span class="codecolor3">length</span>; i<span class="codecolor1">+</span><span class="codecolor1">+</span> ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( callback.<span class="codecolor3">call</span>( obj[ i ], i, obj[ i ] ) <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor4">false</span> ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">break</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> } <span class="codecolor1">else</span> {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">for</span> ( i <span class="codecolor3">in</span> obj ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">if</span> ( callback.<span class="codecolor3">call</span>( obj[ i ], i, obj[ i ] ) <span class="codecolor1">=</span><span class="codecolor1">=</span><span class="codecolor1">=</span> <span class="codecolor4">false</span> ) {
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">break</span>;
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> }
+<span class="cr">&nbsp;</span> <span class="cr">&nbsp;</span> <span class="codecolor1">return</span> obj;
+<span class="cr">&nbsp;</span> }
+});
+				</div>
+			</div>
+		</div>
+		
+		<div data-title="Transfer" class="gridecske">
+			<div id="graphAnim"></div>
+			<div id="graphVal" class="textOnGraph"></div>
+			<div id="graphDir" class="textOnGraph"></div>
+			<div id="graphClock" class="textOnGraph"></div>
+		</div>
+		
+		<div data-title="Scripts" class="gridecske">
+			<div class="wrapScripts">
+				<table class="bordered">
+					<tbody>
+						<tr>
+							<td>Process</td>
+							<td>Pass</td>
+							<td>Code</td>
+							<td>Stat</td>
+							<td>%</td>
+						</tr>
+						<tr>
+							<td>crack.exe</td>
+							<td><span class="randChars" data-type="letters" data-length="4"></span></td>
+							<td><span class="randChars" data-type="mix" data-length="6"></span></td>
+							<td><span class="randChars" data-type="signs" data-length="3"></span></td>
+							<td><span class="randomProgressbar" data-speed="2"><span>▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span></span></td>
+						</tr>
+						<tr>
+							<td>buffer</td>
+							<td><span class="randChars" data-type="signs" data-length="5"></span></td>
+							<td><span class="randChars" data-type="numbers" data-length="6"></span></td>
+							<td><span class="randChars" data-type="mix" data-length="4"></span></td>
+							<td><span class="randomProgressbar" data-speed="10"><span>▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span></span></td>
+						</tr>
+						<tr>
+							<td>trans.exe</td>
+							<td><span class="randChars" data-type="letters" data-length="5"></span></td>
+							<td><span class="randChars" data-type="mix" data-length="6"></span></td>
+							<td><span class="randChars" data-type="signs" data-length="4"></span></td>
+							<td><span class="randomProgressbar" data-speed="5"><span>▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span></span></td>
+						</tr>
+						<tr>
+							<td>cache</td>
+							<td><span class="randChars" data-type="signs" data-length="3"></span></td>
+							<td><span class="randChars" data-type="numbers" data-length="5"></span></td>
+							<td><span class="randChars" data-type="mix" data-length="3"></span></td>
+							<td><span class="randomProgressbar" data-speed="20"><span>▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span></span></td>
+						</tr>
+						<tr>
+							<td>penet</td>
+							<td><span class="randChars" data-type="letters" data-length="5"></span></td>
+							<td><span class="randChars" data-type="numbers" data-length="6"></span></td>
+							<td><span class="randChars" data-type="signs" data-length="4"></span></td>
+							<td><span class="randomProgressbar" data-speed="5"><span>▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		
+		<div data-title="Receiver" class="gridecske">
+			<div class="wraptextfancy">
+				<div class="textfancy">
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██░░░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░░██▓▓▓▓▓▒▒▒▓▓▓▓▓▓▓▒▒▒▓▓▓▓▓██░░░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░░██▓▓▓░░░░░░░▒▓▓░░░░░░░▒████░░░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░▓▓░░░██▓▓▓░░░░░██▓▓▓▓▓▒░░░░▒████░░░▓▓░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░▓▓▓▓░░░░░▓▓▓▓███▓▓▓░░░▓▓████████░░░░░▓▓██░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░▓▓░░░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░▓▓░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░███░░███░░███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓▓░░░▓▓░░░▓▓░░▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░░░▓▓░░░░░░▓▓▓▓▓▓▓█████▓▓░░░░░░▓▓░░░░░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓██░░░░░░░░░░░░░░░░░░░</div>
+<div class="csontSor">░░░░░░░░░░░░░░░░░░░░░░▓█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██░░░░░░░░░░░░░░░░░░░░░</div>				</div>
+			</div>
+		</div>
+		
+		<div data-title="Compiler" class="gridecske">
+			<div id="mtrxRain">
+			</div>
+		</div>
+		
+		<div data-title="Countdown" class="gridecske">
+			<div class="wraptextfancy">
+				<div class="textfancy">
+					<div class="inlineblock lefttext cr strong cy">
+<br>&nbsp;&nbsp;O<br>
+&nbsp;|\\<br>
+&nbsp;|&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="bd">,-*</span><br>
+/&nbsp;\[_]<span class="b0">.</span><span class="b1">.</span><span class="b2">.</span><span class="b3">.</span><span class="b4">.</span><span class="b5">.</span><span class="b6">.</span><span class="b7">.</span><span class="b8">.</span><span class="b9">.</span><span class="ba">.</span><span class="bb">.</span><span class="bc">.</span><span class="bd">(_)</span><br>&nbsp;
+					</div>
+				</div>
+			</div>
+			<div id="downCounter" class="br">667</div>
+		</div>
+		
+		<div data-title="Download" class="gridecske">
+			<div class="wraptextfancy">
+				<div class="textfancy">
+					<div class="inlineblock lefttext cr strong cy">
+.-.____<br>
+|&nbsp;&nbsp;____|_<br>
+|&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/<br>
+|/_____/
+					</div>
+				</div>
+			</div>
+			<h2 class="nounderline">Downloading Critical Data</h2>
+			<div class="progressBar" data-percent="75" data-speed="2">
+				<span class="progress">
+					<span class="progressfill">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span>
+					<span class="progressnr">%</span>
+				</span>
+			</div>
+		</div>
+		
+		<div data-title="Upload" class="gridecske">
+			<div class="wraptextfancy">
+				<div class="textfancy">
+					<div class="inlineblock lefttext cr strong cy">
+&nbsp;&nbsp;_____<br>
+&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<br>
+|&nbsp;()&nbsp;()&nbsp;|<br>
+&nbsp;\&nbsp;&nbsp;^&nbsp;&nbsp;/<br>
+&nbsp;&nbsp;|||||
+					</div>
+				</div>
+			</div>
+			<h2>Uploading Malware</h2>
+			<div class="progressBar" data-percent="3" data-speed="1">
+				<span class="progress">
+					<span class="progressfill">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span>
+					<span class="progressnr">%</span>
+				</span>
+			</div>
+		</div>
+		
+		<div data-title="Access" class="gridecske">
+			<div class="wraptextfancy">
+				<div class="textfancy">
+					<div class="inlineblock lefttext cg">
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br>
+░█▀▄░██▀░█▀▄░█▄░▄█░█░▄▀▀░▄▀▀░█░▄▀▄░█▄░█░<br>
+░█▀░░█▄▄░█▀▄░█░▀░█░█░▄██░▄██░█░▀▄▀░█░▀█░<br>
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br>
+░▄▀░░█▀▄░▄▀▄░█▄░█░▀█▀░██▀░█▀▄░<span class="blinking cw"> <span class="cr">&nbsp;</span>__</span><br>
+░▀▄█░█▀▄░█▀█░█░▀█░░█░░█▄▄░█▄▀░<span class="blinking cw"> /o \_____</span><br>
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<span class="blinking cw"> \__/vVvV-'</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div data-title="Denied" class="gridecske">
+			<div class="wraptextfancy">
+				<div class="textfancy cr">
+░░▒▒▒▒░░░▒░░░░▒▒▒░░▒▒▒▒░░░▒░░░░░░░▒▒▒<br>
+░░░░<span class="blinking cw">▓▓▓▓</span>░░░▒▄▀▄░▄▀▀░▄▀▀▒██▀░▄▀▀░▄▀▀░░<br>
+░░<span class="blinking cw">▓▓▓▓▓▓▓▓</span>░░█▀█░▀▄▄░▀▄▄░█▄▄▒▄██▒▄██░▒<br>
+░<span class="blinking cw">▓▓<span class="transparent">██████</span>▓▓</span>░▒░░░▒▒▒▒░░░▒░░░░▒▒▒░░░░▒▒<br>
+░░<span class="blinking cw">▓▓▓▓▓▓▓▓</span>░░░█▀▄▒██▀░█▄░█░█▒██▀░█▀▄░▒<br>
+░░░░<span class="blinking cw">▓▓▓▓</span>░░▒░▒█▄▀░█▄▄░█▒▀█░█░█▄▄▒█▄▀░░<br>
+░░▒▒▒▒░░░▒░░░░▒▒▒▒▒▒░░░░░░░░░░░░░░▒▒▒
+				</div>
+			</div>
+		</div>
+		
+		<div data-title="Top Secret" class="gridecske">
+			<div class="wraptextfancy">
+				<div class="textfancy">
+					<div class="inlineblock lefttext cr">
+████████████████████████████████░░░█████████████████<br>
+██████████████████████████████░░███░░███████████████<br>
+████████████▄▄░▄▄█▀▄▄▀█▀▄▄▀██░░░░░░░░░██████████████<br>
+██████████████░███░██░█░▀▀░██░░░▓▓▓░░░██████████████<br>
+██████████████░████▄▄██░█████░░░░▓░░░░██████████████<br>
+█████████████████████████████░░░░░░░░░██████████████<br>
+████████████████████████████████████████████████████<br>
+█████████████░▄▄▄░█░▄▄█▀▄▀█░▄▄▀█░▄▄█▄░▄█████████████<br>
+█████████████▄▄▄▀▀█░▄▄█░█▀█░▀▀▄█░▄▄██░██████████████<br>
+█████████████░▀▀▀░█▄▄▄██▄██▄█▄▄█▄▄▄██▄██████████████<br>
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div data-title="Welcome" class="gridecske">
+			<div class="limitedHeight">
+				<article>
+					<h1>Quenq Hacker Simulator</h1>
+					<p>With this website we want to raise awareness for online security and to promote ethical hacking. Always protect your system following the guidelines recommended for a safe Internet.</p>
+					<p class="centered"><img src="hacker-simulator.jpg" alt="online hacking screen"></p>
+					<p>This interactive online hacker app will let you simulate that you're hacking a computer or a digital network. Adjust the screen in the Start menu, open and minimize the windows and play with them. Unlike other hacker simulators, this one is more realistic because it's ASCII text based.</p>
+					<p>Panel can be closed, widened and moved to the top of the screen in the top right corner of each small window. These can be opened from the taskbar down below. </p>
+					<h2>Settings</h2>
+					<p>Press or tap the start menu in the bottom left corner of the screen to open the settings. Here you can pick the color scheme of the hacking simulator. There's nlack and white, DOS, Pascal and neon green options available. Change the font style and size, adjust the size of the windows to fit your monitor. Speed up or slow down the animation, minimize all open windows to the tray or toggle them.</p>
+					<h2>Hot Keys</h2>
+					<p>Press the numbers on your keyboard to show window contents in an alert box in the middle of the screen.</p>
+					<h2>The Windows</h2>
+					<ol>
+						<li><strong>Terminal</strong> - When this window is active and a cursor is blinking on the screen the hacker typer is active. Start typing random buttons on your keyboard to add a code to this panel. It will feel and look that you're typing the hacking code.</li>
+						<li><strong>Directory</strong> - An animation that parses through a file system and cracks each folder.</li>
+						<li><strong>Encryptor</strong> - A program is being displayed line by line.</li>
+						<li><strong>Transfer</strong> - Amimated graph showing transfer speed.</li>
+						<li><strong>Scripts</strong> - Shows some random characters and numbers in a table.</li>
+						<li><strong>Receiver</strong> - Shows a distorted ASCII art image. By default it displays a skull but you can try to click the image, because the image might change.</li>
+						<li><strong>Compiler</strong> - Matrix code rain known from <a href="https://www.imdb.com/title/tt0133093/" target="_blank" rel="external nofollow">the Matrix movie (1999)</a>.</li>
+						<li><strong>Download</strong> - Large progress bar with a open folder icon above.</li>
+						<li><strong>Upload</strong> - Malware upload progress bar with skull icon.</li>
+						<li><strong>Access</strong> - Permission Granted text alert with blinking key ASCII art.</li>
+						<li><strong>Warning 1</strong> - Access denied warning with a blinking sign.</li>
+						<li><strong>Warning 2</strong> - Top secret sign with a lock icon.</li>
+						<li><strong>Help</strong> - The help screen you're reading right now.</li>
+					</ol>
+					<h2>How To Avoid Getting Hacked?</h2>
+					<p>The only way to avoid getting hacked is to never go online. Every program, browser extenstion you have ever installed or website you have ever visited can track your activity online activity.</p>
+					<p>Below you will find useful tips to avoid hackers getting access to your usersnames and passwords, email, social media and other online accounts. Go through the checklist below for your peace of mind.</p>
+					<ol>
+						<li>Don't use the same password for more than one account. Especially not your name followed by "1234" or your birthday.</li>
+						<li>Use secure passwords, not simple words or sequential numbers, containing <a href="https://html-cleaner.com/case-converter/" target="_blank" rel="external nofollow">upper and lowercase letters</a>. Use an <a href="https://texteditor.com/password-generator/" target="_blank" rel="external nofollow">online password generator</a> if necessary.</li>
+						<li>Most systems offer two-step verification and login alerts. This will notify you about suspicios logins and ask you to enter a security code received to your phone or email.</li>
+						<li>Update apps, operating systems regularly. Some programs might have auto-update setting available.</li>
+						<li>Free programs are never free. Probably they're just a bait to intall a browser extension or reset your default browser. Always get them from trusted sites.</li>
+						<li>When installing a software always pick "custom install". Never go with "Recommended settings" because that will probably install unwanted malwares too.</li>
+						<li>Log off and turn off when you're done. You can also <a href="https://support.google.com/chrome/answer/95589" target="_blank" rel="external nofollow">clear browser history</a>.</li>
+						<li>Save passwords to a computer only if you're the only one having access to the device. Others can reveal them very easily.</li>
+						<li>Encrypt your files and always use secure (https://) connection.</li>
+						<li>Windows has its own anti-virus but you can install and activate third parties like Avast, AVG or Avira. Sometimes these can also behave like viruses, especially if running the free version.</li>
+						<li>Treat emails suspiciously if they're asking for personal data or to log in somewhere. Phishing sites imitate the design of login pages of known sites like Facebook or PayPal and collect your login credentials. Make sure that the URL of the website is matching.</li>
+						<li>Use alias emails. One for business, one for personal and one to register to all kind of spammy sites. You can set them to forward the messages to your primary email.</li>
+						<li>Check your privacy settings and make sure everyting is set according to your needs.</li>
+						<li>Lock your phone with face ID, fingerprint, a secure PIN (not 1234) or a gesture pattern. Be able to wipe clean or track your device if lost or stolen.</li>
+						<li>Dont's connect to open WiFi hotspots and secure your own at home.</li>
+						<li>Use a <abbr title="Virtual Private Network">VPN</abbr> to be able to to send and receive data across shared or public networks as if your computing devices were directly connected to the private network.</li>
+						<li>If you've been hacked then stay calm and try to connect and reset the passwords and wipe your data ASAP. Alert the relevant people if you can't: the site involved, your bank, or even the police.</li>
+						<li>Always be suspicious!</li>	
+					</ol>
+					<p>This website is using cookies to collect anonymous visitor analytics and to show personalized ads.<br>Copyright <a href="https://www.quenq.com/" target="_blank" rel="external nofollow">Quenq</a> | <a href="https://www.quenq.com/terms/" target="_blank" rel="external nofollow">Terms of Use</a></p>
+				</article>
+			</div>
+		</div>
+	</div>
+	<div id="ppp">
+		<div>
+			<div id="pppContent"></div>
+			<div id="pppClose">&times;</div>
+		</div>
+	</div>
+	<div id="startmenu">
+		<div id="start">
+			<div id="startPanel">
+				<div id="closeStart" title="Hide Start">x</div>
+				
+				<div class="centered">
+					<span class="button" id="fullScreen">Full Screen</span>
+					<a href="https://www.quenq.com/" target="_blank" rel="external nofollow" class="button green" title="Quenq.com">Other Simulators</a>
+				</div>
+				<div class="row">
+					<strong class="mobileHidden">Colors: </strong>
+					<span class="setting themeChange active" data-class="default">B&amp;W</span>
+					<span class="setting themeChange" data-class="dos">DOS</span>
+					<span class="setting themeChange" data-class="pascal">Pascal</span>
+					<span class="setting themeChange" data-class="green">Green</span>
+				</div>
+				<div class="mobileHidden row">
+					<strong>Font:</strong>
+					<span class="setting fontChange" style='font-family: "Perfect"'>DOS</span>
+					<span class="setting fontChange" style='font-family: "Arial Black", Gadget, sans-serif;'>Bold</span>
+					<span class="setting fontChange active" style='font-family:"Courier New", Courier, monospace'>Print</span>
+					<span class="setting fontChange" style='font-family:"Lucida Console", Monaco, monospace'>Wide</span>
+					<span class="setting fontChange" style='font-family:Arial, Helvetica, sans-serif'>Arial</span>				
+					<br>
+				</div>
+				<div class="row">
+					<strong>Windows:</strong>
+					<span class="setting windowSize" data-size="1" id="setNarrowWindows">Narrow</span>
+					<span class="setting windowSize active" data-size="2">Medium</span>
+					<span class="setting windowSize mobileHidden" data-size="3" id="setWideWindows">Wide</span>
+				</div>
+				<div class="row">
+					<strong>Text:</strong>
+					<span class="button fontSizeChange" id="decreasefont">-</span> / 
+					<span class="button fontSizeChange" id="increasefont">+</span>
+				</div>
+				<div class="mobileHidden row">
+					<strong>Animation speed:</strong>
+					<span class="button animationSpeed" id="decrease">-</span> / 
+					<span class="button animationSpeed" id="increase">+</span> 
+				</div>
+				<div class="mobileHidden row">
+					<span class="button" title="Minimize all windows" id="cleanDesktop">Clean desktop</span>
+					<span class="button" title="Open closed and close open windows" id="toggleWindows">Toggle windows</span>
+				</div>
+				<div class="centered"><!--320x50-->
+				</div>
+				
+			</div>
+			<strong id="startToggle"><span>&#9630;</span>Start</strong>
+		</div>
+		<div id="taskbar"></div>
+	</div>
+</div>
+<script src="jquery.js"></script>
+<script src="hacker.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T854EV4C7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T854EV4C7D');
+</script>
+
+</body>
+</html>

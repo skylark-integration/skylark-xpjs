@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best website for Fake Chat screenshot generator mockup and more. Chat, prank, and customize on platforms like WhatsApp, Instagram, Facebook, Twitter, and more. Available on both Android and iPhone layouts.">
+    <meta property="og:title" content="Fake Chat Generator & Social Mockup">
+    <meta property="og:description" content="Prank your friends with fake chat screenshots and other social mockups. Customize every detail on multiple platforms and layouts.">
+    <meta property="og:image" content="https://www.quenq.com/fake-social/banner.jpg">
+    <title>Fake Chat Generator & Social Mockup</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: rgb(20, 20, 20);
+            --card-color: rgb(23, 23, 23);
+            --link-color: #fff;
+        }
+        body {
+              font-family: "Quicksand", sans-serif;
+
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        header img {
+            width: 150px;
+            height: auto;
+        }
+        .ad-banner {
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .ad-banner {
+                display: block;
+                margin: 20px 0;
+            }
+        }
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: #fff;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.hero-text {
+    background-color: #000;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    order: 2;
+
+    max-width: 100%;
+
+    overflow-y: auto;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    order: 1;
+}
+
+@media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+    }
+
+    .hero-text {
+        order: 1;
+        width: 50%;
+        max-width: none;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .hero-image {
+        order: 2;
+        width: 50%;
+    }
+}
+
+
+
+        .platforms {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .platform {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            color: #fff;
+        }
+        .platform img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        .platform h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+        }
+        .platform ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin: 0;
+        }
+        .platform ul li {
+            margin: 5px 0;
+        }
+        .platform ul li a {
+            text-decoration: none;
+            color: var(--link-color);
+        }
+        .platform ul li a:hover {
+            text-decoration: underline;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+			
+        }
+        .modal iframe {
+            width: 95%;
+            height: 95%;
+            border: none;
+			border-radius: 10px;
+			background-color: #3498db;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  overflow: hidden;
+}
+.loader::before {
+  content: "Loading...";
+  color: #0000;
+  text-shadow: 0 0 0 #000,10ch 0 0 #fff,20ch 0 0 #000;
+  background: linear-gradient(90deg,#0000 calc(100%/3),#000 0 calc(2*100%/3),#0000 0) left/300% 100%;
+  animation: l23 2s infinite;
+}
+
+@keyframes l23{
+  50% {background-position: center;text-shadow: -10ch 0 0 #000,    0 0 0 #fff,10ch 0 0 #000}
+  100%{background-position: right ;text-shadow: -20ch 0 0 #000,-10ch 0 0 #fff,   0 0 0 #000}
+}
+		/* CSS */
+.button-85 {
+              font-family: "Quicksand", sans-serif;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+    </style>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T854EV4C7D"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-T854EV4C7D")</script>
+
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center;">
+            <a href="https://www.quenq.com" target="_blank"><img src="https://www.quenq.com/quenq.png" alt="Quenq Logo"></a>
+        </div>
+        <div class="ad-banner">
+          <!--468x60 -->
+        </div>
+    </header>
+	    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Quenq Social Mocker</h1>
+<p>Want to play a harmless prank on your friends or boost your brand's marketing? Our tool can help! Create fake chat screenshots and social mockups, customizing every detail on multiple platforms like Instagram, WhatsApp, Facebook, Twitter, and more. Compatible with both Android and iPhone layouts, you can easily generate realistic-looking interactions in just a few clicks. So have fun, but remember to use it responsibly and ethically!</p>
+<br>
+<a href="https://www.quenq.com" target="_blank"> <button class="button-85" role="button">More Pranks & Fun Stuff</button> </a>
+
+
+            </div>
+            <img class="hero-image" src="banner.jpg" alt="Hero Image">
+        </div>
+    </section>
+
+    <div class="platforms" id="cards">
+        <!-- Instagram -->
+<div class="platform">
+            <img src="instagram.png" alt="Instagram">
+            <h3>Instagram</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-instagram-profile-generator')">Profile Generator</a></li>
+                <li><a href="#" onclick="openModal('fake-instagram-chat-generator')">Chat Generator</a></li>
+                <li><a href="#" onclick="openModal('fake-instagram-post-generator')">Post Generator</a></li>
+                <li><a href="#" onclick="openModal('fake-instagram-video-call-generator')">Video Call Generator</a></li>
+                <li><a href="#" onclick="openModal('fake-instagram-thread-post-generator')">Threads Post Generator</a></li>
+            </ul>
+        </div>
+        <!-- WhatsApp -->
+        <div class="platform card">
+            <img src="whatsapp.png" alt="WhatsApp">
+            <h3>WhatsApp</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-whatsapp-chat-generator')">Chat Generator</a></li>
+                <li><a href="#" onclick="openModal('fake-whatsapp-video-call-generator')">Video Call Generator</a></li>
+            </ul>
+        </div>
+        <!-- Facebook -->
+        <div class="platform card">
+            <img src="facebook.png" alt="Facebook">
+            <h3>Facebook</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-facebook-chat-generator')">Chat Generator</a></li>
+                <li><a href="#" onclick="openModal('fake-facebook-post-generator')">Post Generator</a></li>
+                <li><a href="#" onclick="openModal('fake-facebook-video-call-generator')">Video Call Generator</a></li>
+            </ul>
+        </div>
+        <!-- Twitter -->
+        <div class="platform card">
+            <img src="twitter.png" alt="Twitter">
+            <h3>Twitter</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-twitter-chat-generator')">Chat Generator</a></li>
+                <li><a href="#" onclick="openModal('fake-twitter-tweet-generator')">Tweet Generator</a></li>
+                <li><a href="#" onclick="openModal('fake-twitter-profile-generator')">Profile Generator</a></li>
+            </ul>
+        </div>
+        <!-- Telegram -->
+        <div class="platform card">
+            <img src="telegram.png" alt="Telegram">
+            <h3>Telegram</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-telegram-chat-generator')">Chat Generator</a></li>
+            </ul>
+        </div>
+        <!-- Snapchat -->
+        <div class="platform card">
+            <img src="snapchat.png" alt="Snapchat">
+            <h3>Snapchat</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-snapchat-chat-generator')">Chat Generator</a></li>
+            </ul>
+        </div>
+        <!-- Skype -->
+        <div class="platform card">
+            <img src="skype.png" alt="Skype">
+            <h3>Skype</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-skype-chat-generator')">Chat Generator</a></li>
+            </ul>
+        </div>
+        <!-- WeChat -->
+        <div class="platform card">
+            <img src="wechat.png" alt="WeChat">
+            <h3>WeChat</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-wechat-chat-generator')">Chat Generator</a></li>
+            </ul>
+        </div>
+        <!-- Line -->
+        <div class="platform card">
+            <img src="line.png" alt="Line">
+            <h3>Line</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-line-chat-generator')">Chat Generator</a></li>
+            </ul>
+        </div>
+        <!-- LinkedIn -->
+        <div class="platform card">
+            <img src="linkedin.png" alt="LinkedIn">
+            <h3>LinkedIn</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-linkedin-chat-generator')">Chat Generator</a></li>
+            </ul>
+        </div>
+        <!-- Tumblr -->
+        <div class="platform card">
+            <img src="tumblr.png" alt="Tumblr">
+            <h3>Tumblr</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-tumblr-chat-generator')">Chat Generator</a></li>
+            </ul>
+        </div>
+        <!-- Text Message -->
+        <div class="platform card">
+            <img src="sms.png" alt="Text Message">
+            <h3>Text Message</h3>
+            <ul>
+                <li><a href="#" onclick="openModal('fake-android-text-messenger-generator')">Android Messages</a></li>
+                <li><a href="#" onclick="openModal('fake-iphone-text-messenger-generator')">iMessages</a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <div class="modal" id="modal" style="display: none;">
+<div id="spinner" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.5);">
+    <div class="loader"></div>
+
+</div>
+
+        <iframe id="modal-iframe" src=""></iframe>
+    </div>
+    
+<footer style="background-color: rgba(0, 0, 0, 0.5); padding: 20px; text-align: center; color: #fff; margin: 0 auto; max-width: 1200px;"> <p>&copy; 2024 <a href="https://www.quenq.com" style="text-decoration: none; color: #fff;" target="_blank">Quenq.com</a>. All rights reserved. This website is for entertainment and educational purposes only. All logos and brand names are the property of their respective owners. Quenq.com is not responsible for any misuse of the tools provided on this site.</p> </footer>
+    <script>
+        function openModal(generator) {
+            const modal = document.getElementById('modal');
+            const iframe = document.getElementById('modal-iframe');
+            iframe.src = 'generator/' + generator + '.html';
+            modal.style.display = 'flex';
+        }
+
+        document.getElementById('modal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                this.style.display = 'none';
+            }
+        });
+		const iframe = document.getElementById('modal-iframe');
+const spinner = document.getElementById('spinner');
+
+iframe.onload = function() {
+    spinner.style.display = 'none';
+}
+
+function openModal(generator) {
+    const modal = document.getElementById('modal');
+    spinner.style.display = 'block';
+    iframe.src = 'generator/' + generator + '.html';
+    modal.style.display = 'flex';
+}
+
+    </script>
+
+
+</body>
+</html>

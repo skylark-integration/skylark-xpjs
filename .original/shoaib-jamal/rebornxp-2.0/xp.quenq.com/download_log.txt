@@ -1,0 +1,82 @@
+ダウンロード開始：2025/06/22 0:27:45
+
+● https://xp.quenq.com から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com へ
+
+favicon.png
+index.html （"[default]" から変更）
+
+● https://xp.quenq.com/css から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\css へ
+
+symbols.css
+scenes.css
+pixeltype.css
+icons.css
+colors.css
+applayouts.css
+
+● https://xp.quenq.com/js から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\js へ
+
+最適化実行中のエラー発生：C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\index.html
+wm.js
+themehandler.js
+screensave.js
+dialoghandler.js
+apps.js
+
+● https://xp.quenq.com/res/ui/nav から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\res\ui\nav へ
+
+up.png
+stop.png
+search.png
+refresh.png
+home.png
+go.png
+forward.png
+favorites.png
+back.png
+
+● https://xp.quenq.com/res/ui から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\res\ui へ
+
+screensave.png
+mslogo.png
+logonlogo.png
+bootlogo.png
+
+● https://xp.quenq.com/res/users から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\res\users へ
+
+guest.bmp
+chess.bmp
+
+● https://xp.quenq.com/css/classic から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\css\classic へ
+
+modules.css
+lunaFallback.css
+controls.css
+
+● https://xp.quenq.com/res/js から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\res\js へ
+
+jszip.min.js
+jsmediatags.min.js
+
+● https://xp.quenq.com/res/symbols から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\res\symbols へ
+
+standby.png
+restart.png
+
+● https://xp.quenq.com/res/js/ruffle から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\res\js\ruffle へ
+
+ruffle.js
+
+● https://xp.quenq.com/res/sounds から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\res\sounds へ
+
+startup.wav
+
+● https://xp.quenq.com/res/icons/tray から C:\studio\studio2\skylark\skylarkjs\intg\desktop\windows\skylark-xpjs\.original\shoaib-jamal\rebornxp-2.0\xp.quenq.com\res\icons\tray へ
+
+webpage.png
+
+ダウンロード完了：2025/06/22 0:27:50
+
+ダウンロード予定数：38
+ダウンロード総数：38
+エラー数：1

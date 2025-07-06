@@ -1,0 +1,359 @@
+/*:root{
+	--icon-mask:none;
+}
+*/
+/* DESKTOP SHELL ICONS  */
+scene_iconspace fsicon{
+	position: relative;
+	text-align: center;
+	display: inline;
+	height: 60px;
+	width: 74px;
+	line-height: 12px;
+	margin: 4px 1px 2px 1px;
+	padding: 5px 0 1px 0px;
+}
+scene_iconspace fsicon icon{
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+	border-bottom: 1px solid transparent;
+}
+scene_iconspace fsicon img{
+	height: 32px;
+	width: 32px;
+	margin: 0 auto;
+	display: block;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+scene_iconspace fsicon icontitle{
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 2px 4px 7px;
+	margin: 0 auto;
+	max-width:100%;
+	/*min-width: 100%;*/
+	max-height: 22px;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	color: #fff;
+	text-shadow: 0px 0px 3px #0009, 1px 2px 2px #000b;
+	width: fit-content;
+}
+scene_iconspace fsicon:active icon,
+scene_iconspace fsicon.selected icon{
+/*	filter: var(--iconFilter);*/
+}
+scene_iconspace fsicon:active icontitle,
+scene_iconspace fsicon.selected icontitle{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+	text-shadow: none;
+	padding: 2px 4px 4px;
+}
+scene_iconspace fsicon.shortcut icon:before{
+	display: block;
+	z-index: 1;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	content: " ";
+	background: url("../res/icons/shortcut.png");
+	/*top: 5px;*/
+	background-size: contain;
+}
+
+/* EXPLORER - THUMBNAIL VIEW */
+
+appcontentholder fscontents.thumbview fsicon{
+	position: relative;
+	text-align: center;
+	display: inline;
+	height: 115px;
+	width: 96px;
+	line-height: 12px;
+	margin: 5px 15px 19px 15px;
+	/*padding: 5px 0 1px 0px;*/
+}
+appcontentholder fscontents.thumbview fsicon icon{
+	display: block;
+	width: 94px;
+	height: 94px;
+	margin: 0 auto;
+	border: 1px solid #e0dfe3;
+}
+appcontentholder fscontents.thumbview fsicon img{
+	height: 48px;
+	width: 48px;
+	margin: 23px auto;
+	display: block;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+appcontentholder fscontents.thumbview fsicon icontitle{
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 2px 2px 4px;
+	margin: 4px auto 0;
+	max-width:100%;
+	/*min-width: 100%;*/
+	max-height: 22px;
+	line-height: 12px;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+appcontentholder fscontents.thumbview fsicon:active icon,
+appcontentholder fscontents.thumbview fsicon.selected icon{
+	outline: 2px solid var(--highlightColor);
+	border: 1px solid var(--highlightColor);
+}
+appcontentholder fscontents.thumbview fsicon:active icontitle, 
+appcontentholder fscontents.thumbview fsicon.spoof-folder icontitle,
+appcontentholder fscontents.thumbview fsicon.selected icontitle {
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+
+appcontentholder fscontents.thumbview fsicon.shortcut icon:before{
+	display: block;
+	z-index: 1;
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	content: " ";
+	background: url("../res/icons/shortcut.png");
+	bottom: 20px;
+	background-size: contain;
+}
+
+/* EXPLORER - TILES VIEW */
+
+appcontentholder fscontents.tileview fsicon {
+	position: relative;
+	text-align: left;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 48px auto;
+
+	width: 204px;
+	height: 48px;
+	margin: 4px;
+	/*padding: 4px;*/
+}
+appcontentholder fscontents.tileview fsicon icon{
+	height: 48px;
+	width: 48px;
+	margin: 0;
+	grid-row: 1;
+	grid-column: 1;
+}
+appcontentholder fscontents.tileview fsicon icon img{
+	height: 48px;
+	width: 48px;
+	display: inline-block;
+	vertical-align: middle;
+	image-rendering: -webkit-optimize-contrast;
+}
+appcontentholder fscontents.tileview fsicon icontitle{
+	display: -webkit-box;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:3;
+	overflow: hidden;
+/*	flex-direction: column;*/
+	justify-content: center;
+	grid-row: 1;
+	grid-column: 2;
+	line-height: 12pt;
+	margin-left: 4px;
+	width: fit-content;
+	height: fit-content;
+	align-self: center;
+}
+appcontentholder fscontents.tileview fsicon:active icontitle,
+appcontentholder fscontents.tileview fsicon.spoof-folder icontitle,
+appcontentholder fscontents.tileview fsicon.selected icontitle {
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+appcontentholder fscontents.tileview fsicon:active icon,
+appcontentholder fscontents.tileview fsicon.selected icon{
+/*	filter:brightness(.3) sepia(90%) hue-rotate(160deg) saturate(7);*/
+}
+
+appcontentholder fscontents.tileview fsicon.shortcut icon:before{
+	display: block;
+	z-index: 1;
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	content: " ";
+	background: url("../res/icons/shortcut.png");
+	bottom: 0px;
+	background-size: contain;
+}
+scene_iconspace fsicon.selected icon:after,
+appcontentholder fscontents.tileview fsicon.selected icon:after,
+appcontentholder fscontents.iconview fsicon.selected icon:after,
+appcontentholder fscontents.listview fsicon.selected icon:after{
+	display: block;
+	z-index: 0;
+	position: relative;
+	width: inherit;
+	height: inherit;
+	content: " ";
+	background: var(--highlightColor);
+	opacity: 0.5;
+	bottom: 0px;
+	background-size: contain;
+	mask-image:var(--icon-mask);
+	mask-repeat: no-repeat;
+	mask-size:100% 100%;
+	-webkit-mask-image:var(--icon-mask);
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size:100% 100%;
+	margin-top: -100%;
+}
+appcontentholder fscontents.iconview fsicon.selected icon:after{
+
+}
+
+/* EXPLORER - ICON VIEW */
+
+appcontentholder fscontents.iconview fsicon{
+	position: relative;
+	text-align: center;
+	display: inline;
+	height: 60px;
+	width: 74px;
+	line-height: 13px;
+	margin: 4px 1px 2px 1px;
+	padding: 5px 0 1px 0px;
+}
+appcontentholder fscontents.iconview fsicon icon{
+	display: block;
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+	border-bottom: 1px solid transparent;
+}
+appcontentholder fscontents.iconview fsicon img{
+	height: 32px;
+	width: 32px;
+	margin: 0 auto;
+	display: block;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+appcontentholder fscontents.iconview fsicon icontitle{
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 2px 4px 4px;
+	margin: 0 auto;
+	max-width:100%;
+	/*min-width: 100%;*/
+	max-height: 22px;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	width: fit-content;
+}
+appcontentholder fscontents.iconview fsicon:active icon,
+appcontentholder fscontents.iconview fsicon.selected icon{
+/*	filter:brightness(.3) sepia(90%) hue-rotate(160deg) saturate(7);*/
+}
+appcontentholder fscontents.iconview fsicon:active icontitle,
+appcontentholder fscontents.iconview fsicon.spoof-folder icontitle,
+appcontentholder fscontents.iconview fsicon.selected icontitle{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+
+appcontentholder fscontents.iconview fsicon.shortcut icon:before{
+	display: block;
+	z-index: 1;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	content: " ";
+	background: url("../res/icons/shortcut.png");
+	/*top: 5px;*/
+	background-size: contain;
+}
+
+/* EXPLORER - LIST VIEW */
+
+appcontentholder fscontents.listview{
+	/*height: calc(100% - 107px);*/
+	padding: 0 0 4px 4px;
+}
+
+appcontentholder fscontents.listview items {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 100%;
+}
+
+appcontentholder fscontents.listview fsicon {
+	position: relative;
+	text-align: left;
+	display: inline-block;
+
+	width: 210px;
+	height: 16px;
+	margin: 1px 0 0;
+}
+appcontentholder fscontents.listview fsicon icon{
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	margin: 0;
+}
+appcontentholder fscontents.listview fsicon icon img{
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	image-rendering: -webkit-optimize-contrast;
+}
+appcontentholder fscontents.listview fsicon icontitle{
+	padding: 2px 4px;
+	display: inline-block;
+	max-width: 186px;
+	line-height: 8pt;
+	line-height: 16px;
+	height: 16px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+	/*transform: translateY(2px);*/
+}
+appcontentholder fscontents.listview fsicon:active icontitle,
+appcontentholder fscontents.listview fsicon.spoof-folder icontitle,
+appcontentholder fscontents.listview fsicon.selected icontitle{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+appcontentholder fscontents.listview fsicon:active icon,
+appcontentholder fscontents.listview fsicon.selected icon{
+/*	filter:brightness(.3) sepia(90%) hue-rotate(160deg) saturate(7);*/
+}
+
+appcontentholder fscontents.listview fsicon.shortcut icon:before{
+	display: block;
+	z-index: 1;
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	content: " ";
+	background: url("../res/icons/shortcut.png");
+	bottom: -2px;
+	background-size: contain;
+}

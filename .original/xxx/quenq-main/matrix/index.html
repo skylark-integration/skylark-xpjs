@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Matrix Code Rain</title>
+	<link rel="canonical" href="index.html">
+	<meta name="description" content="Falling Green Characters Simulator from the Matrix movie. The iconic digital rain can be customized to adjust its colors, speed, and size.">
+	<meta name="keywords" content="matrix,character,rain,quenq,prank">
+	<meta property="og:title" content="Matrix Code Rain">
+	<meta property="og:image" content="https://www.quenq.com/matrix/og.png">
+	<meta property="og:description" content="Falling Green Characters Simulator from the Matrix movie. The iconic digital rain can be customized to adjust its colors, speed, and size.">
+	<style>
+		/* Basic reset */
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background: black;
+			line-height: 1;
+			user-select: none;
+		}
+		canvas {
+			display: block;
+		}
+		.modal {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.8);
+			z-index: 1000;
+			visibility: visible;
+			font-family: Arial, sans-serif;
+		}
+		.modal-content {
+			background: #222;
+			padding: 20px;
+			border-radius: 10px;
+			text-align: center;
+			color: white;
+			width: 300px;
+			position: relative;
+		}
+		.modal-content h2 {
+			margin-bottom: 15px;
+		}
+		.modal-content label {
+			display: block;
+			margin: 10px 0 5px;
+		}
+		.modal-content input,
+		.modal-content select,
+		.modal-content button {
+			margin-bottom: 10px;
+		}
+		.modal-content a {
+			color: #0F0;
+		}
+		#close-modal {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background: #555;
+			color: white;
+			border: none;
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+			cursor: pointer;
+		}
+		body.no-cursor {
+			cursor: none;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<canvas id="c"></canvas>
+
+	<!-- Modal -->
+	<div id="modal" class="modal">
+		<div class="modal-content">
+			<button id="close-modal">&times;</button>
+			<h2>Matrix Rain Simulator</h2>
+			<label for="speed">Speed:</label>
+			<input type="range" id="speed" min="10" max="100" value="33">
+			<label for="color">Color:</label>
+			<input type="color" id="color" value="#00FF00">
+			<label for="size">Size:</label>
+			<input type="number" id="size" min="10" max="30" value="12">
+			<button id="fullscreen">Go Full Screen</button>
+			<p><a href="https://www.quenq.com" target="_blank">More pranks and simulations</a></p>
+			<br>
+			<!--<div id="ad" style="width: 300px; height: 250px; margin: 0 auto;"></div>-->
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		// Disable right-click
+		document.oncontextmenu = () => false;
+
+		var c = document.getElementById("c");
+		var ctx = c.getContext("2d");
+
+		// Make the canvas full screen
+		c.height = window.innerHeight;
+		c.width = window.innerWidth;
+
+		// Chinese characters - taken from the unicode charset
+		var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+		chinese = chinese.split("");
+
+		var font_size = 12;
+		var columns = Math.floor(c.width / font_size);
+		var drops = Array(columns).fill(1);
+
+		var speed = 33;
+		var color = "#0F0";
+
+		function draw() {
+			// Black BG for the canvas
+			ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+			ctx.fillRect(0, 0, c.width, c.height);
+
+			ctx.fillStyle = color; // green text
+			ctx.font = font_size + "px arial";
+			
+			for (var i = 0; i < drops.length; i++) {
+				var text = chinese[Math.floor(Math.random() * chinese.length)];
+				ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+				if (drops[i] * font_size > c.height && Math.random() > 0.975) drops[i] = 0;
+
+				drops[i]++;
+			}
+		}
+
+		// Listen for the resize event
+		window.addEventListener('resize', () => {
+			c.height = window.innerHeight;
+			c.width = window.innerWidth;
+			columns = Math.floor(c.width / font_size);
+			drops = Array(columns).fill(1);
+		});
+
+		var intervalId = setInterval(draw, speed);
+
+		// Modal functionality
+		var modal = document.getElementById("modal");
+		var closeModalBtn = document.getElementById("close-modal");
+		var fullscreenBtn = document.getElementById("fullscreen");
+		var speedInput = document.getElementById("speed");
+		var colorInput = document.getElementById("color");
+		var sizeInput = document.getElementById("size");
+
+		function showModal() {
+			modal.style.visibility = "visible";
+			document.body.classList.remove('no-cursor');
+		}
+
+		function hideModal() {
+			modal.style.visibility = "hidden";
+			document.body.classList.add('no-cursor');
+		}
+
+		closeModalBtn.addEventListener("click", hideModal);
+
+		fullscreenBtn.addEventListener("click", function() {
+			if (!document.fullscreenElement) {
+				document.documentElement.requestFullscreen();
+			}
+			hideModal();
+		});
+
+		speedInput.addEventListener("input", function() {
+			speed = 110 - this.value; // Reverse the logic to make higher value faster
+			clearInterval(intervalId);
+			intervalId = setInterval(draw, speed);
+		});
+
+		colorInput.addEventListener("input", function() {
+			color = this.value;
+		});
+
+		sizeInput.addEventListener("input", function() {
+			font_size = parseInt(this.value, 10);
+			columns = Math.floor(c.width / font_size);
+			drops = Array(columns).fill(1);
+		});
+
+		// Reset color picker value on page load
+		window.addEventListener("load", function() {
+			colorInput.value = "#00FF00";
+		});
+
+		// Listen for F11 to enter/exit fullscreen
+		document.addEventListener("fullscreenchange", function() {
+			if (!document.fullscreenElement) {
+				showModal();
+			}
+		});
+
+		document.addEventListener("keydown", function(e) {
+			if (e.key === "F11") {
+				e.preventDefault();
+				if (!document.fullscreenElement) {
+					document.documentElement.requestFullscreen();
+				} else {
+					document.exitFullscreen();
+				}
+				hideModal();
+			}
+		});
+	</script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T854EV4C7D"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-T854EV4C7D');
+	</script>
+</body>
+</html>

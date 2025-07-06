@@ -1,0 +1,225 @@
+/*if needed for reference: base dimple effect*/
+/*background: radial-gradient(at 10% 10%, #ffffff88 0%, #ffffff66 10%, #ffffff00 50%), radial-gradient(at 90% 90%, #ffffff33 0%, #ffffff22 30%, #ffffff00 50%), #f3593c;*/
+
+/*  COLORS  */
+softbutton.red{
+	background:
+	radial-gradient(at 10%, 10%, #faac9f 0%, #faac9f 10%, #faac9f00 20%),
+	radial-gradient(at 10% 10%, #ea8268 0%, #ea826800 35%), 
+	linear-gradient(to bottom, #ea826800 0%, #ea8268 10%, #ea826800 20%)
+	linear-gradient(to right, #e76f5400 0%, #e76f54 10%, #e76f5400 35%),
+	radial-gradient(at 75% 75%, #e44816 0%, #e4481600 70%);
+	background-color: #e2512c;
+}
+softbutton.red:before{
+	box-shadow: inset -1px -1px 0 #9d2607, inset -1.5px -1.5px 3px #9d2607, inset 1px 1px 1px #e2512c;
+	background: radial-gradient(at 100% 100%, #db3909 0%, #db390900 40%);
+}
+softbutton.red:hover{
+	background:
+	radial-gradient(at 10% 10%, #f1c8b3 0%, #f1c8b300 35%), 
+	linear-gradient(to bottom, #fa998700 0%, #fa9987 10%, #fa998700 20%)
+	linear-gradient(to right, #fc897500 0%, #fc8975 10%, #fc897500 35%);
+	background-color: #f9523d;
+}
+softbutton.red:hover:before{
+	box-shadow: inset -1px -1px 0 #c23c2a, inset -1.5px -1.5px 3px #c23c2a, inset 1px 1px 1px #fc5f4c;
+	background: radial-gradient(at 70% 70%, #fe8664 0%, #fe866400 40%);
+}
+softbutton.red:active{
+	background:
+	radial-gradient(at 70% 70%, #cd4823 0%, #882b14 150%); 
+	background-color: #a43418;
+}
+softbutton.red:active:before{
+	box-shadow: inset 1px 1px 0 #5d270a, inset 1.5px 1.5px 3px #5d270a, inset 0 -1px 0 #d16f54, inset -1px -1px 1px #c3411e;
+	background: radial-gradient(at 70% 70%, #cd4823 0%, #cd482300 30%);
+}
+
+softbutton.yellow{
+	background:
+	radial-gradient(at 10%, 10%, #eac484 0%, #eac484 10%, #eac48400 20%),
+	radial-gradient(at 10% 10%, #e4b36b 0%, #e4b36b00 35%), 
+	linear-gradient(to bottom, #e4b36b00 0%, #e4b36b 10%, #e4b36b00 20%)
+	linear-gradient(to right, #e2ae6100 0%, #e2ae61 10%, #e2ae6100 35%),
+	radial-gradient(at 100% 100%, #b56a02 0%, #b56a0200 70%);
+	background-color: #d7942d;
+}
+softbutton.yellow:before{
+	box-shadow: inset -1px -1px 0 #9c5d02, inset -1.5px -1.5px 3px #9c5d02, inset 1px 1px 1px #d68f24;
+	background: radial-gradient(at 75% 75%, #e6b119 0%, #e6b11900 60%);
+}
+softbutton.yellow:hover{
+	background:
+	radial-gradient(at 10% 10%, #fad698 0%, #fad69800 35%), 
+	linear-gradient(to bottom, #feca7700 0%, #feca77 10%, #feca7700 20%)
+	linear-gradient(to right, #fec36300 0%, #fec363 10%, #fec36300 35%);
+	background-color: #fdaf31;
+}
+softbutton.yellow:hover:before{
+	box-shadow: inset -1px -1px 0 #b97a08, inset -1.5px -1.5px 3px #b97a08, inset 1px 1px 1px #fda926;
+	background: radial-gradient(at 70% 70%, #fedb1b 0%, #fedb1b00 40%);
+}
+softbutton.yellow:active{
+	background:
+	radial-gradient(at 70% 70%, #d89603 0%, #9c5d02 100%); 
+	background-color: #ca7502;
+}
+softbutton.yellow:active:before{
+	box-shadow: inset 1px 1px 0 #5d270a, inset 1.5px 1.5px 3px #724402, inset 0 -1px 0 #dc9d3f, inset -1px -1px 1px #cd7b02;
+	background: radial-gradient(at 70% 70%, #d89603 0%, #d8960300 30%);
+}
+
+softbutton.green{
+	background:
+	radial-gradient(at 10%, 10%, #a4d9a4 0%, #a4d9a4 10%, #a4d9a400 20%),
+	radial-gradient(at 10% 10%, #78bc78 0%, #78bc7800 35%), 
+	linear-gradient(to bottom, #78bc7800 0%, #78bc78 10%, #78bc7800 20%)
+	linear-gradient(to right, #67b46700 0%, #67b467 10%, #67b46700 35%),
+	radial-gradient(at 100% 100%, #027c02 0%, #027c0200 70%);
+	background-color: #339833;
+}
+softbutton.green:before{
+	box-shadow: inset -1px -1px 0 #026202, inset -1.5px -1.5px 3px #026202, inset 1px 1px 1px #339833;
+	background: radial-gradient(at 75% 75%, #0fb30f 0%, #0fb30f00 60%);
+}
+softbutton.green:hover{
+	background:
+	radial-gradient(at 10% 10%, #a4d9a4 0%, #a4d9a400 35%), 
+	linear-gradient(to bottom, #73ce7300 0%, #73ce73 10%, #73ce7300 20%)
+	linear-gradient(to right, #60c96000 0%, #60c960 10%, #60c96000 35%);
+	background-color: #2abc2a;
+}
+softbutton.green:hover:before{
+	box-shadow: inset -1px -1px 0 #0d740d, inset -1.5px -1.5px 3px #0d740d, inset 1px 1px 1px #2abc2a;
+	background: radial-gradient(at 70% 70%, #1bdb1b 0%, #1bdb1b00 40%);
+}
+softbutton.green:active{
+	background:
+	radial-gradient(at 70% 70%, #029d02 0%, #029d02 30%, #026202 130%); 
+	background-color: #027c02;
+}
+softbutton.green:active:before{
+	box-shadow: inset 1px 1px 0 #024702, inset 1.5px 1.5px 3px #026202, inset 0 -1px 0 #3fa03f, inset -1px -1px 1px #028402;
+	background: radial-gradient(at 70% 70%, #029d02 0%, #029d0200 30%);
+}
+
+softbutton.orange{
+	background-color: #ff8936;
+}
+softbutton.orange:hover{
+	background-color: #ff9c57;
+}
+softbutton.orange:active{
+	background-color: #bf4f00;
+}
+
+/*softbutton.yellow{
+	background-color: #e6b119;
+}
+softbutton.yellow:hover{
+	background-color: #febb4a;
+}
+softbutton.yellow:active{
+	background-color: #c47500;
+}*/
+
+softbutton.lime{
+	background-color: #7dd52f;
+}
+softbutton.lime:hover{
+	background-color: #8ae23b;
+}
+softbutton.lime:active{
+	background-color: #4a9d00;
+}
+
+/*softbutton.green{
+	background-color: #23ae21;
+}
+softbutton.green:hover{
+	background-color: #34c531;
+}
+softbutton.green:active{
+	background-color: #029300;
+}*/
+
+softbutton.teal{
+	background-color: #57bde7;
+}
+softbutton.teal:hover{
+	background-color: #70cbf0;
+}
+softbutton.teal:active{
+	background-color: #2291bf;
+}
+
+softbutton.blue{
+	background-color: #2766f5;
+}
+softbutton.blue:hover{
+	background-color: #477df7;
+}
+softbutton.blue:active{
+	background-color: #0140ce;
+}
+
+softbutton.violet{
+	background-color: #7540ec;
+}
+softbutton.violet:hover{
+	background-color: #8151ed;
+}
+softbutton.violet:active{
+	background-color: #612fd0;
+}
+
+softbutton.purple{
+	background-color: #c12df1;
+}
+softbutton.purple:hover{
+	background-color: #ca49f3;
+}
+softbutton.purple:active{
+	background-color: #a512d4;
+}
+
+softbutton.magenta{
+	background-color: #f4306c;
+}
+softbutton.magenta:hover{
+	background-color: #fc4a81;
+}
+softbutton.magenta:active{
+	background-color: #cd0b48;
+}
+
+softbutton.pink{
+	background-color: #f863a2;
+}
+softbutton.pink:hover{
+	background-color: #f96faa;
+}
+softbutton.pink:active{
+	background-color: #e02d78;
+}
+
+/*CUSTOM SHADES*/
+softbutton.corpblue{
+	background-color: #55acee;
+}
+softbutton.corpblue:hover{
+	background-color: #60b3f2;
+}
+softbutton.corpblue:active{
+	background-color: #247ec3;
+}
+
+
+
+softbutton.xpblue{
+	background-color: #2766f5;
+}
+softbutton.xpred{
+	background-color: #e2522d;
+}

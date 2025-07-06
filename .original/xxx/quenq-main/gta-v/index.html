@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/dscountdown.min.js"></script>
+    <script src="js/jamesslide.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="shortcut icon" href="pagecon.png">
+    <title>GTA 5 Loading Screen Simulator - Prank Fun</title>
+    <meta name="description" content="Experience the fun of GTA 5 loading screens with our interactive simulator. A light-hearted prank for your friends!">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.quenq.com/gta-v/">
+    <meta property="og:title" content="GTA 5 Loading Screen Simulator - Prank Fun">
+    <meta property="og:description" content="Experience the fun of GTA 5 loading screens with our interactive simulator. A light-hearted prank for your friends!">
+    <meta property="og:image" content="https://www.quenq.com/gta-v/og.jpg">
+
+    <style>
+      #modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 999;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      #ad {
+        width: 300px;
+        height: 250px;
+        background-color: lightgray;
+        margin: 20px auto;
+      }
+
+      #modal h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      #modal p {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      #modal a {
+        color: #007bff;
+      }
+
+      #modal a:hover {
+        text-decoration: underline;
+      }
+
+      body.modal-active {
+        cursor: auto;
+      }
+
+      body:not(.modal-active) {
+        cursor: none;
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T854EV4C7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T854EV4C7D');
+</script>
+  </head>
+
+  <body class="modal-active">
+    <div id="modal">
+      <h1>GTA V Loading Simulator</h1>
+      <p>
+        <label for="sound">Enable Sound:</label>
+        <input type="checkbox" id="sound" checked>
+      </p>
+      <p>
+        <button id="fullscreen">Make Fullscreen</button>
+      </p>
+      <p>
+        <a href="https://www.quenq.com" target="_blank">More Pranks and Simulations</a>
+      </p>
+<!--      <div id="ad">
+
+      </div>-->
+      <button id="close">Close</button>
+    </div>
+
+    <div id="intro-screen">
+      <div id="player"></div>
+    </div>
+    <div id="loading-screen">
+      <div id="slides">
+      </div>
+      <img id="logo" src="assets/logo.png" />
+      <div id="bottom-left">
+        <span class="loadingText">Loading Story Mode...</span><span class="hiddenCountdown"></span>
+        <div id="loading">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+
+<script>
+      // Get the modal element
+      const modal = document.getElementById("modal");
+
+      // Get the fullscreen button element
+      const fullscreenBtn = document.getElementById("fullscreen");
+
+      // Get the sound checkbox element
+      const soundCheckbox = document.getElementById("sound");
+
+      // Get the close button element
+      const closeBtn = document.getElementById("close");
+
+      // Add event listener to fullscreen button
+      fullscreenBtn.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen();
+        } else {
+          document.exitFullscreen();
+        }
+      });
+
+      // Create audio element for background music
+      const audio = document.createElement("audio");
+      audio.src = "5.mp3";
+      audio.loop = true;
+      document.body.appendChild(audio);
+
+      // Add event listener to sound checkbox
+      soundCheckbox.addEventListener("change", () => {
+        if (soundCheckbox.checked) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      });
+
+      // Add event listener to close button
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-active");
+      });
+
+      // Add event listener to fullscreen change event
+      document.addEventListener("fullscreenchange", () => {
+        if (document.fullscreenElement) {
+          modal.style.display = "none";
+          document.body.classList.remove("modal-active");
+        } else {
+          modal.style.display = "block";
+          document.body.classList.add("modal-active");
+        }
+      });
+
+      // Play background music if sound is enabled
+      if (soundCheckbox.checked) {
+        audio.play();
+      }
+    </script>
+  </body>
+</html>

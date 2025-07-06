@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, user-scalable=no">
+<link rel="preload" href="assets/fonts/fontawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" type="text/css" href="assets/css/style.min0e52.css?01.08.2024.05.36">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T854EV4C7D"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-T854EV4C7D");</script>
+
+</head>
+<body>
+<main>
+<link rel="stylesheet" href="assets/css/bootstrap.min0e52.css?01.08.2024.05.36">
+<link rel="stylesheet" href="assets/css/bootstrap-theme.min0e52.css?01.08.2024.05.36">
+<link rel="stylesheet" href="assets/css/jasny-bootstrap.min0e52.css?01.08.2024.05.36">
+<link rel="stylesheet" type="text/css" href="assets/css/social_css/social-twitter.min0e52.css?01.08.2024.05.36"> 
+<div class="social-page">
+<div class="container">
+
+<div class="row">
+<div class="col-xs-12 col-md-8 col-md-offset-4 text-center">
+<div class="sec-title">
+<h1>Fake Twitter Profile Generator</h1>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div id="left-panel">
+<div class="left-part">
+<div id="options">
+<div class="row">
+<div class="col-xs-12 col-md-6 tw_profile_layout">
+<div class="radio-grp m-0">
+<div class="fb_post_d_block">Layout :</div>
+<div class="radio">
+<label><input name="tw_visibleforLayout" type="radio" value="android" id="android_wp" checked>android</label>
+</div>
+<div class="radio">
+<label><input name="tw_visibleforLayout" type="radio" value="iphone" id="iphone_wp"> iphone</label>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-md-6">
+<div class="checkbox-grp m-0">
+<div class="fb_post_d_block">Parts :</div>
+<div class="checkbox">
+<label><input name="visibleverfied" type="checkbox" id="visibleverfied">Verfied Account</label>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12 col-md-6 tw_profile_clock">
+<div class="form-group">
+<label>Clock</label>
+<input type="text" class="form-control" value="10:04 am" id="edit-2-Clock" data-edit="edit-Clock">
+</div>
+</div>
+<div class="col-xs-12 col-md-6 tw_profile_clock">
+<div class="form-group">
+<label>Battery percent</label>
+<input type="text" class="form-control" value="50" id="Battery_percent" data-edit="Battery percent">
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12" id="tweet_count" style="display: none;">
+<div class="form-group">
+<label>Tweet Count</label>
+<input type="text" class="form-control" value="0" id="edit-tweet" data-edit="edit-tweet">
+</div>
+</div>
+<div class="col-xs-12">
+<div class="fileinput fileinput-new text-center twitter_bg_img with-border" data-provides="fileinput">
+<div class="fileinput-img">
+<div class="fileinput-new twitter-bgtitel-img-top  thumbnail">
+<img src="assets/images/profile.jpg" alt="Profile">
+</div>
+<div class="text-center">
+<div class="fileinput-preview fileinput-exists  twitter-bgpro-imgsrc" style="display: initial;"></div>
+</div>
+</div>
+<div class="fileinput-text">
+<strong>Banner photo</strong>
+<div class="text-center ">
+<span class="btn btn-file btn-sm"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><i class="fa fa-file-image-o" aria-hidden="true"></i>
+<input type="file" name="..."></span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xs-12">
+<div class="fileinput fileinput-new text-center twitter_pro_img with-border" data-provides="fileinput">
+<div class="fileinput-img">
+<div class="fileinput-new twitter-titel-img-top  thumbnail">
+<img src="assets/images/profile.jpg" alt="Profile">
+</div>
+<div class="text-center">
+<div class="fileinput-preview fileinput-exists  twitter-pro-imgsrc" style="display: initial;"></div>
+</div>
+</div>
+<div class="fileinput-text">
+<strong>Profile photo</strong>
+<div class="text-center ">
+<span class="btn btn-file btn-sm"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><i class="fa fa-file-image-o" aria-hidden="true"></i>
+<input type="file" name="..."></span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xs-12">
+<div class="form-group">
+<label for="edit-name">Name</label>
+<input type="text" class="form-control" id="profile1_name" value="John Doe">
+
+</div>
+</div>
+<div class="col-xs-12">
+<div class="form-group">
+<label for="edit-username">User Name</label>
+<input type="text" class="form-control" id="edit-username" value="i.m.john_doe" data-edit="edit-username">
+</div>
+</div>
+<div class="col-xs-12">
+<div class="form-group">
+<label for="edit-borndate">Born Date</label>
+<input type="text" class="form-control" id="edit-borndate" value="January 1, 1999" data-edit="edit-borndate">
+</div>
+</div>
+<div class="col-xs-12">
+<div class="form-group">
+<label for="edit-joindate">Join Date</label>
+<input type="text" class="form-control" id="edit-joindate" value="January 2016" data-edit="edit-joindate">
+</div>
+</div>
+<div class="col-xs-6">
+<div class="form-group">
+<label for="edit-following">Following Count</label>
+<input type="text" class="form-control" id="edit-following" value="61" data-edit="edit-following">
+</div>
+</div>
+<div class="col-xs-6">
+<div class="form-group">
+<label for="edit-followers">Followers Count</label>
+<input type="text" class="form-control" id="edit-followers" value="23" data-edit="edit-followers">
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div id="center-panel">
+<div class="social-view-tab">
+<button type="button" class="lg-view "><i class="fa fa-desktop" aria-hidden="true"></i><span>Desktop View</span></button>
+
+<button type="button" class="sm-view active"><i class="fa fa-mobile" aria-hidden="true"></i><span>Mobile View</span></button>
+</div>
+<div class="right-part mobile_view">
+<div class="live-box">Live preview</div>
+<div class="modal twitter twitter-profile" id="download">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="main-twitter-profile-modal">
+<div class="all_header_wp">
+<div class="android-header">
+<div class="status-bar whatsapp-android-status-bar whatsapp-video-bar">
+<div class="wifi">
+<i class="fa fa-wifi" aria-hidden="true"></i>
+</div>
+<div class="status-network">
+<i class="fa fa-signal" aria-hidden="true"></i>
+</div>
+<div class="status-network">
+<i class="fa fa-signal" aria-hidden="true"></i>
+</div>
+<span class="status-time">10:04 am</span>
+<div class="battery-container">
+<span class="battery-status">50%</span>
+<div class="battery pull-right">
+<div class="battery-percentage">
+<div class="battery-level"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ios-header">
+<div class="status-bar whatsapp-iphone-status-bar">
+<div class="iphone-moblie-network">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<span>vodafone</span>
+<div class="wifi">
+<i class="fa fa-wifi" aria-hidden="true"></i>
+</div>
+</div>
+<div class="iphone-time"><span class="status-time">10:04 AM</span></div>
+<div class="battery-container">
+<span class="battery-status">50%</span>
+<div class="battery iphone-battery pull-right">
+<div class="battery-percentage iphone-battery-percentage">
+<div class="battery-level"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="twitter-tweet-header">
+<div class="header-icon header-icon-arrow pull-left">
+<img alt="image" src="assets/images/back-arrow.png">
+</div>
+<div class="twitter-header-content">
+<h2>Tweet</h2>
+<P class="tweet-count"><span class="text-tweet">0</span> Tweet</P>
+</div>
+</div>
+<div class="main-twitter-profile">
+<div class="twitter-bottom-icon">
+<div class="add-post-icon">
+<img alt="twitter-add-post-icon" src="assets/images/twitter-add-post-icon.png">
+</div>
+</div>
+<div class="twitter-header">
+<div class="twitter-header-cover">
+<div class="twitter-header-icon">
+<div class="left-icon">
+<img alt="twitter-profile-left-arrow" src="assets/images/twitter-profile-left-arrow.png">
+</div>
+<div class="right-dots">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</div>
+</div>
+<div class="main-twitter-profile-pic">
+<div class="twitter-profile-pic">
+<img alt="twitter-profile-pic" src="assets/images/twitter-profile-pic.jpg">
+</div>
+<div class="twitter-profile-edit-btn">
+<p>Edit Profile</p>
+</div>
+</div>
+<div class="twitter-profile-box">
+<div class="profile-name">
+<h2 class="text-name">John Doe</h2>
+<img class="verified-icon" src="assets/images/verified-icon.png" alt="verified icon">
+<h5>@<span class="text-username">i.m.john_doe</span></h5>
+</div>
+<div class="profile-date">
+<div class="born-date">
+<img alt="twitter-join-date" src="assets/images/twitter-baloon.png">
+<span>Born </span>
+<p class="text-borndate"> September 2, 1999</p>
+</div>
+<div class="join-date">
+<img alt="twitter-join-date" src="assets/images/twitter-join-date.png">
+<span>Joined </span>
+<p class="text-joindate">January 2016</p>
+</div>
+</div>
+<div class="follow-count">
+<ul>
+<li>
+<h5 class="twit-following text-following">61</h5>
+<p>Following</p>
+</li>
+<li>
+<h5 class="twit-followers text-followers">23</h5>
+<p>Followers</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center  download-btn">
+<div id="myProgress" style="display: none;">
+<div id="myBar" style="width: 100%;">
+<span id="per">100%</span>
+</div>
+</div>
+<button class="btn" data-name="twitter_profile" id="snapshot"  style="margin-bottom: 30px;">Download Twitter Profile as image
+<i class="fa fa-download" aria-hidden="true"></i>
+</button>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jasny-bootstrap.min.js"></script>
+<script src="assets/js/twitter_profile.js"></script>
+<script src="assets/js/custom_social.js"></script>
+
+
+
+<script src="assets/js/custom0e52.js?01.08.2024.05.36"></script>
+<script src="assets/js/mail0e52.js?01.08.2024.05.36"></script>
+
+<script>
+	var bad = ["4r5e", "5h1t", "5hit", "a55", "anal", "anus", "ar5e", "arrse", "arse", "ass", "ass-fucker", "asses", "assfucker", "assfukka", "asshole", "assholes", "asswhole", "a_s_s", "b!tch", "b00bs", "b17ch", "b1tch", "ballbag", "balls", "ballsack", "bastard", "beastial", "beastiality", "bellend", "bestial", "bestiality", "bi+ch", "biatch", "bitch", "bitcher", "bitchers", "bitches", "bitchin", "bitching", "bloody", "blow job", "blowjob", "blowjobs", "boiolas", "bollock", "bollok", "boner", "boob", "boobs", "booobs", "boooobs", "booooobs", "booooooobs", "breasts", "buceta", "bugger", "bum", "bunny fucker", "butt", "butthole", "buttmuch", "buttplug", "c0ck", "c0cksucker", "carpet muncher", "cawk", "chink", "cipa", "cl1t", "clit", "clitoris", "clits", "cnut", "cock", "cock-sucker", "cockface", "cockhead", "cockmunch", "cockmuncher", "cocks", "cocksuck", "cocksucked", "cocksucker", "cocksucking", "cocksucks", "cocksuka", "cocksukka", "cok", "cokmuncher", "coksucka", "coon", "cox", "crap", "cum", "cummer", "cumming", "cums", "cumshot", "cunilingus", "cunillingus", "cunnilingus", "cunt", "cuntlick", "cuntlicker", "cuntlicking", "cunts", "cyalis", "cyberfuc", "cyberfuck", "cyberfucked", "cyberfucker", "cyberfuckers", "cyberfucking", "d1ck", "damn", "dick", "dickhead", "dildo", "dildos", "dink", "dinks", "dirsa", "dlck", "dog-fucker", "doggin", "dogging", "donkeyribber", "doosh", "duche", "dyke", "ejaculate", "ejaculated", "ejaculates", "ejaculating", "ejaculatings", "ejaculation", "ejakulate", "f u c k", "f u c k e r", "f4nny", "fag", "fagging", "faggitt", "faggot", "faggs", "fagot", "fagots", "fags", "fanny", "fannyflaps", "fannyfucker", "fanyy", "fatass", "fcuk", "fcuker", "fcuking", "feck", "fecker", "felching", "fellate", "fellatio", "fingerfuck", "fingerfucked", "fingerfucker", "fingerfuckers", "fingerfucking", "fingerfucks", "fistfuck", "fistfucked", "fistfucker", "fistfuckers", "fistfucking", "fistfuckings", "fistfucks", "flange", "fook", "fooker", "fuck", "fucka", "fucked", "fucker", "fuckers", "fuckhead", "fuckheads", "fuckin", "fucking", "fuckings", "fuckingshitmotherfucker", "fuckme", "fucks", "fuckwhit", "fuckwit", "fudge packer", "fudgepacker", "fuk", "fuker", "fukker", "fukkin", "fuks", "fukwhit", "fukwit", "fux", "fux0r", "f_u_c_k", "gangbang", "gangbanged", "gangbangs", "gaylord", "gaysex", "goatse", "God", "god-dam", "god-damned", "goddamn", "goddamned", "hardcoresex", "hell", "heshe", "hoar", "hoare", "hoer", "homo", "hore", "horniest", "horny", "hotsex", "jack-off", "jackoff", "jap", "jerk-off", "jism", "jiz", "jizm", "jizz", "kawk", "knob", "knobead", "knobed", "knobend", "knobhead", "knobjocky", "knobjokey", "kock", "kondum", "kondums", "kum", "kummer", "kumming", "kums", "kunilingus", "l3i+ch", "l3itch", "labia", "lust", "lusting", "m0f0", "m0fo", "m45terbate", "ma5terb8", "ma5terbate", "masochist", "master-bate", "masterb8", "masterbat*", "masterbat3", "masterbate", "masterbation", "masterbations", "masturbate", "mo-fo", "mof0", "mofo", "mothafuck", "mothafucka", "mothafuckas", "mothafuckaz", "mothafucked", "mothafucker", "mothafuckers", "mothafuckin", "mothafucking", "mothafuckings", "mothafucks", "mother fucker", "motherfuck", "motherfucked", "motherfucker", "motherfuckers", "motherfuckin", "motherfucking", "motherfuckings", "motherfuckka", "motherfucks", "muff", "mutha", "muthafecker", "muthafuckker", "muther", "mutherfucker", "n1gga", "n1gger", "nazi", "nigg3r", "nigg4h", "nigga", "niggah", "niggas", "niggaz", "nigger", "niggers", "nob", "nob jokey", "nobhead", "nobjocky", "nobjokey", "numbnuts", "nutsack", "orgasim", "orgasims", "orgasm", "orgasms", "p0rn", "pawn", "pecker", "penis", "penisfucker", "phonesex", "phuck", "phuk", "phuked", "phuking", "phukked", "phukking", "phuks", "phuq", "pigfucker", "pimpis", "piss", "pissed", "pisser", "pissers", "pisses", "pissflaps", "pissin", "pissing", "pissoff", "poop", "porn", "porno", "pornography", "pornos", "prick", "pricks", "pron", "pube", "pusse", "pussi", "pussies", "pussy", "pussys", "rectum", "retard", "rimjaw", "rimming", "s hit", "s.o.b.", "sadist", "schlong", "screwing", "scroat", "scrote", "scrotum", "semen", "sex", "sh!+", "sh!t", "sh1t", "shag", "shagger", "shaggin", "shagging", "shemale", "shi+", "shit", "shitdick", "shite", "shited", "shitey", "shitfuck", "shitfull", "shithead", "shiting", "shitings", "shits", "shitted", "shitter", "shitters", "shitting", "shittings", "shitty", "skank", "slut", "sluts", "smegma", "smut", "snatch", "son-of-a-bitch", "spac", "spunk", "s_h_i_t", "t1tt1e5", "t1tties", "teets", "teez", "testical", "testicle", "tit", "titfuck", "tits", "titt", "tittie5", "tittiefucker", "titties", "tittyfuck", "tittywank", "titwank", "tosser", "turd", "tw4t", "twat", "twathead", "twatty", "twunt", "twunter", "v14gra", "v1gra", "vagina", "viagra", "vulva", "w00se", "wang", "wank", "wanker", "wanky", "whoar", "whore", "willies", "willy", "xrated", "xxx"];
+</script>
+</body>
+</html>

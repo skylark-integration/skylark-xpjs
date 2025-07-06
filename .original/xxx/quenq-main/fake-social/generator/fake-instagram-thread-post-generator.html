@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1, user-scalable=no">
+<link rel="preload" href="assets/fonts/fontawesome-webfont.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" type="text/css" href="assets/css/style.min0e52.css?01.08.2024.05.36">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T854EV4C7D"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-T854EV4C7D");</script>
+</head>
+<body>
+<main>
+<link rel="stylesheet" href="assets/css/bootstrap.min0e52.css?01.08.2024.05.36">
+<link rel="stylesheet" href="assets/css/bootstrap-theme.min0e52.css?01.08.2024.05.36">
+<link rel="stylesheet" href="assets/css/croppie.min0e52.css?01.08.2024.05.36">
+
+
+<link rel="stylesheet" href="assets/css/social_css_unminify/social-threads0e52.css?01.08.2024.05.36">
+<div class="social-page">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-md-8 col-md-offset-4 text-center">
+<div class="sec-title">
+<h1>Fake Instagram Thread Post Generator</h1>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-3 col-md-4 mb-3 col-xs-12">
+<div id="left-panel">
+<div id="options">
+<div class="row">
+<div class="col-sm-4 col-md-12">
+<div class="form-border-box">
+<div class="mr-2 form-label-wrap">Layout :</div>
+<div class="d-flex">
+<label class="form-label mr-2">
+<input type="radio" name="visibleforLayout" value="android" id="android_wp" checked><span class="radio-text">Android</span>
+</label>
+<label class="form-label">
+<input type="radio" name="visibleforLayout" value="iphone" id="iphone_wp"><span class="radio-text">iPhone</span>
+</label>
+</div>
+<label class="form-label d-inline-flex align-items-center" for="hide_header">
+<span class="switch mr-2">
+<input name="Verified_Badge" type="checkbox" id="hide_header" value="hide_header" data-cls="header-bar"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">Hide Header</span>
+</label>
+<label class="form-label d-inline-flex align-items-center" for="hide_footer">
+<span class="switch mr-2">
+<input name="Verified_Badge" type="checkbox" id="hide_footer" value="hide_footer" data-cls="footer-bar"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">Hide Footer</span>
+</label>
+<label class="form-label d-inline-flex align-items-center" for="dark_theme">
+<span class="switch mr-2">
+<input name="dark_theme" type="checkbox" id="dark_theme" value="dark_theme" data-cls="dark-theme"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">Dark Theme</span>
+</label>
+<label class="form-label d-inline-flex align-items-center" for="following_bar">
+<span class="switch mr-2">
+<input name="following_bar" type="checkbox" id="following_bar" value="following_bar"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">Hide Following Bar</span>
+</label>
+</div>
+</div>
+<div class="col-sm-4 col-md-12">
+<div class="select-list form-border-box">
+<label class="form-label-wrap">Network</label>
+<div class="network-box m-0">
+<div for="networ_speed" class="form-element arrow">
+<select name="networ_speed" id="networ_speed" class="form-control">
+<option value="n5g">5G</option>
+<option value="n4g">4G</option>
+<option value="n3g">3G</option>
+<option value="n2g">2G</option>
+<option value="nwifi">Wifi</option>
+</select>
+</div>
+<label class="form-label dualsim" for="dual_sim">
+<span class="switch mr-2">
+<input name="dual_sim" type="checkbox" id="dual_sim" value="dual_sim" data-cls="dual_sim"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">Dual Sim</span>
+</label>
+</div>
+</div>
+<div class="form-border-box">
+<label class="form-label-wrap">Time</label>
+<div class="form-group clockandtime-format mb-0">
+<input type="time" class="form-control" id="edit-2-Clock" data-edit="edit-Clock" value="10:04">
+<div class="d-inline-flex align-items-center pl-0" for="time-format">
+<span class="switch switch-hour mr-2">
+<input name="whatsapp-time" type="checkbox" id="time-format"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">Hour</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-4 col-md-12">
+<div class="select-list form-border-box">
+<label class="form-label-wrap">Battery Options</label>
+<div class="battery-box">
+<div for="battery_options" class="form-element arrow">
+<select name="battryopt" id="battery_options" class="form-control">
+<option value="battery-horizontal">Horizontal</option>
+<option value="battery-vertical-one">Vertical-1</option>
+<option value="battery-vertical-two">Vertical-2</option>
+</select>
+</div>
+<div class="Battery-percent-main ">
+<input type="number" class="form-control" value="50" id="Battery_percent" data-edit="Battery percent">
+<label for="Battery_percent" class="label-text">%</label>
+</div>
+</div>
+<label class="form-label d-inline-flex align-items-center" for="bt_per">
+<span class="switch mr-2">
+<input name="whatsapp-pay" type="checkbox" id="bt_per" checked><span class="switch-btn"></span>
+</span>
+<span class="switch-text">Show Percentage</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-9 col-md-8 col-xs-12">
+<div id="center-panel">
+
+<div class="right-part mobile_view">
+<div class="live-box">Live preview</div>
+<div id="download" class="modal threads ui-post">
+<div class="modal-dialog ui-theme">
+<div class="modal-content">
+<div class="all_header_wp">
+<div class="thr-android-header">
+<div class="android-header">
+<div class="status-bar">
+<div class="status-bar-left">
+<span class="status-time">10:04 am</span>
+</div>
+<div class="status-bar-right">
+<div class="show-network mr-1 n5g">
+<div class="data-network wifi-network"><i class="fa fa-wifi" aria-hidden="true"></i></div>
+<div class="data-network net5g">5G</div>
+<div class="data-network net4g">
+<svg version="1.2" baseProfile="tiny" height="14" width="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17" overflow="visible" xml:space="preserve">
+<path d="M11.8,15.8c0,0.4-0.3,0.7-0.7,0.7c-0.4,0-0.7-0.3-0.7-0.7v-4l-0.9,0.9c-0.3,0.3-0.7,0.3-1,0c-0.3-0.3-0.3-0.7,0-1l2.1-2.1 c0.3-0.3,0.7-0.3,1,0l2.1,2.1c0.3,0.3,0.3,0.7,0,1c-0.3,0.3-0.7,0.3-1,0l-0.9-0.9V15.8z M4.7,10.1c0-0.4,0.3-0.7,0.7-0.7 c0.4,0,0.7,0.3,0.7,0.7v4l0.9-0.9c0.3-0.3,0.7-0.3,1,0c0.3,0.3,0.3,0.7,0,1l-2.1,2.1c-0.3,0.3-0.7,0.3-1,0l-2.1-2.1 c-0.3-0.3-0.3-0.7,0-1c0.3-0.3,0.7-0.3,1,0l0.9,0.9V10.1z M1.9,6.9h3.4v1H0.6V0.5h1.3V6.9z M10.6,1.5H8.3V8H7V1.5H4.7v-1h5.9V1.5z M15.9,4.6h-3.1v2.3h3.6v1h-4.9V0.5h4.8v1h-3.5v2.1h3.1V4.6z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="data-network net3g">H+</div>
+<div class="data-network net2g">E</div>
+</div>
+<div class="status-network">
+<i class="fa fa-signal" aria-hidden="true"></i>
+</div>
+<div class="status-network sim2" style="display: none;">
+<i class="fa fa-signal" aria-hidden="true"></i>
+</div>
+<div class="battery-container battery-horizontal">
+<span class="battery-status">50%</span>
+<div class="battery pull-right">
+<div class="battery-percentage">
+<div class="battery-level"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="thr-ios-header" style="display: none;">
+<div class="ios-header">
+<div class="status-bar header-bar">
+<div class="status-bar-left">
+<div class="iphone-time"><span class="status-time">10:04 AM</span></div>
+</div>
+<div class="status-bar-right">
+<div class="new-iphone-moblie-network">
+<div class="phone-network">
+<span class="network-point active"></span>
+<span class="network-point active"></span>
+<span class="network-point active"></span>
+<span class="network-point"></span>
+</div>
+<div class="show-network n5g">
+<span class="data-network net5g">5G</span>
+<span class="data-network net4g">4G</span>
+<span class="data-network net3g">3G</span>
+<span class="data-network net2g">2G</span>
+<span class="data-network wifi-network">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="18" height="14" viewBox="0 0 240 200">
+<path d="M169.274 156.029c-12.585-12.584-29.962-20.377-49.122-20.377-19.162 0-36.539 7.793-49.123 20.377l-27.727-27.727c19.689-19.688 46.873-31.885 76.85-31.885 29.977 0 57.16 12.197 76.85 31.885l-27.728 27.727zm-80.563 17.682 31.441 31.441 31.441-31.441c-8.047-8.043-19.163-13.02-31.441-13.02-12.279 0-23.394 4.977-31.441 13.02zm31.441-99.328c36.053 0 68.746 14.664 92.424 38.346l27.729-27.727c-30.784-30.785-73.284-49.85-120.152-49.85-46.87 0-89.37 19.065-120.153 49.85l27.728 27.727C51.406 89.047 84.1 74.383 120.152 74.383z" fill="currentColor"></path>
+</svg>
+</span>
+</div>
+</div>
+<div class="battery-container">
+<div class="battery iphone-battery">
+<span class="battery-status">50</span>
+<div class="battery-percentage iphone-battery-percentage">
+<div class="battery-level"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="threads-post-body">
+<span class="thr-icon thr-logo"></span>
+<div class="threads-header">
+<ul class="header-tab nav-tabs">
+<li class="tabs active">
+<a data-toggle="tab" href="#hicon1">For you</a>
+</li>
+<li class="tabs">
+<a data-toggle="tab" href="#hicon2">Following</a>
+</li>
+</ul>
+</div>
+<input type="hidden" name="message-box-num" class="message-box-num" value="0">
+<div class="post-contaner">
+<div class="post-box" id="message-box-num0">
+<div class="box-left">
+<div class="modal-title-img post-profile-img">
+<label class="input-img edit-icon">
+<i class="fa fa-pencil" aria-hidden="true"></i>
+<input type="file" class="img-input" name="profile-btn" data-box_num="0" onchange="getTempImage(this)">
+<img src="assets/images/iphone_msg_user_icon.png" alt="user icon" class="off_person_0 preview-profile">
+</label>
+</div>
+<div class="post-replie">
+<span class="post-replie-border"></span>
+<div class="post-replie-profiles rep-1">
+<img src="assets/images/threads/user1.png" alt="post-replie1">
+<img src="assets/images/threads/user2.png" alt="post-replie2">
+<img src="assets/images/threads/user3.png" alt="post-replie3">
+</div>
+</div>
+</div>
+<div class="box-right">
+<div class="post-header">
+<div class="header-left-part">
+<div class="user-name input-main-div">
+<p class="edit-text m-0 d-flex align-items-center"><span class="person-text">Jhon_Done</span><i class="fa fa-pencil" aria-hidden="true"></i> <span class="thr-icon thr-verify"></span></p>
+<input type="text" class="main-input-text person-input" data-class="person" value="Jhon_Done" style="display: none;">
+</div>
+<div class="post-time input-main-div">
+<p class="edit-text m-0"><span class="ptime ptime-text">30m</span><i class="fa fa-pencil" aria-hidden="true"></i></p>
+<input type="text" class="main-input-text ptime-input" value="30" maxlength="3" data-class="ptime" style="display: none;">
+</div>
+</div>
+<div class="header-right-part">
+<div class="post-icon-wrap icon-android">
+<span class="thr-icon thr-dots"></span>
+</div>
+<button class="delete-btn btn-remove" onclick="deletebtn(0);" data-num="0"><i class="fa fa-trash"></i></button>
+</div>
+</div>
+<div class="post-content">
+<div class="input-main-div">
+<div class="text-content edit-text" onclick="editText($(this));">
+<pre><span class="thrpost0-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+															Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span><i class="fa fa-pencil" aria-hidden="true"></i></pre>
+</div>
+<textarea class="post-text-input main-input-text insmessage-input thrpost0-input" data-class="thrpost0" style="display: none;" rows="5" cols="12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+															Lorem Ipsum is simply dummy text of the printing and typesetting industry.</textarea>
+</div>
+<div class="img-content thr-post-img">
+<img src="assets/images/insta-gallery-image1.jpg" alt="img-content">
+<div class="modal-post-img">
+<label class="input-img">
+<i class="fa fa-pencil" aria-hidden="true"></i>
+<input type="file" class="img-input" name="post-img" onchange="postChangeOrUpload($(this),event);">
+</label>
+</div>
+<span class="thr-icon thr-speker" onclick="videoMute($(this));"></span>
+</div>
+</div>
+<div class="post-footer">
+<div class="post-icons">
+<div class="post-icon-wrap input-main-div">
+<span class="thr-icon thr-comment"></span>
+<p class="edit-text"><span class="comment-text">15</span><i class="fa fa-pencil" aria-hidden="true"></i></p>
+<input type="text" class="main-input-text comment-input" value="15" data-class="comment" style="display: none;">
+</div>
+<div class="post-icon-wrap input-main-div">
+<span class="thr-icon thr-repost"></span>
+<p class="edit-text"><span class="repost-text">15</span><i class="fa fa-pencil" aria-hidden="true"></i></p>
+<input type="text" class="main-input-text repost-input" value="15" data-class="repost" style="display: none;">
+</div>
+<div class="post-icon-wrap input-main-div like-wp">
+<span class="thr-icon thr-like" onclick="showLike($(this));"></span>
+<p class="edit-text"><span class="like-text">15</span><i class="fa fa-pencil" aria-hidden="true"></i></p>
+<input type="text" class="main-input-text like-input" value="15" data-class="like" style="display: none;">
+</div>
+<div class="post-icon-wrap">
+<span class="thr-icon thr-shear"></span>
+</div>
+<div class="post-icon-wrap icon-iphone">
+<span class="thr-icon thr-dots"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="btn btn-sm btn-block addpost-btn btn-remove" onclick="resetForm()" data-toggle="modal" data-target="#addpost"><i class="fa fa-plus ml-0 mr-1" aria-hidden="true"></i> Add Post</button>
+<div class="threads-footer">
+<div class="footer-opt">
+<div class="tab-content">
+<div id="hicon1" class="tab-pane fade in thr-icon home-icon active"></div>
+<div id="hicon2" class="tab-pane fade thr-icon home-icon2"></div>
+</div>
+<div class="thr-icon search-icon"></div>
+<div class="thr-icon edite-icon"></div>
+<div class="thr-icon like-icon"></div>
+<div class="thr-icon user-icon"></div>
+</div>
+<div class="footer-border" style="display: none;">
+<span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center download-btn">
+<div id="myProgress" style="display: none;">
+<div id="myBar" style="width: 100%;"><span id="per">100%</span></div>
+</div>
+<button data-name="threads_post" class="btn " id="snapshot"  style="margin-bottom: 30px;">Download Threads post as image<i class="fa fa-download" aria-hidden="true"></i></button>
+</div>
+
+<div class="modal fade modal-form-input" id="addpost" role="dialog">
+<div class="modal-dialog modal-sm">
+
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close close-btn" data-dismiss="modal">&times;</button>
+<p class="modal-title">Add Post</p>
+<input type="hidden" name="message-box-id" class="message-box-id">
+</div>
+<div class="modal-body">
+<p class="error-msg"></p>
+<p class="form-label">Create profile:-</p>
+<div class="d-flex">
+<div class="post-profile-box">
+<label class="input-img m-0 profile-img" for="postprofile">
+<input name="postprofile" type="file" id="postprofile">
+<img src="assets/images/addimgbg.jpg" alt="Instagram Highlight" class="th_privew_profile preview-profile" height="154" width="264" loading="lazy">
+</label>
+</div>
+<div class="pl-1">
+<label for="user_name">
+<input type="text" name="username" class="form-control username" placeholder="User name" id="user_name">
+</label>
+<div class="d-flex">
+<label class="d-inline-flex align-items-center mt-2" for="verifyprofle">
+<span class="switch mr-2">
+<input name="verifyprofle" type="checkbox" id="verifyprofle" value="verifyprofle"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">verified</span>
+</label>
+<label class="d-inline-flex align-items-center mt-2" for="follow">
+<span class="switch mr-2">
+<input name="follow" type="checkbox" id="follow" value="follow"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">Follow</span>
+</label>
+</div>
+</div>
+</div>
+<div class="row mt-3">
+<div class="col-sm-4">
+<label class="from-label" for="post_time">post time:-</label>
+</div>
+<div class="col-sm-8 pl-0 d-flex">
+<input type="number" name="post_time" class="form-control" id="post_time" value="30">
+<div class="form-element arrow">
+<select name="post_time_label" id="post_time_label" class="form-control">
+<option value="now" selected>now</option>
+<option value="s">s</option>
+<option value="m">m</option>
+<option value="h">h</option>
+<option value="d">d</option>
+<option value="y">y</option>
+</select>
+</div>
+</div>
+</div>
+<p class="form-label mt-2 mb-1">Add Post Content:-</p>
+<div class="content-input-wrap">
+<div class="post-privew">
+<div class="file-preview"></div>
+<div class="d-flex file-preview-opt">
+<div class="bold mr-2">set as :</div>
+<label class="form-label mr-2">
+<input type="radio" name="setimage" value="image" checked="checked"><span class="radio-text">image</span>
+</label>
+<label class="form-label">
+<input type="radio" name="setimage" value="video"><span class="radio-text">video</span>
+</label>
+</div>
+</div>
+<div class="post-content-box">
+<textarea name="message-input" class="post-text form-control message-input" rows="5" placeholder="Add post content"></textarea>
+<label class="fileinput fileinput-img m-0" for="image_btn">
+<span class="btn btn-file btn-sm">
+<i class="fa fa-picture-o m-0" aria-hidden="true"></i>
+<input type="file" name="message-image-input" class="message-image-input" id="image_btn">
+<input type="hidden" name="hidden-message-image" class="hidden-message-image" value>
+</span>
+</label>
+
+</div>
+</div>
+<div class="row mt-2">
+<div class="col-sm-4 d-flex">
+<label for="comment_num">
+<span>comment:- </span>
+<input type="text" name="comment_num" value="15" id="comment_num" max="3" class="form-control">
+</label>
+</div>
+<div class="col-sm-4">
+<label for="repost_num">
+<span>repost:- </span>
+<input type="text" name="repost_num" value="15" id="repost_num" max="3" class="form-control">
+</label>
+</div>
+<div class="col-sm-4">
+<label for="like_num">
+<span>like:- </span>
+<input type="text" name="like_num" value="15" id="like_num" max="3" class="form-control">
+</label>
+</div>
+</div>
+<label class="d-inline-flex align-items-center mt-2 mr-2" for="msg_like">
+<span class="switch mr-2">
+<input name="msg_like" value="like" type="checkbox" id="msg_like"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">Post Like</span>
+</label>
+<label class="d-inline-flex align-items-center mt-2" for="replie">
+<span class="switch mr-2">
+<input name="replie" value="replie" type="checkbox" id="replie"><span class="switch-btn"></span>
+</span>
+<span class="switch-text">show comment thread</span>
+</label>
+<div class="post-rep" id="show_rep" style="display: none;">
+<label class="form-label mr-2">Show profile in comment:</label>
+<div class="form-element arrow">
+<select id="profileLayout" class="form-control">
+<option value="profileL1" selected>show 1</option>
+<option value="profileL2">show 2</option>
+<option value="profileL3">show 3</option>
+</select>
+</div>
+</div>
+</div>
+
+<div class="modal-footer">
+<button type="button" class="thr-post-btn btn btn-primery">Post</button>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="modal fade modal-form-input" id="crop-profile-modal1" role="dialog">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close p-close-btn-modal" data-dismiss="modal">&times;</button>
+<p class="modal-title mb-0">Crop Profile</p>
+</div>
+<div class="modal-body d-flex justify-content-center">
+<label class="input-img img-profile-main-tag1">
+<input type="file" name="profile-img1" id="profile-img1" accept="image/*">
+<img src="assets/images/addimgbg.jpg" alt="profile image" class="whatsapp_privew_profile1" height="154" width="264" loading="lazy">
+</label>
+<div id="crop-profile1"></div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-primery btn-crop-profile1">Done</button>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="modal fade modal-form-input" id="crop-profile-modal" role="dialog">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close p-close-btn-modal" data-dismiss="modal">&times;</button>
+<p class="modal-title mb-0">Crop Profile</p>
+</div>
+<div class="modal-body d-flex justify-content-center">
+<label class="input-img img-profile-main-tag">
+<input type="file" name="profile-img" id="profile-img" accept="image/*">
+<img src="assets/images/addimgbg.jpg" alt="post image" class="whatsapp_privew_profile" height="154" width="264" loading="lazy">
+</label>
+<div id="crop-profile"></div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-primery btn-crop-profile">Done</button>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<script src="assets/js/croppie.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jasny-bootstrap.min.js"></script>
+
+<script src="assets/js/unminify/threads_post.js"></script>
+
+
+
+<script src="assets/js/html2canvas0e52.js?01.08.2024.05.36"></script>
+<script src="assets/js/canvas2image0e52.js?01.08.2024.05.36"></script>
+<script src="assets/js/custom0e52.js?01.08.2024.05.36"></script>
+<script src="assets/js/mail0e52.js?01.08.2024.05.36"></script>
+
+<script>
+	var bad = ["4r5e", "5h1t", "5hit", "a55", "anal", "anus", "ar5e", "arrse", "arse", "ass", "ass-fucker", "asses", "assfucker", "assfukka", "asshole", "assholes", "asswhole", "a_s_s", "b!tch", "b00bs", "b17ch", "b1tch", "ballbag", "balls", "ballsack", "bastard", "beastial", "beastiality", "bellend", "bestial", "bestiality", "bi+ch", "biatch", "bitch", "bitcher", "bitchers", "bitches", "bitchin", "bitching", "bloody", "blow job", "blowjob", "blowjobs", "boiolas", "bollock", "bollok", "boner", "boob", "boobs", "booobs", "boooobs", "booooobs", "booooooobs", "breasts", "buceta", "bugger", "bum", "bunny fucker", "butt", "butthole", "buttmuch", "buttplug", "c0ck", "c0cksucker", "carpet muncher", "cawk", "chink", "cipa", "cl1t", "clit", "clitoris", "clits", "cnut", "cock", "cock-sucker", "cockface", "cockhead", "cockmunch", "cockmuncher", "cocks", "cocksuck", "cocksucked", "cocksucker", "cocksucking", "cocksucks", "cocksuka", "cocksukka", "cok", "cokmuncher", "coksucka", "coon", "cox", "crap", "cum", "cummer", "cumming", "cums", "cumshot", "cunilingus", "cunillingus", "cunnilingus", "cunt", "cuntlick", "cuntlicker", "cuntlicking", "cunts", "cyalis", "cyberfuc", "cyberfuck", "cyberfucked", "cyberfucker", "cyberfuckers", "cyberfucking", "d1ck", "damn", "dick", "dickhead", "dildo", "dildos", "dink", "dinks", "dirsa", "dlck", "dog-fucker", "doggin", "dogging", "donkeyribber", "doosh", "duche", "dyke", "ejaculate", "ejaculated", "ejaculates", "ejaculating", "ejaculatings", "ejaculation", "ejakulate", "f u c k", "f u c k e r", "f4nny", "fag", "fagging", "faggitt", "faggot", "faggs", "fagot", "fagots", "fags", "fanny", "fannyflaps", "fannyfucker", "fanyy", "fatass", "fcuk", "fcuker", "fcuking", "feck", "fecker", "felching", "fellate", "fellatio", "fingerfuck", "fingerfucked", "fingerfucker", "fingerfuckers", "fingerfucking", "fingerfucks", "fistfuck", "fistfucked", "fistfucker", "fistfuckers", "fistfucking", "fistfuckings", "fistfucks", "flange", "fook", "fooker", "fuck", "fucka", "fucked", "fucker", "fuckers", "fuckhead", "fuckheads", "fuckin", "fucking", "fuckings", "fuckingshitmotherfucker", "fuckme", "fucks", "fuckwhit", "fuckwit", "fudge packer", "fudgepacker", "fuk", "fuker", "fukker", "fukkin", "fuks", "fukwhit", "fukwit", "fux", "fux0r", "f_u_c_k", "gangbang", "gangbanged", "gangbangs", "gaylord", "gaysex", "goatse", "God", "god-dam", "god-damned", "goddamn", "goddamned", "hardcoresex", "hell", "heshe", "hoar", "hoare", "hoer", "homo", "hore", "horniest", "horny", "hotsex", "jack-off", "jackoff", "jap", "jerk-off", "jism", "jiz", "jizm", "jizz", "kawk", "knob", "knobead", "knobed", "knobend", "knobhead", "knobjocky", "knobjokey", "kock", "kondum", "kondums", "kum", "kummer", "kumming", "kums", "kunilingus", "l3i+ch", "l3itch", "labia", "lust", "lusting", "m0f0", "m0fo", "m45terbate", "ma5terb8", "ma5terbate", "masochist", "master-bate", "masterb8", "masterbat*", "masterbat3", "masterbate", "masterbation", "masterbations", "masturbate", "mo-fo", "mof0", "mofo", "mothafuck", "mothafucka", "mothafuckas", "mothafuckaz", "mothafucked", "mothafucker", "mothafuckers", "mothafuckin", "mothafucking", "mothafuckings", "mothafucks", "mother fucker", "motherfuck", "motherfucked", "motherfucker", "motherfuckers", "motherfuckin", "motherfucking", "motherfuckings", "motherfuckka", "motherfucks", "muff", "mutha", "muthafecker", "muthafuckker", "muther", "mutherfucker", "n1gga", "n1gger", "nazi", "nigg3r", "nigg4h", "nigga", "niggah", "niggas", "niggaz", "nigger", "niggers", "nob", "nob jokey", "nobhead", "nobjocky", "nobjokey", "numbnuts", "nutsack", "orgasim", "orgasims", "orgasm", "orgasms", "p0rn", "pawn", "pecker", "penis", "penisfucker", "phonesex", "phuck", "phuk", "phuked", "phuking", "phukked", "phukking", "phuks", "phuq", "pigfucker", "pimpis", "piss", "pissed", "pisser", "pissers", "pisses", "pissflaps", "pissin", "pissing", "pissoff", "poop", "porn", "porno", "pornography", "pornos", "prick", "pricks", "pron", "pube", "pusse", "pussi", "pussies", "pussy", "pussys", "rectum", "retard", "rimjaw", "rimming", "s hit", "s.o.b.", "sadist", "schlong", "screwing", "scroat", "scrote", "scrotum", "semen", "sex", "sh!+", "sh!t", "sh1t", "shag", "shagger", "shaggin", "shagging", "shemale", "shi+", "shit", "shitdick", "shite", "shited", "shitey", "shitfuck", "shitfull", "shithead", "shiting", "shitings", "shits", "shitted", "shitter", "shitters", "shitting", "shittings", "shitty", "skank", "slut", "sluts", "smegma", "smut", "snatch", "son-of-a-bitch", "spac", "spunk", "s_h_i_t", "t1tt1e5", "t1tties", "teets", "teez", "testical", "testicle", "tit", "titfuck", "tits", "titt", "tittie5", "tittiefucker", "titties", "tittyfuck", "tittywank", "titwank", "tosser", "turd", "tw4t", "twat", "twathead", "twatty", "twunt", "twunter", "v14gra", "v1gra", "vagina", "viagra", "vulva", "w00se", "wang", "wank", "wanker", "wanky", "whoar", "whore", "willies", "willy", "xrated", "xxx"];
+</script>
+</body>
+
+</html>

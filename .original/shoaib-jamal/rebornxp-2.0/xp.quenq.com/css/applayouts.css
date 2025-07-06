@@ -1,0 +1,1918 @@
+/*NOTEPAD*/
+app appcontents appcontentholder.notepad div[name="contentinput"]{
+	outline: none;
+	overflow-y: auto;
+}
+
+/* IMAGE VIEWER */
+app appcontents .imgviewer imagewrapper{
+	height: calc(100% - 38px);
+	width: calc(100% - 2px);
+	margin: 0;
+	display: block;
+	white-space: nowrap;
+	text-align: center;
+}
+app appcontents .imgviewer span.imagehelper{
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+app appcontents .imgviewer imagewrapper img{
+	display: inline-block;
+	vertical-align: middle;
+	height: initial;
+	max-height: 100%;
+	max-width: 100%;
+	border: 1px solid black;
+}
+app appcontents .imgviewer imgviewcontrols{
+	height: 38px;
+	width: 100%;
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+app appcontents .imgviewer imgviewcontrols ul{
+	height: 22px;
+	display: block;
+	position: relative;
+	margin: 9px auto 14px;
+	overflow: hidden;
+	padding: 0;
+}
+app appcontents .imgviewer imgviewcontrols li{
+	width: 16px;
+	height: 16px;
+	padding: 2px 3px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	margin-bottom: 8px;
+	display: inline-block;
+	/*background:url("/res/ui/imgviewer.png");*/
+}
+app appcontents .imgviewer imgviewcontrols li:after{
+	width: 16px;
+	height: 16px;
+	display: block;
+	content: " ";
+	background:url("/res/ui/imgviewer.png");
+}
+
+/*hover state*/
+app appcontents .imgviewer imgviewcontrols li:hover{
+	filter: brightness(80%) saturate(110%) contrast(150%);
+	border: 1px solid #cecec3;
+	background: linear-gradient(to bottom, #fefefd, #f1f1ea);
+	box-shadow: inset 0 1px 2px #fff,inset 0px -1px 2px #d7d2c6, inset -1px 0 0px #d7d2c6aa; 
+}
+app appcontents .imgviewer imgviewcontrols li:active{
+	filter: brightness(80%) saturate(110%) contrast(150%);
+	border: 1px solid #9d9d92;
+	background: linear-gradient(to bottom, #e7e5e0, #e0dfd7);
+	box-shadow: inset 1px 1px 1px #dcdad1, inset 0 -1px 1px #ebeae5;
+}
+/*active state*/
+app appcontents .imgviewer imgviewcontrols li:active:after{
+	transform: translate(1px, 1px);
+}
+app appcontents .imgviewer imgviewcontrols divide{
+	height: 20px;
+	width: 1px;
+	background-color: #c0c0c0;
+	display: inline-block;
+	margin: 0 4px 9px 4px;
+}
+
+/*sprites for image viewer*/
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(2):after{
+	background:url("/res/ui/imgviewer.png") -16px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(3):after{
+	background:url("/res/ui/imgviewer.png") -80px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(4):after{
+	background:url("/res/ui/imgviewer.png") -96px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(5):after{
+	background:url("/res/ui/imgviewer.png") -128px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(6):after{
+	background:url("/res/ui/imgviewer.png") -32px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(7):after{
+	background:url("/res/ui/imgviewer.png") -48px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(8):after{
+	background:url("/res/ui/imgviewer.png") -176px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(9):after{
+	background:url("/res/ui/imgviewer.png") -192px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(10):after{
+	background:url("/res/ui/imgviewer.png") -400px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(11):after{
+	background:url("/res/ui/imgviewer.png") -320px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(12):after{
+	background:url("/res/ui/imgviewer.png") -352px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(13):after{
+	background:url("/res/ui/imgviewer.png") -416px 0;
+}
+app appcontents .imgviewer imgviewcontrols li:nth-of-type(14):after{
+	background:url("/res/ui/imgviewer.png") -384px 0;
+}
+
+/* INTERNET EXPLORER */
+
+app appcontents .iexplore iframecontents iframe{
+	width: 100%;
+	height: calc(100% - 87px);
+	border: none;
+}
+app appcontents .iexplore iframecontents iframe body{
+	background-color: #f00 !important;
+}
+app appcontents .iexplore appnavigation.iexplorenav ul.navbuttons li{
+	padding: 9px 3px 12px 0;
+}
+
+/* DISPLAY PROPERTIES */
+
+/*hide inactive tabs*/
+app appcontents .displayprops tabcontent:not(.selected){
+	display: none;
+}
+app appcontents .displayprops .previewcanvas{
+	margin-top: 10px;
+	display: block;
+	border: 1px solid;
+	border-color: #716f64 #f1efe2 #f1efe2 #716f64;
+	box-shadow: 1px 1px 1px 0 #e0dfe3, -1px -1px 1px 0 #9d9da1;
+	background-size: cover;
+}
+
+/*theme tab*/
+app appcontents .displayprops #tab_themes span{
+	padding-top: 5px;
+	display: block;
+}
+app appcontents .displayprops #tab_themes span.descriptor{
+	padding-top: 10px;
+}
+app appcontents .displayprops #tab_themes select{
+	width: 186px;
+	margin: 0;
+}
+app appcontents .displayprops #tab_themes .previewcanvas{
+	background-size: cover;
+}
+
+app appcontents .displayprops #tab_themes .previewcanvas, app appcontents .displayprops #tab_appearance previewcanvas{
+	width:347px;
+	height:219px;
+}
+app appcontents .displayprops #tab_themes previewcanvas spoofapp{
+	width: 215px;
+	height: 125px;
+	top: 179px;
+	left: 57px;
+}
+app appcontents .displayprops #tab_themes previewcanvas appcontentholder{
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	overflow-y: scroll;
+}
+app appcontents .displayprops #tab_themes previewcanvas app captionbutton:not(.closebtn){
+	display: inline-block;
+	margin: 1px 1px 1px 2px;
+}
+app appcontents .displayprops #tab_themes previewcanvas icon{
+	bottom: 62px;
+	right: 48px;
+	position: absolute;
+}
+app appcontents .displayprops #tab_themes previewcanvas icon img{
+	width: 32px;
+	height: 32px;
+}
+
+/*display tab*/
+app appcontents .displayprops #tab_desktop #previewdisplay, app appcontents .displayprops #tab_screensaver #previewdisplay, app appcontents .displayprops #tab_settings #previewdisplay{
+	width: initial;
+	height: initial;
+	border: none;
+	display: block;
+	margin: 12px auto 8px;
+}
+app appcontents .displayprops #tab_desktop #wppreview{
+	width: 152px;
+	height: 112px;
+	display: inline;
+	position: absolute;
+	top: 27px;
+	left: 111px;
+	background-size: cover !important;
+}
+app appcontents .displayprops #tab_desktop scrollbox{
+	width: 262px;
+	height: 110px;
+}
+app appcontents .displayprops #tab_desktop winbutton#custombackdrop{
+	margin-left: 0;
+}
+app appcontents .displayprops #tab_desktop controls_right{
+	display: inline-block;
+	width:75px;
+	height: 118px;
+	float: right;
+	margin: -120px -4px 0 0;
+}
+app appcontents .displayprops #tab_desktop controls_right span{
+	margin-top: 7px;
+	display: block;
+}
+app appcontents .displayprops #tab_desktop controls_right colorpicker{
+	width: calc(100% - 11px);
+	height: 9px;
+	border: 1px solid black;
+	display: inline-block;
+	margin: -4px 3px -1px -4px;
+	vertical-align: middle;
+}
+app appcontents .displayprops #tab_desktop controls_right winbutton span{
+	display: inline-block;
+	font-size: 8px;
+	vertical-align: middle;
+	margin: -4px -4px 0 2px;
+}
+
+/*screensaver tab*/
+app appcontents .displayprops #tab_screensaver iframe{
+	width: 1024px;
+	height: 768px;
+	transform: scale(0.148, 0.146);
+	position: absolute;
+	top: -303px;
+	left: -327px;
+	overflow: hidden;
+}
+
+app appcontents .displayprops #tab_screensaver grouper#screensaver #topspacer{
+	display: block;
+	margin: -3px;
+}
+app appcontents .displayprops #tab_screensaver grouper#screensaver select{
+	width: 170px;
+}
+app appcontents .displayprops #tab_screensaver grouper#screensaver input[type="number"]{
+	width: 45px;
+}
+app appcontents .displayprops #tab_screensaver grouper#screensaver form{
+	width: 200px;
+	display: inline-block;
+	margin-left: 4px;
+	vertical-align: middle;
+}
+
+app appcontents .displayprops #tab_screensaver grouper#poweroptions span{
+	width: 240px;
+	display: inline-block;
+	vertical-align: top;
+}
+app appcontents .displayprops #tab_screensaver grouper#poweroptions winbutton{
+	float: right;
+	margin-top: -10px;
+}
+
+/*appearance tab*/
+
+app appcontents .displayprops #tab_appearance .previewcanvas{
+	width: 347px;
+	height: 185px;
+	margin-top: 13px;
+}
+
+app appcontents .displayprops #tab_appearance span{
+	padding-top: 10px;
+	display: block;
+}
+app appcontents .displayprops #tab_appearance select{
+	margin: 0;
+	width: 195px;
+}
+app appcontents .displayprops #tab_appearance buttoncontainer{
+	position: absolute;
+	bottom: 7px;
+	right:14px;
+	width: 85px;
+}
+app appcontents .displayprops #tab_appearance buttoncontainer winbutton{
+	margin: 4px;
+}
+app appcontents .displayprops #tab_appearance buttoncontainer btnopt{
+	width: 69px;
+}
+
+/* internal theme preview stuff */
+
+.displayprops spoofapp{
+	position: absolute;
+	border-radius: 7px 7px 0 0;
+	border: 1px solid;
+}
+app .displayprops spoofapp captionbutton:not(.closebtn){
+	display: inline-block;
+}
+app .displayprops spoofapp appcontrols captionbutton,
+app .displayprops spoofapp appcontrols captionbutton:hover,
+app .displayprops spoofapp appcontrols captionbutton:active{
+	margin:1px;
+}
+
+/* ------ spoof themes - blue ------ */
+
+.displayprops  previewcanvas.blue{
+	background: #004e98;
+}
+.displayprops previewcanvas.blue spoofapp{
+	border-color: #0058ee #00138c #00138c #0731d9;
+	background-color: #001b9b;
+}
+.displayprops previewcanvas.blue spoofapp.inactive{
+	border-color: #688de0 #5b5ec5 #4f53bc #5b68cd;
+	background-color: #6d74cd;
+}
+.displayprops previewcanvas.blue spoofapp appcontents{
+	border-color: #0144d0 #003ddc #0048f1 #0855dd;
+	box-shadow: -1px 0 0 #166aee, 1px 0 0 #001ea1, 0 1px 0 #001ea1;
+}
+.displayprops previewcanvas.blue spoofapp.inactive appcontents{
+	border-color: #778edb #f00 #7586dc #758cdc;
+	box-shadow: -1px 0 0 #758cdd, 1px 0 0 #0f0, 0 1px 0 #6d74cd;
+}
+.displayprops previewcanvas.blue spoofapp appheader{
+	background: 
+	radial-gradient(circle at 0% 20%, #0032c1 0%, #0032c188 1%, #0032c100 2%, #0032c100 100%),
+	radial-gradient(circle at 100% 20%, #0032c1 0%, #0032c188 1%, #0032c100 2%, #0032c100 100%),
+	linear-gradient(to bottom,#3d95ff 0%, #2b90ff 7%, #0372ff 9%, #0054e3 14%, #0054e3 19%, #0058ee 50%, #026afe 80%, #026afe 90%, #0065fd 91%, #0060f9 94%, #0046e0 100%);
+	box-shadow: inset 2px 0 0 #0058ee66, inset 1px 0 0 #0058ee, inset -2px 0 0 #0026ac66, inset -1px 0 0 #0026ac;
+	color: #fff;
+	text-shadow: 1px 1px #0a1883;
+	font-weight: 600;
+}
+.displayprops previewcanvas.blue spoofapp.inactive appheader{
+	background: 
+	radial-gradient(circle at 0% 25%, #7276d1 0%, #7276d1aa 1%, #7276d100 2%, #7276d100 100%),
+	radial-gradient(circle at 100% 25%, #7276d1 0%, #7276d1aa 1%, #7276d100 2%, #7276d100 100%),
+	linear-gradient(to bottom,#9ab4e9 0%, #9db9eb 7%, #8bb0e9 9%, #7b9de1  14%, #7996de 19%, #7a96e0 50%, #7fa2e6 80%, #80a5e6 90%, #7fa2e5 91%, #7b99e1 94%, #778edb 100%);
+	box-shadow: inset 2px 0 0 #747cd566, inset 1px 0 0 #747cd5, inset -2px 0 0 #6e6dc566, inset -1px 0 0 #6e6dc5;
+	color: #fff;
+	text-shadow: none;
+	font-weight: 500;
+}
+
+/*caption buttons*/
+.displayprops previewcanvas.blue spoofapp captionbutton,
+.displayprops previewcanvas.blue spoofapp captionbutton:active{
+	background: radial-gradient(at 10% 10%, #9ab7faff 0%, #9ab7fa44 30%, #9ab7fa00 60%), radial-gradient(at 85% 40%, #2766f5ff 0%, #2766f555 40%, #2766f500 50%), #4778f6 ;
+	box-shadow: inset 2px 2px 3px #7099f8, inset -1px -1px 2px #196df4;		
+}
+.displayprops previewcanvas.blue spoofapp captionbutton img,
+.displayprops previewcanvas.blue spoofapp captionbutton:active img{
+	filter: none;
+}
+.displayprops previewcanvas.blue spoofapp captionbutton:after,
+.displayprops previewcanvas.blue spoofapp captionbutton:active:after{
+	box-shadow: inset 1px 1px 1px #3e73f5, inset -1px -1px 1px #0f47c0;
+	border: 1px solid #fff;
+}
+.displayprops previewcanvas.blue spoofapp captionbutton.closebtn,
+.displayprops previewcanvas.blue spoofapp captionbutton.closebtn:active{
+	background: radial-gradient(at 10% 10%, #f1ac9aff 0%, #f1ac9a44 30%, #f1ac9a00 60%), radial-gradient(at 85% 40%, #e34d22ff 0%, #e34d2222 40%, #e34d2200 50%), #e66a4d;
+	box-shadow: inset 2px 2px 3px #ec937c, inset 1px 1px 2px #e34d22;	
+}
+.displayprops previewcanvas.blue spoofapp captionbutton.closebtn img,
+.displayprops previewcanvas.blue spoofapp captionbutton.closebtn:active img{
+	filter: none;
+}
+.displayprops previewcanvas.blue spoofapp captionbutton.closebtn:after,
+.displayprops previewcanvas.blue spoofapp captionbutton.closebtn:active:after{
+	box-shadow: inset 1px 1px 1px #e45f3e, inset -1px -1px 1px #ae2400;
+	border: 1px solid #fff;
+}
+
+/*inactive caption buttons*/
+.displayprops previewcanvas.blue spoofapp.inactive captionbutton{
+	background: radial-gradient(at 10% 10%, #88a2eaff 0%, #88a2ea44 30%, #88a2ea00 60%), radial-gradient(at 85% 40%, #4f75e8ff 0%, #4f75e855 40%, #4f75e800 50%), #5f80e9;
+	box-shadow: inset 2px 2px 3px #7a96ea, inset -1px -1px 2px #4479eb;	
+}
+.displayprops previewcanvas.blue spoofapp.inactive captionbutton img{
+	filter: none;
+}
+.displayprops previewcanvas.blue spoofapp.inactive captionbutton:after{
+	box-shadow: inset 1px 1px 1px #5a80e8, inset -1px -1px 1px #4566ce;
+	border: 1px solid #bdcaee;
+}
+.displayprops previewcanvas.blue spoofapp.inactive captionbutton.closebtn{
+	background: radial-gradient(at 10% 10%, #b49cbaff 0%, #b49cba66 30%, #b49cba00 60%), radial-gradient(at 85% 40%, #ad687eff 0%, #ad687e22 40%, #ad687e00 50%), #ae7891;
+	box-shadow: inset 2px 2px 3px #b396b3, inset -1px -1px 2px #b16775;
+}
+.displayprops previewcanvas.blue spoofapp.inactive captionbutton.closebtn img{
+	filter: none;
+}
+.displayprops previewcanvas.blue spoofapp.inactive captionbutton.closebtn:after{
+	box-shadow: inset 1px 1px 1px #ae768c, inset -1px -1px 1px #955b76;
+	border: 1px solid #bdcaee;
+}
+
+.displayprops previewcanvas.blue #spoof3 appcontents{
+	background-color: #ece9d8;
+}
+
+.displayprops previewcanvas.blue spoofapp winbutton,
+.displayprops previewcanvas.blue spoofapp winbutton:hover,
+.displayprops previewcanvas.blue spoofapp winbutton:active{
+
+	/*grab the winbutton.default value for the background here, since it's the only instance it's shown in*/
+	background: linear-gradient(to bottom,#cee7ff 0%, #bcd4f6 10%, #89ade4 95%, #6982ee 100%);
+	box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77;
+	border: 1px solid #003c74;
+}
+.displayprops previewcanvas.blue spoofapp winbutton btnopt,
+.displayprops previewcanvas.blue spoofapp winbutton:hover btnopt,
+.displayprops previewcanvas.blue spoofapp winbutton:active btnopt{
+
+	/*ditto here, get winbutton.default btnopt*/
+	background: linear-gradient(to bottom, #fcfcfb, #ecebe6);
+	color:#000;
+	box-shadow: none;
+}
+
+/* ------ spoof themes - olive green ------ */
+
+.displayprops  previewcanvas.homestead{
+	background: #9dacbd;
+}
+.displayprops previewcanvas.homestead spoofapp{
+	border-color: #8ba169 #5e764f #5e764f #8ba169;
+	background-color: #93a274;
+}
+.displayprops previewcanvas.homestead spoofapp.inactive{
+	border-color: #d7dbbd #b2b6a5 #b6bdab #c0c7b1;
+	background-color: #c9cdb4;
+}
+.displayprops previewcanvas.homestead spoofapp appcontents{
+	border-color: #96a867 #bac891 #cbd798 #a4b27f;
+	box-shadow: -1px 0 0 #abbd85, 1px 0 0 #899b6d , 0 1px 0 #899b6d;
+}
+.displayprops previewcanvas.homestead spoofapp.inactive appcontents{
+	border-color: #ccd0b7 #dde2c5 #dee2c6  #d6d8be;
+	box-shadow: -1px 0 0 #e0e2c8, 1px 0 0 #d7dbc1 , 0 1px 0 #bfc3b0;
+}
+.displayprops previewcanvas.homestead spoofapp appheader{
+	background: 
+	radial-gradient(circle at 0% 25%, #8ba169 0%, #93a274aa 1%, #93a27400 2%, #93a27400 100%),
+	radial-gradient(circle at 100% 25%, #8ba169 0%, #93a274aa 1%, #93a27400 2%, #93a27400 100%),
+	linear-gradient(to bottom,#e9f2c7 0%, #e0e7b8 7%, #c2cd95 9%, #a7b580 14%, #a7b580 19%, #b0c088 50%, #c2cd95 80%, #c2cd95 90%, #becb92 92%, #a7b680 98%, #a7b680 100%);
+	box-shadow: inset 2px 0 0 #8ba16966, inset 1px 0 0 #8ba169, inset -2px 0 0 #7a896266, inset -1px 0 0 #7a8962;
+	color: #fff;
+	text-shadow: 1px 1px #41400a;
+	font-weight: 600;
+}
+.displayprops previewcanvas.homestead spoofapp.inactive appheader{
+	background: 
+	radial-gradient(circle at 0% 25%, #c4c9b1 0%, #c8cdb4ff 1%, #c8cdb400 2%, #c8cdb400 100%),
+	radial-gradient(circle at 100% 25%, #c4c9b1 0%, #c8cdb4ff 1%, #c8cdb400 2%, #c8cdb400 100%),
+	linear-gradient(to bottom,#f1f1da 0%, #edebd3 7%, #e1e0c3 9%, #d4d7bb 14%, #d4d7bb 19%, #d7dabd 50%, #dee0c2 80%, #dbdec0 90%, #d9dbbd 92%, #ccd0b7 98%, #ccd0b7 100%);
+	box-shadow: inset 2px 0 0 #c4c9b166, inset 1px 0 0 #c4c9b1, inset -2px 0 0 #bfc5ae66, inset -1px 0 0 #bfc5ae;
+	color: #fff;
+	text-shadow: none;
+	font-weight: 500;
+}
+
+/*caption buttons*/
+.displayprops previewcanvas.homestead spoofapp captionbutton,
+.displayprops previewcanvas.homestead spoofapp captionbutton:active{
+	/*background: radial-gradient(circle at 15% 15%, #c7c7beff 0%, #c7c7be00 12%, #c7c7be00 100%), #8f9e6a;*/
+	background: radial-gradient(at 10% 10%, #c7c7beff 0%, #c7c7be44 30%, #c7c7be00 60%), radial-gradient(at 85% 40%, #8d9a64ff 0%, #8d9a6455 40%, #8d9a6400 50%), #9aa878;
+	box-shadow: inset 2px 2px 3px #b7c3a2, inset -1px -1px 2px #708148;	
+}
+.displayprops previewcanvas.homestead spoofapp captionbutton img,
+.displayprops previewcanvas.homestead spoofapp captionbutton:active img{
+	filter: none;
+}
+.displayprops previewcanvas.homestead spoofapp captionbutton:after,
+.displayprops previewcanvas.homestead spoofapp captionbutton:active:after{
+	box-shadow: inset 1px 1px 1px #98a77b, inset -1px -1px 1px #768753;
+	border: 1px solid #fff;	
+}
+.displayprops previewcanvas.homestead spoofapp captionbutton.closebtn,
+.displayprops previewcanvas.homestead spoofapp captionbutton.closebtn:active{
+	background: radial-gradient(at 10% 10%, #e8b4a1ff 0%, #e8b4a144 30%, #e8b4a100 60%), radial-gradient(at 85% 40%, #d25e30aa 0%, #d25e3022 40%, #d25e3000 50%), #d67048;
+	box-shadow: inset 2px 2px 3px #e6aa96, inset -1px -1px 3px #b03c12;	
+}
+.displayprops previewcanvas.homestead spoofapp captionbutton.closebtn img,
+.displayprops previewcanvas.homestead spoofapp captionbutton.closebtn:active img{
+	filter: none;
+}
+.displayprops previewcanvas.homestead spoofapp captionbutton.closebtn:after,
+.displayprops previewcanvas.homestead spoofapp captionbutton.closebtn:active:after{
+	box-shadow: inset 1px 1px 1px #d56f4d, inset -1px -1px 1px #9e3510;
+	border: 1px solid #fff;
+}
+
+/*inactive caption buttons*/
+.displayprops previewcanvas.homestead spoofapp.inactive captionbutton{
+	background: radial-gradient(at 10% 10%, #ecf4ddff 0%, #ecf4dd44 30%, #ecf4dd00 60%), radial-gradient(at 85% 40%, #c3d0aaff 0%, #c3d0aa55 40%, #c3d0aa00 50%), #cddab9;
+	box-shadow: inset 2px 2px 3px #e2ecd2, inset -1px -1px 2px #c0cca2;	
+}
+.displayprops previewcanvas.homestead spoofapp.inactive captionbutton img{
+	filter: none;
+}
+.displayprops previewcanvas.homestead spoofapp.inactive captionbutton:after{
+	box-shadow: inset 1px 1px 1px #cdd9b8, inset -1px -1px 1px #a7b390;
+	border: 1px solid #fff;	
+}
+.displayprops previewcanvas.homestead spoofapp.inactive captionbutton.closebtn{
+	background: radial-gradient(at 10% 10%, #c8b6c4ff 0%, #c8b6c466 30%, #c8b6c500 60%), radial-gradient(at 85% 40%, #ba9292aa 0%, #ba929222 40%, #ba929200 50%), #bc9895;
+	box-shadow: inset 2px 2px 3px #c0a8af, inset -1px -1px 2px #be9993;	
+}
+.displayprops previewcanvas.homestead spoofapp.inactive captionbutton.closebtn img{
+	filter: none;
+}
+.displayprops previewcanvas.homestead spoofapp.inactive captionbutton.closebtn:after{
+	box-shadow: inset 1px 1px 1px #bc9c9e, inset -1px -1px 1px #a9878b;
+	border: 1px solid #fff;
+}
+
+.displayprops previewcanvas.homestead #spoof3 appcontents{
+	background-color: #ece9d8;
+}
+
+.displayprops previewcanvas.homestead spoofapp winbutton,
+.displayprops previewcanvas.homestead spoofapp winbutton:hover,
+.displayprops previewcanvas.homestead spoofapp winbutton:active{
+
+	/*grab the winbutton.default value for the background here, since it's the only instance it's shown in*/
+	background: linear-gradient(to bottom,#c2d18f 0%, #b1cb80 50%, #90c154 95%, #a8a766 100%);
+	box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77;
+	border: 1px solid #376206;
+}
+.displayprops previewcanvas.homestead spoofapp winbutton btnopt,
+.displayprops previewcanvas.homestead spoofapp winbutton:hover btnopt,
+.displayprops previewcanvas.homestead spoofapp winbutton:active btnopt{
+
+	/*ditto here, get winbutton.default btnopt*/
+	background: linear-gradient(to bottom, #fefff2 0%, #fcfbec 10%, #f6f3e1 90%, #f3eedb 100%);
+	color:#000;
+	box-shadow: none;
+}
+
+/* ------ spoof themes - silver ------ */
+
+.displayprops  previewcanvas.metallic{
+	background: #585768;
+}
+.displayprops previewcanvas.metallic spoofapp{
+	border-color: #66667e;
+	background-color: #fbfcfd;
+}
+.displayprops previewcanvas.metallic spoofapp appcontents{
+	border-color: #777792 #66667e #66667e #66667e;
+	box-shadow: -1px 0 0 #fbfcfd, 1px 0 0 #fbfcfd, 0 1px 0 #fbfcfd;
+}
+.displayprops previewcanvas.metallic spoofapp.inactive appcontents{
+	border-color: #cccbd9 #c9c9d7 #c9c9d7 #c9c9d7;
+}
+.displayprops previewcanvas.metallic spoofapp appheader{
+	box-shadow: none;
+	background: radial-gradient(circle at 0% 0%, #7d7e99 0%, #ffffffaa 1%, #ffffff00 1.2%, #ffffff00 100%), radial-gradient(circle at 100% 0%, #7d7e99 0%, #ffffffaa 1%, #ffffff00 1.2%, #ffffff00 100%), linear-gradient(to bottom,#7d7e99 0%, #dadce8 3%, #ffffff 7%, #9a99b1 14%, #a8a9bf 19%, #fff 93%, #83829d 100%);
+	color: #0e1010;
+	text-shadow: 1px 1px #c7c2d1;
+	font-weight: 600;
+}
+.displayprops previewcanvas.metallic spoofapp.inactive appheader{
+	box-shadow: none;
+	background: radial-gradient(circle at 0% 0%, #7d7e99 0%, #ffffffaa 1%, #ffffff00 1.2%, #ffffff00 100%), radial-gradient(circle at 100% 0%, #7d7e99 0%, #ffffffaa 1%, #ffffff00 1.2%, #ffffff00 100%), linear-gradient(to bottom,#babac5 0%, #eceef5 3%, #ffffff 7%, #d7d7e3 14%, #dbdde6 19%, #fff 93%, #cccbd9 100%);
+	color: #a2a1a1;
+	text-shadow: none;
+	font-weight: 500;
+}
+
+/*caption buttons*/
+.displayprops previewcanvas.metallic spoofapp captionbutton,
+.displayprops previewcanvas.metallic spoofapp captionbutton:active{
+	box-shadow: none;
+	background: linear-gradient(#fff 0%, #f0f1f6 5%, #dfdfeb 15%, #a8a7bf 90%, #848ab0 100%);	
+}
+.displayprops previewcanvas.metallic spoofapp captionbutton img,
+.displayprops previewcanvas.metallic spoofapp captionbutton:active img{
+	filter: invert(80%) sepia(300%) hue-rotate(180deg) saturate(200%) drop-shadow(-1px 1px 0px #fff);
+}
+.displayprops previewcanvas.metallic spoofapp captionbutton:after,
+.displayprops previewcanvas.metallic spoofapp captionbutton:active:after{
+	box-shadow: inset 1px 0 0 #d3d4e088, inset -1px 0 0 #d3d4e088;
+	border: 1px solid #6b758f;	
+}
+.displayprops previewcanvas.metallic spoofapp captionbutton.closebtn,
+.displayprops previewcanvas.metallic spoofapp captionbutton.closebtn:active{
+	box-shadow: none;
+	background: linear-gradient(#f3b59d 0%, #e97a6e 33%, #da6263 66%, #d05a5e 85%, #c6545b 95%, #aa3c55 98%);
+}
+.displayprops previewcanvas.metallic spoofapp captionbutton.closebtn img,
+.displayprops previewcanvas.metallic spoofapp captionbutton.closebtn:active img{
+	filter: drop-shadow(0px -1px 0px #4a1320);
+}
+.displayprops previewcanvas.metallic spoofapp captionbutton.closebtn:after,
+.displayprops previewcanvas.metallic spoofapp captionbutton.closebtn:active:after{
+	border: 1px solid #a63944;
+	box-shadow: inset 0 1px 0 #fbe7b5cc, inset 0 -1px 0 #aa3c55aa, inset 1px 0 1px #d75f5f, inset -1px 0 1px #d75f5f;
+}
+
+/*inactive caption buttons*/
+.displayprops previewcanvas.metallic spoofapp.inactive captionbutton{
+	box-shadow: none;
+	background: linear-gradient(#fff 0%, #f0f1f6 5%, #e9e9ef 15%, #cacbd8 90%, #bdbed2 100%);
+}
+.displayprops previewcanvas.metallic spoofapp.inactive captionbutton img{
+	filter: invert(70%) drop-shadow(-1px 1px 0px #fff) opacity(60%);
+}
+.displayprops previewcanvas.metallic spoofapp.inactive captionbutton:after{
+	box-shadow: inset 1px 0 0 #e6e6edaa, inset -1px 0 0 #e6e6edaa;
+	border: 1px solid #a9adb9;
+}
+.displayprops previewcanvas.metallic spoofapp.inactive captionbutton.closebtn{
+	box-shadow: none;
+	background: linear-gradient(#fac8c4 0%, #f2bab9 33%, #eab0b0 66%, #e1a7ab 85%, #dca4a7 95%, #c994a0 98%);
+}
+.displayprops previewcanvas.metallic spoofapp.inactive captionbutton.closebtn img{
+	filter: drop-shadow(0px -1px 0px #ad819a);
+}
+.displayprops previewcanvas.metallic spoofapp.inactive captionbutton.closebtn:after{
+	box-shadow: inset 0 1px 0 #fff9e0, inset 1px 0 1px #e0a7aa66, inset -1px 0 1px #e0a7aa66;
+	border: 1px solid #c79297;
+}
+
+.displayprops previewcanvas.metallic #spoof3 appcontents{
+	background-color: #e0dfe3;
+}
+
+.displayprops previewcanvas.metallic spoofapp winbutton,
+.displayprops previewcanvas.metallic spoofapp winbutton:hover,
+.displayprops previewcanvas.metallic spoofapp winbutton:active{
+
+	/*grab the winbutton.default value for the background here, since it's the only instance it's shown in*/
+	background: linear-gradient(to bottom,#cee7ff 0%, #bcd4f6 10%, #89ade4 95%, #6982ee 100%);
+	box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77;
+	border: 1px solid #003c74;
+}
+.displayprops previewcanvas.metallic spoofapp winbutton btnopt,
+.displayprops previewcanvas.metallic spoofapp winbutton:hover btnopt,
+.displayprops previewcanvas.metallic spoofapp winbutton:active btnopt{
+
+	/*ditto here, get winbutton.default btnopt*/
+	background: linear-gradient(to bottom, #ffffff 0%, #fdfdfd 10%, #c6c5d7 90%, #c6c5d7 100%);
+	color:#000;
+	box-shadow: 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+app appcontents .displayprops #tab_settings #resolutionPreview{
+	position: absolute;
+	top: 27px;
+	left: calc(50% - 77px);
+}
+app appcontents .displayprops #tab_settings container{
+	display: flex;
+	flex-wrap: nowrap;
+	gap:0 10px;
+	height: 100px;
+	margin-bottom: 8px;
+}
+app appcontents .displayprops #tab_settings grouper{
+	display: inline-block;
+	width: 46%;
+}
+app appcontents .displayprops #tab_settings grouper#screenResContain #sliderResolutionValue{
+	text-align: center;
+	width: 100%;
+	display: inherit;
+}
+app appcontents .displayprops #tab_settings grouper#colorContain *:not(:first-child){
+	transform: translateY(-5px);
+}
+app appcontents .displayprops #tab_settings grouper#colorContain #selectColorDepth{
+	margin: 0;
+	width:100%;
+}
+app appcontents .displayprops #tab_settings grouper#colorContain colorstrip{
+	border: 1px solid;
+	border-color: var(--3dLightShade) var(--3dHighlight) var(--3dHighlight) var(--3dLightShade);
+	display: block;
+	width:calc(100% - 1px);
+	height: 13px;
+	margin-top: 5px;
+	background: repeating-linear-gradient(90deg, #ff00bf 0px 1px, #ff0080 1px 3px, #f00 3px 5px, #ff6c00 5px 7px, #ffac00 7px 10px, #ffd200 10px 12px, #ff0 12px 14px, #d9ff00 14px 16px, #acff00 16px 18px, #93ff00 18px 20px, #0f0 20px 22px, #00ff93 22px 24px, #00ffac 24px 27px, #00ffd2 27px 29px, #0ff 29px 31px, #00d9ff 31px 33px, #00acff 33px 35px, #0080ff 35px 37px, #00f 37px 39px, #8000ff 39px 41px, #ac00ff 41px 44px, #d200ff 44px 46px, #f0f 46px 48px, #ff00d9 48px 50px, #ff00bf 50px 51px);
+/*	filter: saturate(1.5);*/
+}
+
+app appcontents .displayprops #tab_settings form{
+	margin-top: -12px;
+}
+
+/* HELP AND SUPPORT */
+app.help{
+	min-width: 520px;
+	min-height: 200px;
+}
+app appcontents .helpsupport{
+	background-color: #6375d6;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: min-content auto;
+}
+app appcontents .helpsupport #helpcontent{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: block;
+	margin: 0;
+	border: none;
+
+	font-family: "Franklin Gothic", "Tahoma", sans-serif;
+}
+
+/* UI TEST APP */
+
+app.dialogbox appcontents appcontentholder.uitest{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 10px;
+	padding-top: 20px;
+	height: inherit;
+}
+app appcontents .uitest grouper{
+	width: inherit;
+	padding: 12px 5px 5px 5px;
+}
+app appcontents .uitest grouper grouperHeading{
+	position: absolute;
+	transform: translateY(-20px);
+}
+app appcontents .uitest grouper#dropdowns{
+	grid-column: 1;
+	grid-row: 1;
+}
+app appcontents .uitest grouper#dropdowns *:not(grouperHeading){
+	/*width: 100%;*/
+	display: block;
+}
+app appcontents .uitest grouper#dropdowns *:not(grouperHeading) img{
+	display: inline;
+}
+app appcontents .uitest grouper#dropdowns select{
+	width: 100%;
+}
+app appcontents .uitest grouper#buttons{
+	grid-column: 1;
+	grid-row: 2;
+}
+app appcontents .uitest grouper#tabs{
+	grid-column: 1;
+	grid-row: 3;
+}
+app appcontents .uitest grouper#tabs tabcontent{
+	height: initial;
+}
+app appcontents .uitest grouper#rangeinputs{
+	grid-column: 2;
+	grid-row: 1;
+}
+app appcontents .uitest grouper#checkboxes{
+	grid-column: 2;
+	grid-row: 2;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+app appcontents .uitest grouper#checkboxes form:nth-of-type(1){
+	grid-row: 1;
+	grid-column: 1;
+}
+app appcontents .uitest grouper#checkboxes form:nth-of-type(2){
+	grid-row: 1;
+	grid-column: 2;
+}
+app appcontents .uitest grouper#checkboxes form li{
+	list-style-type: none;
+	/*padding: 2px 5px;*/
+}
+
+app appcontents .uitest grouper#progressbars{
+	grid-column: 2;
+	grid-row: 3;
+}
+/*app appcontents .uitest grouper#progressbars progress{
+	-moz-appearance: progressbar;
+	width: -moz-available;
+	height: 7px;
+	padding: 2px 3px;
+
+	border: 1px solid #686868;
+	border-radius: 3px;
+	background-color: #fff;
+	box-shadow: inset 1px 1px 1px #bebebe;	
+
+	display: block;
+	box-sizing: content-box;
+}
+app appcontents .uitest grouper#progressbars progress.tall{
+	height: 15px;
+}
+app appcontents .uitest grouper#progressbars progress::-moz-progress-bar {
+	background:repeating-linear-gradient(to right, transparent 0 6px, #fff 6px 8px), linear-gradient(to bottom, #abedac, #28d22b, #abedac);
+}*/
+
+app appcontents .uitest span{
+	grid-column: 3; 
+	grid-row:1 / span 3;
+}
+
+/*#webamp input[type="range"]::-moz-range-track{
+	box-shadow: unset;
+}
+#webamp input[type="range"]::-moz-range-thumb {
+	box-shadow: unset;
+}*/
+
+/* RUN DIALOG */
+app appcontents .rundialog img{
+	margin: 10px 0 15px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+app appcontents .rundialog span{
+	margin: 10px 0 15px;
+	width: auto;
+	height: 32px;
+	display: inline-block;
+	vertical-align: middle;
+}
+app appcontents .rundialog input{
+	width: 270px;
+	height: 15px;
+	margin-left: 4px;
+}
+app appcontents .rundialog btncontainer{
+	position: absolute;
+	bottom: 16px;
+	right: 10px;
+}
+
+/*registry editor*/
+app appcontents .regedit{
+	display: grid;
+	grid-template-rows: 23px auto 23px;
+	grid-template-columns: minmax(40px, 220px) 4px auto;
+	background-color: none;
+	max-width: 100%;
+}
+app appcontents .regedit appnavigation{
+	grid-row: 1;
+	grid-column: 1/4;
+}
+app appcontents .regedit contentpane {
+	/*border: 1px solid #839fbd;
+	overflow: auto;
+	background-color: #fff;
+	display: block;
+
+	LUNA STYLE*/
+}
+app appcontents .regedit contentpane.sidebar{
+	grid-row: 2;
+	grid-column: 1;
+}
+app appcontents .regedit resizer{
+	grid-row: 2;
+	grid-column: 2;
+	cursor: url('/res/ui/cursors/resize_we.cur'), ew-resize;
+}
+app appcontents .regedit contentpane.data{
+	grid-row: 2;
+	grid-column: 3;
+}
+app appcontents .regedit contentpane.data items entry.details-header{
+	/*position: relative;
+	width: 100%;
+	height: 21px;
+	grid-row: 1;
+	grid-column: 1;
+	background-color: #f9fafd;
+	box-shadow: inset 0 -1px 2px #0005;*/
+}
+app appcontents .regedit contentpane.data items entry.details-header *{
+	/*display: inline-block;
+	border-left: 1px solid #0005;
+	margin: 2px 0 2px -10px;
+	padding-left: 10px;*/
+}
+app appcontents .regedit contentpane.data items entry.details-header name{
+	border-left: none;
+}
+
+app appcontents .regedit contentpane.data items{
+	grid-row: 2;
+	grid-column: 1;
+}
+/*app appcontents .regedit contentpane.data items entry{
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 21px 120px 120px auto;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+}*/
+app appcontents .regedit contentpane.data items entry:not(.details-header){
+	height: 17px;
+}
+app appcontents .regedit contentpane.data items entry icon{
+	grid-row: 1;
+	grid-column: 1;
+}
+app appcontents .regedit contentpane.data items entry name{
+	grid-row: 1;
+	grid-column: 2;
+}
+app appcontents .regedit contentpane.data items entry type{
+	grid-row: 1;
+	grid-column: 3;
+}
+app appcontents .regedit contentpane.data items entry data{
+	grid-row: 1;
+	grid-column: 4;
+}
+app appcontents .regedit contentpane.sidebar li item:active{
+	background: none;
+	color: var(--contentText);
+}
+app appcontents .regedit contentpane.sidebar li item span{
+	border: 1px solid transparent;
+	width: min-content;
+	height: min-content;
+}
+app appcontents .regedit contentpane.sidebar li item:active span{
+	background: var(--highlightColor);
+
+	border: 1px dotted black;
+	color: var(--highlightText);
+}
+
+app appcontents .regedit statusbar{
+	grid-row: 3;
+	grid-column: 1/4;
+}
+/*app appcontents .regedit statusbar span{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: block;
+	width: 100%;
+}*/
+/*app appcontents .regedit statusbar #grabber{
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+	width: 10px;
+	height: 10px;
+	background: url("/res/ui/grabber.png");
+	filter: contrast(0) drop-shadow(1px 1px #fff);
+
+	LUNA STYLE
+}*/
+
+app appcontents .regedit contentpane.sidebar ul{
+	margin: 0 0 0 20px;
+	padding: 0;
+	list-style: none;
+}
+
+/*app appcontents .regedit contentpane.sidebar .expander{
+	width: 7px;
+	height: 7px;
+	border: 1px solid #839bb6;
+	border-radius: 2px;
+	background: linear-gradient(to bottom, #ffffff, #f8f8f8, #c6bca7);
+	display: inline-block;
+	position: absolute;
+	top: 8px;
+	left: -20px;
+	z-index: 1;
+	THIS IS ALL FOR LUNA
+}*/
+app appcontents .regedit contentpane.sidebar .expander:before{
+	position: absolute;
+	content: "";
+	width: 5px;
+	height: 1px;
+	display: block;
+	background-color: black;
+	top: 3px;
+	left: 1px;
+}
+app appcontents .regedit contentpane.sidebar .expander:after{
+	position: absolute;
+	content: "";
+	width: 1px;
+	height: 5px;
+	display: block;
+	background-color: black;
+	top: 1px;
+	left: 3px;
+}
+app appcontents .regedit contentpane.sidebar li.active > .expander:after{
+	display: none;
+}
+
+app appcontents .regedit contentpane.sidebar li item{
+  height: 16px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 16px auto;
+
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+app appcontents .regedit contentpane.sidebar li item .icon{
+	width: 16px;
+	height: 16px;
+	grid-row: 1;
+	grid-column: 1;
+	background: url("/res/ui/regedit/folder.png");
+	image-rendering: pixelated;
+	position: relative;
+	top: 3px;
+	left: -4px;
+}
+app appcontents .regedit contentpane.sidebar li.active > item .icon{
+	background: url("/res/ui/regedit/folder_open.png");
+}
+app appcontents .regedit contentpane.sidebar li item span{
+	position: relative;
+	grid-row: 1;
+	grid-column: 2;
+	top: 3px;
+	left: -0px;
+
+	white-space: nowrap;
+	padding-right: 10px;
+}
+
+app appcontents .regedit contentpane.sidebar ul {
+  margin: 0px 0px 0px 20px;
+  list-style: none;
+  display: none;
+}
+app appcontents .regedit contentpane.sidebar ul.root{
+	padding-left: 26px;
+	display: block;
+}
+app appcontents .regedit contentpane.sidebar ul.root > li > item .icon{
+	background: url("/res/ui/regedit/root.png");
+}
+app appcontents .regedit contentpane.sidebar ul.active{
+	display: block;
+}
+
+app appcontents .regedit contentpane.sidebar ul li {
+  position: relative;
+}
+
+app appcontents .regedit contentpane.sidebar ul>li:nth-of-type(1):before {
+  border-left: 1px dotted black;
+}
+app appcontents .regedit contentpane.sidebar ul li:before {
+  position: absolute;
+  left: -16px;
+  top: 0px;
+  content: "";
+  display: block;
+  /*border-left: 1px dotted black;*/
+  height: 12px;
+  border-bottom: 1px dotted black;
+  width: 10px;
+}
+app appcontents .regedit contentpane.sidebar ul li:after {
+  position: absolute;
+  left: -16px;
+  bottom: -11px;
+  content: "";
+  display: block;
+  border-left: 1px dotted black;
+  height: 100%;
+}
+app appcontents .regedit contentpane.sidebar ul li.root {
+  margin: 0px 0px 0px -20px;
+}
+app appcontents .regedit contentpane.sidebar ul li.root:before {
+  display: none;
+}
+app appcontents .regedit contentpane.sidebar ul li.root:after {
+  display: none;
+}
+app appcontents .regedit contentpane.sidebar ul li:last-child:after {
+  display: none;
+}
+
+/* Desktop pet (Clippy) */
+/* Desktop pet (Clippy) */
+app.selfsizing, app.dialogbox.selfsizing {
+    min-width: unset;
+    min-height: unset;
+    width: auto !important;
+    height: auto !important;
+}
+
+app appcontents .clippy petcontain {
+    visibility: visible;
+    width: 120px;
+    height: 120px;
+    display: block;
+    position: relative; /* Ensure balloon positions relative to petcontain */
+}
+
+app appcontents .clippy petcontain #pet {
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(1px 1px 3px #000);
+    background-image: url("/res/images/clippy.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Modular buttons container */
+app appcontents modularbuttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+app appcontents modularbuttons btn {
+    position: relative;
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background: linear-gradient(to bottom, #fff, #ccc);
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+app appcontents modularbuttons btn:hover:before {
+    display: block;
+}
+
+app appcontents modularbuttons btn:before {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    content: "tooltip";
+    background-color: #f5f5d5;
+    border: 1px solid #000;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 1px 3px;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #000;
+}
+
+app appcontents modularbuttons btn:after {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 12px;
+    color: #000;
+}
+
+app appcontents modularbuttons btn.close:before {
+    content: "Close";
+}
+
+app appcontents modularbuttons btn.close:after {
+    content: "×";
+    top: -1px;
+    right: 0;
+}
+
+app.noresize appcontents appcontentholder.sndvol32{
+	padding: 0 0 0 2px;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 23px auto 23px;
+}
+app.noresize appcontents appcontentholder.sndvol32 appnavigation{
+	grid-column: 1;
+	grid-row: 1;
+}
+app.noresize appcontents appcontentholder.sndvol32 volcontents{
+	grid-column: 1;
+	grid-row: 2;
+
+	display: flex;
+	flex-direction: row;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: 100%;
+	scrollbar-color: var(--3dLightShade) var(--mainColor);
+}
+app.noresize appcontents appcontentholder.sndvol32 statusbar{
+	grid-column: 1;
+	grid-row: 3;
+}
+app.noresize appcontents appcontentholder.sndvol32 volentry{
+	position: relative;
+	min-width: 105px;
+	max-width: 105px;
+	height: inherit;
+	border-right: 1px solid var(--3dLightShade);
+	box-shadow: 1px 0 var(--3dHighlight);
+	padding: 0 6px;
+}
+app.noresize appcontents appcontentholder.sndvol32 volentry:last-child{
+	border-right: none;
+	box-shadow: none;
+}
+app.noresize appcontents appcontentholder.sndvol32 volentry form{
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 30px 24px auto 32px;
+	height: inherit;
+}
+app.noresize appcontents appcontentholder.sndvol32 volentry span.name{
+	grid-column: 1;
+	grid-row: 1;
+	display: block;
+	text-align: center;
+	height: 13px;
+	padding: 8px 0;
+	margin: 0 6px;
+	border-bottom: 1px solid var(--3dLightShade);
+	box-shadow: 0 1px var(--3dHighlight);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+app.noresize appcontents appcontentholder.sndvol32 volentry span:not(.name){
+	grid-column: 1;
+	grid-row: 2;
+	padding: 6px 0;
+}
+
+app.noresize appcontents appcontentholder.sndvol32 volentry input[type="range"]{
+	grid-column: 1;
+	grid-row: 3;
+	margin: 10px auto;
+	display: block;
+	height: inherit;
+	/*width: 30px;
+	background: 
+	repeating-linear-gradient(to right, transparent 0px, var(--mainColor) 4px, var(--mainColor) 26px, transparent 30px),
+	repeating-linear-gradient(var(--3dDarkShade) 0px, transparent 1px, transparent 11px);*/
+}
+app.noresize appcontents appcontentholder.sndvol32 volentry li{
+	grid-column: 1;
+	grid-row: 4;
+	margin-top: 11px;
+}
+
+/* CALCULATOR */
+
+app.noresize appcontents .calc calcbody{
+	display: grid;
+	grid-template-columns: auto;
+	grid-auto-rows: auto auto auto auto auto auto;
+}
+
+app.noresize appcontents .calc calcbody input{
+	margin-bottom: 8px;
+	text-align: right;
+}
+
+app.noresize appcontents .calc calcbody #weirdbox{
+	width: 27px;
+	height: 26px;
+	box-shadow: var(--insetBSLowerDark);
+	border: 1px solid;
+	border-color: var(--lowerBoxLight);
+	margin: 4px 11px 0 0;
+}
+
+app.noresize appcontents .calc calcbody .row winbutton:first-child{
+	margin: 3px 6px;
+}
+app.noresize appcontents .calc calcbody .row:nth-of-type(1) {
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 0 7px;
+}
+app.noresize appcontents .calc calcbody .row:nth-of-type(1) winbutton{
+	width: 61px;
+	margin: 3px 0 3px 3px;
+}
+
+app.noresize appcontents .calc winbutton{
+	min-width: unset;
+	width: 34px;
+	height: 27px;
+	margin: 3px 0;
+}
+app.noresize appcontents .calc winbutton btnopt{
+	width: unset;
+	line-height: 23px;
+	color: #00f;
+}
+app.noresize appcontents .calc winbutton.function btnopt{
+	color: #f00;
+}
+
+
+/* winver dialog */
+app.dialogbox appcontents appcontentholder.winver{
+	padding: 0;
+	margin: 0;
+}
+app appcontents .winver #winver-header{
+	width: 100%;
+	height: 72px;
+	background: radial-gradient(circle at 69% 33%, #a3bff9 0%, #85a5f0 28%, #81a1ee 33%, #6084e4 100%);
+	position: relative;
+	z-index: 0;
+}
+app appcontents .winver #winver-header:after{
+	width: 200px;
+	height: 40px;
+	content: " ";
+	display: inline-block;
+	background: url("/res/ui/about-logo.png");
+	background-size: 100% 100%;
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+app appcontents .winver #winver-header:before{
+	content: " ";
+	width: 100%;
+	height: 5px;
+	display: inline-block;
+	margin-top: 72px;
+	background: linear-gradient(to right, #627cd7, #f79525, #698ae7);
+}
+app appcontents .winver #winver-text{
+	margin: 15px 10px 0 52px;
+}
+app appcontents .winver #winver-text a{
+	color: #000080;
+	text-decoration: underline;
+}
+app appcontents .winver hr{
+	border-color: #fff;
+}
+app appcontents .winver winbutton{
+	position: absolute;
+	bottom: 11px;
+	right: 9px;
+}
+
+
+/* task manager */
+
+app appcontents .taskmgr tab_ui{
+	height: calc(100% - 82px);
+}
+app appcontents .taskmgr tab_ui contentpane{
+	margin: 15px 3px 3px;
+	height: calc(100% - 60px);
+}
+app appcontents .taskmgr tab_ui contentpane items entry.details-header{
+	grid-template-columns: 260px 80px auto;
+}
+app appcontents .taskmgr tab_ui contentpane items entry{
+	grid-template-columns: 20px 240px 80px auto;	
+}
+app appcontents .taskmgr tab_ui btncontainer{
+	margin-right: 20px;
+}
+
+app appcontents .taskmgr tab_ui #tab_processes contentpane entry.details-header{
+	grid-template-columns: auto 60px 100px;
+}
+app appcontents .taskmgr tab_ui #tab_processes contentpane entry{
+	grid-template-columns: 0 auto 60px 100px;
+}
+
+
+/* folder options */
+app appcontents .folderopt #tab_view contentpane form{
+	margin: -2px 0 3px 22px;
+}
+app appcontents .folderopt #tab_view contentpane form li{
+	padding: 2px 0 0 18px;
+	height: 14px;
+}
+app appcontents .folderopt #tab_filetypes contentpane entry.details-header{
+	grid-template-columns: 0 90px auto;
+}
+app appcontents .folderopt #tab_filetypes contentpane entry{
+	grid-template-columns: 21px 72px auto;
+}
+
+/* spawned dialogs */
+
+app.dialog{
+	height: unset !important;
+}
+
+app.dialog .dialogicon{
+	vertical-align: top;
+}
+
+app.dialogsrv-32{
+	display: grid;
+	grid-template-columns: 32px auto;
+	grid-template-rows: auto 25px;
+}
+app.dialogsrv-32 img{
+	grid-column: 1;
+	grid-row: 1;
+	vertical-align: top;
+}
+app.dialogsrv-32 span{
+	grid-column: 2;
+	grid-row: 1;
+}
+app.dialogsrv-32 .dialogbuttons{
+	grid-row: 2;
+	grid-column: 1 / 3;
+}
+
+
+
+
+app.dialog appcontentholder.dialogsrv-32 img.dialogicon{
+	vertical-align: baseline;
+}
+
+/* fontview */
+app.fontview appcontentholder appnavigation{
+	height: 32px;
+	margin-bottom: 0;
+}
+app.fontview appcontentholder appnavigation ul.navbuttons{
+	height: 31px;
+}
+app.fontview appcontentholder appnavigation ul.navbuttons winbutton{
+	margin: 5px 8px;
+}
+app.fontview appcontentholder appnavigation ul.navbuttons winbutton:nth-of-type(2){
+	float: right;
+}
+app.fontview appcontentholder #contain{
+	font-family: "Arial", sans-serif;
+	background-color: var(--contentColor);
+	color:var(--contentText);
+	overflow: auto;
+	height: calc(100% - 32px);
+}
+app.fontview appcontentholder #contain p{
+	margin: 0;
+	box-shadow: 0 -1px var(--contentText);
+}
+app.fontview appcontentholder #contain hr{
+	border:none;
+	border-bottom: 1px solid var(--contentText);
+}
+app.fontview appcontentholder #contain #fontname{
+	font-size: 32pt;
+}
+app.fontview appcontentholder #contain #fontdata{
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	font-style: normal;
+	font-weight: 500;
+}
+app.fontview appcontentholder #contain #fontpreview{
+	font-size: 16pt;
+}
+app.fontview appcontentholder #contain #sizepreviews{
+	display: grid;
+	grid-template-columns: 32px auto;
+	box-shadow: 0 -1px var(--contentText);
+}
+app.fontview appcontentholder #contain span.fontsizepreview{
+	white-space: nowrap;
+	overflow: hidden;
+	grid-column: 2;
+}
+app.fontview appcontentholder #contain span.fontsizenote{
+	font-size: var(--contentFontSize);
+	font-family: var(--contentFont);
+	grid-column: 1;
+	align-self: end;
+}
+
+app.msoobe appcontentholder{
+	padding:0;
+	background-color:#fff;
+}
+app.msoobe appcontentholder video{
+	width:100%;
+	height:100%;
+}
+app.msoobe appcontentholder audio{
+	display: none;
+}
+app.msoobe appcontentholder #oobecontain{
+	opacity: 0;
+	animation: oobefade 1s 5s linear forwards;
+	background: radial-gradient(circle at 60px 120px, #84a6ef, transparent 20%, transparent 100%), #4a6dd6;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: 56px calc(100% - 114px) 58px;
+}
+app.msoobe appcontentholder #oobecontain #oobeheader{
+	background: #00309c;
+	width: 100%;
+	height: 54px;
+	top: 0;
+	border-width: 0 0 2px 0;
+	border-style: solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #5275d6, #c6dbff, #8caaef, #5271d6);
+}
+app.msoobe appcontentholder #oobecontain #oobeheader img{
+	height:36px;
+	margin:7px 0 0 24px;
+}
+app.msoobe appcontentholder #oobecontain #oobefooter{
+	background: #00309c;
+	color:#fff;
+	height: 55px;
+	width: 100%;
+	border-width: 3px 0 0 0;
+	border-style: solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #00309c, #f79239, #7b616b, #00309c);
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li{
+	float:right;
+  	margin-top: 16px;
+  	list-style-type: none;
+  	margin-right: 21px;
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li#back{
+	float:left;
+	margin-left: 21px;
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li .btn{
+	width:24px;
+	height: 24px;
+	background:#f00;
+	vertical-align: middle;
+	display: inline-block;
+	margin:0 4px;
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li#back .btn{
+	background:url(/res/ui/oobe/back.png);
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li#skip .btn{
+	background:url(/res/ui/oobe/skip.png);
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li#next .btn{
+	background:url(/res/ui/oobe/next.png);
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li:hover .btn{
+	background-position-x: -24px !important;
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li:active .btn{
+	background-position-x: -48px !important;
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li.disabled{
+	pointer-events: none;
+}
+app.msoobe appcontentholder #oobecontain #oobefooter li.disabled .btn{
+	background-position-x: -72px !important;
+}
+app.msoobe appcontentholder #oobecontain .oobestep{
+	padding:24px 64px;
+	color: #fff;
+	display: none;
+}
+app.msoobe appcontentholder #oobecontain .oobestep.active{
+	display: block;
+}
+app.msoobe appcontentholder #oobecontain .oobestep h1{
+	margin:0;
+	font-size:36px;
+	font-weight: 900;
+	text-shadow: 3px 3px 2px #1845a5, 4px 4px 4px #4a71ce;
+	color:#fbffff;
+	font-family: "Verdana", sans-serif;
+}
+app.msoobe appcontentholder #oobecontain .oobestep #eula{
+	background:#7496e8;
+	color:#fff !important;
+	width:573px;
+	height: 240px;
+	resize: none;
+	border:1px solid;
+	border-color: var(--lowerBoxDark);
+	box-shadow: var(--insetBSLowerLight);
+}
+app.msoobe appcontentholder #oobecontain .oobestep #eula,
+app.msoobe appcontentholder #oobecontain .oobestep input{
+	font-family: unset;
+	font-size: unset;
+	min-width: 200px;
+}
+app.msoobe appcontentholder #oobecontain .oobestep form li{
+	display:inline-block;
+	width:min-content;
+}
+app.msoobe appcontentholder #oobecontain .oobestep#eulastep form{
+	display: inline-block;
+	vertical-align: bottom;
+}
+app.msoobe appcontentholder #oobecontain .oobestep#eulastep p{
+	display: inline-block;
+	vertical-align: middle;
+}
+app.msoobe appcontentholder #oobecontain .oobestep #eula:focus{
+	outline:none;
+}
+app.msoobe appcontentholder #oobecontain .oobestep#internet img{
+	margin:16px auto;
+	display: block;
+}
+app.msoobe appcontentholder #oobecontain .oobestep#goodiescd li{
+	display:block;
+	width: unset;
+	margin-left: 48px;
+	font-size: 20px;
+	font-family: "Verdana", sans-serif;
+	font-weight: 600;
+	height: 76px;
+}
+app.msoobe appcontentholder #oobecontain .oobestep#goodiescd li img{
+	transform: translateX(-64px);
+}
+app.msoobe appcontentholder #oobecontain .oobestep#goodiescd li label{
+	vertical-align: top;
+	margin-left: -30px;
+}
+
+app.msoobe appcontentholder #oobecontain .oobestep#users form li{
+	display: grid;
+	grid-template-columns: 80px 100px;
+	height: 24px;
+}
+@keyframes oobefade{
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+app.msnmsgr, app.inactive.msnmsgr{
+	border-radius: 6px 6px 0 0;
+	border:1px solid #8495ca;
+	background: #f8f8f8;
+}
+
+app.msnmsgr appheader, app.inactive.msnmsgr appheader{
+	height: 20px;
+	background: linear-gradient(to bottom, #c0d0f0, #fff);
+	box-shadow: 0 -1px #ced8ef;
+	border-radius: 5px 5px 0 0;
+	margin:2px 1px 0 1px;
+	padding:0 6px;
+}
+app.msnmsgr appheader img{
+	display: none;
+}
+app.msnmsgr appheader span{
+	color:#153290;
+	text-shadow: none;
+	font-size: var(--contentFontSize);
+	font-family: var(--contentFont);
+}
+app.inactive.msnmsgr appheader span{
+	color:#93a4c5;
+}
+app.msnmsgr appcontrols captionbutton,
+app.inactive.msnmsgr appcontrols captionbutton,
+app.msnmsgr appcontrols captionbutton.closebtn,
+app.msnmsgr appcontrols captionbutton.closebtn:hover,
+app.inactive.msnmsgr appcontrols captionbutton.closebtn,
+app.inactive.msnmsgr appcontrols captionbutton.closebtn:hover,
+app.inactive.msnmsgr appcontrols captionbutton:hover{
+	width:12px;
+	height: 12px;
+	background:none;
+	box-shadow: none;
+	padding: 0;
+}
+app.msnmsgr appcontrols captionbutton div{
+	width: 10px;
+	height: 10px;
+}
+app.msnmsgr appcontrols captionbutton.max div{
+	background-image: url("/res/ui/classic/maximize_classic.png");
+	margin-left:0px;
+	margin-top:1px;
+}
+app.msnmsgr appcontrols captionbutton.min div{
+	background-image: url("/res/ui/classic/minimize_classic.png");
+}
+app.msnmsgr appcontrols captionbutton.closebtn div{
+	background-image: url("/res/ui/classic/close_classic.png");
+	transform: scale(1.1);
+}
+app.msnmsgr appcontrols captionbutton{
+	background:none;
+	border:1px solid transparent;
+}
+app.msnmsgr appcontrols captionbutton:hover,
+app.msnmsgr appcontrols captionbutton.closebtn:hover,
+app.inactive.msnmsgr appcontrols captionbutton:hover,
+app.inactive.msnmsgr appcontrols captionbutton.closebtn:hover{
+	border-color:#aebadf #4f6ba0 #4f6ba0 #aebadf;
+	background:#f2f5fb;
+}
+app.msnmsgr appcontrols captionbutton:active,
+app.msnmsgr appcontrols captionbutton.closebtn:active{
+	border-color:#4f6ba0 #aebadf #aebadf #4f6ba0;
+	background:#f2f5fb;
+}
+app.msnmsgr appcontrols captionbutton:after{
+	display: none;
+}
+app.msnmsgr appcontrols captionbutton::after,
+app.inactive.msnmsgr appcontrols captionbutton:hover::after,
+app.inactive.msnmsgr appcontrols captionbutton.closebtn:hover::after{
+	display: none;
+}
+app.msnmsgr appcontrols captionbutton div,
+app.msnmsgr appcontrols captionbutton:active div,
+app.msnmsgr appcontrols captionbutton.closebtn:active div{
+	filter: invert(38%) sepia(12%) saturate(2411%) hue-rotate(182deg) brightness(87%) contrast(83%) drop-shadow(0 1px #446097) drop-shadow(1px 0 #446097);
+	opacity: 1;
+}
+app.inactive.msnmsgr appcontrols captionbutton div,
+app.inactive.msnmsgr appcontrols captionbutton.closebtn div,
+app.inactive.msnmsgr appcontrols captionbutton.closebtn:hover div,
+app.inactive.msnmsgr appcontrols captionbutton:hover div{
+	filter: invert(68%) sepia(66%) saturate(184%) hue-rotate(182deg) brightness(81%) contrast(89%) drop-shadow(0 1px #8a9ec5) drop-shadow(1px 0 #8a9ec5);
+}
+app.msnmsgr appcontents, app.inactive.msnmsgr appcontents{
+	box-shadow: none;
+	margin: 0px 1px 1px;
+	border-width: 0px 1px 1px;
+	border-style: solid;
+	border-image-source: linear-gradient(rgb(255, 255, 255), rgb(139, 155, 204));
+	border-image-slice: 1;
+}
+
+
+/* Add these to your main CSS file(s) */
+.userprops-cpl .cpl-sidebar {
+    background-image: linear-gradient(to bottom, #79A0EA, #6473D4);
+    color: white; /* Text color for sidebar */
+}
+
+.userprops-cpl .cpl-sidebar-heading {
+    font-weight: bold;
+    font-size: 1.05em; /* Slightly larger */
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.userprops-cpl .cpl-sidebar-group:first-child .cpl-sidebar-heading {
+    margin-top: 0;
+}
+
+.userprops-cpl .cpl-sidebar-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.userprops-cpl .cpl-sidebar-list li {
+    padding: 6px 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.userprops-cpl .cpl-sidebar-list li:hover {
+    text-decoration: underline;
+}
+
+.userprops-cpl .cpl-sidebar-icon {
+    width: 16px; /* Standardized size */
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+/* Main pane background styles */
+.userprops-cpl .cpl-mainpane.main-list-bg > .cpl-page-content {
+    background-color: #6473D4 !important; /* XP Dark Blue for main list */
+    color: white !important;
+}
+.userprops-cpl .cpl-mainpane.main-list-bg h2,
+.userprops-cpl .cpl-mainpane.main-list-bg h3,
+.userprops-cpl .cpl-mainpane.main-list-bg .cpl-tasklist li {
+    color: white !important;
+}
+.userprops-cpl .cpl-mainpane.main-list-bg .cpl-tasklist li:hover {
+    background-color: rgba(255,255,255,0.15);
+}
+
+
+.userprops-cpl .cpl-mainpane.actions-bg > .cpl-page-content,
+.userprops-cpl .cpl-mainpane.picture-bg > .cpl-page-content {
+    background-color: white !important; /* White for actions and picture change */
+    color: black !important;
+}
+
+.userprops-cpl .cpl-mainpane.actions-bg h2,
+.userprops-cpl .cpl-mainpane.actions-bg h3,
+.userprops-cpl .cpl-mainpane.actions-bg .cpl-tasklist li,
+.userprops-cpl .cpl-mainpane.picture-bg h2,
+.userprops-cpl .cpl-mainpane.picture-bg h3,
+.userprops-cpl .cpl-mainpane.picture-bg .cpl-tasklist li,
+.userprops-cpl .cpl-mainpane.picture-bg p {
+    color: black !important;
+}
+.userprops-cpl .cpl-mainpane.actions-bg .cpl-tasklist li:hover,
+.userprops-cpl .cpl-mainpane.picture-bg .cpl-tasklist li:hover {
+    background-color: #f0f0f0;
+}
+
+
+.userprops-cpl .cpl-go-icon {
+    width: 16px; /* Standardized */
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.userprops-cpl .cpl-tasklist li {
+    padding: 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.userprops-cpl .cpl-tasklist li:hover {
+    text-decoration: underline;
+}
+.userprops-cpl .cpl-tasklist li.cpl-task-disabled {
+    color: grey !important;
+    cursor: default;
+    text-decoration: none !important;
+    opacity: 0.7;
+}
+.userprops-cpl .cpl-tasklist li.cpl-task-disabled:hover {
+    background-color: transparent !important;
+}
+
+
+.userprops-cpl .cpl-user-item-main:hover {
+    border-color: #A5C5E9 !important;
+    background-color: rgba(255,255,255,0.2) !important;
+}
+
+/* Ensure nav buttons in top bar look right */
+.userprops-cpl .cpl-topnav .cpl-nav-btn btnopt {
+    display: inline-flex; /* Align img and text */
+    align-items: center;
+}

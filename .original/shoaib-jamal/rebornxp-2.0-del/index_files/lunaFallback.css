@@ -1,0 +1,85 @@
+:root{
+	--mainColor: #ece9d8;
+	--mainText: #000;
+	--internalBackdrop: #808080;
+	--desktop: #008080;
+
+	--3dHighlight: #fff;
+	--3dLightShade: #aca899;
+	--3dDarkShade: #716f64;
+
+	--activePrimary: #0054e3;
+	--activeSecondary: #3d95ff; 
+	--activeFrame: transparent;
+	--activeTitleText: #fff;
+
+	--inactivePrimary: #7a96df;
+	--inactiveSecondary: #9db9eb;
+	--inactiveFrame: transparent;
+	--inactiveTitleText: #d8e4f8;
+
+	--bodyText: #000;
+/*	--inactiveBodyText: #808080; */
+
+	--highlightColor: #316ac5;
+	--highlightText: #fff;
+
+	--menuColor: #fff;
+	--menuText: #000;
+
+	--contentColor: #fff;
+	--contentText: #000;
+}
+
+app.fullscreen{
+	top:-30px !important;
+}
+
+appcontents{
+	scrollbar-color: var(--mainColor) #c0c0c044;
+}
+
+appheader{
+	height: 25px;
+	line-height: 25px;
+}
+appheader span{
+	font-size: 12px;
+	text-shadow: 0 0 0 #fff;
+}
+
+appcontrols captionbutton{
+	height: 19px;
+}
+appcontrols captionbutton:after{
+	margin: 4px 0 0 1px;
+}
+appcontrols captionbutton:active:after{
+	margin: 5px 0 0 2px;
+}
+
+appcontents{
+	height: calc(100% - 32px);
+}
+
+startmenu links applinks ul#allapps ul{
+	border: 1px solid var(--3dLightShade);
+	box-shadow: none;
+}
+
+appcontentholder appnavigation ul.appmenus .submenu, appcontentholder appnavigation xp-popup.viewpicker{
+	border-color: var(--3dLightShade);
+}
+appcontentholder appnavigation xp-popup.viewpicker{
+	box-shadow: 3px 3px 3px #909090;
+	background: var(--menuColor);
+}
+appcontentholder appnavigation xp-popup.viewpicker ul{
+	border-color: transparent;
+}
+
+appcontentholder appnavigation ul.appmenus li:hover{
+	border-color: transparent;
+	background: var(--highlightColor);
+	color: var(--highlightText);
+}

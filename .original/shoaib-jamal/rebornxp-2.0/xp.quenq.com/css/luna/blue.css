@@ -1,0 +1,943 @@
+:root{
+	--mainColor: #ece9d8;
+	--mainText: #000;
+	--internalBackdrop: #808080;
+	--desktop: #004e98;
+	--iconFilter: brightness(.3) sepia(90%) hue-rotate(160deg) saturate(7);
+
+	--3dHighlight: #fff;
+	--3dLightShade: #aca899;
+	--3dDarkShade: #716f64;
+
+	--activePrimary: #0054e3;
+	--activeSecondary: #3d95ff;
+	--activeFrame: transparent;
+	--activeTitleText: #fff;
+
+	--inactivePrimary: #7a96df;
+	--inactiveSecondary: #9db9eb;
+	--inactiveFrame: transparent;
+	--inactiveTitleText: #d8e4f8;
+
+	--bodyText: #000;
+	--inactiveBodyText: #808080;
+
+	--highlightColor: #316ac5;
+	--highlightText: #fff;
+
+	--menuColor: #fff;
+	--menuText: #000;
+
+	--contentColor: #fff;
+	--contentText: #000;
+}
+
+
+/** ----- START CONTROLS CSS ----- **/
+
+/*	SQUISHY BUTTONS */
+/*base element contains structure and normal highlights. Before element contains icon. 
+After element contains shadows. Base colors fetched from colors.css via background-color prop*/
+/*  USER PROFILE PICTURES  */
+usericon span{
+	color: #fff;
+}
+usericon img{
+	border:1px solid #d5d3e8;
+	box-shadow: 1px 0 #d5d3e8, -1px 0 #d5d3e8, 0 1px #d5d3e8, 0 -1px #d5d3e8, 2px 2px 3px #0003;
+}
+
+/*  UI BUTTONS - OK, CANCEL ETC  */
+winbutton{
+	/*bgcol for base, border for the selection ring, box shadow for surround*/
+	border: 1px solid #003c74;
+	background: linear-gradient(to bottom, #fcfcfb, #ecebe6 85%, #d6d0c5 100%);
+	box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77;
+}
+winbutton btnopt{
+	color:#000;
+	background: linear-gradient(to bottom, #fcfcfb, #ecebe6);
+	box-shadow: inset 0 -1px #ecebe6;
+}
+
+/* states */
+winbutton.default{
+	background: linear-gradient(to bottom,#cee7ff 0%, #bcd4f6 10%, #89ade4 95%, #6982ee 100%);
+	box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77;
+}
+winbutton.default btnopt{
+	box-shadow: inset 0 -1px #ecebe6;
+	/*box-shadow: 1px 0 0 #fff, -1px 0 0 #fff;*/
+}
+winbutton:hover{
+	/*box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77;*/
+	background: linear-gradient(to bottom,#fff0cf 0%, #fcd279 10%, #f8b230 95%, #e59700 100%);
+}
+winbutton:hover btnopt{
+	background: linear-gradient(to bottom, #fcfcfb, #ecebe6);
+	/*box-shadow: none;
+	background: linear-gradient(to bottom,#fdfdfd 0%, #fdfdfd 30%, #f6f7fd 31%, #d6d7e7 95%, #d6d7e7 100%);*/
+}
+winbutton:active{
+	background: linear-gradient(to bottom, #e6e6e0, #e0e0d7);
+	box-shadow: inset 1px 1px 2px #d1ccc0, inset 0 -1px 2px #f2f1ee;
+	/*box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77, inset 1px 0 0 #fff, inset -1px 0 0 #fff, inset 0 1px 0 #fff;*/
+}
+winbutton:active btnopt{
+	background: linear-gradient(to bottom, #e6e6e0, #e0e0d7);
+	box-shadow: none;
+}
+winbutton.disabled{
+	background: #f8f6ea;
+	border: 1px solid #c6c6ba;
+	box-shadow: none;
+}
+winbutton.disabled btnopt{
+	color:#8c8a7e;
+	background: none;
+	box-shadow: none;
+}
+
+/*  COMBO BOXES  */
+combobox{
+	background-color: #fff;
+	border: 1px solid #7f9db9;
+}
+
+/*  DATA SLIDERS  */
+app input[type="range"] {
+	background: transparent;
+}
+app input[type="range"]::-moz-range-track {
+	border: 1px solid;
+	border-color: #acaead #ffffff #ffffff #acaead;
+  box-shadow: inset 0 1px #0001;
+}
+app input[type="range"]::-moz-range-thumb {
+  background: linear-gradient(to bottom, #f7f7f4 0%, #f5f5f2 11%, #f3f3ef 22%, #dcdcd9 77%, #c3c3c0 88%, #c3c3c0 100%);
+  box-shadow:inset 1px 1px 1px #fff8, inset -1px -1px 1px #0004, inset 0 2px 0 #48cb46, inset 0 -2px 0 #1fae1d;
+  border-color: #b5c4cd #778892 #778892 #b5c4cd;
+}
+app input[type="range"]::-moz-range-thumb:hover{
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #fac158, inset 0 -2px 0 #e2a330;
+}
+app input[type="range"]::-moz-range-thumb:active{
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #48a73b, inset 0 -2px 0 #1f8710;
+}
+app input[type="range"][disabled=""]::-moz-range-thumb{
+	background: linear-gradient(to right, #f7f6ee 0%, #f6f5ec 11%, #f5f4ea 22%, #f5f4ea 33%, #f5f4ea 44%, #f5f4ea 66%, #ecebe2 88%, #e3e2d9 100%);
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #ceccc0, inset 0 -2px 0 #c2c0b3;
+	border-color: #d6d4c6 #bfbcad #bfbcad #d6d4c6;
+}
+/*webkit*/
+app input[type="range"]::-webkit-slider-runnable-track {
+	border-color: #acaead #ffffff #ffffff #acaead;
+	box-shadow: inset 0 1px #0001;
+}
+app input[type="range"]::-webkit-slider-thumb {
+  background: linear-gradient(to bottom, #f7f7f4 0%, #f5f5f2 11%, #f3f3ef 22%, #dcdcd9 77%, #c3c3c0 88%, #c3c3c0 100%);
+  box-shadow:inset 1px 1px 1px #fff8, inset -1px -1px 1px #0004, inset 0 2px 0 #48cb46, inset 0 -2px 0 #1fae1d;
+  border-color: #b5c4cd #778892 #778892 #b5c4cd;
+}
+app input[type="range"]::-webkit-slider-thumb:hover{
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #fac158, inset 0 -2px 0 #e2a330;
+}
+app input[type="range"]::-webkit-slider-thumb:active{
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #48a73b, inset 0 -2px 0 #1f8710;
+}
+app input[type="range"][disabled=""]::-webkit-slider-thumb{
+	background: linear-gradient(to right, #f7f6ee 0%, #f6f5ec 11%, #f5f4ea 22%, #f5f4ea 33%, #f5f4ea 44%, #f5f4ea 66%, #ecebe2 88%, #e3e2d9 100%);
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #ceccc0, inset 0 -2px 0 #c2c0b3;
+	border-color: #d6d4c6 #bfbcad #bfbcad #d6d4c6;
+}
+
+/* VERTICAL DATA SLIDERS */
+app input[type="range"].vertical.segmented{
+	background: 
+	repeating-linear-gradient(to right, transparent 0px, transparent 3px, var(--mainColor) 4px, var(--mainColor) 26px, transparent 27px, transparent 30px),
+	repeating-linear-gradient(#a1a192 0px, transparent 1px, transparent 11px);
+}
+
+app input[type="range"].vertical::-moz-range-thumb {
+  box-shadow:inset 1px 1px 1px #fff8, inset -1px -1px 1px #0004, inset 2px 0 0 #48cb46, inset -2px 0 0 #1fae1d;
+}
+app input[type="range"].vertical::-moz-range-thumb:hover {
+  box-shadow:inset 1px 1px 1px #fff8, inset -1px -1px 1px #0004, inset 2px 0 0 #fac158, inset -2px 0 0 #e2a330;
+}
+app input[type="range"].vertical::-moz-range-thumb:active {
+  box-shadow:inset 1px 1px 1px #fff8, inset -1px -1px 1px #0004, inset 2px 0 0 #48a73b, inset -2px 0 0 #1f8710;
+}
+
+app input[type="range"].vertical::-webkit-slider-thumb {
+	box-shadow:inset 1px 1px 1px #fff8, inset -1px -1px 1px #0004, inset 2px 0 0 #48cb46, inset -2px 0 0 #1fae1d;
+}
+app input[type="range"].vertical::-webkit-slider-thumb:hover {
+	box-shadow:inset 1px 1px 1px #fff8, inset -1px -1px 1px #0004, inset 2px 0 0 #fac158, inset -2px 0 0 #e2a330;
+}
+app input[type="range"].vertical::-webkit-slider-thumb:active {
+	box-shadow:inset 1px 1px 1px #fff8, inset -1px -1px 1px #0004, inset 2px 0 0 #48a73b, inset -2px 0 0 #1f8710;
+}
+
+/*  PROGRESS BARS  */
+app progress::-moz-progress-bar {
+	background:repeating-linear-gradient(to right, transparent 0 6px, #fff 6px 8px), linear-gradient(to bottom, #abedac, #29d22c, #8ee790);
+}
+app progress::-webkit-progress-value {
+	background:repeating-linear-gradient(to right, transparent 0 6px, #fff 6px 8px), linear-gradient(to bottom, #abedac, #29d22c, #8ee790);
+}
+
+grouper{
+	border: 1px solid #d0d0bf;
+	/*box-shadow: inset 1px 1px var(--3dHighlight), 1px 1px var(--3dHighlight);*/
+}
+app:not(.dialogbox) grouper grouperHeading{
+/*	background: #f9f6f3;*/
+	color: #0c4cd2;
+}
+app.dialogbox grouper grouperHeading{
+/*	background: #eeead6;*/
+}
+app.dialogbox tabcontent grouper grouperHeading{
+/*	background: #f9f6f3;*/
+}
+
+/* SCROLLBARS WEBKIT */
+
+/* scroll tracks */
+appcontents *::-webkit-scrollbar-track:vertical{
+	background: linear-gradient(to right, #f3f1ec, #fefefb);
+	box-shadow: inset 1px 0 #eeede5, inset -1px 0 #eeede5;
+}
+appcontents *::-webkit-scrollbar-track:vertical:active{
+	background: linear-gradient(to right, #e3ded3, #fdfdf6);
+	box-shadow: inset 1px 0 #d7d5c2, inset -1px 0 #d7d5c2;
+}
+appcontents *::-webkit-scrollbar-track:horizontal{
+	background: linear-gradient(to bottom, #f3f1ec, #fefefb);
+	box-shadow: inset 0 1px #eeede5, inset 0 -1px #eeede5;
+}
+appcontents *::-webkit-scrollbar-track:horizontal:active{
+	background: linear-gradient(to bottom, #e3ded3, #fdfdf6);
+	box-shadow: inset 0 1px #d7d5c2, inset 0 -1px #d7d5c2;
+}
+
+/* scroll thumbs */
+appcontents *::-webkit-scrollbar-thumb{
+	border: 1px solid white;
+}
+appcontents *::-webkit-scrollbar-thumb:horizontal{
+	background: url("../../res/ui/luna/blue/scrollgrip_horizontal.png") no-repeat center, linear-gradient(to bottom, #c9d8fc 0%, #c2d3fc 69%, #bad1fc 70%, #b9cdfb 100%);
+	box-shadow: inset 1px 0 #b8cbf6, inset -1px 0 #b9c9f3, inset 0 1px #b4c8f6, inset 0 -1px #fff, inset 0 -2px #bacbf4, inset 2px 0 #e1eafeaa, 1px 0 #7c9fd3;
+	border-bottom: 1px solid #9fb5d2;
+}
+appcontents *::-webkit-scrollbar-thumb:horizontal:hover{
+	background: url("../../res/ui/luna/blue/scrollgrip_horizontal_hover.png") no-repeat center, linear-gradient(to bottom, #d8e8ff 0%, #d6e7ff 69%, #d0e3ff 70%, #cae0ff 100%);
+	box-shadow: inset 1px 0 #b2d1ff, inset -1px 0 #acceff, inset 0 1px #acceff, inset 0 -1px #fff, inset 0 -2px #acceff, inset 2px 0 #eaf3ffaa, 1px 0 #7c9fd3;
+}
+appcontents *::-webkit-scrollbar-thumb:horizontal:active{
+	background: url("../../res/ui/luna/blue/scrollgrip_horizontal_active.png") no-repeat center, linear-gradient(to bottom, #a9bef6 0%, #a1bdfa 69%, #99b9fa 70%, #92b2f6 100%);
+	box-shadow: inset 1px 0 1px #7f95ca, inset -1px 0 1px #96adec, inset 0 1px 1px #839bd4, inset 0 -1px #fff, inset 0 -2px 1px #91adec, 1px 0 #7c9fd3;
+}
+
+appcontents *::-webkit-scrollbar-thumb:vertical{
+	background: url("../../res/ui/luna/blue/scrollgrip_vertical_active.png") no-repeat center, linear-gradient(to right, #c9d8fc 0%, #c2d3fc 69%, #bad1fc 70%, #b9cdfb 100%);
+	box-shadow: inset 1px 0 #b8cbf6, inset 0 -1px #b9c9f3, inset 0 1px #b4c8f6, inset -1px 0 #fff, inset -2px 0 #bacbf4, inset 0 2px #e1eafeaa, 0 1px #7c9fd3;
+	border-right: 1px solid #9fb5d2;
+}
+appcontents *::-webkit-scrollbar-thumb:vertical:hover{
+	background: url("../../res/ui/luna/blue/scrollgrip_vertical_hover.png") no-repeat center, linear-gradient(to right, #d8e8ff 0%, #d6e7ff 69%, #d0e3ff 70%, #cae0ff 100%);
+	box-shadow: inset 1px 0 #acceff, inset 0 -1px #acceff, inset 0 1px #acceff, inset -1px 0 #fff, inset -2px 0 #acceff, inset 0 2px #eaf3ffaa, 0 1px #7c9fd3;
+}
+appcontents *::-webkit-scrollbar-thumb:vertical:active{
+	background: url("../../res/ui/luna/blue/scrollgrip_vertical_active.png") no-repeat center, linear-gradient(to right, #a9bef6 0%, #a1bdfa 69%, #99b9fa 70%, #92b2f6 100%);
+	box-shadow: inset 1px 0 1px #839bd4, inset 0 -1px 1px #96adec, inset 0 1px 1px #7f95cb, inset -1px 0 #fff, inset -2px 0 1px #96adec, 0 1px #7c9fd3;
+}
+
+/* scroll buttons */
+appcontents *::-webkit-scrollbar-button{
+	border: 1px solid white;
+}
+/* horizontal interact */
+appcontents *::-webkit-scrollbar-button:horizontal{
+	border-bottom: 1px solid #7e9fd2;
+	border-right: 1px solid #9fb5d2;
+	box-shadow: inset 0 -1px #fff, inset 0 -2px #b8c9f2, inset -1px 0 #fff, inset -2px 0 #b9cbf3, inset 1px 0 #b7caf5, inset 0 1px #bbcdf5;
+}
+appcontents *::-webkit-scrollbar-button:horizontal:hover{
+	box-shadow: inset 0 -1px #fff, inset 0 -2px #96abdf, inset -1px 0 #fff, inset -2px 0 #97aee3, inset 1px 0 #97aee3, inset 0 1px #98b1e4;
+}
+appcontents *::-webkit-scrollbar-button:horizontal:active{
+	box-shadow: inset 0 -1px #fff, inset 0 -2px #b8c9f2, inset -1px 0 #fff, inset -2px 0 #b5c9f3, inset 1px 0 #7c89db, inset 0 1px #838fda;
+}
+
+/* vertical interact */
+appcontents *::-webkit-scrollbar-button:vertical{
+	border-right: 1px solid #7e9fd2;
+	border-bottom: 1px solid #9fb5d2;
+	box-shadow: inset -1px 0 #fff, inset -2px 0 #b8c9f2, inset 1px 0 #b7caf5, inset 0 -1px #fff, inset 0 -2px #b9cbf3, inset 0 1px #bbcdf5;
+}
+appcontents *::-webkit-scrollbar-button:vertical:hover{
+	box-shadow: inset -1px 0 #fff, inset -2px 0 #97aee0, inset 1px 0 #95ade5, inset 0 -1px #fff, inset 0 -2px #97aee3, inset 0 1px #91abe1;
+}
+appcontents *::-webkit-scrollbar-button:vertical:active{
+	box-shadow: inset -1px 0 #fff, inset -2px 0 #bacbf4, inset 1px 0 #7c89db, inset 0 -1px #fff, inset 0 -2px #b3c8f5, inset 0 1px #828dd9;
+}
+
+/* up arrow specific */
+appcontents *::-webkit-scrollbar-button:vertical:decrement{
+	background: 
+	url("../../res/ui/luna/blue/scroll_up.png") no-repeat center,
+	radial-gradient(circle at 0 0, #e1eafe 0%, #e1eafe00 20%, #e1eafe00 100%),
+	linear-gradient(to right, #c9d8fc 0%, #c1d3fb 69%, #b6cefb 70%, #b6cdfb 100%);
+}
+appcontents *::-webkit-scrollbar-button:vertical:decrement:hover{
+	background: 
+	url("../../res/ui/luna/blue/scroll_up.png") no-repeat center,
+	radial-gradient(circle at 0 0, #fdffff 0%, #fdffff00 20%, #fdffff00 100%),
+	linear-gradient(to right, #ddf0fe 0%, #ceeafd 69%, #c5e3fc 70%, #c2e2fc 100%);
+}
+appcontents *::-webkit-scrollbar-button:vertical:decrement:active{
+	background: 
+	url("../../res/ui/luna/blue/scroll_up.png") no-repeat center,
+	radial-gradient(circle at 0 0, #6e8ef1 0%, #6e8ef100 20%, #6e8ef100 100%),
+	linear-gradient(to right, #7d9df1 0%, #93acf2 69%, #9eaef2 70%, #a4b7ed 100%);
+}
+
+/* down arrow specific */
+appcontents *::-webkit-scrollbar-button:vertical:increment{
+	background: 
+	url("../../res/ui/luna/blue/scroll_down.png") no-repeat center,
+	radial-gradient(circle at 0 0, #e1eafe 0%, #e1eafe00 20%, #e1eafe00 100%),
+	linear-gradient(to right, #c9d8fc 0%, #c1d3fb 69%, #b6cefb 70%, #b6cdfb 100%);
+}
+appcontents *::-webkit-scrollbar-button:vertical:increment:hover{
+	background: 
+	url("../../res/ui/luna/blue/scroll_down.png") no-repeat center,
+	radial-gradient(circle at 0 0, #fdffff 0%, #fdffff00 20%, #fdffff00 100%),
+	linear-gradient(to right, #ddf0fe 0%, #ceeafd 69%, #c5e3fc 70%, #c2e2fc 100%);
+}
+appcontents *::-webkit-scrollbar-button:vertical:increment:active{
+	background: 
+	url("../../res/ui/luna/blue/scroll_down.png") no-repeat center,
+	radial-gradient(circle at 0 0, #6e8ef1 0%, #6e8ef100 20%, #6e8ef100 100%),
+	linear-gradient(to right, #7d9df1 0%, #93acf2 69%, #9eaef2 70%, #a4b7ed 100%);
+}
+
+/* left arrow specific */
+appcontents *::-webkit-scrollbar-button:horizontal:decrement{
+	background: 
+	url("../../res/ui/luna/blue/scroll_left.png") no-repeat center,
+	radial-gradient(circle at 0 0, #e1eafe 0%, #e1eafe00 20%, #e1eafe00 100%),
+	linear-gradient(to right, #c9d8fc 0%, #c1d3fb 69%, #b6cefb 70%, #b6cdfb 100%);
+}
+appcontents *::-webkit-scrollbar-button:horizontal:decrement:hover{
+	background: 
+	url("../../res/ui/luna/blue/scroll_left.png") no-repeat center,
+	radial-gradient(circle at 0 0, #fdffff 0%, #fdffff00 20%, #fdffff00 100%),
+	linear-gradient(to right, #ddf0fe 0%, #ceeafd 69%, #c5e3fc 70%, #c2e2fc 100%);
+}
+appcontents *::-webkit-scrollbar-button:horizontal:decrement:active{
+	background: 
+	url("../../res/ui/luna/blue/scroll_left.png") no-repeat center,
+	radial-gradient(circle at 0 0, #6e8ef1 0%, #6e8ef100 20%, #6e8ef100 100%),
+	linear-gradient(to right, #7d9df1 0%, #93acf2 69%, #9eaef2 70%, #a4b7ed 100%);
+}
+
+/* right arrow specific */
+appcontents *::-webkit-scrollbar-button:horizontal:increment{
+	background: 
+	url("../../res/ui/luna/blue/scroll_right.png") no-repeat center,
+	radial-gradient(circle at 0 0, #e1eafe 0%, #e1eafe00 20%, #e1eafe00 100%),
+	linear-gradient(to right, #c9d8fc 0%, #c1d3fb 69%, #b6cefb 70%, #b6cdfb 100%);
+}
+appcontents *::-webkit-scrollbar-button:horizontal:increment:hover{
+	background: 
+	url("../../res/ui/luna/blue/scroll_right.png") no-repeat center,
+	radial-gradient(circle at 0 0, #fdffff 0%, #fdffff00 20%, #fdffff00 100%),
+	linear-gradient(to right, #ddf0fe 0%, #ceeafd 69%, #c5e3fc 70%, #c2e2fc 100%);
+}
+appcontents *::-webkit-scrollbar-button:horizontal:increment:active{
+	background: 
+	url("../../res/ui/luna/blue/scroll_right.png") no-repeat center,
+	radial-gradient(circle at 0 0, #6e8ef1 0%, #6e8ef100 20%, #6e8ef100 100%),
+	linear-gradient(to right, #7d9df1 0%, #93acf2 69%, #9eaef2 70%, #a4b7ed 100%);
+}
+
+/* scroll corner */
+appcontents *::-webkit-scrollbar-corner{
+	background: #efece0;
+}
+
+/* SCROLLBARS GECKO */
+appcontents{
+	scrollbar-color: #bcd2fe #fefcf8;
+}
+
+/* DESKTOP SHELL ICONS  */
+
+desktopicon icontitle{
+	color: #fff;
+}
+desktopicon:active icontitle{
+	background-color: #004e98;
+	text-shadow: none;
+}
+
+/* EXPLORER SIDEBAR */
+
+app appcontentholder.explorer sidebarcontents{
+	color: #fff;
+	background: linear-gradient(to bottom, #7ba2e7, #6375d6);
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup{
+	background: linear-gradient(to right, #fff, #c6d3f7);
+	color: #215dc6;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup.collapsed .collapser{
+	box-shadow: -2px -2px 2px #b5c1e6;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup .collapser{
+	background-color: #fcffff;
+	border: 1px solid #b3b8cf;
+	box-shadow: 2px 2px 2px #b5c1e6;
+	text-shadow: 0 0 2px #e3ffff;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup ul{
+	background-color: #d6dff7;
+	border-color: #fff;
+}
+
+/* EXPLORER BROWSE ICONS */
+
+appcontentholder fscontents fsicon.spoof-folder icontitle{
+	background-color: #004e98;
+	color: #fff;
+}
+
+/* EXPLORER - THUMBNAIL VIEW */
+
+appcontentholder fscontents.thumbview fsicon icon{
+	border: 1px solid #e0dfe3;
+}
+
+/*appcontentholder fscontents.thumbview fsicon:active icon{
+	border: 1px solid #004e98;
+	outline: 2px solid #004e98;
+}
+appcontentholder fscontents.thumbview fsicon:active icontitle{
+	background-color: #004e98;
+	color:#fff;
+}*/
+
+/* EXPLORER - TILES VIEW */
+
+/*appcontentholder fscontents.tileview fsicon:active icontitle{
+	background-color: #004e98;
+	color:#fff;
+}
+appcontentholder fscontents.tileview fsicon:active icon{
+	filter:brightness(.3) sepia(90%) hue-rotate(160deg) saturate(7);
+}*/
+
+/* EXPLORER - ICON VIEW */
+
+/*appcontentholder fscontents.iconview fsicon:active icon{
+	filter:brightness(.3) sepia(90%) hue-rotate(160deg) saturate(7);
+}
+appcontentholder fscontents.iconview fsicon:active icontitle{
+	background-color: #004e98;
+	color:#fff;
+}*/
+
+/* EXPLORER - LIST VIEW */
+
+/*appcontentholder fscontents.listview fsicon:active icontitle{
+	background-color: #004e98;
+	color:#fff;
+}
+appcontentholder fscontents.listview fsicon:active icon{
+	filter:brightness(.3) sepia(90%) hue-rotate(160deg) saturate(7);
+}*/
+
+/* TABBED UI */
+
+appcontents tab_ui tabholder ul.tabs li{
+	border:1px solid;
+	border-color: #91a7b4 #91a7b4 #a5aaad #91a7b4;
+	background: linear-gradient(to bottom, #fff 0%, #fafaf9 10%, #f0f0ea 100%);
+	box-shadow: inset 0 -1px #ecebe6, inset -1px 0 1px #e6e3dc;
+}
+appcontents tab_ui tabholder ul.tabs li:hover{
+	box-shadow: inset 0 2px 0 #ffc73c, inset 0 -1px #ecebe6, inset -1px 0 1px #e6e3dc;;
+	background: linear-gradient(to bottom, #fff 0%, #fafaf9 10%, #f0f0ea 100%);
+	border-color: #e68b2c #9db1ba #a5aaad #9db1ba;
+}
+appcontents tab_ui tabholder ul.tabs li.selected{
+	box-shadow: inset 0 2px 0 #ffc73c;
+	background: #fcfcfe;
+	border-color: #cf7225 #919b9c #fff #919b9c;
+}
+appcontents tab_ui tabcontent{
+	background: linear-gradient(to bottom, #fff, #f9f6f3);
+	border: 1px solid #a5aaad;
+}
+
+/*dropdown box, also data input fields*/
+
+appcontents select, input[type="text"], input[type="number"]{
+	border:1px solid #7f9db9;
+	background: #fff;
+}
+
+/*list view box*/
+
+appcontents scrollbox{
+	outline: 1px solid #8eafcb;
+	background: var(--contentColor);
+}
+
+/** ----- START MODULES CSS ----- **/
+scene_desktop{
+	background-color: var(--desktop);
+}
+
+taskbar{
+	background: linear-gradient(to bottom, #3168d5 2%, #4993e6 8%, #245dd7 17%, #2257d5 30%, #2663e0 89%, #1941a5 98%);
+}
+taskbar startbtn{
+	width:97px;
+	background: url('../../res/ui/luna/blue/start.png');
+	filter: drop-shadow(1px 1px 1px #307fe8);
+}
+taskbar startbtn:hover{
+	background: url('../../res/ui/luna/blue/start_hover.png');
+}
+taskbar startbtn:active, taskbar startbtn.active{
+	background: url('../../res/ui/luna/blue/start_press.png');
+}
+taskbar taskarea task{
+	color: #fff;
+	background: linear-gradient(to bottom, #3a80f3, #3980f4);
+	box-shadow: inset 1px 1px 2px #68a7f7, inset 0px -2px 2px #316fe8, inset 1px 0 0 #6da4f6;
+	border: 1px solid;
+	border-color: #3172da #2653b8 #2653b8 #3172da;
+}
+taskbar taskarea task:hover{
+	background: linear-gradient(to bottom, #59a4ff, #55a0ff);
+	box-shadow: inset 1px 1px 3px #8bc0ff, inset 1px 0 0 #9fccff, inset -1px -1px 3px #2a81ff;
+	border: 1px solid;
+	border-color: #2e60b3 #1f408c #1f408c #2e60b3;
+}
+taskbar taskarea task.active, taskbar taskarea task:active{
+	height: 22px;
+	margin-top: 4px;
+	background: linear-gradient(to bottom, #1951b9, #1a50b8);
+	box-shadow: inset 1px 1px 0 #1848a6, inset 0px -2px 2px #2156b7, 0 -1px 0 #2266d5;
+	border: 1px solid #123d94;
+	border-left: 1px solid #082970;
+	color:#fff;
+}
+taskbar taskarea task.active:hover{
+	background: linear-gradient(to bottom, #326fea, #326ee9);
+	box-shadow: inset 1px 1px 1px #1b5bd3, inset 2px 2px 2px #3f7ae8, 0 -1px 0 #2266d5;
+	border: 1px solid;
+	border-color: #1c51c2 #0c3cae #0c3cae #1c51c2;
+
+}
+
+taskbar trayarea{
+	background: linear-gradient(to bottom, #095bc9 2%, #19b8f3 8%, #1290e8 17%, #1290e9 30%, #0f9eef 89%, #095bc9 98%), linear-gradient(to left, #0f83e0ff 0%, #0f83e000 15%);
+	box-shadow: inset 2px 0 0 #00c5ff88, -1px 0 0 #0b3051;
+}
+taskbar trayarea span{
+	color: #fff;
+}
+
+startmenu{
+	border: 1px solid #1e59c4;
+	background-color: #2b6dd1;
+
+	filter: drop-shadow(2px 2px 2px #00000088);
+}
+
+startmenu userbar{
+
+	background: radial-gradient(circle at 100% 0%, #0849a977 0%, #0849a900 6%, #0849a900 100%), linear-gradient(to bottom, #66a2e7 0%, #74abe8 1.5%, #0c5fcb 5%, #1061cc 10%, #4792ec 100%);
+	box-shadow: inset -2px 0px 3px #1455b7, inset 2px 0 3px #7190d9;
+	border-bottom:1px solid #1b6bd1;
+}
+startmenu links{
+	/*blue and homestead*/
+
+	border-top: 2px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #91a4da 0%, #91a4da 0.4%, #ffffff 0.5%, #ff8e24, #d3e5fa 99.5%, #2b6dd1 99.6%, #2b6dd1 100%);
+}
+startmenu links applinks{
+	background-color: #fff;
+	border-left:1px solid #91a4da;
+	color: #373738;
+	padding-top: 2px; /*possibly metallic specific*/
+}
+startmenu links applinks ul#pinnedapps{
+	border-bottom: 1px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right,#fff 0%, #fff 8.5%, #fefefe 8.6%, #d3d3c8 24.05%, #d3d3c8 51.05%, #d3d3c8 76.05%, #fefefe 93.6%, #fff 93.7%, #fff 100%);
+}
+startmenu links applinks ul#pinnedapps span.name{
+	color: #808080;
+}
+startmenu links applinks ul#allapps{
+	border-top:1px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right,#fff 0%, #fff 8.5%, #fefefe 8.6%, #d3d3c8 24.05%, #d3d3c8 51.05%, #d3d3c8 76.05%, #fefefe 93.6%, #fff 93.7%, #fff 100%);
+}
+startmenu links applinks ul#allapps ul#start-programs{
+	border: 1px solid #3e88e3;
+	border-left: 1px solid #3a85e3;
+	box-shadow: inset 1px 0 #83b1ed, inset 2px 0 #2c7ae0, inset 3px 0 #2d7ce2, inset 4px 0 #307fe5, inset 5px 0 #3382e8;	
+}
+startmenu links applinks ul#allapps ul{
+	border: 1px solid #3e88e3;
+	border-left: 1px solid #3a85e3;
+	box-shadow: inset 1px 0 #83b1ed, inset 2px 0 #2c7ae0, inset 3px 0 #2d7ce2, inset 4px 0 #307fe5, inset 5px 0 #3382e8;
+}
+
+startmenu links applinks ul#allapps:hover ul#start-programs li:not(.divider):hover{
+	background-color: #1665cb;
+	color: #fff;
+}
+
+startmenu links applinks li:hover{
+	background-color: #316ac5;
+	color:#fff;
+}
+startmenu links applinks li:hover span.name{
+	color: #fff !important;
+}
+startmenu links syslinks{
+	background-color: #d3e5fa;
+	box-shadow: inset -1px 0 2px #a6c2e6;
+	border-left:1px solid #95bdee;
+	border-right:1px solid #2b6dd1;
+	color:#0a246a;
+}
+startmenu links syslinks ul#syslocations:after{
+	background: linear-gradient(to right, #b9d6fc 0%, #81b6ff 50%, #b9d6fc 100%);
+}
+startmenu links syslinks ul#settings:before{
+	background: linear-gradient(to right, #dbe7f6 0%, #ededed 50%, #dbe7f6 100%);
+}
+startmenu links syslinks ul#settings:after{
+	background: linear-gradient(to right, #b9d6fc 0%, #81b6ff 50%, #b9d6fc 100%);
+}
+startmenu links syslinks ul#support:before{
+	background: linear-gradient(to right, #dbe7f6 0%, #ededed 50%, #dbe7f6 100%);
+}
+
+startmenu links syslinks li:hover{
+	background-color: #316ac5;
+	color:#fff;
+}
+
+startmenu poweropt{
+	background: radial-gradient(circle at 0% 100%, #0846b8aa 0%, #0846b800 13%, #0846b800 100%), radial-gradient(circle at 100% 100%, #0c50b188 0%, #0c50b100 13%, #0c50b100 100%),  linear-gradient(to bottom, #438be3 0%, #1164d1 95%, #0c56c0 100%);
+	box-shadow: inset 3px 0 2px #376cd4;
+	border:none;
+	border-top: 1px solid #3277de;
+}
+startmenu poweropt span{
+	color:#fff;
+}
+/*startmenu:before{
+	content:' ';
+	height:30px;
+	width: 97px;
+	background:url('../res/ui/start_press.png');
+	position: absolute;
+	bottom: 0;
+	margin: 0 0 -31px -1px;
+	box-shadow: none;
+}*/
+/*RESIZABLE WINDOW*/
+
+/*Dialog box*/
+app{
+	border:1px solid;
+	border-color: #0059e8 #00138c #00138c #0019cf;
+	background-color: #0021a9;
+}
+
+/*application frames*/
+appheader{
+	color: #fff;
+	text-shadow: 1px 1px #0a1883;
+
+	background: 
+	radial-gradient(circle at 0% 20%, #0032c1 0%, #0032c188 1%, #0032c100 2%, #0032c100 100%),
+	radial-gradient(circle at 100% 20%, #0032c1 0%, #0032c188 1%, #0032c100 2%, #0032c100 100%),
+	linear-gradient(to bottom,#3d95ff 0%, #2b90ff 7%, #0372ff 9%, #0054e3 18%, #0054e3 19%, #0058ee 50%, #026afe 80%, #026afe 90%, #0065fd 93%, #71aaff 96%, #c4d6ff 100%);
+	/*background-color: #0055e5;*/
+	box-shadow: inset -1px -1px 1px #0026acaa, inset -2px -1px 1px #0020c8aa, inset -3px -1px 1px #003be0aa, inset 1px -1px 1px #0020c8aa, inset 2px -1px 1px #0038d8aa, inset 3px -1px 1px #0046e4aa, inset 0 -1px #f00;
+}
+appanimator{
+	color: #fff;
+	text-shadow: none;
+}
+
+app.inactive{
+	border-color: #688de0 #5b5ec5 #4f53bc #5b68cd;
+	background-color: #6d74cd;
+}
+
+app.inactive appheader{
+	background: 
+	radial-gradient(circle at 0% 25%, #7276d1 0%, #7276d1aa 1%, #7276d100 2%, #7276d100 100%),
+	radial-gradient(circle at 100% 25%, #7276d1 0%, #7276d1aa 1%, #7276d100 2%, #7276d100 100%),
+	linear-gradient(to bottom,#9ab4e9 0%, #9db9eb 7%, #8bb0e9 9%, #7b9de1  18%, #7996de 19%, #7a96e0 50%, #7fa2e6 80%, #80a5e6 90%, #7fa2e5 91%, #7b99e1 94%, #778edb 100%);
+	box-shadow: inset 2px 0 0 #747cd566, inset 1px 0 0 #747cd5, inset -2px 0 0 #6e6dc566, inset -1px 0 0 #6e6dc5;
+	color: #d8e4f8;
+	text-shadow: none;
+}
+
+/*caption buttons _ [] X*/
+
+appcontrols captionbutton, app.inactive appcontrols captionbutton:hover{
+	background: radial-gradient(at 10% 10%, #9ab7faff 0%, #9ab7fa44 30%, #9ab7fa00 60%), radial-gradient(at 85% 40%, #2766f5ff 0%, #2766f555 40%, #2766f500 50%), #4778f6 ;
+	box-shadow: inset 2px 2px 3px #7099f8, inset -1px -1px 2px #196df4;
+}
+appcontrols captionbutton div, app.inactive appcontrols captionbutton:hover div{
+	filter: none;
+}
+appcontrols captionbutton:after, app.inactive appcontrols captionbutton:hover:after{
+	box-shadow: inset 1px 1px 1px #3e73f5, inset -1px -1px 1px #0f47c0;
+	border: 1px solid #fff;
+}
+
+/*hover states*/
+appcontrols captionbutton:hover{
+	background: radial-gradient(at 10% 10%, #a4c2ffff 0%, #a4c2ff44 30%, #a4c2ff00 60%), radial-gradient(at 70% 70%, #3eb4ffff 0%, #3eb4ff55 40%, #3eb4ff00 50%), #317aff ;
+	box-shadow: inset 2px 2px 3px #81aaff , inset -1px -1px 2px #3578ff;
+}
+appcontrols captionbutton:hover:after{
+	box-shadow: inset 1px 0 1px #1761f9aa, inset -1px 0 1px #1b52c2aa, inset 0 1px 1px #3678ff, inset 0 -1px 1px #1950c1;
+	background: none;
+	border: 1px solid #fff;
+}
+
+/*click states*/
+appcontrols captionbutton:active, app.inactive appcontrols captionbutton:active{
+	background: linear-gradient(45deg, #003882 0%, #0045a9 25%, #0055ba 75%, #0060c4 100%);
+	box-shadow: none;
+}
+appcontrols captionbutton:active div, app.inactive appcontrols captionbutton:active div{
+	opacity: 0.6;
+	filter: none;
+}
+appcontrols captionbutton:active:after, app.inactive appcontrols captionbutton:active:after{
+	box-shadow: inset 1px 1px 1px #002452aa, inset -1px -1px 1px #0052b7aa;
+	/*background: linear-gradient(#9c9eb5 0%, #d8d7e9 90%, #fefbff 100%);*/
+	border:1px solid #fff;
+}
+
+/*close button specific*/
+appcontrols captionbutton.closebtn, app.inactive appcontrols captionbutton.closebtn:hover{
+	background: radial-gradient(at 10% 10%, #f1ac9aff 0%, #f1ac9a44 30%, #f1ac9a00 60%), radial-gradient(at 85% 40%, #e34d22ff 0%, #e34d2222 40%, #e34d2200 50%), #e66a4d;
+	box-shadow: inset 2px 2px 3px #ec937c, inset 1px 1px 2px #e34d22;
+}
+appcontrols captionbutton.closebtn div, app.inactive appcontrols captionbutton.closebtn:hover div{
+	filter: none;
+}
+appcontrols captionbutton.closebtn:after, app.inactive appcontrols captionbutton.closebtn:hover:after{
+	box-shadow: inset 1px 1px 1px #e45f3eaa, inset -1px -1px 1px #ae2400aa;
+	border: 1px solid #fff;
+}
+
+appcontrols captionbutton.closebtn:hover{
+	background: radial-gradient(at 10% 10%, #ffb8b0ff 0%, #ffb8b044 30%, #ffb8b000 60%), radial-gradient(at 70% 70%, #ffa27dff 0%, #ffa27d22 40%, #ffa27d00 50%), #ff6452;
+	box-shadow: inset 2px 2px 3px #ffa59b, inset 1px 1px 2px #ff6857;
+}
+appcontrol captionbutton.closebtn:hover div{
+	filter: none;
+}
+appcontrols captionbutton.closebtn:hover:after{
+	border: 1px solid #fff;
+	box-shadow: inset 0 1px 1px #ff6b5aaa, inset 0 -1px 1px #c93c2baa, inset 1px 0 1px #ff5744aa, inset -1px 0 1px #cf4c3baa;
+}
+
+appcontrols captionbutton.closebtn:active, app.inactive appcontrols captionbutton.closebtn:active{
+	background: linear-gradient(45deg, #8d2c14 0%, #ba391a 25%, #c5431f 75%, #cf4c23 100%);
+	box-shadow: none;
+}
+appcontrols captionbutton.closebtn:active div, app.inactive appcontrols captionbutton.closebtn:active div{
+	filter: none;
+	opacity: 0.6;
+}
+appcontrols captionbutton.closebtn:active:after, app.inactive appcontrols captionbutton.closebtn:active:after{
+	border: 1px solid #fff;
+	box-shadow: inset 1px 1px 1px #5a1d0daa, inset -1px -1px 1px #c3411eaa;
+}
+
+/* inactive window state */
+app.inactive appcontrols captionbutton{
+	background: radial-gradient(at 10% 10%, #88a2eaff 0%, #88a2ea44 30%, #88a2ea00 60%), radial-gradient(at 85% 40%, #4f75e8ff 0%, #4f75e855 40%, #4f75e800 50%), #5f80e9;
+	box-shadow: inset 2px 2px 3px #7a96ea, inset -1px -1px 2px #4479eb;	
+}
+app.inactive appcontrols captionbutton div{
+	filter: none;
+}
+app.inactive appcontrols captionbutton:after{
+	box-shadow: inset 1px 1px 1px #5a80e8, inset -1px -1px 1px #4566ce;
+	border: 1px solid #bdcaee;
+}
+
+app.inactive appcontrols captionbutton.closebtn{
+	background: radial-gradient(at 10% 10%, #b49cbaff 0%, #b49cba66 30%, #b49cba00 60%), radial-gradient(at 85% 40%, #ad687eff 0%, #ad687e22 40%, #ad687e00 50%), #ae7891;
+	box-shadow: inset 2px 2px 3px #b396b3, inset -1px -1px 2px #b16775;
+}
+app.inactive appcontrols captionbutton.closebtn div{
+	filter: none;
+}
+app.inactive appcontrols captionbutton.closebtn:after{
+	box-shadow: inset 1px 1px 1px #ae768c, inset -1px -1px 1px #955b76;
+	border: 1px solid #bdcaee;
+}
+
+/*maximized window state*/
+app.maximized appheader{
+	background: linear-gradient(to bottom,#3e96ff 0%, #2c8aff 3%, #0370ff 7%, #0055e3 14%, #0152e0 19%, #0166fe 85%, #005af8 93%, #0043cf 100%);
+}
+app.maximized.inactive appheader{
+	background: linear-gradient(to bottom,#99b3e9 0%, #9db9eb 3%, #8cb0e9 7%, #7998df 14%, #7894dd 19%, #88aee9 85%, #7e9ee5 93%, #7687dc 100%);
+}
+
+/*app contents*/
+appcontents{
+	/*background-color: #fff;*/
+
+	border:1px solid;
+	border-color: #0144d0 #003ddc #0048f1 #0855dd;
+	/*box-shadow: -1px 0 0 #166aee, 1px 0 0 #001ea1, 0 1px 0 #001ea1;*/
+	box-shadow: -1px 0 2px 0px #5d8aee, 1px 0 2px 1px #003ddc, 0px 1px 2px 1px #003ddc;
+	/*box-shadow: -1px 0 1px 0px #28f, 1px 0 1px 1px #06f, 0px 1px 1px 1px #06f;*/
+}
+app.inactive appcontents{
+	border-color: #778edb #7586dc #7586dc #758cdc;
+	box-shadow: -1px 0 0 #758cdd, 1px 0 0 #7588de, 0 1px 0 #6d74cd;
+}
+
+app.dialogbox appcontents{
+	box-shadow: -1px 0 0 #28f, 1px 0 0 #06f, 0px 1px 0 #06f;
+	background-color: #eeead6;
+}
+
+/*window navigation + menus*/
+appcontentholder appnavigation.rich{
+	background: linear-gradient(to right, #f2f4f2, #eeead6);
+}
+appcontentholder appnavigation ul{
+	color: #000;
+	border-bottom: 1px solid #d8d2bd;
+}
+appcontentholder appnavigation ul:nth-of-type(n+2){
+	border-top: 1px solid #fff;
+}
+
+appcontentholder appnavigation ul.appmenus li:hover{
+	background-color:#316ac5;
+	/*this text color doesn't apply to the silver theme*/
+	color: #fff;
+}
+appcontentholder appnavigation navflag{
+	border-color: #d8d2bd;
+	border-style: solid;
+	border-width: 0 0 1px 1px;
+}
+
+appcontentholder appnavigation ul.navbuttons{
+	border-top: 1px solid #fff;
+}
+appcontentholder appnavigation ul.navbuttons li.divider{
+	border-right:1px solid #cac6af;
+}
+appcontentholder appnavigation ul.navbuttons li:hover{
+	border:1px solid #d8d2bd;
+	background: linear-gradient(to bottom, #f9f9f5, #f1f1ea);
+	box-shadow: inset 0 1px 2px #fefefd,inset 0px -1px 2px #d7d2c6, inset -1px 0 1px #e8e5dc;
+}
+appcontentholder appnavigation ul.navbuttons li:hover pointer{
+	border-left:1px solid #d8d2bd;
+	box-shadow: inset 1px 0 0 #f6f6f3;
+}
+appcontentholder appnavigation ul.navbuttons li:active{
+	border:1px solid #9d9d92;
+	background: linear-gradient(to bottom, #e7e5e0, #e0dfd7);
+	box-shadow: inset 1px 1px 1px #dcdad1, inset 0 -1px 1px #ebeae5;
+}
+
+/* view picker popup */
+
+appcontentholder appnavigation xp-popup.viewpicker{
+	border: 1px solid #9d9da1;
+	background: #fff;
+	box-shadow: 4px 4px 4px #909090;
+}
+/*appcontentholder appnavigation xp-popup.viewpicker li:hover{
+	background: #004e98;
+	color: #fff;
+}*/
+
+ /* content panes in apps */
+appcontentholder contentpane{
+	border: 1px solid;
+	border-color: #839fbd;
+	box-shadow: none;
+	background-color: #fff;
+	color: #000;
+}
+appcontentholder contentpane items entry.details-header{
+	background: #efece0;
+	box-shadow: inset 0 -1px 2px #cec9bf;
+	color: #000;
+}
+appcontentholder contentpane items entry.details-header *{
+	border-left: 1px solid #c8c8b7;
+	box-shadow: inset 1px 0 #fff;
+}
+appcontentholder contentpane items entry:not(.details-header):active icon{
+	filter: sepia(0.9) saturate(4) brightness(0.5) contrast(2) hue-rotate(140deg);
+}
+
+appcontentholder resizer{
+	background-color: #efece0;
+}
+
+/* status bar stuff in apps */
+
+appcontentholder statusbar{
+	background: linear-gradient(to bottom, #efece0, #e7e4d0);
+	border-top: 1px solid #959386;
+	box-shadow: inset 0 1px 1px #d7d8c8, inset 0 -1px 4px #ded8c8;
+}
+
+/* resize grabber */
+appcontentholder statusbar #grabber{
+	/*background: url("../../res/ui/luna/grabber.png") no-repeat;
+	filter: contrast(0) sepia(1) drop-shadow(1px 1px #fff) opacity(0.9);*/
+}
+
+/* when opening a system directory (windows or system32) */
+
+appcontentholder systemfilesprompt{
+	background-color: #6375d6;
+	background: url("../../res/ui/luna/metallic/systemfiles.bmp"), #6375d6;
+}
+appcontentholder systemfilesprompt h1{
+	color: #d6dff5;
+}
+appcontentholder systemfilesprompt h2{
+	color: #fff;
+}
+appcontentholder systemfilesprompt span{
+	color: #fff;
+}

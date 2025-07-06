@@ -1,0 +1,136 @@
+/* --- Core App Layout --- */
+app appcontentholder.minesweeper {
+    padding: 0 !important;
+}
+
+app appcontentholder minecontents {
+    background-color: #c0c0c0;
+    border-width: 4px 0 0 3px;
+    border-style: solid;
+    border-color: #fff;
+    display: block;
+    padding-bottom: 5px;
+    margin-left: 2px;
+}
+
+/* --- Top UI Bar --- */
+app appcontentholder.minesweeper #top_ui {
+    margin: 6px;
+    height: 34px;
+    border: 2px solid;
+    border-color: #808080 #fff #fff #808080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+/* --- Sprite Sheet Asset --- */
+.minesweeper_sprite {
+    background-image: url("../res/ui/minesweeper/minesweeper_sprites.png");
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+/* --- Counters (Flag & Timer) --- */
+app appcontentholder.minesweeper #top_ui #timer,
+app appcontentholder.minesweeper #top_ui #flagcount {
+    display: flex; /* Use flex to align the digit divs */
+}
+
+.digit {
+    width: 13px;
+    height: 23px;
+}
+
+/* Positions for each digit 0-9 and '-' from the sprite sheet */
+.d0 { background-position: 0 -50px; }
+.d1 { background-position: -13px -50px; }
+.d2 { background-position: -26px -50px; }
+.d3 { background-position: -39px -50px; }
+.d4 { background-position: -52px -50px; }
+.d5 { background-position: -65px -50px; }
+.d6 { background-position: -78px -50px; }
+.d7 { background-position: -91px -50px; }
+.d8 { background-position: -104px -50px; }
+.d9 { background-position: -117px -50px; }
+.d-blank { background-position: -130px -50px; }
+
+/* --- Smiley Button --- */
+app appcontentholder.minesweeper #top_ui #newgame {
+    width: 24px;
+    height: 24px;
+    border: 2px outset #c0c0c0;
+    border-color: #fff #808080 #808080 #fff;
+}
+
+#newgame.smile { background-position: 0px -73px; }
+#newgame:active, #newgame.whoa {
+    background-position: -24px -73px;
+    border-style: inset;
+    border-color: #808080 #fff #fff #808080;
+}
+#newgame.win { background-position: -96px -73px; }
+#newgame.lose { background-position: -72px -73px; }
+
+/* --- Game Grid --- */
+app appcontentholder.minesweeper #gridholder {
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid;
+    border-color: #808080 #fff #fff #808080;
+    margin: 0 6px;
+    font-size: 0; /* Prevents tiny gaps between divs */
+}
+
+app appcontentholder.minesweeper #gridholder div {
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-color: #fff #808080 #808080 #fff;
+    background-color: #c0c0c0;
+}
+
+app appcontentholder.minesweeper #gridholder div:not(.opened):active {
+    border: 1px solid #808080;
+    background-image: none;
+}
+
+app appcontentholder.minesweeper #gridholder div.opened {
+    border: 1px solid #808080;
+}
+
+/* Positions for each tile state from the sprite sheet */
+.tile_1 { background-position: 0 0; }
+.tile_2 { background-position: -16px 0; }
+.tile_3 { background-position: -32px 0; }
+.tile_4 { background-position: -48px 0; }
+.tile_5 { background-position: -64px 0; }
+.tile_6 { background-position: -80px 0; }
+.tile_7 { background-position: -96px 0; }
+.tile_8 { background-position: -112px 0; }
+.mine { background-position: -32px -16px; }
+.mine-hit { background-position: -48px -16px; }
+.mine-wrong { background-position: -64px -16px; }
+.flag { background-position: -16px -16px; }
+.question { background-position: -80px -16px; }
+.question-down { background-position: -96px -16px; }
+
+/* --- Menu Styling (Unchanged) --- */
+app appcontentholder.minesweeper .appmenus #gamemenu .submenu {
+    display: none;
+    background-color: white;
+    border: 1px solid black;
+    position: absolute;
+    width: min-content;
+}
+
+app appcontentholder.minesweeper .appmenus #gamemenu .submenu.open {
+    display: block;
+}
+
+app appcontentholder.minesweeper .appmenus #gamemenu .submenu li {
+    display: block;
+    height: 20px;
+}

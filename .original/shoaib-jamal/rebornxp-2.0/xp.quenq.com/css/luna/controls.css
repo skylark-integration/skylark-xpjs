@@ -1,0 +1,1167 @@
+@font-face{
+	font-family: "MS Pixel Font";
+	src: url("../../res/fonts/w95fa.woff");
+}
+
+/*:root{
+	--contentFont: "MS Pixel Font", "Tahoma", sans-serif;
+	--contentFontSize: 8.06px;
+	--titleFont:  "Trebuchet MS", sans-serif;
+	--titleFontSize: 14px;
+}*/
+
+/*  USER LEVEL CSS  */
+
+::selection{
+	background: var(--highlightColor);
+	color: var(--highlightText);
+}
+
+/*	SQUISHY BUTTONS */
+/*base element contains structure and normal highlights. Before element contains icon. 
+After element contains shadows. Base colors fetched from colors.css via background-color prop*/
+softbutton{
+	display: inline-block;
+	width:31px;
+	height:31px;
+	margin: 1px;
+	border-radius: 4px;
+	background-size: 31px;
+	position: relative;
+	background: radial-gradient(at 10% 10%, #ffffff66 0%, #ffffff4a 10%, #ffffff00 60%), radial-gradient(at 85% 85%, #ffffff33 0%, #ffffff19 30%, #ffffff00 50%);
+}
+softbutton img{
+	height: 31px;
+	width: 31px;
+	display: block;
+	position: absolute;
+	top:1px;
+	pointer-events: none;
+}
+softbutton:before{
+	filter: multiply;
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	/*transform: translateY(-100%);*/
+	margin: 0 0 0 -1px;
+	border-radius: 5px;
+	box-shadow: inset -1.5px -1.5px 4.5px #00000088, inset 1px 1px 1px #00000029;
+	background: radial-gradient(at 100% 100%, #00000022 0%, #00000000 40%);
+	border:1px solid white;
+}
+softbutton:after{
+	position: absolute;
+	top:1px;
+}
+/*HOVER STATES*/
+softbutton:hover{
+/*	background: radial-gradient(at 10% 10%, #ffffff88 0%, #ffffff66 10%, #ffffff00 60%), radial-gradient(at 85% 85%, #ffffff66 0%, #ffffff22 30%, #ffffff00 50%);*/
+	cursor: url("../../res/ui/cursors/link.cur"), pointer;
+}
+/*softbutton:hover:after{
+	box-shadow: inset -1.5px -1.5px 4.5px #00000088, inset 1px 1px 1px #00000022;
+	background: none;
+}*/
+/*CLICK STATES*/
+/*softbutton:active{
+	background: radial-gradient(at 90% 90%, #ffffff33 0%, #ffffff22 20%, #ffffff00 50%);
+}
+softbutton:active:after{
+	filter: multiply;
+	box-shadow: inset -1.5px 1.5px 4.5px #00000055, inset 1.5px 1.5px 3px #00000055;
+	background: radial-gradient(at 10% 10%, #0000002a 0%, #00000000 60%);
+	border:1px solid white;
+}*/
+softbutton:active img{
+	opacity: 0.6;
+}
+
+/*  DOUBLED SQUISHY BUTTON  */
+.bigbutton{
+	display: inline-block;
+	width:64px;
+	height:64px;
+	border:2px solid white;
+	border-radius: 8px;
+	background: none;
+	background-size: 64px;
+}
+.bigbutton:after{
+	filter: multiply;
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	margin-top: -100%;
+	border-radius: 8px;
+	box-shadow: inset -3px -3px 8px #000044aa, inset 2px 2px 1px #00004433;
+	border:2px solid white;
+}
+/*  USER PROFILE PICTURES  */
+startmenu usericon{
+	display: inline-block;
+	height: 52px;
+	margin:0;
+	position: relative;
+}
+startmenu usericon span.name{
+	display: inline-block;
+	line-height: 17px;
+	font-family: "Tahoma", sans-serif;
+	color: #fff;
+	margin: 0 0 0 12px;
+	font-weight: 500;
+	vertical-align: top;
+	font-size: 19px;
+}
+startmenu usericon img{
+	width:48px;
+	height: 48px;
+	display: inline-block;
+	margin-left: 2px;
+	border:1px solid #d5d3e8;
+	border-radius: 2px;
+	box-shadow: 1px 0 #d5d3e8, -1px 0 #d5d3e8, 0 1px #d5d3e8, 0 -1px #d5d3e8, 2px 2px 3px #0003;
+}
+/*usericon:after{
+	content: ' ';
+	width:52px;
+	height: 52px;
+	display: block;
+	margin: -70px 0 0 0;
+	background-color: #d5d3e8;
+	border-radius: 4px;
+	box-shadow: 2px 2px 3px #00000033;
+}*/
+
+/*  OLD UI BUTTON METHOD, DEPRECATED  */
+oldbutton{
+	/*bgcol for base, border for the selection ring, box shadow for surround*/
+	display: inline-block;
+	font-family: var(--systemFont);
+	font-size: var(--systemFontSize);
+	text-align: center;
+	color:#000;
+	background: linear-gradient(to bottom, #fcfcfb, #ecebe6);
+	margin:3px;
+	padding: 1px 5px;
+
+	min-width:71px;
+
+	border-radius: 2.5px;
+	border: 2px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to bottom, #fcfcfb, #ecebe6 90%, #d6d0c5 100%);
+	box-shadow: 0 0 0px 1px #003c74, 0px -1px 0 1px #00000022, 0px 1px 0 1px #ffffff55;
+}
+oldbutton.default{
+	border-image-source: linear-gradient(to bottom,#cee7ff 0%, #bcd4f6 10%, #89ade4 95%, #6982ee 100%);
+}
+oldbutton:hover{
+	border-image-source: linear-gradient(to bottom,#fff0cf 0%, #fcd279 10%, #f8b230 95%, #e59700 100%);
+}
+oldbutton:active{
+	background: linear-gradient(to bottom, #e6e6e0, #e0e0d7);
+	border-image-source: linear-gradient(to bottom, #c1bdb3 0%, #e2e1da 5%, #e2e1da 87.5%, #f2f1ee 100%);
+}
+oldbutton.disabled{
+	color:#8c8a7e;
+	background: #f8f6ea;
+	border-image-source: linear-gradient(to bottom,#f8f6ea, #f8f6ea);
+	box-shadow: 0 0 0 1px #c6c6ba;
+}
+
+/*  UI BUTTONS - OK, CANCEL ETC  */
+btncontainer.right{
+	position: absolute;
+	right: 0px;
+	margin-top: 4px;
+	margin-right: 6px;
+}
+btncontainer.left{
+	position: absolute;
+	left: 0px;
+	margin-top: 4px;
+	margin-left: 6px;
+}
+btncontainer.center{
+	margin: 4px auto 0;
+}
+
+winbutton{
+	/*bgcol for base, border for the selection ring, box shadow for surround*/
+	display: inline-block;
+	border-radius: 3px;
+	border: 1px solid #003c74;
+	background: linear-gradient(to bottom, #ffffff 0%, #fdfdfd 10%, #c6c5d7 90%, #c6c5d7 100%);
+	padding: 0;
+	margin: 2px;
+	height: 19px;
+	box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77, inset 1px 0 0 #fff, inset -1px 0 0 #fff;;
+	min-width: 71px;
+}
+winbutton btnopt{
+	display:block;
+	font-family: var(--systemFont);
+	font-size: var(--systemFontSize);
+	text-align: center;
+	color:#000;
+	background: linear-gradient(to bottom, #ffffff 0%, #fdfdfd 10%, #c6c5d7 90%, #c6c5d7 100%);
+	margin:2px;
+	padding: 0px 4px;
+	height:calc(100% - 4px);
+	width:inherit;
+	line-height: 15px;
+}
+
+/* states */
+winbutton.default{
+	background: linear-gradient(to bottom,#cee7ff 0%, #bcd4f6 10%, #89ade4 95%, #6982ee 100%);
+	box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77;
+}
+winbutton.default btnopt{
+	box-shadow: 1px 0 0 #fff, -1px 0 0 #fff;
+}
+winbutton:hover{
+	box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77;
+	background: linear-gradient(to bottom,#fff0cf 0%, #fcd279 10%, #f8b230 95%, #e59700 100%);
+}
+winbutton:hover btnopt{
+	box-shadow: none;
+	background: linear-gradient(to bottom,#fdfdfd 0%, #fdfdfd 30%, #f6f7fd 31%, #d6d7e7 95%, #d6d7e7 100%);
+}
+winbutton:active{
+	background: linear-gradient(to bottom, #acabbd, #ffffff);
+	box-shadow: 0px -1px 0 0px #00000022, 0px 1px 0 0px #ffffff77, inset 1px 0 0 #fff, inset -1px 0 0 #fff, inset 0 1px 0 #fff;
+}
+winbutton:active btnopt{
+	background: linear-gradient(to bottom, #acabbd, #ffffff);
+}
+winbutton.disabled{
+	background: #f1f1ed;
+	border: 1px solid #c4c3bf;
+	box-shadow: none;
+	pointer-events: none;
+}
+winbutton.disabled btnopt{
+	color:#8c8a7e;
+	background: none;
+	box-shadow: none;
+}
+
+/*  COMBO BOXES  */
+combobox{
+	/*margin-top: -1px;*/
+	background-color: #fff;
+	border: 1px solid #7f9db9;
+	width: inherit;
+	height: 16px;
+	padding: 2px 0;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 16px;
+	overflow: hidden;
+	text-overflow: clip;
+	white-space: nowrap;
+}
+combobox img{
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin: -2px 2px 0 2px;
+}
+
+/*  DATA SLIDERS  */
+app input[type="range"] {
+	-webkit-appearance: none;
+	background: transparent;
+	width: 100%;
+	height: 20px;
+}
+app input[type="range"]::-moz-range-track {
+	height: 2px;
+	border: 1px solid;
+	border-color: #acaead #ffffff #ffffff #acaead;
+  	box-shadow: inset 0 1px #0001;
+  	border-radius: 2px;
+}
+app input[type="range"]::-moz-range-thumb {
+	height: 19px;
+	width: 9px;
+	background: linear-gradient(to right, #d4d3e1 0%, #fff 11%, #f1f1f1 22%, #e1e1eb 33%, #d4d3e1 44%, #c6c6d2 66%, #b7b6c4 88%, #b7b6c4 100%);
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #48cb46, inset 0 -2px 0 #1fae1d;
+	border: 1px solid;
+	border-radius: 3px;
+	border-color: #b5c4cd #778892 #778892 #b5c4cd;
+}
+app input[type="range"]::-moz-range-thumb:hover{
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #fac158, inset 0 -2px 0 #e2a330;
+}
+app input[type="range"]::-moz-range-thumb:active{
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #48a73b, inset 0 -2px 0 #1f8710;
+}
+app input[type="range"][disabled=""]::-moz-range-track{
+	pointer-events: none;
+}
+app input[type="range"][disabled=""]::-moz-range-thumb{
+	background: linear-gradient(to right, #f7f6ee 0%, #f6f5ec 11%, #f5f4ea 22%, #f5f4ea 33%, #f5f4ea 44%, #f5f4ea 66%, #ecebe2 88%, #e3e2d9 100%);
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #ceccc0, inset 0 -2px 0 #c2c0b3;
+	border-color: #d6d4c6 #bfbcad #bfbcad #d6d4c6;
+	pointer-events: none;
+}
+
+app input[type="range"]::-webkit-slider-runnable-track {
+	height: 4px;
+	border: 1px solid;
+	border-color: #acaead #ffffff #ffffff #acaead;
+  	box-shadow: inset 0 1px #0001;
+  	border-radius: 2px;
+}
+app input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 21px;
+	width: 11px;
+	margin-top: -10px;
+	background: linear-gradient(to right, #d4d3e1 0%, #fff 11%, #f1f1f1 22%, #e1e1eb 33%, #d4d3e1 44%, #c6c6d2 66%, #b7b6c4 88%, #b7b6c4 100%);
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #48cb46, inset 0 -2px 0 #1fae1d;
+	border: 1px solid;
+	border-radius: 3px;
+	border-color: #b5c4cd #778892 #778892 #b5c4cd;
+}
+app input[type="range"][disabled=""]::-webkit-slider-runnable-track{
+	border-color: var(--mainColor) var(--3dHighlight) var(--3dHighlight) var(--mainColor);
+	box-shadow: inset 0 1px var(--3dLightShade), inset 0 -1px var(--mainColor);
+	pointer-events: none;
+}
+app input[type="range"][disabled=""]::-webkit-slider-thumb{
+	background: linear-gradient(to right, #f7f6ee 0%, #f6f5ec 11%, #f5f4ea 22%, #f5f4ea 33%, #f5f4ea 44%, #f5f4ea 66%, #ecebe2 88%, #e3e2d9 100%);
+	box-shadow: inset -1px -1px 0 0px #0002, inset 1px 1px 0 0px #fff7, inset 0 2px 0 #ceccc0, inset 0 -2px 0 #c2c0b3;
+	border-color: #d6d4c6 #bfbcad #bfbcad #d6d4c6;
+	pointer-events: none;
+}
+
+/* 	VERTICAL DATA SLIDERS  */
+app input[type="range"].vertical.segmented{
+	width: 30px;
+	background: 
+	repeating-linear-gradient(to right, transparent 0px, #ece9d8 4px, #ece9d8 26px, transparent 30px),
+	repeating-linear-gradient(#a1a192 0px, transparent 1px, transparent 11px);
+}
+
+app input[type="range"].vertical::-moz-range-track {
+	width: 1px;
+	height: 100%;
+}
+app input[type="range"].vertical::-moz-range-thumb {
+	height: 9px;
+	width: 19px;
+	transform: scaleY(-1);
+}
+
+app input[type="range"].vertical {
+	-webkit-appearance: slider-vertical;
+	writing-mode: vertical-lr;
+	transform: scaleY(-1);
+/*	visibility: hidden;*/
+}
+app input[type="range"].vertical::-webkit-slider-runnable-track {
+/*	transform: rotate(-90deg) scaleX(5);*/
+/*	visibility: visible;*/
+	width: 4px;
+}
+app input[type="range"].vertical::-webkit-slider-thumb {
+/*	transform: scaleX(-0.2);*/
+/*	visibility: visible;*/
+	transform: scaleY(-1);
+	margin-top: unset;
+	margin-left: -10px;
+	width: 22px !important;
+	height: 11px !important;
+}
+
+/*  CHECKS AND RADIOS  */
+app form li{
+	position: relative;
+	padding: 2px 0 2px 18px;
+	height: 16px;
+	list-style: none;
+}
+app form li label input[type="checkbox"], app form li label input[type="radio"]{
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+app form li label wincheckbox, app form li label winradio{
+	box-sizing: border-box;
+	width: 11px;
+	height: 11px;
+
+	position: absolute;
+	top: 4px;
+	left: 0;
+
+	outline: 1px solid #1c5180;
+	border: 2px solid transparent;
+	box-shadow: none;
+	display: inline-block;
+	background: linear-gradient(135deg, #dcdcd7, #ffffff);
+	border-image: linear-gradient(135deg, #dcdcd7, #ffffff);
+	border-image-slice: 1;
+}
+app form li label wincheckbox:hover{
+	border-image: linear-gradient(135deg, #fff0cf, #f8b330);
+	border-image-slice: 1;
+}
+app form li label winradio:hover{
+	border: 2px solid #fac04e;
+}
+app form li label wincheckbox:active, app form li label winradio:active{
+	border-image: linear-gradient(135deg, #b0b0a7, #f1efdf);
+	border-image-slice: 1;
+	background: linear-gradient(135deg, #b0b0a7, #f1efdf);
+}
+app form li label winradio{
+	border-radius: 100%;
+}
+app form li label wincheckbox:after{
+	display: none;
+	transform: rotate(-45deg);
+	width: 2px;
+	height: 4px;
+	content: "";
+	position: absolute;
+	background-color: #21a121;
+	top: 2px;
+	left: 1px;
+}
+app form li label wincheckbox:before{
+	display: none;
+	transform: rotate(45deg);
+	width: 2px;
+	height: 6px;
+	content: "";
+	position: absolute;
+	background-color: #21a121;
+	top: 0px;
+	right: 1px;
+}
+app form li label winradio:after{
+	content: "";
+	width: 5px;
+	height: 5px;
+	display: none;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	background: radial-gradient(circle at 0 0, #55d551, #139210);
+	border-radius: 100%;
+}
+app form li label input:checked + wincheckbox:after, app form li label input:checked + wincheckbox:before, app form li label input:checked + winradio:after{
+	display: block;
+}
+app form li label input:disabled + wincheckbox, app form li label input:disabled + winradio{
+	background: #fff;
+	border: 2px solid #fff;
+	outline: 1px solid #cac8bb;
+}
+app form li label input:disabled + wincheckbox:after, app form li label input:disabled + wincheckbox:before, app form li label input:disabled + winradio:after{
+	background: #cac8bb;
+}
+
+
+/*  PROGRESS BARS  */
+app progress {
+	-webkit-appearance: none;
+	-moz-appearance: progressbar;
+	width: -webkit-fill-available;
+	width: -moz-available;
+	height: 7px;
+	padding: 2px 3px 2px;
+
+	border: 1px solid;
+	border-color: #686868;
+	border-radius: 3px;
+	background-color: #fff;
+	box-shadow: inset 1px 1px #bebebe, inset 2px 2px #efefef, inset -1px -1px #efefef;
+
+	display: block;
+	box-sizing: content-box;
+}
+app progress.tall {
+	height: 15px;
+}
+app progress::-moz-progress-bar {
+	background:repeating-linear-gradient(to right, transparent 0 6px, #fff 6px 8px), linear-gradient(to bottom, #abedac, #29d22c, #8ee790);
+}
+app progress::-webkit-progress-bar {
+	background: transparent;
+}
+app progress::-webkit-progress-value {
+	background:repeating-linear-gradient(to right, transparent 0 6px, #fff 6px 8px), linear-gradient(to bottom, #abedac, #29d22c, #8ee790);
+}
+
+grouper{
+	border: 1px solid var(--3dLightShade);
+	box-shadow: inset 1px 1px var(--3dHighlight), 1px 1px var(--3dHighlight);
+	display: block;
+	width:100%;
+	padding:2px 8px 5px 8px;
+	border-radius: 4px;
+}
+grouper grouperHeading{
+	margin-left: 4px;
+	transform: translateY(-10px);
+	display: inline-block;
+/*	background: var(--mainColor);*/
+	backdrop-filter: blur(4px);
+	padding: 0 4px;
+}
+tab_ui grouper{
+	width: auto;
+	margin: 14px 0;
+}
+
+/* SCROLLBARS WEBKIT */
+appcontents *::-webkit-scrollbar{
+	box-sizing: border-box;
+	width: 17px;
+	height: 17px;
+}
+
+appcontents *::-webkit-scrollbar-button:vertical:start:increment,
+appcontents *::-webkit-scrollbar-button:vertical:end:decrement,
+appcontents *::-webkit-scrollbar-button:horizontal:start:increment, 
+appcontents *::-webkit-scrollbar-button:horizontal:end:decrement 
+{
+    display: none;
+}
+
+/* scroll tracks */
+appcontents *::-webkit-scrollbar-track:vertical{
+	background: linear-gradient(to right, #f3f1ec, #fefefb);
+	box-shadow: inset 1px 0 #eeede5, inset -1px 0 #eeede5;
+}
+appcontents *::-webkit-scrollbar-track:vertical:active{
+	background: linear-gradient(to right, #e3ded3, #fdfdf6);
+	box-shadow: inset 1px 0 #d7d5c2, inset -1px 0 #d7d5c2;
+}
+appcontents *::-webkit-scrollbar-track:horizontal{
+	background: linear-gradient(to bottom, #f3f1ec, #fefefb);
+	box-shadow: inset 0 1px #eeede5, inset 0 -1px #eeede5;
+}
+appcontents *::-webkit-scrollbar-track:horizontal:active{
+	background: linear-gradient(to bottom, #e3ded3, #fdfdf6);
+	box-shadow: inset 0 1px #d7d5c2, inset 0 -1px #d7d5c2;
+}
+
+/* scroll thumbs */
+appcontents *::-webkit-scrollbar-thumb{
+	box-sizing: border-box;
+	border: 1px solid white;
+	border-radius: 2px;
+	height: 16px;
+	width: 16px;
+}
+appcontents *::-webkit-scrollbar-thumb:horizontal{
+	background: url("../../res/ui/luna/blue/scrollgrip_horizontal.png") no-repeat center, linear-gradient(to bottom, #c9d8fc 0%, #c2d3fc 69%, #bad1fc 70%, #b9cdfb 100%);
+	box-shadow: inset 1px 0 #b8cbf6, inset -1px 0 #b9c9f3, inset 0 1px #b4c8f6, inset 0 -1px #fff, inset 0 -2px #bacbf4, inset 2px 0 #e1eafeaa, 1px 0 #7c9fd3;
+	border-bottom: 1px solid #9fb5d2;
+	border-radius: 3px 3px 3px 3px;
+}
+appcontents *::-webkit-scrollbar-thumb:horizontal:hover{
+	background: url("../../res/ui/luna/blue/scrollgrip_horizontal_hover.png") no-repeat center, linear-gradient(to bottom, #d8e8ff 0%, #d6e7ff 69%, #d0e3ff 70%, #cae0ff 100%);
+	box-shadow: inset 1px 0 #b2d1ff, inset -1px 0 #acceff, inset 0 1px #acceff, inset 0 -1px #fff, inset 0 -2px #acceff, inset 2px 0 #eaf3ffaa, 1px 0 #7c9fd3;
+}
+appcontents *::-webkit-scrollbar-thumb:horizontal:active{
+	background: url("../../res/ui/luna/blue/scrollgrip_horizontal_active.png") no-repeat center, linear-gradient(to bottom, #a9bef6 0%, #a1bdfa 69%, #99b9fa 70%, #92b2f6 100%);
+	box-shadow: inset 1px 0 1px #7f95ca, inset -1px 0 1px #96adec, inset 0 1px 1px #839bd4, inset 0 -1px #fff, inset 0 -2px 1px #91adec, 1px 0 #7c9fd3;
+}
+
+appcontents *::-webkit-scrollbar-thumb:vertical{
+	background: url("../../res/ui/luna/blue/scrollgrip_vertical_active.png") no-repeat center, linear-gradient(to right, #c9d8fc 0%, #c2d3fc 69%, #bad1fc 70%, #b9cdfb 100%);
+	box-shadow: inset 1px 0 #b8cbf6, inset 0 -1px #b9c9f3, inset 0 1px #b4c8f6, inset -1px 0 #fff, inset -2px 0 #bacbf4, inset 0 2px #e1eafeaa, 0 1px #7c9fd3;
+	border-right: 1px solid #9fb5d2;
+	border-radius: 3px 3px 3px 3px;
+}
+appcontents *::-webkit-scrollbar-thumb:vertical:hover{
+	background: url("../../res/ui/luna/blue/scrollgrip_vertical_hover.png") no-repeat center, linear-gradient(to right, #d8e8ff 0%, #d6e7ff 69%, #d0e3ff 70%, #cae0ff 100%);
+	box-shadow: inset 1px 0 #acceff, inset 0 -1px #acceff, inset 0 1px #acceff, inset -1px 0 #fff, inset -2px 0 #acceff, inset 0 2px #eaf3ffaa, 0 1px #7c9fd3;
+}
+appcontents *::-webkit-scrollbar-thumb:vertical:active{
+	background: url("../../res/ui/luna/blue/scrollgrip_vertical_active.png") no-repeat center, linear-gradient(to right, #a9bef6 0%, #a1bdfa 69%, #99b9fa 70%, #92b2f6 100%);
+	box-shadow: inset 1px 0 1px #839bd4, inset 0 -1px 1px #96adec, inset 0 1px 1px #7f95cb, inset -1px 0 #fff, inset -2px 0 1px #96adec, 0 1px #7c9fd3;
+}
+
+/* scroll buttons */
+appcontents *::-webkit-scrollbar-button{
+	display: block;
+	height: 17px;
+	width: 17px;
+	border: 1px solid white;
+	border-radius: 3px;
+}
+/* horizontal interact */
+
+
+appcontents *::-webkit-scrollbar-button:horizontal{
+	border-bottom: 1px solid #7e9fd2;
+	border-right: 1px solid #9fb5d2;
+	box-shadow: inset 0 -1px #fff, inset 0 -2px #b8c9f2, inset -1px 0 #fff, inset -2px 0 #b9cbf3, inset 1px 0 #b7caf5, inset 0 1px #bbcdf5;
+}
+appcontents *::-webkit-scrollbar-button:horizontal:hover{
+	box-shadow: inset 0 -1px #fff, inset 0 -2px #96abdf, inset -1px 0 #fff, inset -2px 0 #97aee3, inset 1px 0 #97aee3, inset 0 1px #98b1e4;
+}
+appcontents *::-webkit-scrollbar-button:horizontal:active{
+	box-shadow: inset 0 -1px #fff, inset 0 -2px #b8c9f2, inset -1px 0 #fff, inset -2px 0 #b5c9f3, inset 1px 0 #7c89db, inset 0 1px #838fda;
+}
+
+/* vertical interact */
+appcontents *::-webkit-scrollbar-button:vertical{
+	border-right: 1px solid #7e9fd2;
+	border-bottom: 1px solid #9fb5d2;
+	box-shadow: inset -1px 0 #fff, inset -2px 0 #b8c9f2, inset 1px 0 #b7caf5, inset 0 -1px #fff, inset 0 -2px #b9cbf3, inset 0 1px #bbcdf5;
+}
+appcontents *::-webkit-scrollbar-button:vertical:hover{
+	box-shadow: inset -1px 0 #fff, inset -2px 0 #97aee0, inset 1px 0 #95ade5, inset 0 -1px #fff, inset 0 -2px #97aee3, inset 0 1px #91abe1;
+}
+appcontents *::-webkit-scrollbar-button:vertical:active{
+	box-shadow: inset -1px 0 #fff, inset -2px 0 #bacbf4, inset 1px 0 #7c89db, inset 0 -1px #fff, inset 0 -2px #b3c8f5, inset 0 1px #828dd9;
+}
+
+/* up arrow specific */
+appcontents *::-webkit-scrollbar-button:vertical:decrement{
+	background: 
+	url("../../res/ui/luna/blue/scroll_up.png") no-repeat center,
+	radial-gradient(circle at 0 0, #e1eafe 0%, #e1eafe00 20%, #e1eafe00 100%),
+	linear-gradient(to right, #c9d8fc 0%, #c1d3fb 69%, #b6cefb 70%, #b6cdfb 100%);
+}
+appcontents *::-webkit-scrollbar-button:vertical:decrement:hover{
+	background: 
+	url("../../res/ui/luna/blue/scroll_up.png") no-repeat center,
+	radial-gradient(circle at 0 0, #fdffff 0%, #fdffff00 20%, #fdffff00 100%),
+	linear-gradient(to right, #ddf0fe 0%, #ceeafd 69%, #c5e3fc 70%, #c2e2fc 100%);
+}
+appcontents *::-webkit-scrollbar-button:vertical:decrement:active{
+	background: 
+	url("../../res/ui/luna/blue/scroll_up.png") no-repeat center,
+	radial-gradient(circle at 0 0, #6e8ef1 0%, #6e8ef100 20%, #6e8ef100 100%),
+	linear-gradient(to right, #7d9df1 0%, #93acf2 69%, #9eaef2 70%, #a4b7ed 100%);
+}
+
+/* down arrow specific */
+appcontents *::-webkit-scrollbar-button:vertical:increment{
+	background: 
+	url("../../res/ui/luna/blue/scroll_down.png") no-repeat center,
+	radial-gradient(circle at 0 0, #e1eafe 0%, #e1eafe00 20%, #e1eafe00 100%),
+	linear-gradient(to right, #c9d8fc 0%, #c1d3fb 69%, #b6cefb 70%, #b6cdfb 100%);
+}
+appcontents *::-webkit-scrollbar-button:vertical:increment:hover{
+	background: 
+	url("../../res/ui/luna/blue/scroll_down.png") no-repeat center,
+	radial-gradient(circle at 0 0, #fdffff 0%, #fdffff00 20%, #fdffff00 100%),
+	linear-gradient(to right, #ddf0fe 0%, #ceeafd 69%, #c5e3fc 70%, #c2e2fc 100%);
+}
+appcontents *::-webkit-scrollbar-button:vertical:increment:active{
+	background: 
+	url("../../res/ui/luna/blue/scroll_down.png") no-repeat center,
+	radial-gradient(circle at 0 0, #6e8ef1 0%, #6e8ef100 20%, #6e8ef100 100%),
+	linear-gradient(to right, #7d9df1 0%, #93acf2 69%, #9eaef2 70%, #a4b7ed 100%);
+}
+
+/* left arrow specific */
+appcontents *::-webkit-scrollbar-button:horizontal:decrement{
+	background: 
+	url("../../res/ui/luna/blue/scroll_left.png") no-repeat center,
+	radial-gradient(circle at 0 0, #e1eafe 0%, #e1eafe00 20%, #e1eafe00 100%),
+	linear-gradient(to right, #c9d8fc 0%, #c1d3fb 69%, #b6cefb 70%, #b6cdfb 100%);
+}
+appcontents *::-webkit-scrollbar-button:horizontal:decrement:hover{
+	background: 
+	url("../../res/ui/luna/blue/scroll_left.png") no-repeat center,
+	radial-gradient(circle at 0 0, #fdffff 0%, #fdffff00 20%, #fdffff00 100%),
+	linear-gradient(to right, #ddf0fe 0%, #ceeafd 69%, #c5e3fc 70%, #c2e2fc 100%);
+}
+appcontents *::-webkit-scrollbar-button:horizontal:decrement:active{
+	background: 
+	url("../../res/ui/luna/blue/scroll_left.png") no-repeat center,
+	radial-gradient(circle at 0 0, #6e8ef1 0%, #6e8ef100 20%, #6e8ef100 100%),
+	linear-gradient(to right, #7d9df1 0%, #93acf2 69%, #9eaef2 70%, #a4b7ed 100%);
+}
+
+/* right arrow specific */
+appcontents *::-webkit-scrollbar-button:horizontal:increment{
+	background: 
+	url("../../res/ui/luna/blue/scroll_right.png") no-repeat center,
+	radial-gradient(circle at 0 0, #e1eafe 0%, #e1eafe00 20%, #e1eafe00 100%),
+	linear-gradient(to right, #c9d8fc 0%, #c1d3fb 69%, #b6cefb 70%, #b6cdfb 100%);
+}
+appcontents *::-webkit-scrollbar-button:horizontal:increment:hover{
+	background: 
+	url("../../res/ui/luna/blue/scroll_right.png") no-repeat center,
+	radial-gradient(circle at 0 0, #fdffff 0%, #fdffff00 20%, #fdffff00 100%),
+	linear-gradient(to right, #ddf0fe 0%, #ceeafd 69%, #c5e3fc 70%, #c2e2fc 100%);
+}
+appcontents *::-webkit-scrollbar-button:horizontal:increment:active{
+	background: 
+	url("../../res/ui/luna/blue/scroll_right.png") no-repeat center,
+	radial-gradient(circle at 0 0, #6e8ef1 0%, #6e8ef100 20%, #6e8ef100 100%),
+	linear-gradient(to right, #7d9df1 0%, #93acf2 69%, #9eaef2 70%, #a4b7ed 100%);
+}
+
+/* scroll corner */
+appcontents *::-webkit-scrollbar-corner{
+	background: #efece0;
+}
+
+/* SCROLLBARS GECKO */
+appcontents{
+	scrollbar-color: #bcd2fe #fefcf8;
+}
+/* CHROMIUM MITIGATION - scrollbar color overrides more advanced webkit customization if present */
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+	appcontents {
+		scrollbar-color: unset !important;
+	}
+}
+app:not(.dialogbox) grouper grouperHeading{
+	margin-left: 4px;
+	transform: translateY(-10px);
+	display: inline-block;
+/*	background: #ece9d8;*/
+	padding: 0 4px;
+}
+app.dialogbox grouper grouperHeading{
+/*	background: #e0dfe3;*/
+}
+app.dialogbox tabcontent grouper grouperHeading{
+/*	background: #ece9d8;*/
+}
+
+/* set app height bounds */
+app appcontentholder {
+	height: 100%;
+	display: block;
+}
+
+/* EXPLORER SIDEBAR VIEW */
+
+/* set grid layouting for explorer's specific case */
+app appcontentholder.explorer {
+	height: 100%;
+	display: grid;
+	grid-template-rows: 87px auto;
+	grid-template-columns: 210px auto;
+	font-family: var(--contentFont);
+}
+app appcontentholder.explorer appnavigation{
+	grid-column: 1 / 3;
+	grid-row: 1;
+	min-width: 210px;
+}
+app appcontentholder.explorer.nosidebar{
+	grid-template-columns: 0px auto;
+}
+app appcontentholder.explorer.nosidebar sidebarcontents{
+	display: none;
+}
+
+app appcontentholder.explorer sidebarcontents{
+	grid-column: 1;
+	grid-row: 2;
+	/*max-height: calc(100% - 107px);*/
+	color: #fff;
+	background: linear-gradient(to bottom, #7ba2e7, #6375d6);
+	padding: 12px 12px 0;
+	display: block;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup{
+	width: 100%;
+	display: block;
+	background: linear-gradient(to right, #fff, #c6d3f7);
+	color: #215dc6;
+	border-radius: 3px 3px 0 0;
+	margin-bottom: 15px;
+	transition: 0.5s max-height ease-out;
+	max-height: 300px;
+	overflow: hidden;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup.collapsed{
+	max-height: 25px;
+	overflow: hidden;
+	z-index: 1;
+	transition: 0.5s max-height ease-out;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup.collapsed ul{
+	opacity: 0;
+	transform: translateY(-100%);
+	/*height: 0;*/
+	overflow: hidden;
+	padding: 0;
+	border: none;
+	pointer-events: none;
+	z-index: 0;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup.collapsed .collapser{
+	transform: rotate(180deg);
+	box-shadow: -2px -2px 2px #b5c1e6;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup.collapsed .collapser span{
+	margin-right: 0;
+	margin-top: 0;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup span{
+	padding: 5px 0 4px 13px;
+	display: inline-block;
+	font-weight: 600;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup .collapser{
+	float: right;
+	margin-top: 3px;
+	margin-right: 6px;
+
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+	background-color: #fcffff;
+	border: 1px solid #b3b8cf;
+	box-shadow: 2px 2px 2px #b5c1e6;
+	text-shadow: 0 0 2px #e3ffff;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup .collapser span{
+	padding: 0;
+	font-weight: 700;
+	transform: rotate(-90deg) scaleX(0.5) translate(-2px, -1px);
+	display: block;
+	letter-spacing: -3px;
+	font-family: "Tahoma", sans-serif;
+	font-size: 11px;
+	-webkit-font-smoothing: auto;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup .groupheader{
+	z-index: 1;
+	position: relative;
+}
+
+app appcontentholder.explorer sidebarcontents .sidebargroup ul{
+	display: block;
+	background-color: #d6dff7;
+	padding: 9px 15px;
+	margin: 0;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	border-color: #fff;
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-out;
+
+	list-style-type: none;
+	height: initial;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup ul li{
+	padding: 2px 0;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup.details ul li.name{
+	font-weight: 600;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup:not(.details) ul li:hover{
+	text-decoration: underline;
+	cursor: url("../../res/ui/cursors/link.cur"), pointer;
+}
+app appcontentholder.explorer sidebarcontents .sidebargroup ul li img{
+	vertical-align: middle;
+	margin-right: 7px;
+}
+/* EXPLORER BROWSE ICONS */
+
+appcontentholder.explorer fscontents {
+	grid-column: 2;
+	grid-row: 2;
+
+	overflow-y: auto;
+	display: block;
+	/*max-height: calc(100% - 107px);*/
+	padding-bottom: 20px;
+	background-color: var(--contentColor);
+	color: var(--contentText);
+}
+appcontentholder.explorer items{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+appcontentholder fscontents fsicon.spoof-folder icontitle{
+	background-color: var(--highlightColor);
+	color: var(--highlightText);
+}
+
+/* TABBED UI */
+
+appcontents tab_ui{
+	display: block;
+	height: calc(100% - 50px);
+	margin: 6px;
+	margin-bottom: 22px;
+}
+appcontents tab_ui.nomargin{
+	margin: 0;
+	margin-bottom: 22px;
+}
+appcontents tab_ui tabholder{
+	position: relative;
+	z-index: 1;
+}
+appcontents tab_ui tabholder ul.tabs {
+	margin: 0 0 -3px 0;
+	padding: 2px;
+	font-size: 0;
+}
+appcontents tab_ui tabholder ul.tabs li{
+	font-size: var(--systemFontSize);
+	display: inline-block;
+	list-style-type: none;
+	border:1px solid #91a7b4;
+	padding: 0 5px;
+	margin: 0 1px 0 0;
+	border-radius: 3px 3px 0 0 ;
+	background: linear-gradient(to bottom, #ffffff, #bebed8);
+}
+appcontents tab_ui tabholder ul.tabs li:hover{
+	box-shadow: inset 0 2px 0 #ffc73c;
+	background: linear-gradient(to bottom, #fff 0%, #fff 25%, #fcfbfe 26%, #d5d5e6 100%);
+	border-color: #e68b2c #99a0a3 #919b9c #99a0a3;
+}
+appcontents tab_ui tabholder ul.tabs li:hover{
+	background: #00f;
+}
+appcontents tab_ui tabholder ul.tabs li.selected{
+	margin: -2px -1px 0 -2px;
+	padding: 2px 7px 0 7px;
+	box-shadow: inset 0 2px 0 #ffc73c;
+	background: #fff;
+	border-color: #e68b2c #919b9c #fff #919b9c;
+}
+appcontents tab_ui tabcontent{
+	background: linear-gradient(to bottom, #fcfcfe, #f5f4f1);
+	box-shadow: inset 1px 0 #fff, inset -1px 0 #fff, inset 0 1px #fff, inset 0 -1px #fff, 1px 1px 1px #c6c5c9;
+	padding: 0 12px; 
+	margin: 0;
+	border: 1px solid #919b9c;
+	display: block;
+	height: 100%;
+	position: relative;
+}
+appcontents tab_ui tabcontent:not(.selected){
+	display: none;
+}
+
+/*dropdown box, also data input fields*/
+
+appcontents select, input[type="text"], input[type="number"] {
+	border:1px solid #7f9db9;
+	background: #fff;
+	font-family: var(--systemFont);
+	font-size: var(--systemFontSize);
+	padding: 2px 3px;
+	margin: 1px 2px;
+	width: inherit;
+}
+input[type="number"]{
+	padding: 2px 0 2px 3px;
+}
+appcontents select:focus, input[type="number"]:focus, input[type="text"]:focus, input[type="range"]:focus{
+	outline: 1px dotted var(--mainText);
+}
+
+/*list view box*/
+
+appcontents scrollbox{
+	display: block;
+	border: 1px solid white;
+	overflow-y: scroll;
+	margin: 6px 0;
+	padding: 0 4px;
+	outline: 1px solid #7f9db9;
+}
+app appcontents scrollbox li{
+	display: block;
+	vertical-align: middle;
+
+}
+appcontents scrollbox li img{
+	width: 16px;
+	height: 16px;
+	display: inline;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+app appcontents scrollbox li.highlighted{
+	background: var(--highlightColor);
+	color: var(--highlightText);
+}
+
+appcontents dialogbuttons{
+	display: inline-block;
+	right:0px;
+	position: absolute;
+	margin-top: 28px;
+	margin-right: 6px;
+}
+appcontents dialogbuttons winbutton{
+	margin: 2px 4px;
+}
+appcontents winbutton colorpicker{
+	background:var(--desktop);
+}
+
+balloonpopup {
+	opacity: 0;
+	animation: fadein 0.5s ease;
+	animation-delay: 8s;
+	animation-fill-mode: forwards;
+
+	min-width: 32px;
+	min-height: 32px;
+	max-width: 240px;
+
+	margin: 0;
+	padding: 4px 5px 9px 11px;
+
+	display: block;	
+	position: absolute;
+	bottom:33px;
+
+	filter:drop-shadow(3px 3px 2px #00000099);
+	background-color: #fffee8;
+	color: #000;
+	color: #000;
+	color: black;
+	border: 1px solid black;
+	border-radius: 6px;
+	font-size: var(--contentFontSize);
+	text-align: left;
+	right: 92px;
+	z-index: 2;
+}
+@keyframes fadein {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+balloonpopup:before, balloonpopup:after{
+	content: ' ';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    z-index: 2;
+    right: 15px;
+}
+balloonpopup:before {
+	bottom:-18px;
+	border-width: 0 17px 18px 0;
+	border-color: transparent #000 transparent transparent;
+	transform: translateX(1px);
+
+}
+balloonpopup:after {
+	bottom:-15px;
+	border-width: 0 15px 15px 0;
+	border-color: transparent #fffee8 transparent transparent;
+
+}
+balloonpopup *{
+	/*outline: 1px solid red;*/
+}
+balloonpopup balloontitle{
+	height: 16px;
+	font-weight: 900;
+	display: inline-block;
+	line-height: 12px;
+	vertical-align: middle;
+	margin-top: -5px;
+}
+balloonpopup .balloonicon{
+	padding: 0 8px 0 0;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	line-height: 12px;
+	vertical-align: middle;
+}
+balloonpopup closeballoon{
+	display: block;
+	position: absolute;
+	right:5px;
+	top:4px;
+	width: 16px;
+	height: 16px;
+	padding: 0;
+
+	border-radius: 2px;
+	border: 1px solid #d0c9b6;
+	background: #fffff7;
+
+	line-height: 12px;
+}
+balloonpopup closeballoon img, taskbar balloonpopup closeballoon img{
+	width: 14px;
+	height: 14px;
+	filter: invert(70%) sepia(100%);
+	padding: 1px;
+}
+balloonpopup closeballoon:hover{
+	border:1px solid white;
+	box-shadow: 1px 1px 1px #b8b8a2, -1px -1px 0px #b8b8a266, inset -1px -1px 1px #b6700788, inset 1px 1px 0 #ffad31;
+	background: radial-gradient(at 10% 10%, #fff6 0%, #fff0 33%), radial-gradient(at 80% 80%, #ffdc18 0%, #ffdc1800 40%), linear-gradient(#ffad31, #ffad31);
+}
+balloonpopup closeballoon:hover img, taskbar balloonpopup closeballoon:hover img{
+	filter: none;
+}
+
+balloonpopup closeballoon:active{
+	border:1px solid white;
+	box-shadow: 1px 1px 1px #b8b8a2, -1px -1px 0px #b8b8a266, inset 1px 1px 1px #653c00;
+	background: radial-gradient(at 0% 0%, #8c5200 0%, #8c520000 33%), radial-gradient(at 80% 80%, #eea600 0%, #eea60000 50%), linear-gradient(#cc7900, #cc7900);
+}
+balloonpopup closeballoon:active img, taskbar balloonpopup closeballoon:active img{
+	filter: brightness(70%) sepia(100%);
+}
+
+balloonpopup span.messagetext{
+	display: block;
+	padding: 0 25px  0 0;
+	line-height: 16px;
+	color: #000;
+}
+/*
+softbutton{
+	display: inline-block;
+	width:31px;
+	height:31px;
+	margin: 1px;
+	border-radius: 4px;
+	background-size: 31px;
+	background: radial-gradient(at 10% 10%, #ffffff66 0%, #ffffff4a 10%, #ffffff00 60%), radial-gradient(at 85% 85%, #ffffff33 0%, #ffffff19 30%, #ffffff00 50%);
+}
+softbutton img{
+	height: 31px;
+	width: 31px;
+	display: block;
+}
+softbutton:after{
+	filter: multiply;
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	margin: -32px 0 0 -1px;
+	border-radius: 5px;
+	box-shadow: inset -1.5px -1.5px 4.5px #00000088, inset 1px 1px 1px #00000029;
+	background: radial-gradient(at 100% 100%, #00000022 0%, #00000000 40%);
+	border:1px solid white;
+}*/

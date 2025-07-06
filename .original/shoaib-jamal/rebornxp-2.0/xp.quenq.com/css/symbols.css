@@ -1,0 +1,175 @@
+/*  SYMBOLS  */
+.boom:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background-image: url("/res/symbols/boom.png");
+	background-size: contain;
+}
+.broc:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/broc.png");
+	background-size: contain;
+}
+.cactus:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/cactus.png");
+	background-size: contain;
+}
+.city:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/city.png");
+	background-size: contain;
+}
+.croissant:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/croissant.png");
+	background-size: contain;
+}
+.dog:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/dog.png");
+	background-size: contain;
+}
+.donut:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/donut.png");
+	background-size: contain;
+}
+.egg:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/egg.png");
+	background-size: contain;
+}
+.eggplant:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/eggplant.png");
+	background-size: contain;
+}
+.fish:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/fish.png");
+	background-size: contain;
+}
+.moon:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/moon.png");
+	background-size: contain;
+}
+.orng:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/orange.png");
+	background-size: contain;
+}
+.paws:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/paws.png");
+	background-size: contain;
+}
+.peach:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/peach.png");
+	background-size: contain;
+}
+.sparkles:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/sparkles.png");
+	background-size: contain;
+}
+
+
+
+.twitter:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/twitter.png");
+	background-size: contain;
+}
+.bile:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/bile.png");
+	background-size: contain;
+}
+.krutons:after{
+	height: inherit;
+	width: inherit;
+	content:" ";
+	display: block;
+	background: url("/res/symbols/krutons.png");
+	background-size: contain;
+}
+
+.restart:after{
+	height: inherit;
+	width: inherit;
+	content: " ";
+	display: block;
+	background: url("../res/symbols/restart.png");
+	background-size: contain;
+}
+
+.shutdown:after{
+	height: inherit;
+	width: inherit;
+	content: " ";
+	display: block;
+	background: url("/res/symbols/shutdown.png");
+	background-size: contain;
+}
+
+.logoff:after{
+	height: inherit;
+	width: inherit;
+	content: " ";
+	display: block;
+	background: url("../res/symbols/logoff.png");
+	background-size: contain;
+}

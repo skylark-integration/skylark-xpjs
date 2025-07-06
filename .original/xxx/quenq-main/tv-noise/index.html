@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+<title>Static TV Noise Screen</title>
+<link rel="canonical" href="index.html">
+<meta name="description" content="You might remember the static TV noise with vibrating random black and white dots from old analog TVs. This screen will bring this effect back on your computer.">
+<meta name="keywords" content="static,tv,noise,quenq,prank">
+<meta property="og:title" content="Static TV Noise Screen">
+<meta property="og:image" content="https://www.quenq.com/tv-noise/og.jpg">
+<meta property="og:description" content="You might remember the static TV noise with vibrating random black and white dots from old analog TVs. This screen will bring this effect back on your computer.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T854EV4C7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T854EV4C7D');
+</script>
+</head>
+<body>
+<div id="container">
+    <div class="grained"></div>
+</div>
+<div class="grainpopup">
+    <span class="helper"></span>
+    <div>
+        <div title="Close" class="popupCloseButton">&times;</div>
+        <h1>Static TV Noise Screen</h1>
+        <p class="intro">You might remember the static TV noise with vibrating random black and white dots from old analog TVs. This screen will bring this effect back on your computer.</p>
+        <p>Make sure you have <br>Full Screen enabled (<strong>F11 button</strong>)!</p>
+        <p>(Go to the <a href="https://www.quenq.com/">home page here</a>)</p>
+        <br>
+        <button id="toggleSound">Enable Sound</button>
+        <audio id="noiseAudio" loop>
+            <source src="static.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+<br>
+    </div>
+</div>
+<div class="gradientFrame"></div>
+
+<script>
+var options = {
+  "animate": true,
+  "patternWidth": 285.56,
+  "patternHeight": 42.42,
+  "grainOpacity": 1,
+  "grainDensity": 1.5,
+  "grainWidth": 1.89,
+  "grainHeight": 1.5
+}
+grained("#container", options);
+
+document.getElementById('toggleSound').addEventListener('click', function(event) {
+    event.stopPropagation(); // Prevent event bubbling
+    var audio = document.getElementById('noiseAudio');
+    if (audio.paused) {
+        audio.play();
+        this.textContent = 'Disable Sound';
+    } else {
+        audio.pause();
+        this.textContent = 'Enable Sound';
+    }
+});
+
+document.querySelector('.popupCloseButton').addEventListener('click', function() {
+    document.querySelector('.grainpopup').style.display = 'none';
+});
+</script>
+</body>
+</html>

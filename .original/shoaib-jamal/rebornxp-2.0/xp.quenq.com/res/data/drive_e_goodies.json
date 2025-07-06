@@ -1,0 +1,163 @@
+{
+    "type": "directory",
+    "contents": {
+        "Music": {
+            "type": "directory",
+            "contents": {
+                "Triage at Dawn (HL2).mp3": {
+                    "type": "file",
+                    "icon": "mediafile.png",
+                    "contents": "res/audio/hl2.mp3"
+                },
+                "What's the World Come To (SiN).mp3": {
+                    "type": "file",
+                    "icon": "mediafile.png",
+                    "contents": "res/audio/sin.mp3"
+                },
+                "Halo Theme.mp3": {
+                    "type": "file",
+                    "icon": "mediafile.png",
+                    "contents": "res/audio/halo.mp3"
+                },
+                "009 Sound System - Dreamscape.mp3": {
+                    "type": "file",
+                    "icon": "mediafile.png",
+                    "contents": "res/audio/dreamscape.mp3"
+                },
+                "009 Sound System - When You're Young.mp3": {
+                    "type": "file",
+                    "icon": "mediafile.png",
+                    "contents": "res/audio/young.mp3"
+                }
+            }
+        },
+        "Videos": {
+            "type": "directory",
+            "contents": {
+                "The Hippo and Dog Video.mp4": {
+                    "type": "file",
+                    "icon": "mediafile.png",
+                    "contents": "res/video/lion.mp4"
+                },
+                "Aqua - Barbie Girl.mp4": {
+                    "type": "file",
+                    "icon": "mediafile.png",
+                    "contents": "res/video/barbie.mp4"
+                },
+                "Dancing Baby.mp4": {
+                    "type": "file",
+                    "icon": "mediafile.png",
+                    "contents": "res/video/baby.mp4"
+                },
+                "Peanut Butter Jelly Time.mp4": {
+                    "type": "file",
+                    "icon": "mediafile.png",
+                    "contents": "res/video/peanut.mp4"
+                }
+            }
+        },
+        "Pictures": {
+            "type": "directory",
+            "contents": {
+                "Shakira XP.jpg": {
+                    "type": "file",
+                    "contents": "res/pictures/shakira.jpg"
+                },
+                "Rich Kid Meme.png": {
+                    "type": "file",
+                    "contents": "res/pictures/meme.jpg"
+                },
+                "Mouse.jpg": {
+                    "type": "file",
+                    "contents": "res/pictures/mouse.jpg"
+                },
+                "Big 3310.jpg": {
+                    "type": "file",
+                    "contents": "res/pictures/3310.jpg"
+                },
+                "Hello CRT.jpg": {
+                    "type": "file",
+                    "contents": "res/pictures/crt.jpg"
+                },
+                "Troll Face.jpg": {
+                    "type": "file",
+                    "contents": "res/pictures/troll.jpg"
+                }
+            }
+        },
+        "Extras": {
+            "type": "directory",
+            "icon": "folder.png",
+            "contents": {
+                "No Themes.exe": {
+                    "type": "file",
+                    "icon": "theme.png",
+                    "contents": {
+                        "action": "themehandler.unload()"
+                    }
+                },
+                "not_a_jumpscare.exe": {
+                    "type": "file",
+                    "icon": "defaultapp.png",
+                    "contents": {
+                        "action": "apps.load('jeff').then((app) => {if(app) app.start()});"
+                    }
+                },
+                "Wanna Laugh.exe": {
+                    "type": "file",
+                    "icon": "gonnacry.png",
+                    "contents": {
+                        "action": "apps.load('gonnacry').then((app) => {if(app) app.start()});"
+                    }
+                },
+                "Ram Downloader.exe": {
+                    "type": "file",
+                    "icon": "repl.png",
+                    "contents": {
+                        "action": "apps.load('repl').then((app) => {if(app) app.start()});"
+                    }
+                },
+                "totally_safe_picture.jpeg.lnk": {
+                    "type": "file",
+                    "icon": "gif.png",
+                    "contents": {
+                        "action": "apps.load('bsod').then(app => app.start({ file: 'trojan.sys', message: 'PAGE_FAULT_IN_NONPAGED_AREA' }))"
+                    }
+                },
+                "System Cleanup.exe": {
+                    "type": "file",
+                    "icon": "diskclean.png",
+                    "contents": {
+                        "action": "apps.load('fakeformat').then(app => app.start())"
+                    }
+                },
+                "Display Enhancer.exe": {
+                    "type": "file",
+                    "icon": "displayprops.png",
+                    "contents": {
+                        "action": "apps.load('hotdog').then(app => app.start())"
+                    }
+                },
+                "bliss_dark.jpg": {
+                    "type": "file",
+                    "contents": "res/background/stock-wallpapers/bliss_dark.jpg"
+                }
+            }
+        },
+        "README_GOODIES.txt": {
+            "type": "file",
+            "icon": "text.png",
+            "contents": "Welcome to the Reborn XP Goodies CD!\n\nThis disc is packed with the early 2000s media for you to enjoy. Check out the Music, Videos and Pictures folders to relive the golden era of the internet.\n\n==================================================\nWARNING: READ BEFORE OPENING THE EXTRAS FOLDER\n==================================================\n\nThe Extras folder contains powerful utilities and programs. These are experimental and may cause unexpected behavior or jump scares. Run them at your own risk.\n\nA special note regarding the 'bliss_dark.jpg' file: We have received reports of severe system instability when this image is set as the desktop wallpaper. This action is NOT recommended.\n\nYou have been warned.\n\n--------------------------------------------------\n\nFor updates, ideas, or to report a bug, join our official Discord Server: https://dsc.gg/quenq\n\nThis CD will be updated with new content based on your feedback.\n\nHave fun exploring!"
+        },
+        "personal_stuff.zip": {
+                    "type": "file",
+                    "icon": "zip.png",
+                    "contents": "res/goodies/personal_stuff.zip"
+                },
+                "microsoft_nostalgic.zip": {
+                    "type": "file",
+                    "icon": "zip.png",
+                    "contents": "res/goodies/microsoft_nostalgic.zip"
+                }
+    }
+}

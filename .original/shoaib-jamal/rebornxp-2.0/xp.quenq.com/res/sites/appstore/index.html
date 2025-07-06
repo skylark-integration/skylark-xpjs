@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reborn XP App Store</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="appstore-container">
+      
+
+        <div class="appstore-main-content">
+            <div class="featured-slider" id="featuredSlider">
+                <!-- Slides will be injected by JS -->
+            </div>
+
+            <div class="filters-search-bar">
+                <div class="category-filters" id="categoryFilters">
+                    <button data-category="all" class="active">All</button>
+                    <!-- Categories will be injected by JS -->
+                </div>
+                <div class="search-input">
+                    <input type="text" id="searchInput" placeholder="Search apps...">
+                </div>
+            </div>
+
+            <div id="app-list-container" class="app-list">
+                <p class="loading-text">Loading apps...</p>
+            </div>
+        </div>
+
+        <footer class="appstore-footer">
+            <p>© <a href="https://www.quenq.com" target="_blank">Quenq.com</a> | All the programs names and logos are of their rightful copyright holders.</p>
+        </footer>
+    </div>
+
+    <div id="appDetailModal" class="app-detail-modal">
+        <div class="app-detail-modal-content">
+            <span class="close-modal-button" onclick="closeAppDetailModal()">×</span>
+            <img id="modalAppIcon" src="https://xp.quenq.com/res/sites/appstore/" alt="App Icon" class="app-icon">
+            <h2 id="modalAppName">App Name</h2>
+            <p id="modalAppCategory">Category: </p>
+             <p id="modalAppVersion" style="display:none; font-size: 0.9em; color: #555;"></p>
+            <hr style="border:0; border-top:1px solid #A0A0A0; margin:10px 0;">
+            <p id="modalAppDescription" style="max-height: 150px; overflow-y: auto;"></p>
+            <hr style="border:0; border-top:1px solid #A0A0A0; margin:10px 0;">
+            <div style="text-align:right; margin-top:15px;">
+                <button id="modalInstallButton" class="action-button">Install</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./appstore_client.js"></script>
+</body>
+</html>

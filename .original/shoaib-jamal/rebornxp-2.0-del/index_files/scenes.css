@@ -1,0 +1,756 @@
+body{
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	background: #000;
+	overscroll-behavior: none;
+	overflow: hidden;
+}
+body.zoomed{
+	transform: scale(2);
+	transform-origin: 0 0;
+	width: 50vw;
+	height: 50vh;
+	overflow: hidden;
+	image-rendering: pixelated;
+}
+body.zoomed scene_desktop{
+	width: 50vw;
+	height: 50vh;
+}
+html > *{
+	cursor: url('../res/ui/cursors/default.cur'), default;
+/*	cursor: none !important;*/
+}
+
+@font-face {
+    font-family: 'vga8x14';
+    src: url('../res/fonts/Web437_IBM_VGA_8x14.woff');
+}
+@font-face {
+    font-family: 'bsod_type';
+    src: url('../res/fonts/PIXEARG_.ttf');
+}
+
+scene_bootscreen {
+    position: absolute; /* Make it a positioning context */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;       /* MAKE SURE IT'S FULL HEIGHT */
+    background: #000;
+    z-index: 1;
+    cursor: none !important;
+    /* overflow: hidden; /* Optional: good for full-screen containers */
+}
+
+scene_bootscreen.loaded {
+    display: none;
+}
+
+scene_bootscreen boot_contain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    animation: fadeIn 1s 1 steps(8, jump-both); /* Your original animation */
+    /* width: auto; /* Let content define width or set explicitly */
+}
+
+scene_bootscreen boot_contain #winlogo {
+    width: 70%;
+
+    margin: 0 auto 50px auto;
+    display: block
+}
+
+scene_bootscreen boot_contain #loadingbar {
+    width: 124px;
+    height: 13px;
+    padding: 0 1px;
+    margin: 0 auto; /* Centered horizontally within boot_contain */
+    border-radius: 3px;
+    border: 1px solid #aeb0ad;
+    box-shadow: inset 0 0 1px #3f403e;
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); /* Corrected clip-path syntax */
+    display: block; /* If not already */
+}
+
+scene_bootscreen boot_contain #loadingbar #loadingbeansholder {
+    width: 124px;
+    display: block;
+    overflow-x: hidden;
+}
+
+scene_bootscreen boot_contain #loadingbar #loadingbeans {
+    width: 24px;
+    transform: translateX(-32px);
+    animation: loadingProg 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(21, jump-both);
+    animation-delay: 1s;
+}
+
+scene_bootscreen boot_contain #loadingbar bean {
+    margin: 0 0 3px;
+    border: 1px solid black;
+    background-color: #2736c7;
+    width: 6px;
+    height: 9px;
+    display: inline-block;
+}
+
+scene_bootscreen boot_contain #loadingbar #bean1 {
+    box-shadow: inset 0 1px #2837c8, inset 0 2px #5a78ef, inset 0 4px #7f9af1, inset 0 5px #5a79ef;
+}
+
+scene_bootscreen boot_contain #loadingbar #bean2 {
+    box-shadow: inset 0 1px #2837c8, inset 0 2px #5a78ef, inset 0 4px #7f9af1, inset 0 6px #5a79ef;
+}
+
+scene_bootscreen boot_contain #loadingbar #bean3 {
+    box-shadow: inset 0 1px #2837c8, inset 0 2px #5a78ef, inset 0 5px #7f9af1, inset 0 7px #5a79ef;
+}
+
+/* Keyframes for loading animation */
+@keyframes loadingProg {
+    from {
+        transform: translateX(-32px);
+    }
+    to {
+        transform: translateX(130px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer styling - now refers to the footer directly under scene_bootscreen */
+scene_bootscreen > footer { /* Direct child selector */
+    position: absolute;
+    bottom: 20px;      /* Adjust as needed for vertical spacing from bottom */
+    left: 2vw;         /* Adjust as needed for horizontal spacing from left */
+    right: 2vw;        /* Adjust as needed for horizontal spacing from right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Copyright text */
+scene_bootscreen > footer #copyrightinfo {
+    color: #e7e9e6;
+    font-family: "msSansSerif", "Microsoft Sans Serif", sans-serif;
+    font-size: calc(var(--base-font-size) * 0.9); 
+   
+}
+
+scene_bootscreen > footer #mslogo {
+    width: 10vw;      
+    max-width: 150px; 
+}
+
+
+@font-face {
+    font-family: "msSansSerif";
+    src: url("../res/fonts/MSSansSerif 8pt.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+ scene_updatescreen_xp {
+                        margin: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: none; /* Hidden by default */
+                        grid-template-rows: 80px auto 96px;
+                        grid-template-columns: auto;
+                        position: absolute;
+                        overflow: hidden;
+                        background-color: #5a7edc;
+                        z-index: 999999;
+                    }
+                    scene_updatescreen_xp.active {
+                        display: grid; /* Becomes visible when active */
+                    }
+                    scene_updatescreen_xp .updatetop {
+                        grid-column: 1;
+                        grid-row: 1;
+                        border-width: 0 0 2px 0;
+                        border-style: solid;
+                        border-image-slice: 1;
+                        border-image-source: linear-gradient(to right, #5076d4 0%, #c7ddff 20%, #c7ddff 50%, #5076d4 100%);
+                        background-color: #00309c;
+                    }
+                    scene_updatescreen_xp .updatemid {
+                        display: grid;
+                        grid-column: 1;
+                        grid-row: 2;
+                        place-content: center;
+                        text-align: center;
+                        color: white;
+                        font-family: 'Tahoma', sans-serif;
+                        font-size: 18px;
+                        background: radial-gradient(circle at 10% 10%, #94b4efff 0%, #94b4ef00 25%, #94b4ef00 100%);
+                    }
+                    scene_updatescreen_xp .updatemid h1 {
+                        font-size: 24px;
+                        font-weight: normal;
+                        margin-bottom: 20px;
+                    }
+                    scene_updatescreen_xp .updatebtm {
+                        grid-column: 1;
+                        grid-row: 3;
+                        border-style: solid;
+                        border-width: 2px 0 0 0;
+                        border-image-slice: 1;
+                        border-image-source: linear-gradient(to right, #003399 0%, #f49439 20%, #f49439 50%, #003399 100%);
+	                    background: linear-gradient(to right, #3934ad, #00309c);
+                    }
+
+
+scene_logon{
+	margin: 0;
+	width:100%;
+	height: 100%;
+	display: none;
+	grid-template-rows: 80px auto 96px;
+	grid-template-columns: auto;
+	position: absolute;
+	overflow: hidden;
+	background-color: #5a7edc;
+}
+scene_logon logontop{
+	grid-column: 1;
+	grid-row: 1;
+
+	border-width: 0 0 2px 0;
+	border-style: solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #5076d4 0%, #c7ddff 20%, #c7ddff 50%, #5076d4 100%);
+	background-color: #00309c;
+}
+
+scene_logon logonmid{
+
+	display: grid;
+	grid-column: 1;
+	grid-row: 2;
+
+	grid-template-rows: auto;
+	grid-template-columns: 50% 50%;
+	background: radial-gradient(circle at 10% 10%, #94b4efff 0%, #94b4ef00 25%, #94b4ef00 100%);
+}
+scene_logon logonmid left leftcontain{
+	padding-right: 20px;
+
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translateY(-50%);
+}
+scene_logon logonmid left leftcontain img{
+	height: 81px;
+	width: 134px;
+	
+	float: right;
+	display: block;
+	pointer-events: none;
+}
+scene_logon logonmid left leftcontain #tip,
+scene_logon logonmid left leftcontain #welcome{
+	color: #fff;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: right;
+
+	display: block;
+	margin-top: 24px;
+	margin-right: 24px;
+}
+scene_logon logonmid left leftcontain #welcome{
+	font-style: italic;
+	font-size: 48px;
+	text-shadow: 2px 3px #3451bb;
+	margin-top: -76px;
+	display: none;
+	letter-spacing: -0.5px;
+}
+scene_logon logonmid right{
+	padding-left: 17px;
+	border-left: 1px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to bottom, #5a7edc 0%, #91aeee 50%, #5a7edc 100%);
+}
+scene_logon logonmid right rightcontain{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+
+	display:flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	gap:0px;
+}
+scene_logon logonmid right user{
+	padding: 10px 9px 6px;
+	opacity: 1;
+	transition: all ease 0.5s;
+	width:350px;
+	border-radius: 9px;
+	margin: 2px 0;
+	height: 55px;
+}
+scene_logon logonmid right user.active{
+	opacity: 1 !important;
+	pointer-events: none !important;
+}
+scene_logon logonmid right user span.apps{
+	/* display: none; */
+	width: 200px;
+}
+scene_logon logonmid right user.running span.apps{
+	display: inline-block;
+}
+
+
+scene_logon logonmid right user:active{
+	background: linear-gradient(to right, #1242a6ff 0%, #1242a600 99%);
+}
+scene_logon logonmid right user:active:before{
+	transition: none;
+	z-index: -1;
+	width:352px;
+	height:73px;
+	content:' ';
+	position: absolute;
+	left:0;
+	border-radius: 9px;
+	margin-top: -11px;
+	margin-left: -1px;
+	background: linear-gradient(to right, #9cb2eaff 0%, #9cb2ea00 100%);
+}
+scene_logon logonmid right usericon{
+	margin: 0;
+	display: inline-block;
+	height: 52px;
+	margin: 0;
+	position: relative;
+}
+scene_logon logonmid right usericon img{
+	width:48px;
+	height: 48px;
+	display: inline-block;
+	margin-left: 2px;
+	border:1px solid #d5d3e8;
+	border-radius: 2px;
+	box-shadow: 1px 0 #d5d3e8, -1px 0 #d5d3e8, 0 1px #d5d3e8, 0 -1px #d5d3e8, 2px 2px 3px #0003;
+}
+scene_logon logonmid right usericon span.name{
+	display: inline-block;
+	line-height: 17px;
+	font-family: "Tahoma", sans-serif;
+	color: #fff;
+	margin: 0 0 0 12px;
+	font-weight: 500;
+	vertical-align: top;
+	font-size: 19px;
+}
+scene_logon logonmid right usericon span.apps{
+	color: #00309c;
+	position: absolute;
+	left: 64px;
+	top: 20px;
+	font-family: "LogonPixelTahoma", "Tahoma", sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+}
+scene_logon logonmid right:hover user{
+	opacity: 0.3;
+}
+scene_logon logonmid right:hover *:hover{
+	opacity: 1;
+	cursor: url("../res/ui/cursors/link.cur"), pointer;
+}
+usericon span.name{
+	display: inline-block;
+	line-height: 17px;
+	font-family: "Tahoma", sans-serif;
+	color: #fff;
+	margin: 0 0 0 12px;
+	font-weight: 500;
+	vertical-align: top;
+	font-size: 19px;
+}
+usericon span.apps{
+	color: #00309c;
+	position: absolute;
+	left: 64px;
+	top: 20px;
+	font-family: var(--contentFont);
+	font-size: var(--contentFontSize);
+	font-weight: 600;
+}
+scene_logon logonmid right:hover user:hover usericon img{
+	border: 1px solid #ffee00;
+	/*box-shadow: 1px 0 #ffb600, -1px 0 #ffb600, 0 1px #ffb600, 0 -1px #ffb600, 2px 2px 3px #0003;*/
+	box-shadow: 1px 0 #ffb600, -1px 0 #ffb600, 0 1px #ffb600, 0 -1px #ffb600, 2px 2px 3px #0003;
+}
+
+scene_logon logonbtm{
+	grid-column: 1;
+	grid-row: 3;
+
+	border-style: solid;
+	border-width: 2px 0 0 0;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #003399 0%, #f49439 20%, #f49439 50%, #003399 100%);
+	background: linear-gradient(to right, #3934ad, #00309c);
+}
+scene_logon logonbtm softbutton{
+	height: 22px;
+	width: 22px;
+	margin: 20px 0 0 25px;
+	border-radius: 3px;
+	display: inline-block;
+	box-shadow: 3px 3px 0px #0d2086;
+	padding-bottom: 1px;
+}
+scene_logon logonbtm softbutton:before{
+	border-radius: 3px;
+}
+scene_logon logonbtm softbutton:hover span{
+	text-decoration: underline;
+	cursor: url("../res/ui/cursors/link.cur"), pointer;
+}
+scene_logon logonbtm span{
+	width: 300px;
+	color: #fff;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	display: inline-block;
+	line-height: 24px;
+	transform: translate(32px, -24px);
+}
+scene_logon logonbtm p{
+	width: 300px;
+	color: #fff;
+	font-family: "Tahoma", sans-serif;
+	font-size: 12px;
+
+	display: inline-block;
+	position: absolute;
+	right:0;
+
+	padding: 8px 31px 0 0;
+}
+
+scene_logon.isLoggingOn logonbtm span, scene_logon.isLoggingOn logonbtm btncontain, scene_logon.isLoggingOn logonbtm p, scene_logon.isLoggingOn logonmid leftcontain img, scene_logon.isLoggingOn logonmid leftcontain span#tip{
+	display: none;
+}
+scene_logon.isLoggingOn logonmid leftcontain span#welcome{
+	display: block;
+}
+scene_logon.isLoggingOn user:not(.active){
+	height: 0;
+	opacity: 0 !important;
+	padding: 0;
+	margin: 0;
+	pointer-events: none !important;
+	transition: all ease 0.5s, opacity linear 0s !important;
+}
+
+scene_desktop{
+	/*margin: 0;*/
+	background: var(--desktop);
+	background-image: url('../res/background/stock-wallpapers/Bliss.jpg');
+	background-position: center center;
+	background-size: 100% 100%;
+	/*background-size: cover;*/
+	background-position: 50% 100%;
+	width:100%;
+	height: 100%;
+	/*display: inline-block;*/
+	position: absolute;
+	overflow: hidden;
+	z-index: 1;
+}
+app, contextmenu{
+	display: none;
+}
+scene_holder{
+	width:100%;
+	height:100%;
+	position: absolute;
+/*	filter: url(#ujas);*/
+/*	filter: url(#2col);*/
+	background: #000;
+	/*avoid animator going out of bounds*/
+	overflow: hidden;
+}
+body > svg {
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+#ditherpixels{
+	position: absolute;
+	top:0;
+	left: 0;
+	z-index: 10000000;
+	width: 100%;
+	height: 100%;
+/*	text-rendering: pixelated;*/
+	mix-blend-mode: soft-light;
+	pointer-events: none;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAAAAACMmsGiAAAAGElEQVR4AWNhaFjQwHKg4UADS0GDAYQFAE68CFHWssiIAAAAAElFTkSuQmCC");
+}
+#crteffect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000000;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    /* Horizontal scanlines only */
+    background: linear-gradient(rgba(0, 0, 0, 0.3) 50%, transparent 50%);
+    background-size: 100% 3px; /* Thicker scanlines */
+    opacity: 0.7; /* Visible effect */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Vignette */
+    filter: contrast(1.2) brightness(0.9); /* CRT phosphor glow */
+    animation: flicker 0.1s infinite; /* More noticeable flicker */
+}
+
+/* Increased flicker animation */
+@keyframes flicker {
+    0% { opacity: 0.7; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.7; }
+}
+scene_holder.grayscale, scene_holder.ega.grayscale{
+	filter: brightness(1.17) saturate(0) contrast(2) brightness(0.75) contrast(100000%);
+}
+scene_holder.ega{
+	filter: saturate(1) brightness(0.8) contrast(100000%) brightness(1.6);
+	/*filter: saturate(250%) brightness(0.9) contrast(100000%);*/
+}
+scene_holder.resized{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	box-shadow: -1px 0 #a7adbf, 0 -1px #64656b, 1px 0 1px #96989c, 0 1px 1px #d9dad8;
+}
+scene_desktop.vga{
+	filter: none;
+}
+
+
+
+@font-face{
+	font-family: msAliasedType;
+	src: url('../res/fonts/Windows Regular.ttf');
+}
+@font-face{
+	font-family: "LogonPixelTahoma";
+	src: url("../res/fonts/Tahoma 8pt 11-2 Bold.ttf");
+	font-weight: bold;
+	font-style: normal;
+}
+
+scene_desktop.nofontsmoothing{
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: grayscale;
+	/*font-family: msAliasedType !important;*/
+}
+
+scene_desktop audio{
+	/*display: none;*/
+}
+scene_iconspace{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: calc(100% - 32px);
+	width: 78px;
+}
+scene_windowspace{
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height:100%; /*variable depending on theme and taskbar properties*/
+	pointer-events:none;
+}
+
+scene_bsod{
+	background: #000082;
+	display: none;
+	color: #fff;
+	font-size: calc(100vh / 52);
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	z-index: 999999;
+	overflow: hidden;
+	cursor: none;
+}
+scene_bsod pre{
+	margin: 30px;
+	font-family: 'vga8x14';
+	cursor: none;
+}
+
+scene_screensaver{
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	display: none;
+	position: absolute;
+	z-index: 9999999;
+	overflow: hidden;
+	cursor: none;
+}
+scene_screensaver img{
+	position: absolute;
+	top:50%;
+	left: 50%;
+}
+
+scene_overlay{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+scene_overlay.inactive{
+	display: none;
+}
+
+scene_desktop.fadetogray, scene_logon.fadetogray{
+	animation: 5s linear 1s 1 normal forwards fadeToGray;
+}
+
+@keyframes fadeToGray{
+	0% {filter: saturate(1);}
+	100% {filter: saturate(0.08);}
+}
+
+actionbox{
+	width:312px;
+	height:198px;
+	background: radial-gradient(#99b4f7, #5c7ee0);
+	border: 1px solid #000;
+	display: block;
+	margin: 0 auto;
+}
+actionbox.inactive{
+	display: none;
+}
+actionbox #btncontain{
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	width: calc(100% - 30px);
+	height: calc(100% - 125px);
+	margin: 0 15px;
+}
+actionbox #btncontain powerbtn{
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+}
+actionbox #btncontain powerbtn softbutton{
+	margin: 0 auto;
+	display: block;
+}
+actionbox #btncontain powerbtn span{
+	display: inline-block;
+	color: #fff;
+	font-family: var(--contentFont);
+	text-align: center;
+	width: 100%;
+	font-size: 13px;
+	font-weight: 600;
+	margin-top: 10px;
+}
+
+actionbox act_heading{
+	display: block;
+	height:43px;
+	background-color: #003399;
+	border-bottom: 2px solid;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #2f5eba, #cfe6ff, #2f5eba);
+	margin-bottom: 19px;
+}
+
+actionbox act_heading span{
+	font-family: sans-serif;
+	font-weight: 700;
+	color: #fff;
+	margin: 13px 0 0 12px;
+	display: inline-block;
+}
+
+actionbox footing{
+	height: 43px;
+	width: inherit;
+	background-color: #003399;
+	display: inline-block;
+	bottom: 0;
+	margin-top: 18px;
+}
+actionbox footing winbutton{
+	margin: 12px 10px 0 0;
+	display: inline-block;
+	right:0;
+	float: right;
+}
+
+#selection-rectangle {
+    position: absolute;
+    border: 1px dotted #000;
+    background-color: rgba(49, 105, 197, 0.3); /* XP selection blue with transparency */
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 99999;
+}
+
+/* Style for icons being dragged over a folder */
+fsicon.drop-target-active {
+    background-color: rgba(49, 105, 197, 0.5);
+    border-radius: 3px;
+}
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

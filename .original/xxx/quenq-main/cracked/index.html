@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:image" content="https://www.quenq.com/cracked/elCrackinScreen.jpg">
+<meta property="og:title" content="Cracked Screen Prank: Fool Your Friends with a Fake Broken Screen">
+<meta property="og:description" content="Create a hilarious cracked screen prank with our fullscreen tool. Fool your friends and family with a realistic fake broken screen effect!">
+<meta property="og:url" content="https://www.quenq.com/cracked">
+<meta name="description" content="Create a hilarious cracked screen prank with our fullscreen tool. Fool your friends and family with a realistic fake broken screen effect!">
+
+    <title>Cracked Screen Prank</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url(elCrackinScreen.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .modal, .fix-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            cursor: auto; /* Show cursor when modals are active */
+            display: none;
+            text-align: center;
+        }
+        .modal.active, .fix-modal.active {
+            display: block;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+.ad-placeholder {
+    width: 300px;
+    height: 250px;
+    background-color: #ccc;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+        .fix-modal img {
+            width: 100px;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T854EV4C7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T854EV4C7D');
+</script>
+</head>
+<body>
+    <div class="modal active" aria-labelledby="modal-title">
+        <span class="close-btn" onclick="closeModal()">&times</span>
+        <h2>Craked Screen Prank</h2>
+        <p id="modal-title" onclick="hideModal()">Click here to make it full screen or press F11</p>
+<p><a href="https://www.quenq.com" target="_blank">More pranks and simulations</a></p>
+       <!-- <div class="ad-placeholder">
+
+        </div>-->
+    </div>
+    <main>
+    </main>
+    <div class="fix-modal">
+        <a href="https://www.quenq.com"><img src="https://www.quenq.com/quenq.png" alt="Quenq Logo"></a>
+        <p>Don't worry, your screen is safe. This was just a prank.</p>
+        <p>Press F11 to exit full screen.</p>
+        <p>For more pranks visit <a href="https://www.quenq.com">quenq.com</a></p>
+       <!-- <div class="ad-placeholder">
+            
+        </div>-->
+    </div>
+    <script>
+        function closeModal() {
+            document.querySelector('.modal').classList.remove('active');
+            document.body.style.cursor = 'none'; // Hide cursor when modal is closed
+        }
+
+        function hideModal() {
+            document.querySelector('.modal').classList.remove('active');
+            document.body.style.cursor = 'none'; // Hide cursor when modal is closed
+            makeFullScreen();
+        }
+
+        function makeFullScreen() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.msRequestFullscreen) {
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+
+        function openFixModal() {
+            document.querySelector('.fix-modal').classList.add('active');
+            document.body.style.cursor = 'default'; // Show cursor when fix-modal is active
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'F11') {
+                makeFullScreen();
+            } else if (event.key === 'Enter') {
+                openFixModal();
+            }
+        });
+    </script>
+</body>
+</html>

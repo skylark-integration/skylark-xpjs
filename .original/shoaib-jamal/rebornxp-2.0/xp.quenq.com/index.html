@@ -1,0 +1,585 @@
+<!doctype html>
+<html>
+<head>
+<title>Reborn XP - The Real Windows XP Simulator</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta charset="UTF-8">
+<meta name="description" content="Experience the nostalgia of Windows XP in your browser! Reborn XP is a fully functional, web-based simulator with working applications, themes, file system, and more.">
+<meta property="og:title" content="Reborn XP - The Real Windows XP Simulator">
+<meta property="og:description" content="A fully functional, web-based simulation of Windows XP with working applications, themes, and file system.">
+<meta property="og:image" content="/og.jpg"/>
+<meta property="og:url" content="/" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="apple-mobile-web-app-title" content="Reborn XP"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content=""/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<link rel="icon" href="favicon.png" type="image/x-icon"/>
+<link rel="canonical" href="/" />
+<style>
+ #btncontain{
+   display:inline-block;margin-left:11px
+ }
+*{
+-webkit-user-select:none;user-select:none
+}
+:root{
+--srcWidth:640px;
+--srcTop:200px;
+--srcLeft:200px;
+--destWidth:100%;
+--destTop:0px;
+--destLeft:0px
+}
+</style>
+<link rel="stylesheet" href="css/symbols.css"/>
+<link rel="stylesheet" href="css/colors.css"/>
+<link class="scenes" rel="stylesheet" href="css/scenes.css"/>
+<link rel="stylesheet" href="css/applayouts.css"/>
+<link rel="stylesheet" href="css/icons.css"/>
+<link class="theme" rel="stylesheet" href="css/classic/controls.css"/>
+<link class="theme" rel="stylesheet" href="css/classic/modules.css"/>
+<link class=theme rel="stylesheet" href="css/classic/lunaFallback.css"/>
+<link class="theme truetype" rel="stylesheet" href="css/pixeltype.css"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Reborn XP",
+  "description": "An interactive, web-based simulation of the Windows XP operating system, featuring functional applications, themes, and a persistent virtual file system.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Browser",
+  "browserRequirements": "Requires a modern web browser with JavaScript enabled.",
+  "url": "/",
+  "screenshot": "/og.jpg",
+  "creator": {
+    "@type": "Organization",
+    "name": "Quenq",
+    "url": "https://www.quenq.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script>
+  window.CURRENT_APP_VERSION="2.0.0";
+</script>
+<script type="module">
+  import{DiskManager}from"./js/DiskManager.js";
+  window.dm=new DiskManager;
+</script>
+<script type="module">
+  import{Shell}from"./js/shell.js";
+  window.shell=new Shell;
+</script>
+<script id="gdi" src="js/wm.js" defer></script>
+<script id="uxtheme" src="js/themehandler.js" defer></script>
+<script id="dialogsrv" src="js/dialoghandler.js" defer></script>
+<script type="module">
+  import{Explorer}from"./js/explorer.js";
+  window.explorer=new Explorer();
+</script>
+<script id="rundll32" src="js/apps.js" defer></script>
+<script id="scrsave" src="js/screensave.js" defer></script>
+<script src="res/js/jsmediatags.min.js"></script>
+<script src="res/js/jszip.min.js"></script>
+<script src="res/js/ruffle/ruffle.js" defer></script>
+</head>
+<body class="classic lunaFallback">
+<div id="seo-content" class="visually-hidden">
+<h1>Reborn XP - The Windows XP Simulator</h1>
+<p>Step back in time and experience the nostalgia of the classic Windows XP operating system, fully recreated in your web browser. This is an interactive and functional simulation, not just a video or a theme.</p>
+<ul>
+<li>Explore a working desktop with a functional Start Menu, taskbar, and icons.</li>
+<li>Customize your experience with the complete suite of authentic themes, including Luna, Royale, Zune, and Classic.</li>
+<li>Use classic applications, listen to music in Windows Media Player, and play iconic games.</li>
+<li>Create and save files to a persistent virtual file system that remembers your work between sessions.</li>
+</ul>
+<p>Reborn XP is loading now. Get ready to relive the definitive computing experience of the 2000s.</p>
+</div>
+<style>
+  .boot-screen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    color:#ccc;
+    z-index:99999999;
+    font-family:vga8x14,monospace;font-smooth:never;
+    -webkit-font-smoothing:none;
+    padding:80px 60px;
+    box-sizing:border-box;
+    font-size:20px;
+    line-height:1.6;
+    display:none
+  }
+  .boot-screen p{
+    margin:0 0 1em
+  }
+  .boot-screen .title{
+    text-transform:uppercase;
+    margin-top:1.5em;
+    margin-bottom:.5em
+  }
+  .boot-screen ul{
+    list-style:none;
+    padding:0;
+    margin:0 0 0 40px
+  }
+  .boot-screen li{
+    padding:4px 8px;
+    cursor:pointer;display:block;
+    width:fit-content
+  }
+  .boot-screen li.selected{
+    background-color:#ccc;color:#000
+  }
+  .boot-screen .boot-message{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100%;
+    font-size:24px;
+    color:#fff
+  }
+  #bootloader{
+    background-color:#000
+  }
+  #reinstall-confirm{
+    background-color:navy
+  }
+  #post-screen{
+    display:none;
+    flex-direction:column
+  }
+  #post-screen pre{
+    font-family:vga8x14;
+      white-space:pre-wrap;
+    font-size:22px;
+    line-height:1.2
+  }
+  #post-screen main{
+    flex-grow:1
+  }
+  .epa-logo{
+    image-rendering:pixelated;
+    display:block;
+    float:right;
+    width:136px;
+    height:84px;
+    background-image:url('data:image/gif;base64,R0lGODlhiABUALMAAAEBAQH/Af//AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAAALAAAAACIAFQAAwT/EMhJq704ayC6/6C3jWRpnmgZrmybvnAsS62Q1nOuz+tO9b6g8AcaYkLGZKyo1DCb0OMnqppSo88rKav1cbtbKzgnHqPK5rMovVyzq7Y3ryPfoOuvO96NJ9P7HHyAc39ygoM6h2CKiH5xZoyNjpCFkkORSZiWk1eam5xQnp+gmZWjiaaiMKqncKmmO6ytYYeyVbNBdLCBQru4bYGPRF6+vzePu7YZxcYnborMJtHNtxOM03bY1NkVvtrLwtt5r+HW5dLn4s7lkd/d6erV7+Dj8W3nytz29VK58PtOiuXrt6+GQXAGWRC0l9BFwIZILLgbBTEiworJJgK8dO3fRjUe/98JDPlxhJ6L9KiRNGfS1kkaK6VolPFlocR8L2Gu+jOTXy2RFwYGCzmzUs+bOoclNSes1tGhLflZ8wKzKTKr5IjElElS4yupOsUUGpvl2dOqKyfC2ooWaxyeLKvyYmpDqNaY7tZa1ef2blizLJkMzIlUXty4epfeQSLoqlymO7d+S6z051xea4F2S9qY7Tx00gpDRqPLcUa6N3lmvQc6zGfIHC6jRZwOiMTZmiO3NqlV5JrVl4nWDUgjNc3JXR37Jos62OF+I5c+37nbyePKbhU6m7qQHbOcdlOfdu6X+zrpSmVfX96RLb6awT2HLn4kPWz2elweDGpUvmv1z3knYP9/Trln0Xu3GTGWTXqFcxJpZ9kXnhromUdfbvC1dR8qhClooYQI4tYSc734N0eFF6bYW4bi1RVhH6Ux+B6LD3U4y0sOcvWURfFgsleLsdhY0Fu1vZhbSfwZieSSTDbpZBcBRCnllFRWaeWVWGap5ZZcdukll0+GKeaYAFEJwJQUBHABmhJI2WYFaqY5gZpmunlmlG/mOaedbNY5551uxnkmoHjWaaeciA6qZ6J0/inooopG+micgtJJKZyOZspopG1equejkmK6KaAWVBoqqKj+uaing+LJ6amaqtoqnKyaOuqerrI5K625xgqprZzWOiuqfBbr6q597iqpsaC+SuxEob/66qysk36q6LHRAqtpqndSi2mz094a7ZvceruqtZSWmyer4l4LLLfN+tluvLmiaSap1NYrbKLo6lqpveYS2mieEQAAOw==');
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat
+  }
+</style>
+<div id="post-screen" class="boot-screen" style="display:none;background-color:#000">
+<header>
+<pre><span class=epa-logo></span>
+Award Modular BIOS v4.51PG, An Energy Star Ally
+Copyright (C) 1984-2025, Quenq Systems.
+
+Quenq Sys BIOS v.2.0.0
+</pre>
+</header>
+<main>
+<pre id="post-text"></pre>
+</main>
+<footer>
+<pre>Press &lt;DEL&gt; to enter SETUP, &lt;F12&gt; to Boot Menu</pre>
+</footer>
+</div>
+<div id="bootloader" class="boot-screen">
+<p>Use the ↑ and ↓ keys to move the selection.</p>
+<p>Press ENTER to boot the selected OS, or ESC to restart.</p>
+<p class="title">Please select an option:</p>
+<ul id="boot-options-list">
+<li data-action="start-xp">Start Windows XP</li>
+<li data-action="install-xp">Reinstall Windows XP</li>
+</ul>
+<p id="countdown-text" class="title">
+  Booting in <span id="timer-seconds">10</span>...
+</p>
+</div>
+<div id="reinstall-confirm" class="boot-screen" style="display:none">
+<p>
+Setup is about to erase all contents of your virtual hard drives (C: and E:) and all saved user settings. This action cannot be undone.
+</p>
+<p> Are you sure you want to continue?</p>
+<p class="title">Select an option:</p>
+<ul id="confirm-options-list">
+<li data-action="confirm-wipe">Yes, continue Setup</li>
+<li data-action="cancel-wipe">No, return to main menu</li>
+</ul>
+</div>
+<svg>
+<filter id="15bitcol" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feComponentTransfer in="componentTransfer1" result="componentTransfer">
+<feFuncR type="discrete" tableValues="0 0.032 0.065 0.097 0.129 0.161 0.194 0.226 0.258 0.290 0.323 0.355 0.387 0.419 0.452 0.484 0.516 0.548 0.581 0.613 0.645 0.677 0.710 0.741 0.774 0.806 0.839 0.871 0.903 0.935 0.968 1"/>
+<feFuncG type=discrete tableValues="0 0.032 0.065 0.097 0.129 0.161 0.194 0.226 0.258 0.290 0.323 0.355 0.387 0.419 0.452 0.484 0.516 0.548 0.581 0.613 0.645 0.677 0.710 0.741 0.774 0.806 0.839 0.871 0.903 0.935 0.968 1"/>
+<feFuncB type=discrete tableValues="0 0.032 0.065 0.097 0.129 0.161 0.194 0.226 0.258 0.290 0.323 0.355 0.387 0.419 0.452 0.484 0.516 0.548 0.581 0.613 0.645 0.677 0.710 0.741 0.774 0.806 0.839 0.871 0.903 0.935 0.968 1"/>
+<feFuncA type="identity" />
+</feComponentTransfer>
+</filter>
+</svg>
+<svg>
+<filter id="256+col" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feComponentTransfer x="0%" y="0%" width="100%" height="100%" in="componentTransfer1" result="componentTransfer">
+<feFuncR type="discrete" tableValues="0 0.143 0.286 0.429 0.571 0.714 0.857 1"/>
+<feFuncG type="discrete" tableValues="0 0.143 0.286 0.429 0.571 0.714 0.857 1"/>
+<feFuncB type="discrete" tableValues="0 0.33 0.67 1"/>
+<feFuncA type="identity" />
+</feComponentTransfer>
+</filter>
+</svg>
+<svg>
+<filter id="256col" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feComponentTransfer x="0%" y="0%" width="100%" height="100%" in="componentTransfer1" result="componentTransfer">
+<feFuncR type=discrete tableValues="0 0.143 0.286 0.429 0.571 0.714 0.857 1"/>
+<feFuncG type=discrete tableValues="0 0.143 0.286 0.429 0.571 0.714 0.857 1"/>
+<feFuncB type=discrete tableValues="0 0.33 0.67 1"/>
+<feFuncA type=identity />
+</feComponentTransfer>
+</filter>
+</svg>
+<svg>
+<filter id="16col" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+<feColorMatrix type="luminanceToAlpha" in="SourceGraphic" result="alphaValues" />
+<feComponentTransfer in="alphaValues" result="darkMask">
+<feFuncA type="discrete" tableValues="1 1 0 0 0"/>
+</feComponentTransfer>
+<feComponentTransfer in="alphaValues" result="lightMask">
+<feFuncA type="discrete" tableValues="0 0 0 1 1"/>
+</feComponentTransfer>
+<feComponentTransfer in="alphaValues" result="grayMask">
+<feFuncA type="discrete" tableValues="0 0 1 0 0"/>
+</feComponentTransfer>
+<feComponentTransfer in="SourceGraphic" result="darkColors">
+<feFuncR type="discrete" tableValues="0 0.5 0.5 0.5 0.5"/>
+<feFuncG type="discrete" tableValues="0 0.5 0.5 0.5 0.5"/>
+<feFuncB type="discrete" tableValues="0 0.5 0.5 0.5 0.5"/>
+</feComponentTransfer>
+<feComponentTransfer in="SourceGraphic" result="lightColors">
+<feFuncR type="discrete" tableValues="0 0 1 1 1"/>
+<feFuncG type="discrete" tableValues="0 0 1 1 1"/>
+<feFuncB type="discrete" tableValues="0 0 1 1 1"/>
+</feComponentTransfer>
+<feFlood flood-color="#c0c0c0" flood-opacity="1" result="grayColor" />
+<feComposite in="darkColors" in2="darkMask" operator="in" result="darkComposite" />
+<feComposite in="lightColors" in2="lightMask" operator="in" result="lightComposite" />
+<feComposite in="grayColor" in2="grayMask" operator="in" result="grayComposite" />
+<feMerge result="rawColor">
+<feMergeNode in="darkComposite" />
+<feMergeNode in="lightComposite" />
+</feMerge>
+<feMerge result="finalColor">
+<feMergeNode in="rawColor" />
+<feMergeNode in="grayComposite" />
+</feMerge>
+</filter>
+</svg>
+<svg>
+<filter id="8col" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feComponentTransfer x="0%" y="0%" width="100%" height="100%" in="componentTransfer1" result="componentTransfer">
+<feFuncR type="discrete" tableValues="0 1"/>
+<feFuncG type="discrete" tableValues="0 1"/>
+<feFuncB type="discrete" tableValues="0 1"/>
+<feFuncA type="identity" />
+</feComponentTransfer>
+</filter>
+</svg>
+<svg>
+<filter id="2col" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feColorMatrix type="saturate" values="0" />
+<feComponentTransfer x="0%" y="0%" width="100%" height="100%" in="componentTransfer1" result="componentTransfer">
+<feFuncR type="discrete" tableValues="0 1"/>
+<feFuncG type="discrete" tableValues="0 1"/>
+<feFuncB type="discrete" tableValues="0 1"/>
+<feFuncA type="identity" />
+</feComponentTransfer>
+</filter>
+</svg>
+<template id="iexploreTemplate">
+<appcontentholder class="iexplore">
+<appnavigation class="rich">
+<ul class="appmenus">
+<li>File</li>
+<li>Edit</li>
+<li>View</li>
+<li>Favorites</li>
+<li>Tools</li>
+<li>Help</li>
+</ul>
+<navflag></navflag>
+<ul class="navbuttons">
+<li name="go-previous" onclick='playSystemSound("start")'><img src="res/ui/nav/back.png">Back <pointer>▼</pointer></li>
+<li name="go-next" onclick='playSystemSound("start")'><img src="res/ui/nav/forward.png"> <pointer>▼</pointer></li>
+<li name="stopload"><img src="res/ui/nav/stop.png"></li>
+<li name="reload"><img src="res/ui/nav/refresh.png"></li>
+<li name="home"><img src="res/ui/nav/home.png"></li>
+<li class="divider"></li>
+<li><img src="res/ui/nav/search.png">Search</li>
+<li><img src="res/ui/nav/favorites.pnservieg">Favorites</li>
+<li name="history"><"img src="res/ui/nav/up.png"></li>
+</ul>
+<ul class="address"bar">
+<li>"Address"</li>
+<li>"<combobox "name="addressBar" class="a"ddressBar"><img src="res/icons/tray/webpage.png"> </combobox></li>
+<li><img src="res/ui/nav/go.png">Go</li>
+</ul>
+</appnavigation>
+<iframecontents>
+<iframe class="iexploreframe" name="webview">
+</iframe>
+</iframecontents>
+</appcontentholder>
+</template>
+<audio id="sound_system" src="res/sounds/startup.wav" friendlyname="System" preload="auto"></audio>
+<scene_holder screenmode="0">
+<div id="ditherpixels" style="display:none"></div>
+<div id="crteffect" style="display:none"></div>
+<scene_desktop data-env="system" style="background:0 0;z-index:2;pointer-events:none">
+<scene_windowspace></scene_windowspace>
+<scene_shell style="display:none"><taskbar><taskarea></taskarea></taskbar></scene_shell>
+</scene_desktop>
+<scene_bootscreen class"="bootSequence" style="display:none">
+<boot_con"tain">
+<img id="winlogo" src="res/ui/bootlogo.png">
+<div id="loadingbar">
+<div id="loadingbeansholder">
+<div id="loadingbeans">
+<bean id="bean1"></bean><bean id="bean2"></bean><bean id="bean3"></bean>
+</div>
+</div>
+</div>
+</boot_contain>
+<footer>
+<span id="copyrightinfo">Copyright © Microsoft Corporation</span>
+<img id="mslogo" src="res/ui/mslogo.png">
+</footer>
+</scene_bootscreen>
+<scene_logon>
+<logontop></logontop>
+<logonmid>
+<left>
+<leftcontain ondblclick='shell._fastlogon=!0,localStorage.setItem("devMode","true")'>
+<img src="res/ui/logonlogo.png"><br><br><br><br>
+<span id="tip">To begin, click your user name</span>
+<span id="welcome">welcome</span>
+</leftcontain>
+</left>
+<right>
+<rightcontain>
+<user id="Administrator" data-theme="luna" data-style="blue" data-wallpaper="stock-wallpapers/Energy_bliss.jpg" data-wpmode="stretch" onclick="shell.logonUser(this)">
+  <a><usericon><img src="res/users/chess.bmp"><span class="name">Administrator</span><span class="apps"></span></usericon></a>
+</user>
+<user id="Guest" data-theme="luna" data-style="blue" data-wallpaper="stock-wallpapers/Windows_XP_Professional.jpg" data-wpmode="stretch" onclick="shell.logonUser(this)">
+  <a><usericon><img src="res/users/guest.bmp"><span class="name">Guest</span><span class="apps"></span></usericon></a>
+</user>
+</rightcontain>
+</right>
+</logonmid>
+<logonbtm>
+<p>After you log on, you can explore and customize. <br> Look around through files and tinker with the apps!</p>
+<btncontain onclick="window.wm.openOverlay(),window.wm.openPowerOptions(!0)"><softbutton class="red shutdown"><span>Turn off computer</span></softbutton></btncontain>
+</logonbtm>
+</scene_logon>
+<scene_overlay class="inactive">
+<actionbox id="shutdown">
+<act_heading><span>Turn off computer</span></act_heading>
+<div id=btncontain>
+<powerbtn><softbutton class="yellow"><img src="res/symbols/standby.png"></softbutton><span>Stand By</span></powerbtn>
+<powerbtn><softbutton class="red" onclick="window.shell.reboot()"><img src="res/symbols/restart.png"></softbutton><span>Turn Off</span></powerbtn>
+<powerbtn><softbutton class="green" onclick="window.shell.reboot()"><img src="res/symbols/restart.png"></softbutton><span>Restart</span></powerbtn>
+</div>
+<footing><winbutton onclick="window.wm.closeOverlay()"><btnopt>Cancel</btnopt></winbutton></footing>
+</actionbox>
+<actionbox id="logoff">
+<act_heading><span>Log Off Windows XP</span></act_heading>
+<div id="btncontain">
+<powerbtn><softbutton class="green" onclick="shell.switchLogon()"><img src="res/symbols/restart.png"></softbutton><span>Switch User</span></powerbtn>
+<powerbtn><softbutton class="yellow" onclick="window.wm.closeOverlay(),shell.logoffUser(shell._currentUser)"><img src="res/symbols/standby.png"></softbutton><span>Log Off</span></powerbtn>
+</div>
+<footing><winbutton onclick="window.wm.closeOverlay()"><btnopt>Cancel</btnopt></winbutton></footing>
+</actionbox>
+</scene_overlay>
+<scene_screensaver>
+<img src="res/ui/screensave.png">
+</scene_screensaver>
+<scene_bsod>
+<pre>
+
+A problem has been detected and Windows XP has been shut down to prevent damage
+to your computer.
+
+The problem seems to be caused by the following file: UXTHEME.DLL
+
+ILLEGAL_UXSTYLE_INPUT_VALUE
+
+If this is the first time you've seen this Stop error screen,
+refresh your browser tab. If this screen appears again, follow
+these steps:
+
+Check to make sure any new hardware or software is properly installed.
+If this is a new installation, ask Quenq or your browser vendor
+for any Windows XP modifications you might need.
+
+If problems continue, disable or remove any newly installed hardware
+or software. Disable BIOS memory options such as chaching or shadowing.
+If you need to use Safe Mode to remove or disable components, refresh
+your browser tab, press F8 to select Advanced Startup Options, and then
+select Safe Mode.
+
+Technical information:
+
+*** STOP: 0x00000069 (0xFD3094C2, 0x00000001,0xFBFE7617,0x00000000)
+
+
+*** UXTHEME.DLL - Address FDF23422 base at FDF24000, DateStamp 3d6dd67c
+			</pre>
+</scene_bsod>
+<scene_updatescreen_xp>
+<div class="updatetop"></div>
+<div class="updatemid">
+<div class="update-content" style="display:flex;flex-direction:column;align-items:end">
+<img src="res/ui/logonlogo.png" alt="Windows XP Logo" style="margin-bottom:25px">
+<h1 id=update-xp-text style=margin-bottom:10px>Installing Windows Updates... 0%</h1>
+<p>Do not turn off or unplug your computer.</p>
+</div>
+</div>
+<div class="updatebtm"></div>
+</scene_updatescreen_xp>
+<div id="selection-rectangle" style="display:none"></div>
+<script>
+function playSystemSound(e) {
+  window.shell && shell.playSystemSound(e)
+}
+
+function startOS() {
+  document.getElementById("post-screen").style.display = "none", 
+  document.getElementById("bootloader").style.display = "none", 
+  document.getElementById("reinstall-confirm").style.display = "none", 
+  document.getElementById("seo-content").style.display = "none";
+  const e = document.querySelector("scene_bootscreen");
+  e && (e.style.display = ""), 
+  window.APP_VERSION = window.CURRENT_APP_VERSION || "2.0.0", 
+  window.shell.setup().then((() => (
+    window.wm.setup(), 
+    window.apps.setup()
+  ))).then((() => (
+    "function" == typeof window.initializeScreensaver && window.initializeScreensaver(),
+     shell.dismissBoot())))
+}
+
+function runBootloader() {
+  const e = document.getElementById("post-screen"),
+    t = document.getElementById("post-text"),
+    n = document.getElementById("bootloader"),
+    o = document.getElementById("reinstall-confirm");
+  if (!e || !n) return void startOS();
+  let i = ["Main Processor : Intel® Pentium® 4 @ 2.80GHz", "Memory Testing :  2097152K OK", "", "Detecting Pri Master ... Virtual Hard Disk C:", "Detecting Pri Slave  ... Virtual Hard Disk D:", "Detecting Sec Master ... Virtual CD/DVD E:", "Detecting Sec Slave  ... None", "", "Initializing USB Controllers ... Done", ""],
+    a = 0;
+  e.style.display = "flex";
+  const l = () => {
+    a < i.length ? (t.innerHTML += i[a] + "\n", a++, setTimeout(l, 100)) : setTimeout((() => {
+      e.style.display = "none",
+        function() {
+          let e = !1,
+            t = "main",
+            i = null,
+            a = 10,
+            l = 0;
+          const r = n.querySelectorAll("#boot-options-list li"),
+            s = o.querySelectorAll("#confirm-options-list li"),
+            c = n.querySelector("#countdown-text"),
+            d = n.querySelector("#timer-seconds");
+
+          function u(e) {
+            e.forEach(((e, t) => {
+              e.classList.toggle("selected", t === l)
+            }))
+          }
+
+          function y() {
+            i && clearInterval(i), c && (c.style.display = "none")
+          }
+
+          function m() {
+            c && (c.style.display = "block"), a = 10, i && clearInterval(i), d.textContent = a, i = setInterval((() => {
+              a--, d.textContent = a, a <= 0 && f()
+            }), 1e3)
+          }
+          async function w() {
+            n.style.display = "none", o.style.display = "none";
+            const e = document.createElement("div");
+            e.className = "boot-message", e.style.cssText = "font-family: vga8x14; font-size:22px; position:fixed; top:0; left:0; width:100%; height:100%; z-index:999999999; background-color:#000; color:#fff; display:flex; align-items:center; justify-content:center;", document.body.appendChild(e), e.textContent = "Formatting virtual disks...", localStorage.clear();
+            await Promise.all([new Promise(resolve => window.indexedDB.deleteDatabase("rebornxp_fs_C").onsuccess = resolve), new Promise(resolve => window.indexedDB.deleteDatabase("rebornxp_fs_E").onsuccess = resolve)]);
+            await new Promise((e => setTimeout(e, 2e3))), e.textContent = "Restarting computer...", await new Promise((e => setTimeout(e, 1500))), window.location.reload()
+          }
+
+          function f() {
+            if (e) return;
+            e = !0, y(), window.removeEventListener("keydown", g);
+            const n = "main" === t ? r[l].dataset.action : s[l].dataset.action;
+            "install-xp" === n ? p("confirm") : "confirm-wipe" === n ? w() : "cancel-wipe" === n ? p("main") : startOS()
+          }
+
+          function p(i) {
+            t = i, e = !1, l = 0, "main" === i ? (n.style.display = "block", o.style.display = "none", u(r), m()) : "confirm" === i && (n.style.display = "none", o.style.display = "block", u(s), document.body.focus())
+          }
+
+          function g(n) {
+            if (e) return;
+            "main" === t && y();
+            const o = "main" === t ? r : s;
+            switch (n.key) {
+              case "ArrowUp":
+                n.preventDefault(), l = (l - 1 + o.length) % o.length, u(o);
+                break;
+              case "ArrowDown":
+                n.preventDefault(), l = (l + 1) % o.length, u(o);
+                break;
+              case "Enter":
+                n.preventDefault(), f();
+                break;
+              case "Escape":
+                n.preventDefault(), "confirm" === t ? p("main") : location.reload()
+            }
+          }
+          r.forEach(((e, t) => {
+            e.addEventListener("click", (() => {
+              l = t, u(r), f()
+            }))
+          })), s.forEach(((e, t) => {
+            e.addEventListener("click", (() => {
+              l = t, u(s), f()
+            }))
+          })), window.addEventListener("keydown", g, {
+            capture: !0
+          }), p("main")
+        }()
+    }), 1500)
+  };
+  l()
+}
+if ("serviceWorker2222222222" in navigator) {
+  let e;
+  navigator.serviceWorker.addEventListener("controllerchange", (() => {
+    e || (window.location.reload(), e = !0)
+  })), window.addEventListener("load", (() => {
+    navigator.serviceWorker.register("/sw.js").then((e => {
+      navigator.serviceWorker.controller ? runBootloader() : window.location.reload()
+    })).catch((e => {
+      console.error("ServiceWorker registration failed:", e), runBootloader()
+    }))
+  }))
+} else window.addEventListener("load", runBootloader)  
+</script>
+</scene_holder>
+</body>
+</html>
